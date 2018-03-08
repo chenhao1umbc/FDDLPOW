@@ -3,7 +3,7 @@ clear
 clc;
 tic
 
-addpath(genpath('.././FDDLOW'))
+addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 % load data
 [Database]=load_data;

@@ -3,8 +3,8 @@ clear
 clc;
 tic
 
-addpath(genpath('.././fddlow'))
-addpath(genpath('.././data'))
+addpath(genpath('./fddlow'))
+addpath(genpath('./data'))
 % load data
 [Database]=load_data;
 
@@ -15,7 +15,7 @@ lbmd=1.5;
 mu=0.1;
 nu=1e3;
 Q=16;% this is wq without negative
-beta = 0.1;
+beta = 5;
 [opts]=loadoptions(K,lbmd,mu,Q,nu,beta);
 
 % for table 2 algorithm
@@ -24,7 +24,7 @@ save(['.././', opts.mixnm],'Dict_mix','opts')
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-beta = 1;
+beta = 15;
 [opts]=loadoptions(K,lbmd,mu,Q,nu,beta);
 
 % for table 2 algorithm
@@ -33,7 +33,7 @@ save(['.././', opts.mixnm],'Dict_mix','opts')
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-beta = 10;
+beta = 20;
 [opts]=loadoptions(K,lbmd,mu,Q,nu,beta);
 
 % for table 2 algorithm

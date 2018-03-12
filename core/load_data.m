@@ -97,5 +97,5 @@ database.cv_mixdata=cv_mixdat;
 database.cv_mixlabel=cvmixls;
 database.test_mixdata=tt_mixdat;
 database.test_mixlabel=ttmixls;
-    
+database.cvln_mix =cvln_mix; % samples for training in logistis regression
 end % end of the function file

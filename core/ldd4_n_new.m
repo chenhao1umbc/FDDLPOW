@@ -1,6 +1,6 @@
 
 % loading mixture data 
-if N_c == 2
+if N_c == 2 % 2 class mixture
     for indx_p = 1:N_c 
         if powercases == 1
             Power{indx_p} = zeros(1,N_c); % only 0 0 0 
@@ -16,7 +16,7 @@ if N_c == 2
     end
 end
 
-if N_c == 3
+if N_c == 3 % 3 class mixture
     for indx_p = 1:N_c 
         if powercases == 1
             Power{indx_p} = zeros(1,N_c); % only 0 0 0 

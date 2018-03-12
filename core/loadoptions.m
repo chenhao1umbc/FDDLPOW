@@ -1,4 +1,4 @@
-function [opts]=loadoptions(K,lambda1,mu,Q,nu,beta)
+function [opts]=loadoptions(K,lambda1,mu,Q,nu,beta, SNR)
 % this fucntion is made to load the options for dictionary learning
 %             opt are the training/testing options with
 %                 opt.K -the number of atoms in Dictionary
@@ -12,7 +12,9 @@ function [opts]=loadoptions(K,lambda1,mu,Q,nu,beta)
 if nargin < 5
     nu=1000;
     beta = 1;
+    SNR = 2000;
 end
+opts.SNR = SNR;
 opts.K=K;
 opts.Q=Q;
 opts.lambda1=lambda1;                                        

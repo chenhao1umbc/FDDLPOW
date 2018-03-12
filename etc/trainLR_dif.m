@@ -1,38 +1,35 @@
+function B = trainLR_dif(opt, Database)
 % train logistic regression for mixture cases
+% load data
+SNR = opt.SNR;
+featln = Database.featln;
+cvln_mix = Database.cvln_mix;
 
-%% load data
-SNR = 2000;
-featln = 4;
-
+tr_ln = size(Database.tr_data, 2);
+cv_ln = size(Database.cv_data, 2);
+trcv_ln = tr_ln + cv_ln;
 P = size(Database.tr_data, 1);
-N = size(Database.tr_data, 2)+size(Database.cv_data, 2)+featln*
-449*4*6+(15+20)*4*50
+N = tr_ln + cv_ln + featln*(15+20)*cvln_mix; % N_c <4
 X_all = zeros(P, N); % P*N matrix
-Y_all = zeros(N, 6); % 6 classes
+Y_all = zeros(N, 6); % 6 classes #################################
 
-nmdb1=['norm_db449_6classqn22_positive_renorm_snr', num2str(SNR),'.mat']; % positive
-nmdb2=['norm_db449_6classqn22_negative_renorm_snr', num2str(SNR),'.mat']; % negative
-load(nmdb1)
-load(nmdb2)
-
-% concatenate the positve and negative parts
-for ii=1:449*6                
-    db2.features(:,1+(ii-1)*featln:ii*featln)=...
-        flip(flip(db2.features(:,1+(ii-1)*featln:ii*featln),2),1);
-end
-X_all(:, 1:449*6*featln) = [db.features;db2.features]; % samples
+X_all(:, 1:(tr_ln + cv_ln)) = [Database.tr_data, Database.cv_data]; % samples
 lb = [1,zeros(1,5)];
 for counter =1:6
-    Y_all(featln*449*(counter-1)+1:featln*449*counter, :) = ...
-    kron(ones(449*featln,1), circshift(lb, counter-1));
+    Y_all(tr_ln/6*(counter-1)+1:tr_ln/6*counter, :) = ...
+    kron(ones(tr_ln/6,1), circshift(lb, counter-1));
+end
+for counter =1:6
+    Y_all(cv_ln/6*(counter-1)+1+tr_ln:cv_ln/6*counter+tr_ln, :) = ...
+    kron(ones(cv_ln/6,1), circshift(lb, counter-1));
 end
 rt = './data/SNout_LMdata4/qn22/SNR_difpower/';
 part1 = 'norm_mix';
 part2 = ['db449_6classqn22_positive_renorm_snr',num2str(SNR),'power_'];
 part3 = ['db449_6classqn22_negative_renorm_snr',num2str(SNR),'power_'];
-counter = 7;
+counter = 7; %#####################################################
 
-for N_c = 2:3
+for N_c = 2:3 % N_c classes of mixtures
     Power = zeros(1,N_c); % only 0 0 0 
     c = combnk(1:6, N_c); % ble bt fhss1 zb
     for indCl=1:size(c,1)
@@ -47,16 +44,17 @@ for N_c = 2:3
                 flip(flip(db2.features(:,1+(ii-1)*featln:ii*featln),2),1);
         end
         temp = [db.features; db2.features];
-        X_all(:, 10777+(counter-7)*50*featln:10776+(counter-6)*50*featln) = temp(:, 1:featln*50);
+        X_all(:, trcv_ln+1+(counter-7)*cvln_mix*featln:trcv_ln+...
+            (counter-6)*cvln_mix*featln) = temp(:, 1:featln*cvln_mix);
         lb = zeros(1, 6);
         lb(indClnm) = 1/length(indClnm);
-        Y_all(10777+(counter-7)*50*featln:10776+(counter-6)*50*featln, :) = ...
-            kron(ones(50*featln,1), lb);
+        Y_all(trcv_ln+1+(counter-7)*cvln_mix*featln:trcv_ln+...
+            (counter-6)*cvln_mix*featln, :) = kron(ones(50*featln,1), lb);
         counter = counter +1;
     end
 end
 
-load(['SNR',num2str(SNR),'DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat'])
+load(opt.mixnm)
 Database.test_mixdata = X_all;
 Z_all = sparsecoding_mix_test(Dict_mix,Database,opts);
 
@@ -68,5 +66,4 @@ warning off
 B = mnrfit(X, Y_all);
 save(['SNR',num2str(SNR),'B_X_Y_mix.mat'], 'B', 'X', 'Y');
 
-
-toc
+end % end of the file

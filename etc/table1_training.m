@@ -18,5 +18,5 @@ Q = 16;
 
 % for table 1 algorithm
 Dict = FDDLOW_table1(Database.tr_data, Database.tr_label, opts);
-save(['.././', opts.mixnm],'Dict','opts')
+save(opts.mixnm,'Dict','opts')
 

@@ -20,23 +20,4 @@ beta = 5;
 
 % for table 2 algorithm
 Dict_mix = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
-save(['.././', opts.mixnm],'Dict_mix','opts')
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-beta = 15;
-[opts]=loadoptions(K,lbmd,mu,Q,nu,beta);
-
-% for table 2 algorithm
-Dict_mix = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
-save(['.././', opts.mixnm],'Dict_mix','opts')
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-beta = 20;
-[opts]=loadoptions(K,lbmd,mu,Q,nu,beta);
-
-% for table 2 algorithm
-Dict_mix = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
 save(opts.mixnm,'Dict_mix','opts')
-

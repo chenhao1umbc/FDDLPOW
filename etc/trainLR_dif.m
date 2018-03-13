@@ -64,6 +64,6 @@ Y = Y_all;
 % train logistic regression
 warning off
 B = mnrfit(X, Y_all);
-save(['SNR',num2str(SNR),'B_X_Y_mix.mat'], 'B', 'X', 'Y');
+save(['SNR',num2str(SNR),'_beta', num2str(opt.beta), 'B_X_Y.mat'], 'B', 'X', 'Y');
 
 end % end of the file

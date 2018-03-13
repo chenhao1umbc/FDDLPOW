@@ -24,6 +24,6 @@ Dict_mix = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
 save(opts.mixnm,'FDDLOW_mix','opts')
 
 % this part will give the logistic regression result
-trainLR_dif(opts, Database)
+trainLR_dif(opts, Database);
 
 

@@ -1,13 +1,13 @@
 clear 
 clc
 
-addpath(genpath('./FDDLOW'))
+addpath(genpath('./fddlow'))
 addpath(genpath('./data'))
 
 % load data
 % load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat')
-
-% load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta1000.mat')
+% load('Delta_FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta0.1.mat')
+load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta10.mat')
 if exist('Dict')==1
     Dict_mix = Dict; % if loading FDDL
 end 

@@ -6,9 +6,9 @@ addpath(genpath('./data'))
 
 % load data
 % load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat')
-% load('Delta_FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta0.1.mat')
-% load('Delta_FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta1.mat')
-load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta10.mat')
+load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta0.1.mat')
+% load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta1.mat')
+% load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta10.mat')
 if exist('Dict')==1
     Dict_mix = Dict; % if loading FDDL
 end 
@@ -20,11 +20,11 @@ V = Dict_mix.V;
 Delta = Dict_mix.Delta;
 
 fln = 4; % feature length
-mixture_n = 1; % mixture_n classes mixture
+mixture_n = 2; % mixture_n classes mixture
 [Database]=load_data(mixture_n, 2000, 1);
 C = max(Database.tr_label); % how many classes
 
-% Z = sparsecoding_mix_test(Dict_mix, Database, opts);
+Z = sparsecoding_mix_test(Dict_mix, Database, opts);
 % [acc, acc_av] = lr_test_new(Dict_mix, Database, Z, B);
 
 %% Cross-validation using KNN
@@ -43,7 +43,7 @@ end
 %}
 
 %% calculate fisher/orghogonal term value
-%{   1
+%{   
 sparsity = mean(sum(Z ~= 0))
 X = Database.tr_data;
 N = size(Z,2);
@@ -84,7 +84,7 @@ Vq= v(:,1:3);
 PCA =Vq'*X0;
 symbolpool = {'*', 'o', 'h', 's', 'd', '^', 'p'};
 c = combnk(1:C,mixture_n);
-nn = size(Z,2)/size(c,1); % how many samples per combo
+nn = size(Z,2)/size(c,1)/mixture_n; % how many samples per combo
 for jj = 1:1%size(c,1)
     if jj ~=0
     h = figure(1000);

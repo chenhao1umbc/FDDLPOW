@@ -21,7 +21,7 @@ SNR = 2000;
 [opts]=loadoptions(K,lbmd,mu,Q,nu,beta, SNR);
 
 % for table 2 algorithm
-Dict_mix = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
+FDDLOW_mix = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
 save(opts.mixnm,'FDDLOW_mix','opts')
 
 % this part will give the logistic regression result

@@ -23,7 +23,7 @@ for counter =1:6
     Y_all(cv_ln/6*(counter-1)+1+tr_ln:cv_ln/6*counter+tr_ln, :) = ...
     kron(ones(cv_ln/6,1), circshift(lb, counter-1));
 end
-rt = './data/SNout_LMdata4/qn22/SNR_difpower/';
+rt = '/home/chenhao/Matlab/FDDLOW/data/SNout_LMdata4/qn22/SNR_difpower/';
 part1 = 'norm_mix';
 part2 = ['db449_6classqn22_positive_renorm_snr',num2str(SNR),'power_'];
 part3 = ['db449_6classqn22_negative_renorm_snr',num2str(SNR),'power_'];

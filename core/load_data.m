@@ -1,4 +1,4 @@
-function [database]=load_data(N_c, SNR, powercases)
+function [database]=load_data(N_c, SNR, pctrl)
 % This function is made to load testing, cross-validation, and traing data with their labels
 % output is database, struct with 
 %         database.featln - scattering coefficient time lenght per sample
@@ -13,12 +13,12 @@ function [database]=load_data(N_c, SNR, powercases)
 if nargin<1
     N_c = 2;
     SNR = 2000;
-    powercases = 1; % equal power
+    pctrl.equal = 1; % equal power
 elseif nargin<2
     SNR = 2000;
-    powercases = 1; % equal power
+    pctrl.equal = 1; % equal power
 elseif nargin<3
-    powercases = 1; % equal power    
+    pctrl.equal = 1; % equal power    
 end
 whichclass=[1:6];% bluetooth,BLE,wifi,zigbee
 nClass=length(whichclass);

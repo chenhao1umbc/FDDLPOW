@@ -2,9 +2,11 @@
 % loading mixture data 
 if N_c == 2 % 2 class mixture
     for indx_p = 1:N_c 
-        if pctrl.equal == 1 % equal power cases
+        if pctrl.powercases == 1 % equal power cases
             Power{indx_p} = zeros(1,N_c); % only 0 0 0 
-        else
+        end
+
+        if pctrl.powercases == 2 % non-qual power cases
             Power{indx_p} = circshift([0, pctrl.db], indx_p-1); 
         end
     end
@@ -14,7 +16,9 @@ if N_c == 3 % 3 class mixture
     for indx_p = 1:N_c 
         if pctrl.equal == 1% equal power cases
             Power{indx_p} = zeros(1,N_c); % only 0 0 0 
-        else
+        end
+
+        if pctrl.powercases == 2 % non-qual power cases
             Power{indx_p} = circshift([0, pctrl.db, pctrl.db], indx_p-1); 
         end
     end

@@ -21,5 +21,4 @@ end
 Z = sparsecoding_mix_test(Dict_mix, Database, opts);
 
 sparsity = mean(sum(Z ~= 0))
-
-[acc, acc_av] = lr_test(Dict_mix, Database, Z, B)
+[acc, acc_weak_av, acc_av] = lr_test(Dict_mix, Database, Z, B)

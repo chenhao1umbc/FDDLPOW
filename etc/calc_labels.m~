@@ -33,12 +33,12 @@ function [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts)
     acc_weak_av = sum(acc_weak)/C;
     
     mixture_n = n;
-    acc = 0;
     comb = combnk(1:C, mixture_n);
-    ntestsample = ln_test/mixture_n;
+    ntestsample = size(aoos(Z,4,size(Z, 2)), 2)/mixture_n;
     ncomb = size(combnk(1:C, mixture_n), 1);
     nsample_percomb = ntestsample/ncomb;
-    test_label = labels_pre(1:mixture_n, :); 
+    [~, labels_pre] = sort(result, 1, 'descend');
+    test_label = labels_pre(1:mixture_n, :);    
     for i = 1: ncomb
         for ii = 1: mixture_n
             predit_labels = test_label(:, 1+nsample_percomb*(i-1):nsample_percomb*i);

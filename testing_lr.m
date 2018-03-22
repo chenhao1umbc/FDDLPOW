@@ -12,8 +12,8 @@ load('SNR2000_beta3B_X_Y.mat')
 
 mixture_n = 2; % mixture_n classes mixture
 SNR = 2000;
-pctrl.equal = 0; % 1 means eqaul power, 0 non-equal
-pctrl.db = 20; % dynamic ratio is 3, 6, 10, 20, 40db
+pctrl.equal = 1; % 1 means eqaul power, 0 non-equal
+pctrl.db = 40; % dynamic ratio is 3, 6, 10, 20, 40db
 [Database]=load_data(mixture_n, SNR, pctrl);% the equal power mixture, 400 samples per combination
 if exist('Dict')==1
     Dict_mix = Dict;

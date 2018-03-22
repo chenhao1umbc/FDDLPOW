@@ -1,3 +1,5 @@
+% temp file to tune beta with logistic regression
+
 clear 
 clc
 
@@ -6,8 +8,8 @@ addpath(genpath('./data'))
 
 t = [0, 0.1:0.2:0.7, 1, 1.3:0.2:1.7, 2:0.25:2.5, 2.7, 3, 5, 10];
 tt = [3,6,10,20,40];
-for ii = 1:length(t) % loop through beta
-    for jj = 1:length(tt)
+for ii = 7%1:length(t) % loop through beta
+    for jj = 1%1:length(tt)
         if ii == 1
             load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat')%FDDLO
             load('B_X_Y.mat')%FDDLO
@@ -25,8 +27,9 @@ for ii = 1:length(t) % loop through beta
         end 
         Z = sparsecoding_mix_test(Dict_mix, Database, opts);
         sparsity = mean(sum(Z ~= 0))
-        [acc, acc_av] = lr_test(Dict_mix, Database, Z, B)
-
-        record(ii, jj) = acc_av; 
+        [acc_weak, acc_weak_av, acc_all] = lr_test(Dict_mix, Database, Z, B)
+        
+        record_weak_av(ii, jj) = acc_weak_av; 
+        record_all(ii, jj) = acc_all;  
     end
 end

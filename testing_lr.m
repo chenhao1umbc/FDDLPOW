@@ -4,11 +4,11 @@ clc
 addpath(genpath('./fddlow'))
 addpath(genpath('./data'))
 
-% load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat')%FDDLO
-% load('B_X_Y.mat')%FDDLO
+load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat')%FDDLO
+load('B_X_Y.mat')%FDDLO
 
-load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta3.mat')
-load('SNR2000_beta3B_X_Y.mat')
+% load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta3.mat')
+% load('SNR2000_beta3B_X_Y.mat')
 
 mixture_n = 2; % mixture_n classes mixture
 SNR = 2000;
@@ -21,4 +21,4 @@ end
 Z = sparsecoding_mix_test(Dict_mix, Database, opts);
 
 sparsity = mean(sum(Z ~= 0))
-[acc, acc_weak_av, acc_av] = lr_test(Dict_mix, Database, Z, B)
+[acc, acc_weak_av, acc_av] = lr_test(Dict_mix, Database, Z, B, pctrl)

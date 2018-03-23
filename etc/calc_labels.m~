@@ -21,17 +21,12 @@ function [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts)
             indClnm(1) = temp(whichpart); % find the week signal
             indClnm(2:6) = Theother3(indClnm(1)); % find non-week signal
             for ii=1:ln_test_part/Ncombs          
-                    acc0(indClnm(1))=acc0(indClnm(1))+length(find...
-                        (labels_pre_part(1:n,ii+(indCl-1)*ln_test_part/Ncombs)==indClnm(1)));            
+                acc0(indClnm(1))=acc0(indClnm(1))+length(find...
+                    (labels_pre_part(1:n,ii+(indCl-1)*ln_test_part/Ncombs)==indClnm(1)));            
             end
-
         end   
-
     end
-    
-    acc_weak = sum(acc_t, 2)/50/size(combnk(1:5,n-1),1);
-    acc_weak_av = sum(acc_weak)/C;
-    
+      
     mixture_n = n;
     acc = 0;
     comb = combnk(1:C, mixture_n);
@@ -45,7 +40,17 @@ function [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts)
             acc = acc + length(find(predit_labels == comb(i, ii)));
         end
     end   
+    for i = 1 + ncomb: ncomb*2
+        for ii = 1: mixture_n
+            predit_labels = test_label(:, 1+nsample_percomb*(i-1):nsample_percomb*i);
+            acc = acc + length(find(predit_labels == comb(i-ncomb, ii)));
+        end
+    end  
     acc_all = acc /ln_test/n;
-    
+    acc_weak = sum(acc_t, 2)/50/size(combnk(1:5,n-1),1);
+    if opts.equal
+        acc_weak_av = acc_all;
+        
+    acc_weak_av = sum(acc_weak)/C;
     
 end % end of the function file

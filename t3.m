@@ -45,9 +45,14 @@ for ii = 1:length(t) % loop through beta
         N_t = size(Database.test_mixlabel, 2); % test signal length
         opts.ln_test = N_t/featln;
 
-        [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts)
+        [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
 
         record_weak_av(ii, jj) = acc_weak_av; 
         record_all(ii, jj) = acc_all; 
+        ii
+        jj
     end
 end
+record_all(:,6) =t(1:end)';
+record_weak_av(:,6) =t(1:end)';
+save('record_lr', 'record_all', 'record_weak_av')

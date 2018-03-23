@@ -7,8 +7,9 @@ addpath(genpath('./data'))
 load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat')%FDDLO
 load('B_X_Y.mat')%FDDLO
 
-% load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta3.mat')
-% load('SNR2000_beta3B_X_Y.mat')
+% load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta0.5.mat')
+% load('SNR2000_beta0.5B_X_Y.mat')
+% load('beta0.5B_X_Y.mat')
 
 mixture_n = 2; % mixture_n classes mixture
 SNR = 2000;

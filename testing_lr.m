@@ -5,7 +5,7 @@ addpath(genpath('./fddlow'))
 addpath(genpath('./data'))
 
 load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat')%FDDLO
-load('B_X_Y.mat')%FDDLO
+load('B_X_Y_pure.mat')%FDDLO
 
 % load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta0.5.mat')
 % load('SNR2000_beta0.5B_X_Y.mat')

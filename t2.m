@@ -12,10 +12,12 @@ for ii = 1:length(t) % loop through beta
     for jj = 1:length(tt)
         if ii == 1
             load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat')%FDDLO
-            load('B_X_Y.mat')%FDDLO
+%             load('B_X_Y.mat')%FDDLO
+            load('B_X_Y_pure.mat')%FDDLO
         else
             load(['FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta', num2str(t(ii)), '.mat'])
-            load(['SNR2000_beta', num2str(t(ii)), 'B_X_Y.mat'])
+%             load(['SNR2000_beta', num2str(t(ii)), 'B_X_Y.mat'])
+            load(['beta', num2str(t(ii)), 'B_X_Y.mat'])
         end
         mixture_n = 2; % mixture_n classes mixture
         SNR = 2000;
@@ -27,7 +29,7 @@ for ii = 1:length(t) % loop through beta
         end 
         Z = sparsecoding_mix_test(Dict_mix, Database, opts);
         sparsity = mean(sum(Z ~= 0))
-        [acc_weak, acc_weak_av, acc_all] = lr_test(Dict_mix, Database, Z, B)
+        [acc_weak, acc_weak_av, acc_all] = lr_test(Dict_mix, Database, Z, B, pctrl)
         
         record_weak_av(ii, jj) = acc_weak_av; 
         record_all(ii, jj) = acc_all;  

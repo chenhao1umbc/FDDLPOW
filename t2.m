@@ -17,7 +17,7 @@ for ii = 1:length(t) % loop through beta
         else
             load(['FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta', num2str(t(ii)), '.mat'])
 %             load(['SNR2000_beta', num2str(t(ii)), 'B_X_Y.mat'])
-            load(['beta', num2str(t(ii)), 'B_X_Y.mat'])
+            load(['beta', num2str(t(ii)), 'B_X_Y_pure.mat'])
         end
         mixture_n = 2; % mixture_n classes mixture
         SNR = 2000;

@@ -1,4 +1,4 @@
-function B = trainLR_pure(opt, Database, Dict_mix)
+function B = trainLR_(opt, Database, Dict_mix)
 % train logistic regression for pure cases
 
 featln = Database.featln;

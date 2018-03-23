@@ -44,6 +44,7 @@ for ii = 1:length(t) % loop through beta
         opts.Ncombs = max(Database.cv_mixlabel);
         N_t = size(Database.test_mixlabel, 2); % test signal length
         opts.ln_test = N_t/featln;
+        opts.equal = pctrl.equal;
 
         [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
 

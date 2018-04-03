@@ -34,18 +34,14 @@ function [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts)
     ncomb = size(combnk(1:C, mixture_n), 1);
     nsample_percomb = ntestsample_half/ncomb;
     test_label = labels_pre(1:mixture_n, :); 
-    for i = 1: ncomb 
-        for ii = 1: mixture_n
-            predit_labels = test_label(:, 1+nsample_percomb*(i-1):nsample_percomb*i);
-            acc = acc + length(find(predit_labels == comb(i, ii)));
-        end
-    end   
-    for i = 1 + ncomb: ncomb*2
-        for ii = 1: mixture_n
-            predit_labels = test_label(:, 1+nsample_percomb*(i-1):nsample_percomb*i);
-            acc = acc + length(find(predit_labels == comb(i-ncomb, ii)));
-        end
-    end  
+    for jj = 1:mixture_n
+        for ii = 1 + ncomb*(jj-1): ncomb*jj
+            for iii = 1: mixture_n
+                predit_labels = test_label(:, 1+nsample_percomb*(ii-1):nsample_percomb*ii);
+                acc = acc + length(find(predit_labels == comb(ii-ncomb*(jj-1), iii)));
+            end
+        end  
+    end
     acc_all = acc /ln_test/n;
     acc_weak = sum(acc_t, 2)/50/size(combnk(1:5,n-1),1);
     if opts.equal

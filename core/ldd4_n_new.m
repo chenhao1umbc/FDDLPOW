@@ -22,7 +22,7 @@ end
 cv_mixdat=[];tt_mixdat=[];cvmixls=[];ttmixls=[];
 c = combnk(1:6, N_c); % ble bt fhss1 zb
 
-r00t = '/home/chenhao/Matlab/FDDLOW/data/SNout_LMdata4/qn22/SNR_difpower/norm_mix';
+r00t = './data/SNout_LMdata4/qn22/SNR_difpower/norm_mix';
 part1 ='db449_6classqn22_positive_renorm_snr';
 part2 = 'db449_6classqn22_negative_renorm_snr';
 

@@ -167,3 +167,5 @@ plot(all_sigma_c2)
 xlabel('class#')
 ylabel('sum of covariance diagnal')
 %}
+
+set(gcf,'color','w');

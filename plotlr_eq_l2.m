@@ -6,7 +6,7 @@ lgnomix_alg2 = [0.8440 	0.7993 	0.7020 	0.4660 	0.2187 ];
 lgnomix_alg3 = [0.9827 	0.9773 	0.8947 	0.5380 	0.2767 ];
 eqnomix_alg2 = [0.9580 	0.9580 	0.9600 	0.9007 	0.5707 ];
 % eqnomix_alg3 = [0.9400 	0.9360 	0.9187 	0.8587 	0.5473 ];
-eqnomix_alg3 =[0.9600 	0.9587 	0.9607 	0.8927 	0.5280]
+eqnomix_alg3 =[0.9600 	0.9587 	0.9607 	0.8927 	0.5280];
 
 db = 1:5;
 figure 
@@ -31,8 +31,8 @@ legend('FDDLO and log. regr. using mixture labels',...
     'FDDLOW and log. regr. without mixture labels',...
     'FDDLO and ZF without mixture labels',...
     'FDDLOW and ZF without mixture labels','Location', 'southwest');
-title 'Weaker signal accuracy'
+title 'Weaker signal accuracy  L =2'
 xlabel('Dynamic ratio in dB')
-ylabel 'accuracy for weaker signal L =2'
+ylabel 'accuracy for weaker signal'
 ylim([0,1])
 set(gcf,'color','w');

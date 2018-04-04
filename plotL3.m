@@ -33,10 +33,10 @@ name = {'FDDLO with lr\_mix'
 'FDDLOW with eq'};
 legend(name, 'Location','southwest')
 xticklabels({'3db','', '6db','', '10db','', '20db','', '40db'})
-xlabel 'Dynamic range'
+xlabel 'Dynamic ratio in dB'
 ylabel 'accuracy'
 ylim([0,1])
-title 'accuracy for weak signal for L=3'
+title 'Accuracy for weak signal for L=3'
 set(gcf,'color','w');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure(2)
@@ -60,7 +60,7 @@ name = {'FDDLO with lr\_mix'
 xticklabels({'3db','', '6db','', '10db','', '20db','', '40db'})
 legend(name, 'Location','southwest')
 xticklabels({'3db','', '6db','', '10db','', '20db','', '40db'})
-xlabel 'Dynamic range'
+xlabel 'Dynamic ratio in dB'
 ylabel 'accuracy'
 ylim([0,1])
 title 'accuracy for weak and non-weak signal for L=3'

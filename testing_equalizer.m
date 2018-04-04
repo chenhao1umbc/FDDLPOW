@@ -11,7 +11,8 @@ mixture_n = 3; % mixture_n classes mixture
 SNR = 2000;
 pctrl.equal = 0; % 1 means eqaul power, 0 non-equal
 pctrl.db = 10; % dynamic ratio is 3, 6, 10, 20, 40db
-[Database]=load_data(mixture_n, SNR, pctrl);% the equal power mixture, 400 samples per combination
+% the equal power mixture, 400 samples per combination
+[Database]=load_data(mixture_n, SNR, pctrl);
 if exist('Dict')==1
     Dict_mix = Dict;
 end

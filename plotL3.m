@@ -25,18 +25,18 @@ end
 plot(weak(5, :), '--sq')
 plot(weak(6, :), '--^')
 
-name = {'FDDLO with lr\_mix'
-'FDDLO with lr\_pure'
-'FDDLOW with lr\_mix'
-'FDDLOW with lr\_pure'
-'FDDLO with eq'
-'FDDLOW with eq'};
+name = {'DDL with lr\_mix'
+'DDL with lr\_pure'
+'DDLW with lr\_mix'
+'DDLW with lr\_pure'
+'DDL with eq'
+'DDLW with eq'};
 legend(name, 'Location','southwest')
 xticklabels({'3db','', '6db','', '10db','', '20db','', '40db'})
 xlabel 'Dynamic ratio in dB'
 ylabel 'accuracy'
 ylim([0,1])
-title 'Accuracy for weak signal for L=3'
+title 'Weaker signal accuracy for L=3'
 set(gcf,'color','w');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure(2)
@@ -51,12 +51,12 @@ end
 plot(all(5, :), '--sq')
 plot(all(6, :), '--^')
 
-name = {'FDDLO with lr\_mix'
-'FDDLO with lr\_pure'
-'FDDLOW with lr\_mix'
-'FDDLOW with lr\_pure'
-'FDDLO with eq'
-'FDDLOW with eq'};
+name = {'DDL with lr\_mix'
+'DDL with lr\_pure'
+'DDLW with lr\_mix'
+'DDLW with lr\_pure'
+'DDL with eq'
+'DDLW with eq'};
 xticklabels({'3db','', '6db','', '10db','', '20db','', '40db'})
 legend(name, 'Location','southwest')
 xticklabels({'3db','', '6db','', '10db','', '20db','', '40db'})

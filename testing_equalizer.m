@@ -7,7 +7,7 @@ addpath(genpath('./data'))
 load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat') %FDDLO
 % load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta0.1.mat')
 
-mixture_n = 3; % mixture_n classes mixture
+mixture_n = 2; % mixture_n classes mixture
 SNR = 2000;
 pctrl.equal = 0; % 1 means eqaul power, 0 non-equal
 pctrl.db = 10; % dynamic ratio is 3, 6, 10, 20, 40db

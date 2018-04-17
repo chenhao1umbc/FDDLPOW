@@ -9,11 +9,12 @@ addpath(genpath('.././data'))
 [Database]=load_data;
 
 %% training dictionary
+for ii = [16, 32]
 K=100;
 lbmd=1.5;
 mu=0.1;
 nu=1e3;
-Q= 32;
+Q= ii;
 beta = 1.7;
 SNR = 2000;
 [opts]=loadoptions(K,lbmd,mu,Q,nu,beta, SNR);
@@ -25,3 +26,4 @@ save(opts.mixnm,'Dict_mix','opts')
 % this part will give the logistic regression result
 trainLR_dif(opts, Database);
 
+end

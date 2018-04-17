@@ -71,7 +71,7 @@ for ii = 1:opt.max_iter
         end
     end
     if opt.savedict
-        if mod(ii,30) == 0
+        if mod(ii,60) == 0
             Dict.D = D;
             Dict.W = W;
             Dict.Z = Z;

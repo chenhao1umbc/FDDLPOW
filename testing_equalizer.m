@@ -1,12 +1,13 @@
 clear 
 clc
 
-addpath(genpath('./fddlow'))
-addpath(genpath('./data'))
+addpath(genpath('.././fddlow'))
+addpath(genpath('.././data'))
 
 % load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat') %FDDLO
 % load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta1.7.mat')
-load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q32_nu1000_beta1.7.mat')
+% load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q32_nu1000_beta1.7.mat')
+
 
 mixture_n = 3; % mixture_n classes mixture
 SNR = 2000;

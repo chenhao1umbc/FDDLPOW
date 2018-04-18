@@ -9,3 +9,1803 @@ To get started, type one of these: helpwin, helpdesk, or demo.
 For product information, visit www.mathworks.com.
  
 >> >> >> >> >> >> >> >> >> >> >> >> 
+sparsity =
+
+   95.3424
+
+one iter time: 176.0801 
+
+sparsity =
+
+   85.7426
+
+one iter time: 189.3441 
+
+sparsity =
+
+   77.7085
+
+one iter time: 175.4689 
+
+sparsity =
+
+   71.2457
+
+one iter time: 193.1385 
+
+sparsity =
+
+   66.2010
+
+one iter time: 185.7760 
+
+sparsity =
+
+   62.2097
+
+one iter time: 185.8292 
+
+sparsity =
+
+   58.9317
+
+one iter time: 178.7849 
+
+sparsity =
+
+   56.2437
+
+one iter time: 185.3429 
+
+sparsity =
+
+   53.9403
+
+one iter time: 181.8992 
+
+sparsity =
+
+   51.9883
+
+one iter time: 184.3908 
+
+sparsity =
+
+   50.2935
+
+one iter time: 179.5505 
+
+sparsity =
+
+   48.7647
+
+one iter time: 187.3016 
+
+sparsity =
+
+   47.4539
+
+one iter time: 185.3883 
+
+sparsity =
+
+   46.2744
+
+one iter time: 179.6541 
+
+sparsity =
+
+   45.2024
+
+one iter time: 185.1520 
+
+sparsity =
+
+   44.1879
+
+one iter time: 191.2401 
+
+sparsity =
+
+   43.2492
+
+one iter time: 186.2937 
+
+sparsity =
+
+   42.3635
+
+one iter time: 192.5068 
+
+sparsity =
+
+   41.5736
+
+one iter time: 191.1367 
+
+sparsity =
+
+   40.8264
+
+one iter time: 199.0839 
+
+sparsity =
+
+   40.0994
+
+one iter time: 193.2581 
+
+sparsity =
+
+   39.3738
+
+one iter time: 191.4932 
+
+sparsity =
+
+   38.6782
+
+one iter time: 186.3267 
+
+sparsity =
+
+   38.0461
+
+one iter time: 194.4600 
+
+sparsity =
+
+   37.3997
+
+one iter time: 186.6250 
+
+sparsity =
+
+   36.7097
+
+one iter time: 184.0241 
+
+sparsity =
+
+   36.0274
+
+one iter time: 185.8213 
+
+sparsity =
+
+   35.3217
+
+one iter time: 186.8030 
+
+sparsity =
+
+   34.6303
+
+one iter time: 187.9451 
+
+sparsity =
+
+   33.8803
+
+one iter time: 185.6730 
+
+sparsity =
+
+   33.1128
+
+one iter time: 183.2559 
+
+sparsity =
+
+   32.2508
+
+one iter time: 178.8263 
+
+sparsity =
+
+   31.3460
+
+one iter time: 187.4128 
+
+sparsity =
+
+   30.5461
+
+one iter time: 146.9759 
+
+sparsity =
+
+   29.9850
+
+one iter time: 64.1839 
+
+sparsity =
+
+   29.3732
+
+one iter time: 60.5691 
+
+sparsity =
+
+   28.9072
+
+one iter time: 63.9495 
+
+sparsity =
+
+   28.5372
+
+one iter time: 62.6817 
+
+sparsity =
+
+   28.2283
+
+one iter time: 44.8216 
+
+sparsity =
+
+   27.9565
+
+one iter time: 42.7632 
+
+sparsity =
+
+   27.6679
+
+one iter time: 44.5490 
+
+sparsity =
+
+   27.4358
+
+one iter time: 45.5221 
+
+sparsity =
+
+   27.2315
+
+one iter time: 42.8570 
+
+sparsity =
+
+   27.0550
+
+one iter time: 45.4744 
+
+sparsity =
+
+   26.8939
+
+one iter time: 45.7589 
+
+sparsity =
+
+   26.7335
+
+one iter time: 44.6913 
+
+sparsity =
+
+   26.5865
+
+one iter time: 46.2910 
+
+sparsity =
+
+   26.4474
+
+one iter time: 45.6574 
+
+sparsity =
+
+   26.3268
+
+one iter time: 46.2135 
+
+sparsity =
+
+   26.1922
+
+one iter time: 43.8106 
+
+sparsity =
+
+   26.0499
+
+one iter time: 44.3504 
+
+sparsity =
+
+   25.9282
+
+one iter time: 44.7956 
+
+sparsity =
+
+   25.8114
+
+one iter time: 46.3378 
+
+sparsity =
+
+   25.6849
+
+one iter time: 43.9494 
+
+sparsity =
+
+   25.5707
+
+one iter time: 45.0633 
+
+sparsity =
+
+   25.4465
+
+one iter time: 46.3817 
+
+sparsity =
+
+   25.3246
+
+one iter time: 45.7514 
+
+sparsity =
+
+   25.2138
+
+one iter time: 47.0225 
+
+sparsity =
+
+   25.1047
+
+one iter time: 43.7582 
+
+sparsity =
+
+   24.9893
+
+one iter time: 45.0689 
+
+sparsity =
+
+   24.8694
+
+one iter time: 47.2241 
+
+sparsity =
+
+   24.7556
+
+one iter time: 45.1052 
+
+sparsity =
+
+   24.6360
+
+one iter time: 44.4838 
+
+sparsity =
+
+   24.5319
+
+one iter time: 45.2724 
+
+sparsity =
+
+   24.4361
+
+one iter time: 45.6775 
+
+sparsity =
+
+   24.3281
+
+one iter time: 44.9153 
+
+sparsity =
+
+   24.2303
+
+one iter time: 45.8946 
+
+sparsity =
+
+   24.1360
+
+one iter time: 44.9947 
+
+sparsity =
+
+   24.0278
+
+one iter time: 45.2884 
+
+sparsity =
+
+   23.9249
+
+one iter time: 46.3721 
+
+sparsity =
+
+   23.8335
+
+one iter time: 47.0004 
+
+sparsity =
+
+   23.7461
+
+one iter time: 48.6521 
+
+sparsity =
+
+   23.6567
+
+one iter time: 45.0945 
+
+sparsity =
+
+   23.5653
+
+one iter time: 42.9047 
+
+sparsity =
+
+   23.4739
+
+one iter time: 41.9575 
+
+sparsity =
+
+   23.3953
+
+one iter time: 45.2652 
+
+sparsity =
+
+   23.3181
+
+one iter time: 46.6860 
+
+sparsity =
+
+   23.2621
+
+one iter time: 44.5648 
+
+sparsity =
+
+   23.1753
+
+one iter time: 45.1503 
+
+sparsity =
+
+   23.1004
+
+one iter time: 44.4292 
+
+sparsity =
+
+   23.0318
+
+one iter time: 46.8726 
+
+sparsity =
+
+   22.9644
+
+one iter time: 43.7857 
+
+sparsity =
+
+   22.8863
+
+one iter time: 44.2592 
+
+sparsity =
+
+   22.8192
+
+one iter time: 45.1116 
+
+sparsity =
+
+   22.7660
+
+one iter time: 44.4594 
+
+sparsity =
+
+   22.7011
+
+one iter time: 44.3925 
+
+sparsity =
+
+   22.6504
+
+one iter time: 45.0729 
+
+sparsity =
+
+   22.6060
+
+one iter time: 42.8942 
+
+sparsity =
+
+   22.5604
+
+one iter time: 44.0353 
+
+sparsity =
+
+   22.5189
+
+one iter time: 43.4981 
+
+sparsity =
+
+   22.4744
+
+one iter time: 46.4046 
+
+sparsity =
+
+   22.4372
+
+one iter time: 43.5863 
+
+sparsity =
+
+   22.3943
+
+one iter time: 44.9219 
+
+sparsity =
+
+   22.3578
+
+one iter time: 43.5745 
+
+sparsity =
+
+   22.3165
+
+one iter time: 44.3277 
+
+sparsity =
+
+   22.2843
+
+one iter time: 43.2095 
+
+sparsity =
+
+   22.2512
+
+one iter time: 44.2539 
+
+sparsity =
+
+   22.2144
+
+one iter time: 45.7067 
+
+sparsity =
+
+   22.1687
+
+one iter time: 45.3298 
+
+sparsity =
+
+   22.1275
+
+one iter time: 45.2021 
+
+sparsity =
+
+   22.1032
+
+one iter time: 43.3315 
+
+sparsity =
+
+   22.0679
+
+one iter time: 45.4116 
+
+sparsity =
+
+   22.0333
+
+one iter time: 45.5847 
+
+sparsity =
+
+   21.9893
+
+one iter time: 46.5656 
+
+sparsity =
+
+   21.9419
+
+one iter time: 44.6547 
+
+sparsity =
+
+   21.9060
+
+one iter time: 45.7610 
+
+sparsity =
+
+   21.8858
+
+one iter time: 43.7124 
+
+sparsity =
+
+   21.8572
+
+one iter time: 44.0207 
+
+sparsity =
+
+   21.8263
+
+one iter time: 45.4432 
+
+sparsity =
+
+   21.7947
+
+one iter time: 46.9921 
+
+sparsity =
+
+   21.7657
+
+one iter time: 43.9549 
+
+sparsity =
+
+   21.7376
+
+one iter time: 44.8297 
+
+sparsity =
+
+   21.7083
+
+one iter time: 44.9585 
+
+sparsity =
+
+   21.6824
+
+one iter time: 47.1711 
+
+sparsity =
+
+   21.6539
+
+one iter time: 46.1444 
+
+sparsity =
+
+   21.6229
+
+one iter time: 45.3707 
+
+sparsity =
+
+   21.5964
+
+one iter time: 45.5391 
+
+sparsity =
+
+   21.5600
+
+one iter time: 46.2055 
+
+sparsity =
+
+   21.5322
+
+one iter time: 44.0527 
+
+sparsity =
+
+   21.5043
+
+one iter time: 44.9444 
+
+sparsity =
+
+   21.4733
+
+one iter time: 45.1857 
+
+sparsity =
+
+   21.4404
+
+one iter time: 43.2514 
+
+sparsity =
+
+   21.4056
+
+one iter time: 45.0162 
+
+sparsity =
+
+   21.3832
+
+one iter time: 46.3697 
+
+sparsity =
+
+   21.3619
+
+one iter time: 44.0860 
+
+sparsity =
+
+   21.3414
+
+one iter time: 44.9644 
+
+sparsity =
+
+   21.3178
+
+one iter time: 43.3794 
+
+sparsity =
+
+   21.2994
+
+one iter time: 42.9279 
+
+sparsity =
+
+   21.2668
+
+one iter time: 45.1422 
+
+sparsity =
+
+   21.2617
+
+one iter time: 44.3930 
+
+sparsity =
+
+   21.2429
+
+one iter time: 46.1441 
+
+sparsity =
+
+   21.2237
+
+one iter time: 45.9850 
+
+sparsity =
+
+   21.1997
+
+one iter time: 45.5496 
+
+sparsity =
+
+   21.1899
+
+one iter time: 44.2775 
+
+sparsity =
+
+   21.1713
+
+one iter time: 43.0268 
+
+sparsity =
+
+   21.1558
+
+one iter time: 45.1304 
+
+sparsity =
+
+   21.1487
+
+one iter time: 46.7531 
+
+sparsity =
+
+   21.1433
+
+one iter time: 44.4392 
+
+sparsity =
+
+   21.1240
+
+one iter time: 44.5927 
+
+sparsity =
+
+   21.1069
+
+one iter time: 43.9076 
+
+sparsity =
+
+   21.0990
+
+one iter time: 44.9270 
+
+sparsity =
+
+   21.0868
+
+one iter time: 45.5370 
+
+sparsity =
+
+   21.0738
+
+one iter time: 46.2469 
+
+sparsity =
+
+   21.0631
+
+one iter time: 42.8919 
+
+sparsity =
+
+   21.0583
+
+one iter time: 47.1489 
+
+sparsity =
+
+   21.0425
+
+one iter time: 43.5865 
+
+sparsity =
+
+   21.0400
+
+one iter time: 46.1270 
+
+sparsity =
+
+   21.0297
+
+one iter time: 45.5820 
+
+sparsity =
+
+   21.0215
+
+one iter time: 46.5602 
+
+sparsity =
+
+   21.0158
+
+one iter time: 43.4689 
+
+sparsity =
+
+   98.3497
+
+one iter time: 186.1630 
+
+sparsity =
+
+   94.9244
+
+one iter time: 187.1369 
+
+sparsity =
+
+   89.7050
+
+one iter time: 186.9843 
+
+sparsity =
+
+   85.1485
+
+one iter time: 184.4110 
+
+sparsity =
+
+   81.0792
+
+one iter time: 188.4390 
+
+sparsity =
+
+   77.4424
+
+one iter time: 188.2962 
+
+sparsity =
+
+   74.1403
+
+one iter time: 184.5329 
+
+sparsity =
+
+   71.1674
+
+one iter time: 187.4549 
+
+sparsity =
+
+   68.4714
+
+one iter time: 184.0598 
+
+sparsity =
+
+   66.0622
+
+one iter time: 185.8360 
+
+sparsity =
+
+   63.8543
+
+one iter time: 188.2220 
+
+sparsity =
+
+   61.8117
+
+one iter time: 185.2925 
+
+sparsity =
+
+   59.9778
+
+one iter time: 189.2258 
+
+sparsity =
+
+   58.3046
+
+one iter time: 188.9413 
+
+sparsity =
+
+   56.7660
+
+one iter time: 182.3821 
+
+sparsity =
+
+   55.3757
+
+one iter time: 185.2243 
+
+sparsity =
+
+   54.1201
+
+one iter time: 176.9568 
+
+sparsity =
+
+   52.9738
+
+one iter time: 179.3330 
+
+sparsity =
+
+   51.9089
+
+one iter time: 163.2483 
+
+sparsity =
+
+   50.9186
+
+one iter time: 174.8779 
+
+sparsity =
+
+   50.0543
+
+one iter time: 161.2262 
+
+sparsity =
+
+   49.3024
+
+one iter time: 151.7181 
+
+sparsity =
+
+   48.6418
+
+one iter time: 133.9147 
+
+sparsity =
+
+   48.0357
+
+one iter time: 129.1823 
+
+sparsity =
+
+   47.4735
+
+one iter time: 114.5398 
+
+sparsity =
+
+   46.9442
+
+one iter time: 109.6985 
+
+sparsity =
+
+   46.4528
+
+one iter time: 113.8230 
+
+sparsity =
+
+   45.9721
+
+one iter time: 126.8025 
+
+sparsity =
+
+   45.4610
+
+one iter time: 131.5427 
+
+sparsity =
+
+   44.9550
+
+one iter time: 130.5973 
+
+sparsity =
+
+   44.4561
+
+one iter time: 128.8821 
+
+sparsity =
+
+   43.9881
+
+one iter time: 130.4578 
+
+sparsity =
+
+   43.5185
+
+one iter time: 135.5366 
+
+sparsity =
+
+   43.0675
+
+one iter time: 127.9772 
+
+sparsity =
+
+   42.6688
+
+one iter time: 145.6311 
+
+sparsity =
+
+   42.2044
+
+one iter time: 140.7659 
+
+sparsity =
+
+   41.7612
+
+one iter time: 145.4528 
+
+sparsity =
+
+   41.3142
+
+one iter time: 150.0592 
+
+sparsity =
+
+   40.8994
+
+one iter time: 166.4630 
+
+sparsity =
+
+   40.4297
+
+one iter time: 158.2992 
+
+sparsity =
+
+   40.0053
+
+one iter time: 164.8931 
+
+sparsity =
+
+   39.5818
+
+one iter time: 182.1455 
+
+sparsity =
+
+   39.1464
+
+one iter time: 177.5740 
+
+sparsity =
+
+   38.7189
+
+one iter time: 188.0925 
+
+sparsity =
+
+   38.2993
+
+one iter time: 169.6537 
+
+sparsity =
+
+   37.8846
+
+one iter time: 182.7391 
+
+sparsity =
+
+   37.4781
+
+one iter time: 173.8575 
+
+sparsity =
+
+   37.0571
+
+one iter time: 182.9670 
+
+sparsity =
+
+   36.6287
+
+one iter time: 184.8820 
+
+sparsity =
+
+   36.2131
+
+one iter time: 186.6746 
+
+sparsity =
+
+   35.7714
+
+one iter time: 187.5414 
+
+sparsity =
+
+   35.3125
+
+one iter time: 179.6862 
+
+sparsity =
+
+   34.8476
+
+one iter time: 180.4515 
+
+sparsity =
+
+   34.4408
+
+one iter time: 185.1060 
+
+sparsity =
+
+   33.8926
+
+one iter time: 183.9741 
+
+sparsity =
+
+   33.2735
+
+one iter time: 182.1714 
+
+sparsity =
+
+   32.6249
+
+one iter time: 177.5907 
+
+sparsity =
+
+   31.9587
+
+one iter time: 185.7940 
+
+sparsity =
+
+   31.2567
+
+one iter time: 185.3274 
+
+sparsity =
+
+   30.5647
+
+one iter time: 181.2029 
+
+sparsity =
+
+   29.8982
+
+one iter time: 166.1686 
+
+sparsity =
+
+   29.3894
+
+one iter time: 93.3357 
+
+sparsity =
+
+   28.9600
+
+one iter time: 64.0300 
+
+sparsity =
+
+   28.4651
+
+one iter time: 64.4513 
+
+sparsity =
+
+   28.1099
+
+one iter time: 62.2781 
+
+sparsity =
+
+   27.8150
+
+one iter time: 46.3529 
+
+sparsity =
+
+   27.5543
+
+one iter time: 42.4812 
+
+sparsity =
+
+   27.3294
+
+one iter time: 45.8028 
+
+sparsity =
+
+   27.1046
+
+one iter time: 42.2896 
+
+sparsity =
+
+   26.8782
+
+one iter time: 45.5182 
+
+sparsity =
+
+   26.7140
+
+one iter time: 44.6283 
+
+sparsity =
+
+   26.5832
+
+one iter time: 46.2168 
+
+sparsity =
+
+   26.4501
+
+one iter time: 45.7362 
+
+sparsity =
+
+   26.3114
+
+one iter time: 43.0130 
+
+sparsity =
+
+   26.1790
+
+one iter time: 44.4061 
+
+sparsity =
+
+   26.0712
+
+one iter time: 42.8725 
+
+sparsity =
+
+   25.9567
+
+one iter time: 44.7616 
+
+sparsity =
+
+   25.8510
+
+one iter time: 42.7126 
+
+sparsity =
+
+   25.7636
+
+one iter time: 41.3135 
+
+sparsity =
+
+   25.6518
+
+one iter time: 44.1316 
+
+sparsity =
+
+   25.5532
+
+one iter time: 45.2393 
+
+sparsity =
+
+   25.4468
+
+one iter time: 41.5688 
+
+sparsity =
+
+   25.3500
+
+one iter time: 43.6678 
+
+sparsity =
+
+   25.2364
+
+one iter time: 45.3088 
+
+sparsity =
+
+   25.1092
+
+one iter time: 44.7237 
+
+sparsity =
+
+   25.0114
+
+one iter time: 47.5946 
+
+sparsity =
+
+   24.8989
+
+one iter time: 45.9195 
+
+sparsity =
+
+   24.7811
+
+one iter time: 43.3923 
+
+sparsity =
+
+   24.6481
+
+one iter time: 44.0695 
+
+sparsity =
+
+   24.5357
+
+one iter time: 43.4322 
+
+sparsity =
+
+   24.4514
+
+one iter time: 41.6889 
+
+sparsity =
+
+   24.3510
+
+one iter time: 43.2981 
+
+sparsity =
+
+   24.2408
+
+one iter time: 43.5563 
+
+sparsity =
+
+   24.1240
+
+one iter time: 41.6179 
+
+sparsity =
+
+   24.0299
+
+one iter time: 47.2210 
+
+sparsity =
+
+   23.9164
+
+one iter time: 42.3115 
+
+sparsity =
+
+   23.8190
+
+one iter time: 45.5156 
+
+sparsity =
+
+   23.7271
+
+one iter time: 45.8787 
+
+sparsity =
+
+   23.6190
+
+one iter time: 46.3563 
+
+sparsity =
+
+   23.5342
+
+one iter time: 45.0641 
+
+sparsity =
+
+   23.4507
+
+one iter time: 44.6136 
+
+sparsity =
+
+   23.3724
+
+one iter time: 43.5649 
+
+sparsity =
+
+   23.2897
+
+one iter time: 44.6184 
+
+sparsity =
+
+   23.2071
+
+one iter time: 45.8571 
+
+sparsity =
+
+   23.1244
+
+one iter time: 45.5026 
+
+sparsity =
+
+   23.0437
+
+one iter time: 47.7575 
+
+sparsity =
+
+   22.9582
+
+one iter time: 43.0890 
+
+sparsity =
+
+   22.8881
+
+one iter time: 47.5444 
+
+sparsity =
+
+   22.8181
+
+one iter time: 42.5325 
+
+sparsity =
+
+   22.7444
+
+one iter time: 49.0348 
+
+sparsity =
+
+   22.6965
+
+one iter time: 45.6032 
+
+sparsity =
+
+   22.6389
+
+one iter time: 43.6883 
+
+sparsity =
+
+   22.5779
+
+one iter time: 45.6527 
+
+sparsity =
+
+   22.5226
+
+one iter time: 44.3953 
+
+sparsity =
+
+   22.4560
+
+one iter time: 46.9286 
+
+sparsity =
+
+   22.4065
+
+one iter time: 41.8583 
+
+sparsity =
+
+   22.3489
+
+one iter time: 44.0106 
+
+sparsity =
+
+   22.2958
+
+one iter time: 47.0371 
+
+sparsity =
+
+   22.2454
+
+one iter time: 44.0069 
+
+sparsity =
+
+   22.1961
+
+one iter time: 44.6145 
+
+sparsity =
+
+   22.1513
+
+one iter time: 45.6679 
+
+sparsity =
+
+   22.1019
+
+one iter time: 44.1786 
+
+sparsity =
+
+   22.0579
+
+one iter time: 45.5332 
+
+sparsity =
+
+   22.0226
+
+one iter time: 45.2601 
+
+sparsity =
+
+   21.9821
+
+one iter time: 45.3389 
+
+sparsity =
+
+   21.9425
+
+one iter time: 44.9906 
+
+sparsity =
+
+   21.9075
+
+one iter time: 45.8195 
+
+sparsity =
+
+   21.8650
+
+one iter time: 45.0775 
+
+sparsity =
+
+   21.8371
+
+one iter time: 43.8072 
+
+sparsity =
+
+   21.8025
+
+one iter time: 42.4090 
+
+sparsity =
+
+   21.7686
+
+one iter time: 47.7430 
+
+sparsity =
+
+   21.7276
+
+one iter time: 42.9142 
+
+sparsity =
+
+   21.6986
+
+one iter time: 45.6135 
+
+sparsity =
+
+   21.6768
+
+one iter time: 44.3349 
+
+sparsity =
+
+   21.6562
+
+one iter time: 42.6976 
+
+sparsity =
+
+   21.6347
+
+one iter time: 43.9278 
+
+sparsity =
+
+   21.6128
+
+one iter time: 45.4849 
+
+sparsity =
+
+   21.5958
+
+one iter time: 42.2219 
+
+sparsity =
+
+   21.5624
+
+one iter time: 44.9812 
+
+sparsity =
+
+   21.5424
+
+one iter time: 43.1371 
+
+sparsity =
+
+   21.5243
+
+one iter time: 42.1555 
+
+sparsity =
+
+   21.5093
+
+one iter time: 46.4686 
+
+sparsity =
+
+   21.4850
+
+one iter time: 47.3879 
+
+sparsity =
+
+   21.4761
+
+one iter time: 44.8917 
+
+sparsity =
+
+   21.4539
+
+one iter time: 41.7946 
+
+sparsity =
+
+   21.4479
+
+one iter time: 44.4737 
+
+sparsity =
+
+   21.4337
+
+one iter time: 43.3308 
+
+sparsity =
+
+   21.4094
+
+one iter time: 44.8944 
+
+sparsity =
+
+   21.3992
+
+one iter time: 44.5469 
+
+sparsity =
+
+   21.3910
+
+one iter time: 44.3367 
+>> 

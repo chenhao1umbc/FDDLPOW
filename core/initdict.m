@@ -13,7 +13,7 @@ function [D, Z, W, U, V, Delta, Loss, opt]=initdict(X,trlabels,opt)
 
 C=max(trlabels); % how many classes
 [M_d,N]=size(X); % M is the data dimension, N is the # of samples
-rng(0)
+rng(opt.rng)
 
 % check checking the existing Dictionary
 % nm=['DDLMD','_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1)...

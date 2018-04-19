@@ -14,6 +14,7 @@ if nargin < 5
     beta = 1;
     SNR = 2000;
 end
+opts.rng = 0; % for dictionary initialization
 opts.SNR = SNR;
 opts.K=K;
 opts.Q=Q;
@@ -22,7 +23,7 @@ opts.mu=mu;
 opts.showconverge = false;
 %opts.threshold=1e-8;% for FISTA sparse coding
 opts.savedict=true;
-opts.max_iter=150;
+opts.max_iter=100;
 opts.losscalc=true;
 opts.k_neighbors=3; % how many neighors
 opts.kNNmethod=1; % 1 for averaging; 2 for max pooling needs more computation

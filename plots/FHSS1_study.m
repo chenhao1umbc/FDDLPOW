@@ -1,5 +1,5 @@
-
 % all the codes show projection for L =2
+
 cname = {'BLE', 'BT', 'FHSS1', 'FHSS2', 'Wi-Fi1', 'Wi-Fi2'};
 symb = {'x','sq', '*', '>','^','.'};
 for ii = 1:6
@@ -8,10 +8,10 @@ plot(rt(ii, 1:end/2), symb{ii}); grid on; hold on
 end
 legend(cname)
 
-figure
-pr = rt(:, [251:300,1001:1050]);
-[~, lb] = sort(pr, 1, 'descend');
-imagesc(pr)
+% figure
+% pr = rt(:, [251:300,1001:1050]);
+% [~, lb] = sort(pr, 1, 'descend');
+% imagesc(pr)
 
 
 NComb = combnk(1:6, 2);
@@ -33,13 +33,12 @@ for ii = 1: size(NComb, 1)
     title(['sum of ',cname{NComb(ii,1)},' and ', cname{NComb(ii,2)} ]);
     colorbar
 end
-
 figure
-imagesc(Dict_mix.D); title 'Dictionary'; colorbar
+imagesc(Dict_mix.D); title 'The whole dictionary'; colorbar
 
 Zs = aoos(Z,4,size(Z, 2));
 tr_Zs = aoos(Dict_mix.Z,4,size(Dict_mix.Z, 2));
-figure; imagesc([W'*Zs(:, [251:300,1001:1050]), W'*tr_Zs(:, [301:900, 1501:1800])])
+% figure; imagesc([W'*Zs(:, [251:300,1001:1050]), W'*tr_Zs(:, [301:900, 1501:1800])])
 
 ZZ = cell(6, 1);
 for ii = 1:6
@@ -66,6 +65,8 @@ line([36, 36],[1,1000],'color','r')
 title 'atoms used for BT, FHSS1 and Wifi2'
 
 
+%% sparse coefficients
+%{
 Z_weak2_3 = Zs(:, 251:300); % equal power case Z_weak2_3 == Z_2_weak3
 Z_2_weak3 = Zs(:, 1001:1050);
 
@@ -94,3 +95,5 @@ result0 = pinv(H)*W'*aoos(Z0,4,size(Z0, 2));
 Z0 = (10* ZZ{2}+ZZ{3});
 result0 = pinv(H)*W'*aoos(Z0,4,size(Z0, 2));
 [~, labels_pre0] = sort(result0, 1, 'descend');
+ 
+%}

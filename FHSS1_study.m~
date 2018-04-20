@@ -60,12 +60,7 @@ title 'atoms used for Wifi2'
 
 figure 
 imagesc([Dict_mix.D(:, ind2(1:18)), Dict_mix.D(:, ind3(1:18)),Dict_mix.D(:, ind6(1:18)) ]);
-hold on
-line([18, 18],[1,1000],'color','r')
-line([36, 36],[1,1000],'color','r')
-title 'atoms used for BT, FHSS1 and Wifi2'
-
-
+title 'atoms used for BT, FHSSWifi2'
 Z_weak2_3 = Zs(:, 251:300); % equal power case Z_weak2_3 == Z_2_weak3
 Z_2_weak3 = Zs(:, 1001:1050);
 

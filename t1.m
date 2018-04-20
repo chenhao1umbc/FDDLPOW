@@ -9,7 +9,7 @@ addpath(genpath('.././data'))
 [Database]=load_data;
 
 %% training dictionary
-for ii = [16, 32]
+for ii = 32
     for jj = 1:10
         K=100;
         lbmd=1.5;

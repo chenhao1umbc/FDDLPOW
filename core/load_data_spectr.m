@@ -21,17 +21,8 @@ elseif nargin<3
     pctrl.equal = 1; % equal power    
 end
 
-dir='/home/chenhao/Matlab/LMData4/DataCollection/';
-sig_name = {'ble_all', 'bt_all', 'fhss1_all', 'fhss2_all', 'wifi1_all', 'wifi2_all'};
-var_name = 'x';
-smp_len = 4e6; % 100 milliseconds as input lenghth
-t_resol = 100;
-nClass=length(sig_name);
-featln= t_resol*2 -1; % time length  
-fre_resol = 1024;
 
-
-trln=628; % trainging 300 per class
+trln=100; % trainging 300 per class
 cvln=135; % cross-validation data is 50 per class
 ttln=135; % testing data is 40 per class
 cvttln=cvln+ttln;
@@ -48,7 +39,8 @@ ind_tr = ind(1:trln);
 ind_cv = ind(trln+1:trln+cvln);
 ind_tt = ind(trln+cvln+1:end);
 
-n_r = fre_resol;
+featln = 199;
+n_r = size(total_dat, 1);
 n_tr_p = trln*featln;
 n_cv_p = cvln*featln;
 n_tt_p = ttln*featln;

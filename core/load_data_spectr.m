@@ -40,23 +40,6 @@ cvln_mix=50; % cross-validation data is 100 mixture samples per combination
 ttln_mix=50; % testing data is 100 mixture samples per combination
 
 %% data generation
-%{
-total_dat = zeros(fre_resol, featln * (cvttln + trln) * nClass);
-for ii = 1:nClass
-    fname = [dir sig_name{ii}];
-    obj=matfile(fname);
-    len_window = floor(smp_len/t_resol);
-
-    for k = 1:cvttln + trln
-        x = obj.x(((1+(k-1)*smp_len/2):smp_len +(k-1)*smp_len/2),1);
-        sp_x = spectrogram(x,len_window,[],fre_resol,4e7,'yaxis','centered');
-        temp = log(abs(sp_x));
-        total_dat(:, (1+(k-1)*featln) + featln*(cvttln+trln)*(ii-1):...
-            k*featln + featln*(cvttln+trln)*(ii-1)) = temp/norm(temp, 'f');  
-    end
-end
-save('total_dat','total_dat')
-%}
 load('/home/chenhao/Matlab/FDDLOW/data/total_dat');
 
 rng(1)
@@ -102,6 +85,8 @@ database.cv_label=cvls;
 database.test_data=tt_dat;
 database.test_label=ttls;
 if N_c > 1
+    cv_mixdat=[cv_mixdat,cv_dat_temp];
+    cvmixls=[cvmixls,indCl*ones(1,size(cv_dat_temp,2))];
     database.cv_mixdata=cv_mixdat;
     database.cv_mixlabel=cvmixls;
     database.test_mixdata=tt_mixdat;

@@ -7,6 +7,7 @@ addpath(genpath('./fddlow'))
 addpath(genpath('./data'))
 % load data
 [Database]=load_data;
+Database = load_data_spectr;
 
 %% training dictionary
 % for table 1 algorithm

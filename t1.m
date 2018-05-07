@@ -6,8 +6,8 @@ tic
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 % load data
-% [Database]=load_data;
-Database = load_data_spectr(1);
+[Database]=load_data(1);
+% Database = load_data_spectr(1);
 
 %% training dictionary
 % for table 1 algorithm

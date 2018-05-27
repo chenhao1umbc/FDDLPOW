@@ -35,7 +35,19 @@ for ii=1:opt.max_iter
     optZ.showconverge=false;
     optZ.showcost=false;
     Z=DDLMD_updateZ(X,trlabels,optZ,W,D,Z);
-    sparsity=mean(sum(Z ~= 0))       % avg number of nonzero elements in cols of Z
+    sparsity=mean(sum(Z ~= 0))/opt.K   % avg number of nonzero elements in cols of Z
+    if ii == 10
+        if sparsity < 0.2 || sparsity >0.9
+            break;
+            fprintf('too sparse \n')
+        end
+    end
+    if ii == 30
+        if sparsity > 0.5 || sparsity < 0.1
+            break;
+            fprintf('too non-sparse \n')
+        end
+    end
     
     % update W, with D and Z fixed
     optW=opt;
@@ -73,5 +85,6 @@ end
 Dict.D=D;
 Dict.W=W;
 Dict.Z=Z;
+Dict.iter = ii;
 
 end % end of the function file

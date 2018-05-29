@@ -50,20 +50,18 @@ end
 end
 
 %% testing part
+for K = [100, 150, 200, 250]
+for lbmd = [0.001 0.005 0.01 1e-4]
+for mu=[1, 0.1, 0.01, 0.001 0.0001]
+[opts]=loadoptions(K,lbmd,mu,Q,nu,beta, SNR);
 
-if do_cv ==1    
-    for K = [100, 150, 200, 250]
-        for lbmd = [0.001 0.005 0.01 1e-4]
-            for mu=[1, 0.1, 0.01, 0.001 0.0001]
-                [opts]=loadoptions(K,lbmd,mu,Q,nu,beta, SNR);
-                exist(opts.Dictnm)
-                if exist(opts.Dictnm)
-                    load(opts.Dictnm,'Dict','opts')
-                end 
+    
+if do_cv ==1
+    load(opts.Dictnm,'Dict','opts')
+end 
 
-            end
-        end
-    end
+end
+end
 end
 
 

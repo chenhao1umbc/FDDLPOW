@@ -52,9 +52,7 @@ for ii=1:opt.max_iter
     % update W, with D and Z fixed
     optW=opt;
     optW.ploteig=false;
-    W=DDLMD_updateW(trlabels,optW,Z);    
-    
-    
+    W=DDLMD_updateW(trlabels,optW,Z);          
     
     % show loss function value
     if opt.losscalc

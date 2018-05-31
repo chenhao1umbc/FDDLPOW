@@ -5,8 +5,8 @@ function Z_cvmix=sparsecoding_mix_cv(Dict,database,opt)
 D=Dict.D;
 X=database.cv_mixdata;
 
-opt.max_iter=300;
-opt.threshold=1e-5;
+opt.max_iter = 500;
+opt.threshold = 1e-4;
 opt.showprogress=false; % show the FISTA progress
 rng(0)
 Zinit=randn(opt.K,size(X,2));

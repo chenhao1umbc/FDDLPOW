@@ -41,14 +41,14 @@ for ii=1:opt.max_iter
     sparsity=mean(sum(Z ~= 0))/opt.K   % avg number of nonzero elements in cols of Z
     if ii == 10
         if sparsity < 0.2 || sparsity >0.9
-            break;
             fprintf('too sparse \n')
+            break;            
         end
     end
     if ii == 30
         if sparsity > 0.5 || sparsity < 0.1
-            break;
             fprintf('too non-sparse \n')
+            break;            
         end
     end
     

@@ -34,7 +34,7 @@ beta = 1;
 SNR = 2000;
 
 K = [100, 150, 200, 250];
-lbmd = [0.001 0.005 0.01 1e-4];
+lbmd = [0.01, 0.005, 0.001, 1e-4];
 mu = [1, 0.1, 0.01, 0.001 0.0001];
 
     
@@ -96,18 +96,17 @@ if do_cv ==1
                 [SW,SB]=calcfisher(Dict_mix.Z,Database.tr_label,opts);
                 fWZ=trace(W'*SW*W)-trace(W'*SB*W)+norm(W'*Dict_mix.Z,'fro')^2;
                 
-                mean(sum(Z ~= 0))/K(ind1)
-                mean(sum(Dict_mix.Z ~= 0))/K(ind1)
-                
-
-                opts.lambda1*sum(abs(Dict_mix.Z(:)))
-                opts.mu*fWZ
+%                 mean(sum(Z ~= 0))/K(ind1)
+%                 mean(sum(Dict_mix.Z ~= 0))/K(ind1)                
+% 
+%                 opts.lambda1*sum(abs(Dict_mix.Z(:)))
+%                 opts.mu*fWZ
                 
             end
         end
     end
 end
-
+save('results_','result_K_lambda_mu','sparsity_K_lambda_mu')
 toc
 
 

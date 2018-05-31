@@ -89,14 +89,18 @@ if do_cv ==1
                 opts.ln_test = N_t/featln;
                 opts.equal = pctrl.equal;
                 [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
+                
                 result_K_lambda_mu(ind1, ind2, ind3) = acc_all;
+                sparsity_K_lambda_mu(ind1, ind2, ind3) = mean(sum(Z ~= 0))/K(ind1);
                 
-                sparsity_K_lambda_mu(ind1, ind2, ind3) = mean(sum(Z ~= 0))/K(ind1)
-                
-                mean(sum(Dict_mix.Z ~= 0))/K(ind1)
                 [SW,SB]=calcfisher(Dict_mix.Z,Database.tr_label,opts);
                 fWZ=trace(W'*SW*W)-trace(W'*SB*W)+norm(W'*Dict_mix.Z,'fro')^2;
-                opts.lambda1*sum(abs(Z(:)))
+                
+                mean(sum(Z ~= 0))/K(ind1)
+                mean(sum(Dict_mix.Z ~= 0))/K(ind1)
+                
+
+                opts.lambda1*sum(abs(Dict_mix.Z(:)))
                 opts.mu*fWZ
                 
             end

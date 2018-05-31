@@ -24,16 +24,19 @@ for ii=1:opt.max_iter
     % update D, with W and Z fixed
     optD=opt;
     optD.max_iter=500;
-    optD.threshold=1e-3;
+    optD.threshold=1e-4;
     optD.showconverge=false;
     D=DDLMD_updateD(X,optD,D,Z);
     
-    % update Z, with D and Z fixed
+    % update Z, with D and W fixed
     optZ=opt;
-    optZ.max_iter=500;
-    optZ.threshold=1e-4;
+    optZ.max_iter=200;
+    optZ.threshold=1e-6;
     optZ.showconverge=false;
     optZ.showcost=false;
+    optZ.showcost= true*optZ.showprogress;
+    optZ.max_Ziter = 10; % for Z update
+    optZ.Zthreshold = 1e-6; 
     Z=DDLMD_updateZ(X,trlabels,optZ,W,D,Z);
     sparsity=mean(sum(Z ~= 0))/opt.K   % avg number of nonzero elements in cols of Z
     if ii == 10

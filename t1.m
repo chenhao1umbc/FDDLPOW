@@ -9,7 +9,7 @@ addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 
 % do traing or do crossvalidation
-do_training = 0;
+do_training = 1;
 do_cv = 1;
 
 % load data
@@ -28,10 +28,10 @@ pctrl.db = 3; % dynamic ratio is 3, 6, 10, 20, 40db
 K = 100;
 lbmd = 1e-4;
 mu=1e-3;
-nu= 1e3;
 Q=16;% this is wq without negative
-beta = 1;
 SNR = 2000;
+nu= 1e3;
+beta = 1;
 
 % K = [100, 150, 200, 250];
 % lbmd = [0.01, 0.005, 0.001, 1e-4];
@@ -104,7 +104,7 @@ if do_cv ==1
         end
     end
 end
-save('results_','result_K_lambda_mu','sparsity_K_lambda_mu','tr_sparsity_K_lambda_mu')
+save('t1_results_','result_K_lambda_mu','sparsity_K_lambda_mu','tr_sparsity_K_lambda_mu')
 toc
 
 

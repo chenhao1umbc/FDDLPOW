@@ -1,5 +1,5 @@
 function [Dict]=FDDLOW_table2(X,trlabels,opt)
-% This fucntion is designed to train the dictionary in table 2
+% This fucntion is designed to train the dictionary in table 2, FDDLO
 % The input is  X, the training data, a matrix M by N, N data samples
 %             trlabels is the labels of training data, like[1,1,1,1,2,2,3,3,3]             
 %             opt are the training options with

@@ -43,7 +43,7 @@ function [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts)
         end  
     end
     acc_all = acc /ln_test/n;
-    acc_weak = sum(acc_t, 2)/(ln_test/C)/size(combnk(1:(C-1),n-1),1);
+    acc_weak = sum(acc_t, 2)/nsample_percomb/size(combnk(1:(C-1),n-1),1);
     if opts.equal
         acc_weak_av = acc_all;
     else

@@ -30,7 +30,7 @@ for ii=1:opt.max_iter
     
     % update Z, with D and W fixed
     optZ=opt;
-    optZ.max_iter=200;
+    optZ.max_iter=300;
     optZ.threshold=1e-6;
     optZ.showconverge=false;
     optZ.showcost=false;

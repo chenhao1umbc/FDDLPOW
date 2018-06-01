@@ -13,7 +13,7 @@ do_training = 0;
 do_cv = 1;
 
 % load data
-mixture_n = 3; % mixture_n classes mixture, = 1,2,3
+mixture_n = 1; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
 pctrl.equal = 1; % 1 means eqaul power, 0 non-equal
 pctrl.db = 3; % dynamic ratio is 3, 6, 10, 20, 40db
@@ -25,17 +25,17 @@ pctrl.db = 3; % dynamic ratio is 3, 6, 10, 20, 40db
 
 %% training dictionary
 % load settings
-K = 100;
-lbmd = 1e-4;
-mu=1e-3;
+K = 200;
+lbmd = 0.001;
+mu=0.1;
 nu= 1e3;
 Q=16;% this is wq without negative
 beta = 1;
 SNR = 2000;
 
-% K = [100, 150, 200, 250];
-% lbmd = [0.01, 0.005, 0.001, 1e-4];
-% mu = [1, 0.1, 0.01, 0.001 0.0001];
+K = [100, 150, 200, 250];
+lbmd = [0.01, 0.005, 0.001, 1e-4];
+mu = [1, 0.1, 0.01, 0.001 0.0001];
 
     
 for ind1 = 1: length(K)
@@ -69,7 +69,7 @@ if do_cv ==1
                     if exist('Dict')==1
                         Dict_mix = Dict;
                     end
-                    Z = sparsecoding_mix_test(Dict_mix, Database, opts); %%%%% cv or test
+                    Z = sparsecoding_mix_cv(Dict_mix, Database, opts);
                     W = Dict_mix.W;
                     C = max(Database.tr_label);
                     N = size(Database.tr_label,2);
@@ -85,7 +85,7 @@ if do_cv ==1
                     [~, labels_pre] = sort(result, 1, 'descend');
 
                     opts.Ncombs = max(Database.cv_mixlabel);
-                    N_t = size(Database.test_mixlabel, 2); %%%%% cv or test,
+                    N_t = size(Database.cv_mixlabel, 2); % test signal length
                     opts.ln_test = N_t/featln;
                     opts.equal = pctrl.equal;
                     [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);

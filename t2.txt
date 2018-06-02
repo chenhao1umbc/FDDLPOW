@@ -9,3 +9,224 @@ To get started, type one of these: helpwin, helpdesk, or demo.
 For product information, visit www.mathworks.com.
  
 >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> 
+sparsity =
+
+   99.9998
+
+one iter time: 466.9729 
+
+sparsity =
+
+   99.9999
+
+one iter time: 188.1957 
+
+sparsity =
+
+   100
+
+one iter time: 45.4525 
+
+sparsity =
+
+   100
+
+one iter time: 45.3045 
+
+sparsity =
+
+   100
+
+one iter time: 45.9893 
+
+sparsity =
+
+   99.9999
+
+one iter time: 187.6972 
+
+sparsity =
+
+   100
+
+one iter time: 45.3939 
+
+sparsity =
+
+   100
+
+one iter time: 45.8784 
+
+sparsity =
+
+   99.9994
+
+one iter time: 188.6339 
+
+sparsity =
+
+   99.9997
+
+too sparse 
+
+sparsity =
+
+   99.4982
+
+one iter time: 1477.4223 
+
+sparsity =
+
+   99.9978
+
+one iter time: 186.9393 
+
+sparsity =
+
+   99.9713
+
+one iter time: 187.8108 
+
+sparsity =
+
+   99.7169
+
+one iter time: 187.3058 
+
+sparsity =
+
+   99.0684
+
+one iter time: 186.4116 
+
+sparsity =
+
+   98.7236
+
+one iter time: 187.6879 
+
+sparsity =
+
+   97.9134
+
+one iter time: 186.8577 
+
+sparsity =
+
+   97.2322
+
+one iter time: 187.2828 
+
+sparsity =
+
+   97.5528
+
+one iter time: 45.1023 
+
+sparsity =
+
+   97.5508
+
+too sparse 
+
+sparsity =
+
+   99.2931
+
+one iter time: 1478.1237 
+
+sparsity =
+
+   99.6669
+
+one iter time: 330.8437 
+
+sparsity =
+
+   99.8475
+
+one iter time: 187.9058 
+
+sparsity =
+
+   99.0955
+
+one iter time: 188.4141 
+
+sparsity =
+
+   98.3642
+
+one iter time: 187.5072 
+
+sparsity =
+
+   97.3101
+
+one iter time: 186.8624 
+
+sparsity =
+
+   96.1847
+
+one iter time: 187.1820 
+
+sparsity =
+
+   95.2203
+
+one iter time: 185.9762 
+
+sparsity =
+
+   94.3851
+
+one iter time: 187.5422 
+
+sparsity =
+
+   94.8383
+
+too sparse 
+
+sparsity =
+
+   99.2625
+
+one iter time: 1346.6941 
+
+sparsity =
+
+   99.6880
+
+one iter time: 294.0259 
+
+sparsity =
+
+   99.8331
+
+one iter time: 166.7439 
+
+sparsity =
+
+   98.9338
+
+one iter time: 164.4312 
+
+sparsity =
+
+   97.6838
+
+one iter time: 161.3451 
+
+sparsity =
+
+   95.0646
+
+one iter time: 293.1216 
+
+sparsity =
+
+   89.3027
+
+one iter time: 821.7121 

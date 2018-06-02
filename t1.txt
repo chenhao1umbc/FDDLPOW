@@ -16,33 +16,11 @@ ii =
 
 sparsity =
 
-    0.9669
+    0.9156
 
-Elapsed time is 67.029846 seconds.
+Elapsed time is 107.958727 seconds.
 
 ii =
 
      2
-
-
-sparsity =
-
-    0.3835
-
-Elapsed time is 73.370172 seconds.
-
-ii =
-
-     3
-
-
-sparsity =
-
-    0.3964
-
-Elapsed time is 74.764834 seconds.
-
-ii =
-
-     4
 

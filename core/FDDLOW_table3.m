@@ -30,12 +30,12 @@ for ii = 1:opt.max_iter
         
     % update Z, with D Uand W fixed
     optZ = opt;
-    optZ.max_iter = 300; % for fista
+    optZ.max_iter = 500; % for fista
     optZ.threshold = 1e-6;
     optZ.showprogress = false; % show inside of fista
     optZ.showconverge = false; % show updateZ
     optZ.showcost= true*optZ.showprogress;
-    optZ.max_Ziter = 10; % for Z update
+    optZ.max_Ziter = 20; % for Z update
     optZ.Zthreshold = 1e-6;        
     Z = mix_updateZ(X,trlabels,optZ, W, D, Z, U, V, Delta); 
     [H1, H2, H3] = getMH1H2H3(trlabels, Z); % get M, H1, and H2 for updating W and U.

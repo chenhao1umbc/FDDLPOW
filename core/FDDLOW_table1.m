@@ -31,7 +31,7 @@ for ii=1:opt.max_iter
     % update Z, with D and W fixed
     optZ=opt;
     optZ.max_iter=500;
-    optZ.threshold=1e-4;
+    optZ.threshold=1e-6;
     optZ.showprogress = false; % show inside of fista
     optZ.showconverge = false; % show updateZ
     optZ.showcost= true*optZ.showprogress;
@@ -41,13 +41,13 @@ for ii=1:opt.max_iter
     sparsity=mean(sum(Z ~= 0))/opt.K   % avg number of nonzero elements in cols of Z
     if ii == 10
         if sparsity < 0.2 || sparsity >0.9
-            fprintf('too sparse \n')
+            fprintf('too sparse or non-sparse\n')
             break;            
         end
     end
     if ii == 30
         if sparsity > 0.5 || sparsity < 0.1
-            fprintf('too non-sparse \n')
+            fprintf('too sparse or non-sparse \n')
             break;            
         end
     end
@@ -64,7 +64,7 @@ for ii=1:opt.max_iter
     end
     if opt.showconverge
         figure(400);
-        plot(Loss(1:ii));
+        plot(Loss(:));
         title('objective function value');
         xlabel('Iterations');
         pause(.1);

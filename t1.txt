@@ -18,7 +18,7 @@ sparsity =
 
     0.9156
 
-Elapsed time is 107.038644 seconds.
+Elapsed time is 108.152385 seconds.
 
 ii =
 
@@ -29,7 +29,7 @@ sparsity =
 
     0.3882
 
-Elapsed time is 98.291340 seconds.
+Elapsed time is 106.953684 seconds.
 
 ii =
 
@@ -40,7 +40,7 @@ sparsity =
 
     0.3858
 
-Elapsed time is 92.910273 seconds.
+Elapsed time is 106.490408 seconds.
 
 ii =
 
@@ -51,7 +51,7 @@ sparsity =
 
     0.3780
 
-Elapsed time is 96.892161 seconds.
+Elapsed time is 107.018676 seconds.
 
 ii =
 
@@ -62,9 +62,1051 @@ sparsity =
 
     0.3789
 
-Elapsed time is 91.732289 seconds.
+Elapsed time is 107.066491 seconds.
 
 ii =
 
      6
 
+
+sparsity =
+
+    0.3912
+
+Elapsed time is 106.726345 seconds.
+
+ii =
+
+     7
+
+
+sparsity =
+
+    0.3820
+
+Elapsed time is 107.082093 seconds.
+
+ii =
+
+     8
+
+
+sparsity =
+
+    0.3880
+
+Elapsed time is 107.451412 seconds.
+
+ii =
+
+     9
+
+
+sparsity =
+
+    0.3927
+
+Elapsed time is 106.514014 seconds.
+
+ii =
+
+    10
+
+
+sparsity =
+
+    0.4033
+
+Elapsed time is 106.361947 seconds.
+
+ii =
+
+    11
+
+
+sparsity =
+
+    0.4140
+
+Elapsed time is 105.972305 seconds.
+
+ii =
+
+    12
+
+
+sparsity =
+
+    0.4164
+
+Elapsed time is 106.769770 seconds.
+
+ii =
+
+    13
+
+
+sparsity =
+
+    0.4149
+
+Elapsed time is 81.917140 seconds.
+
+ii =
+
+    14
+
+
+sparsity =
+
+    0.4094
+
+Elapsed time is 84.365230 seconds.
+
+ii =
+
+    15
+
+
+sparsity =
+
+    0.4067
+
+Elapsed time is 86.299545 seconds.
+
+ii =
+
+    16
+
+
+sparsity =
+
+    0.4095
+
+Elapsed time is 84.643440 seconds.
+
+ii =
+
+    17
+
+
+sparsity =
+
+    0.4126
+
+Elapsed time is 85.420014 seconds.
+
+ii =
+
+    18
+
+
+sparsity =
+
+    0.4171
+
+Elapsed time is 78.175794 seconds.
+
+ii =
+
+    19
+
+
+sparsity =
+
+    0.4218
+
+Elapsed time is 91.981580 seconds.
+
+ii =
+
+    20
+
+
+sparsity =
+
+    0.4245
+
+Elapsed time is 77.371117 seconds.
+
+ii =
+
+    21
+
+
+sparsity =
+
+    0.4291
+
+Elapsed time is 96.677710 seconds.
+
+ii =
+
+    22
+
+
+sparsity =
+
+    0.4332
+
+Elapsed time is 89.147049 seconds.
+
+ii =
+
+    23
+
+
+sparsity =
+
+    0.4335
+
+Elapsed time is 76.564126 seconds.
+
+ii =
+
+    24
+
+
+sparsity =
+
+    0.4321
+
+Elapsed time is 88.875601 seconds.
+
+ii =
+
+    25
+
+
+sparsity =
+
+    0.4336
+
+Elapsed time is 73.473390 seconds.
+
+ii =
+
+    26
+
+
+sparsity =
+
+    0.4332
+
+Elapsed time is 80.308699 seconds.
+
+ii =
+
+    27
+
+
+sparsity =
+
+    0.4354
+
+Elapsed time is 82.126347 seconds.
+
+ii =
+
+    28
+
+
+sparsity =
+
+    0.4340
+
+Elapsed time is 63.338231 seconds.
+
+ii =
+
+    29
+
+
+sparsity =
+
+    0.4322
+
+Elapsed time is 62.077679 seconds.
+
+ii =
+
+    30
+
+
+sparsity =
+
+    0.4311
+
+Elapsed time is 61.771509 seconds.
+
+ii =
+
+    31
+
+
+sparsity =
+
+    0.4303
+
+Elapsed time is 60.928042 seconds.
+
+ii =
+
+    32
+
+
+sparsity =
+
+    0.4274
+
+Elapsed time is 68.479826 seconds.
+
+ii =
+
+    33
+
+
+sparsity =
+
+    0.4246
+
+Elapsed time is 59.260327 seconds.
+
+ii =
+
+    34
+
+
+sparsity =
+
+    0.4221
+
+Elapsed time is 58.143838 seconds.
+
+ii =
+
+    35
+
+
+sparsity =
+
+    0.4187
+
+Elapsed time is 57.499890 seconds.
+
+ii =
+
+    36
+
+
+sparsity =
+
+    0.4159
+
+Elapsed time is 56.564996 seconds.
+
+ii =
+
+    37
+
+
+sparsity =
+
+    0.4156
+
+Elapsed time is 55.370134 seconds.
+
+ii =
+
+    38
+
+
+sparsity =
+
+    0.4156
+
+Elapsed time is 54.262547 seconds.
+
+ii =
+
+    39
+
+
+sparsity =
+
+    0.4158
+
+Elapsed time is 53.910928 seconds.
+
+ii =
+
+    40
+
+
+sparsity =
+
+    0.4154
+
+Elapsed time is 53.356842 seconds.
+
+ii =
+
+    41
+
+
+sparsity =
+
+    0.4159
+
+Elapsed time is 53.822881 seconds.
+
+ii =
+
+    42
+
+
+sparsity =
+
+    0.4167
+
+Elapsed time is 53.358879 seconds.
+
+ii =
+
+    43
+
+
+sparsity =
+
+    0.4176
+
+Elapsed time is 48.047462 seconds.
+
+ii =
+
+    44
+
+
+sparsity =
+
+    0.4180
+
+Elapsed time is 47.490596 seconds.
+
+ii =
+
+    45
+
+
+sparsity =
+
+    0.4189
+
+Elapsed time is 47.595269 seconds.
+
+ii =
+
+    46
+
+
+sparsity =
+
+    0.4185
+
+Elapsed time is 46.758527 seconds.
+
+ii =
+
+    47
+
+
+sparsity =
+
+    0.4190
+
+Elapsed time is 47.005422 seconds.
+
+ii =
+
+    48
+
+
+sparsity =
+
+    0.4193
+
+Elapsed time is 46.823958 seconds.
+
+ii =
+
+    49
+
+
+sparsity =
+
+    0.4201
+
+Elapsed time is 46.861818 seconds.
+
+ii =
+
+    50
+
+
+sparsity =
+
+    0.4206
+
+Elapsed time is 46.757302 seconds.
+
+ii =
+
+    51
+
+
+sparsity =
+
+    0.4217
+
+Elapsed time is 46.157083 seconds.
+
+ii =
+
+    52
+
+
+sparsity =
+
+    0.4225
+
+Elapsed time is 45.646307 seconds.
+
+ii =
+
+    53
+
+
+sparsity =
+
+    0.4235
+
+Elapsed time is 45.526114 seconds.
+
+ii =
+
+    54
+
+
+sparsity =
+
+    0.4244
+
+Elapsed time is 45.484803 seconds.
+
+ii =
+
+    55
+
+
+sparsity =
+
+    0.4259
+
+Elapsed time is 45.706416 seconds.
+
+ii =
+
+    56
+
+
+sparsity =
+
+    0.4274
+
+Elapsed time is 46.234281 seconds.
+
+ii =
+
+    57
+
+
+sparsity =
+
+    0.4290
+
+Elapsed time is 45.728638 seconds.
+
+ii =
+
+    58
+
+
+sparsity =
+
+    0.4302
+
+Elapsed time is 45.317120 seconds.
+
+ii =
+
+    59
+
+
+sparsity =
+
+    0.4312
+
+Elapsed time is 45.891828 seconds.
+
+ii =
+
+    60
+
+
+sparsity =
+
+    0.4318
+
+Elapsed time is 45.257690 seconds.
+
+ii =
+
+    61
+
+
+sparsity =
+
+    0.4326
+
+Elapsed time is 45.318041 seconds.
+
+ii =
+
+    62
+
+
+sparsity =
+
+    0.4305
+
+Elapsed time is 44.839060 seconds.
+
+ii =
+
+    63
+
+
+sparsity =
+
+    0.4317
+
+Elapsed time is 45.630550 seconds.
+
+ii =
+
+    64
+
+
+sparsity =
+
+    0.4337
+
+Elapsed time is 45.277284 seconds.
+
+ii =
+
+    65
+
+
+sparsity =
+
+    0.4362
+
+Elapsed time is 45.413328 seconds.
+
+ii =
+
+    66
+
+
+sparsity =
+
+    0.4390
+
+Elapsed time is 46.040605 seconds.
+
+ii =
+
+    67
+
+
+sparsity =
+
+    0.4392
+
+Elapsed time is 46.339640 seconds.
+
+ii =
+
+    68
+
+
+sparsity =
+
+    0.4425
+
+Elapsed time is 44.074639 seconds.
+
+ii =
+
+    69
+
+
+sparsity =
+
+    0.4443
+
+Elapsed time is 44.240120 seconds.
+
+ii =
+
+    70
+
+
+sparsity =
+
+    0.4463
+
+Elapsed time is 44.812919 seconds.
+
+ii =
+
+    71
+
+
+sparsity =
+
+    0.4485
+
+Elapsed time is 44.919618 seconds.
+
+ii =
+
+    72
+
+
+sparsity =
+
+    0.4512
+
+Elapsed time is 45.883913 seconds.
+
+ii =
+
+    73
+
+
+sparsity =
+
+    0.4545
+
+Elapsed time is 46.807450 seconds.
+
+ii =
+
+    74
+
+
+sparsity =
+
+    0.4575
+
+Elapsed time is 45.854904 seconds.
+
+ii =
+
+    75
+
+
+sparsity =
+
+    0.4608
+
+Elapsed time is 46.876635 seconds.
+
+ii =
+
+    76
+
+
+sparsity =
+
+    0.4639
+
+Elapsed time is 47.970471 seconds.
+
+ii =
+
+    77
+
+
+sparsity =
+
+    0.4632
+
+Elapsed time is 47.178888 seconds.
+
+ii =
+
+    78
+
+
+sparsity =
+
+    0.4670
+
+Elapsed time is 49.849643 seconds.
+
+ii =
+
+    79
+
+
+sparsity =
+
+    0.4746
+
+Elapsed time is 43.773335 seconds.
+
+ii =
+
+    80
+
+
+sparsity =
+
+    0.4793
+
+Elapsed time is 44.928702 seconds.
+
+ii =
+
+    81
+
+
+sparsity =
+
+    0.4837
+
+Elapsed time is 46.292317 seconds.
+
+ii =
+
+    82
+
+
+sparsity =
+
+    0.4826
+
+Elapsed time is 49.308003 seconds.
+
+ii =
+
+    83
+
+
+sparsity =
+
+    0.4786
+
+Elapsed time is 47.695560 seconds.
+
+ii =
+
+    84
+
+
+sparsity =
+
+    0.4752
+
+Elapsed time is 47.021744 seconds.
+
+ii =
+
+    85
+
+
+sparsity =
+
+    0.4713
+
+Elapsed time is 46.179579 seconds.
+
+ii =
+
+    86
+
+
+sparsity =
+
+    0.4691
+
+Elapsed time is 43.872508 seconds.
+
+ii =
+
+    87
+
+
+sparsity =
+
+    0.4672
+
+Elapsed time is 43.554744 seconds.
+
+ii =
+
+    88
+
+
+sparsity =
+
+    0.4659
+
+Elapsed time is 42.673050 seconds.
+
+ii =
+
+    89
+
+
+sparsity =
+
+    0.4670
+
+Elapsed time is 43.003909 seconds.
+
+ii =
+
+    90
+
+
+sparsity =
+
+    0.4667
+
+Elapsed time is 40.824979 seconds.
+
+ii =
+
+    91
+
+
+sparsity =
+
+    0.4680
+
+Elapsed time is 40.387043 seconds.
+
+ii =
+
+    92
+
+
+sparsity =
+
+    0.4674
+
+Elapsed time is 42.085701 seconds.
+
+ii =
+
+    93
+
+
+sparsity =
+
+    0.4670
+
+Elapsed time is 42.137445 seconds.
+
+ii =
+
+    94
+
+
+sparsity =
+
+    0.4673
+
+Elapsed time is 42.390492 seconds.
+
+ii =
+
+    95
+
+
+sparsity =
+
+    0.4675
+
+Elapsed time is 43.802859 seconds.
+
+ii =
+
+    96
+
+
+sparsity =
+
+    0.4689
+
+Elapsed time is 44.512382 seconds.
+
+ii =
+
+    97
+
+
+sparsity =
+
+    0.4703
+
+Elapsed time is 46.330940 seconds.
+
+ii =
+
+    98
+
+
+sparsity =
+
+    0.4702
+
+Elapsed time is 47.071578 seconds.
+
+ii =
+
+    99
+
+
+sparsity =
+
+    0.4707
+
+Elapsed time is 47.085567 seconds.
+
+ii =
+
+   100
+
+
+sparsity =
+
+    0.4709
+
+Elapsed time is 48.410292 seconds.
+>> >> >> >> >> Elapsed time is 159.447623 seconds.
+>> >> >> 

@@ -1,5 +1,5 @@
 function [Dict]=FDDLOW_table2(X,trlabels,opt)
-FDDLOW_table3
+
 % This fucntion is designed to train the dictionary in table 2, FDDLO
 % min||(D,Z,W) J(D,Z,W),  s.t.W_q^T W_q=I,q=1,2,..Q
 % with J(D,Z,W)=||X-DZ||_F^2+||_1 ||Z||_1+muf(W,Z)+nug(W,Z)
@@ -34,7 +34,7 @@ for ii = 1:opt.max_iter
     % update Z, with D Uand W fixed
     optZ = opt;
     optZ.max_iter = 500; % for fista
-    optZ.threshold = 1e-6;
+    optZ.threshold = 1e-5;
     optZ.showprogress = false; % show inside of fista
     optZ.showconverge = false; % show updateZ
     optZ.showcost= true*optZ.showprogress;
@@ -42,16 +42,16 @@ for ii = 1:opt.max_iter
     optZ.Zthreshold = 1e-6;        
     Z = mix_updateZ_t2(X,trlabels,optZ, W, D, Z, U); 
     [M, H1, H2] = getMH1H2_t2(trlabels, Z); % get M, H1, and H2 for updating W and U.
-    sparsity = mean(sum(Z ~= 0))       % avg number of nonzero elements in cols of Z
+    sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
     if ii == 10
         if sparsity < 0.2 || sparsity >0.9
-            fprintf('too sparse or non-sparse\n')
+            fprintf('10 iters too sparse or non-sparse\n')
             break;            
         end
     end
     if ii == 30
         if sparsity > 0.5 || sparsity < 0.1
-            fprintf('too sparse or non-sparse\n')
+            fprintf('30 iters too sparse or non-sparse\n')
             break;            
         end
     end

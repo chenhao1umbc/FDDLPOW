@@ -12,7 +12,7 @@ addpath(genpath('.././data'))
 do_training = 0;
 do_cv = 1;
 
-for 
+for uuu = []
 % load data
 mixture_n = 3; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;

@@ -25,7 +25,7 @@ if fileexistance==2
     W=Dict.W;
     [M, ~, ~] = getMH1H2_t2(trlabels, Z);
     U = mix_updateU_t2(W, M);        
-    opt.max_iter= 70;% because of good initialization
+    opt.max_iter= 80;% because of good initialization
     Loss=zeros(4,opt.max_iter);
 else    
     D=randn(M_d,opt.K);

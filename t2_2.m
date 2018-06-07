@@ -37,7 +37,7 @@ SNR = 2000;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 nu= 1e-4 ;
 beta = 1;
-nu = [ 1 0.1 0.01 0.001 1e-4 1e-5 1e-6];
+nu = [ 10 1 0.1 0.01 0.001 1e-4 1e-5 1e-6];
    
 for ind1 = 1: length(nu)
     [opts]=loadoptions(K,lbmd,mu,Q,nu(ind1),beta, SNR);
@@ -99,6 +99,6 @@ if do_cv ==1
     end
 end
 
-save('tb2_results_','result_nu','result_nuWEEK','sparsity_nu','tr_sparsity_nu')
+save('t2_2_results_','result_nu','result_nuWEEK','sparsity_nu','tr_sparsity_nu')
 toc
 

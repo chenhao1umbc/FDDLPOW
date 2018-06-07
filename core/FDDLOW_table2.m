@@ -50,7 +50,7 @@ for ii = 1:opt.max_iter
         end
     end
     if 0.3 == ii/opt.max_iter
-        if sparsity > 0.5 || sparsity < 0.1
+        if sparsity > 0.6 || sparsity < 0.1
             fprintf('30 iters too sparse or non-sparse\n')
             break;            
         end

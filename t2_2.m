@@ -26,8 +26,8 @@ pctrl.db = 6; % dynamic ratio is 3, 6, 10, 20, 40db
 %% training dictionary
 % load settings
 K = 100;
-lbmd = 1e-4;
-mu=1e-3;
+lbmd = 1e-3;
+mu=0.1;
 Q=16;% this is wq without negative
 SNR = 2000;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

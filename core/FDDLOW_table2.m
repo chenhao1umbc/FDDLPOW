@@ -43,13 +43,13 @@ for ii = 1:opt.max_iter
     Z = mix_updateZ_t2(X,trlabels,optZ, W, D, Z, U); 
     [M, H1, H2] = getMH1H2_t2(trlabels, Z); % get M, H1, and H2 for updating W and U.
     sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
-    if ii == 10
+    if 0.1 == 10/opt.max_iter
         if sparsity < 0.2 || sparsity >0.9
             fprintf('10 iters too sparse or non-sparse\n')
             break;            
         end
     end
-    if ii == 30
+    if 0.3 == ii/opt.max_iter
         if sparsity > 0.5 || sparsity < 0.1
             fprintf('30 iters too sparse or non-sparse\n')
             break;            

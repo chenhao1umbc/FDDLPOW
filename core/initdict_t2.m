@@ -13,7 +13,7 @@ function [D,Z,W,U,Loss,opt]=initdict_t2(X,trlabels,opt)
 
 C=max(trlabels); % how many classes
 [M_d,N]=size(X); % M is the data dimension, N is the # of samples
-rng(0)
+rng(opt.rng)
 
 % check checking the existing Dictionary
 nm = opt.Dictnm;

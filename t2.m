@@ -12,12 +12,16 @@ addpath(genpath('.././data'))
 do_training = 0;
 do_cv = 1;
 
-for 
+for uuu = [0, 3, 6, 10, 20]
 % load data
 mixture_n = 3; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
-pctrl.equal = 0; % 1 means eqaul power, 0 non-equal
-pctrl.db = 6; % dynamic ratio is 3, 6, 10, 20, 40db
+pctrl.db = uuu; % dynamic ratio is 0 3, 6, 10, 20 db
+if pctrl.db == 0
+    pctrl.equal = 1;
+else
+    pctrl.equal = 0;
+end
 
 % the equal power mixture, 400 samples per combination
 [Database]=load_data_new(mixture_n, SNR, pctrl);
@@ -36,9 +40,9 @@ SNR = 2000;
 % one is K = 100, lambda = 1e-4, mu = 1e-3
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-nu= 0.01 ;
-beta = 1;
-% nu = [ 1 0.1 0.01 0.001 1e-4 1e-5 1e-6];
+nu= 0.005 ;
+beta = -1;
+% nu = [ 0.003 0.005 0.007 0.01 0.03 0.05 0.07 0.1];
    
 for ind1 = 1: length(nu)
     [opts]=loadoptions(K,lbmd,mu,Q,nu(ind1),beta, SNR);
@@ -65,7 +69,7 @@ if do_cv ==1
             if exist('Dict')==1
                 Dict_mix = Dict;
             end
-            Z = sparsecoding_mix_cv(Dict_mix, Database, opts); %%%%% cv or test **************
+            Z = sparsecoding_mix_test(Dict_mix, Database, opts); %%%%% cv or test **************
             W = Dict_mix.W;
             C = max(Database.tr_label);
             N = size(Database.tr_label,2);
@@ -81,25 +85,22 @@ if do_cv ==1
             [~, labels_pre] = sort(result, 1, 'descend');
 
             opts.Ncombs = max(Database.cv_mixlabel);
-            N_t = size(Database.cv_mixlabel, 2); %%%%% cv or test **************
+            N_t = size(Database.test_mixlabel, 2); %%%%% cv or test **************
             opts.ln_test = N_t/featln;
             opts.equal = pctrl.equal;
             [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
 
-            result_nu(ind1) = acc_all;
-            result_nuWEEK(ind1) = acc_weak_av;
+            result_nu(ind1) = acc_all
+            result_nuWEEK(ind1) = acc_weak_av
             sparsity_nu(ind1) = mean(sum(Z ~= 0))/K;
             tr_sparsity_nu(ind1) = mean(sum(Dict_mix.Z ~= 0))/K;
 
             [SW,SB]=calcfisher(Dict_mix.Z,Database.tr_label,opts);
             fWZ=trace(W'*SW*W)-trace(W'*SB*W)+norm(W'*Dict_mix.Z,'fro')^2;              
-% 
-%                 opts.lambda1*sum(abs(Dict_mix.Z(:)))
-%                 opts.mu*fWZ
         end 
     end
 end
-
-save('tb2_results_','result_nu','result_nuWEEK','sparsity_nu','tr_sparsity_nu')
+end
+save('tb2_results','result_nu','result_nuWEEK','sparsity_nu','tr_sparsity_nu')
 toc
 

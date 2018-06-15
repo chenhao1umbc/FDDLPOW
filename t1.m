@@ -7,16 +7,20 @@ tic
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
-for uuu = [ 3  6 10 20]
+for uuu = [ 0 3  6 10 20]
 % do traing or do crossvalidation
-do_training =0;
+do_training = 0;
 do_cv = 1;
 
 % load data
 mixture_n = 3; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
-pctrl.equal = 0; % 1 means eqaul power, 0 non-equal
-pctrl.db = uuu; % dynamic ratio is 3, 6, 10, 20, 40db
+pctrl.db = uuu; % dynamic ratio is 0 3, 6, 10, 20 db
+if pctrl.db == 0
+    pctrl.equal = 1;
+else
+    pctrl.equal = 0;
+end
 
 % the equal power mixture, 400 samples per combination
 [Database]=load_data_new(mixture_n, SNR, pctrl);
@@ -91,8 +95,8 @@ if do_cv ==1
                     opts.equal = pctrl.equal;
                     [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
 
-                    result_K_lambda_mu(ind1, ind2, ind3) = acc_all;
-                    result_K_lambda_muWEEK(ind1, ind2, ind3) = acc_weak_av;
+                    result_K_lambda_mu(ind1, ind2, ind3) = acc_all
+                    result_K_lambda_muWEEK(ind1, ind2, ind3) = acc_weak_av
                     sparsity_K_lambda_mu(ind1, ind2, ind3) = mean(sum(Z ~= 0))/K(ind1);
                     tr_sparsity_K_lambda_mu(ind1, ind2, ind3) = mean(sum(Dict_mix.Z ~= 0))/K(ind1);
                     

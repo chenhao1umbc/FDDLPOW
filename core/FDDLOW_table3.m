@@ -1,5 +1,8 @@
 function [Dict]=FDDLOW_table3(X,trlabels,opt)
-% This fucntion is designed to train the dictionary in table 2
+
+% This fucntion is designed to train the dictionary in table 3, FDDLOW
+%
+%
 % The input is  X, the training data, a matrix M by N, N data samples
 %             trlabels is the labels of training data, like[1,1,1,1,2,2,3,3,3]             
 %             opt are the training options with
@@ -39,7 +42,19 @@ for ii = 1:opt.max_iter
     optZ.Zthreshold = 1e-6;        
     Z = mix_updateZ(X,trlabels,optZ, W, D, Z, U, V, Delta); 
     [H1, H2, H3] = getMH1H2H3(trlabels, Z); % get M, H1, and H2 for updating W and U.
-    sparsity = mean(sum(Z ~= 0))       % avg number of nonzero elements in cols of Z
+    sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
+    if 0.1 == 10/opt.max_iter
+        if sparsity < 0.2 || sparsity >0.9
+            fprintf('10 iters too sparse or non-sparse\n')
+            break;            
+        end
+    end
+    if 0.3 == ii/opt.max_iter
+        if sparsity > 0.6 || sparsity < 0.1
+            fprintf('30 iters too sparse or non-sparse\n')
+            break;            
+        end
+    end
     if opt.losscalc
         Loss(2,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,Delta);
     end
@@ -54,7 +69,7 @@ for ii = 1:opt.max_iter
     V = mix_updateV(W, Z, H1);
     
     % update W, with D Uand Z fixed
-    W = mix_updateW(opt, H1, H2, H3, Delta, U, V,  Z);    
+    W = mix_updateW(opt, H1, H2, H3, Delta, U, V, Z);    
     if opt.losscalc
         Loss(3,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,Delta);
     end    
@@ -93,5 +108,6 @@ Dict.Z = Z;
 Dict.U = U;
 Dict.V = V;
 Dict.Delta = Delta;
+Dict.iter = ii;
 
 end % end of the file

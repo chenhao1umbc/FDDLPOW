@@ -12,7 +12,6 @@ addpath(genpath('.././data'))
 do_training = 1;
 do_cv = 0;
 
-
 % load data
 mixture_n = 3; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
@@ -49,9 +48,9 @@ for ind1 = 1: length(nu)
     % for table 1 algorithm
     if do_training ==1
         Dict_mix = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
-        if Dict_mix.iter > 30
+%         if Dict_mix.iter > 30
             save(opts.mixnm,'Dict_mix','opts')
-        end
+%         end
     end
 end
 

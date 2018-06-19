@@ -18,7 +18,7 @@ function [Dict]=FDDLOW_table2(X,trlabels,opt)
 [D, Z, W, U, Loss, opt] = initdict_t2(X,trlabels,opt); % max_iter will change for existing dictionary
 
 % main loop
-for ii = 1:2%opt.max_iter   
+for ii = 1:opt.max_iter   
     t1 = toc;
     
     % update D, with U W and Z fixed

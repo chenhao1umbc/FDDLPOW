@@ -8,13 +8,15 @@ tic
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 
-for uuu = [0, 3, 6, 10, 20]
+
 % do traing or do crossvalidation
 do_training = 0;
-do_cv = 1;
+do_result = 1;
+cv = 0; % validation or testing
 
+for uuu = [0 3 6 10 20]
 % load data
-mixture_n = 2; % mixture_n classes mixture, = 1,2,3
+mixture_n = 3; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
 pctrl.db = uuu; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
@@ -41,8 +43,8 @@ SNR = 2000;
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 nu= 0.01 ;
-beta = 0.1; % or 0.14
-% beta = [0.5 0.3 0.16 0.14 0.12 0.08 0.06 0.04 0.02 ];
+beta = 100; % or 0.14
+% beta = [1e-6 1e-5 1e-4 1e-3 1e-2 0.1 1 10 100 ];
    
 for ind1 = 1: length(beta)
     [opts]=loadoptions(K,lbmd,mu,Q,nu,beta(ind1), SNR);
@@ -56,7 +58,7 @@ for ind1 = 1: length(beta)
 end
 
 %% testing part
-if do_cv ==1      
+if do_result ==1      
     result_beta = zeros(length(K),length(beta));
     sparsity_beta = zeros(length(K),length(beta));
     tr_sparsity_beta = zeros(length(K),length(beta));
@@ -69,7 +71,11 @@ if do_cv ==1
             if exist('Dict')==1
                 Dict_mix = Dict;
             end
-            Z = sparsecoding_mix_test(Dict_mix, Database, opts); %%%%% cv or test **************
+            if cv == 1;
+                Z = sparsecoding_mix_cv(Dict_mix, Database, opts); %%%%% cv or test **************
+            else
+                Z = sparsecoding_mix_test(Dict_mix, Database, opts);
+            end
             W = Dict_mix.W;
             C = max(Database.tr_label);
             N = size(Database.tr_label,2);
@@ -85,7 +91,11 @@ if do_cv ==1
             [~, labels_pre] = sort(result, 1, 'descend');
 
             opts.Ncombs = max(Database.cv_mixlabel);
-            N_t = size(Database.test_mixlabel, 2); %%%%% cv or test **************
+            if cv == 1
+                N_t = size(Database.cv_mixlabel, 2); %%%%% cv or test **************
+            else 
+                N_t = size(Database.test_mixlabel, 2); %%%%% cv or test **************
+            end
             opts.ln_test = N_t/featln;
             opts.equal = pctrl.equal;
             [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
@@ -105,4 +115,3 @@ end
  
 save('tb3_results','result_beta','result_betaWEEK','sparsity_beta','tr_sparsity_beta')
 toc
-

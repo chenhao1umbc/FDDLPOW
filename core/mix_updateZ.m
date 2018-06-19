@@ -1,4 +1,4 @@
-function Z = mix_updateZ(X, trlabels, opt, W, D, Zin, U, V, Delta)
+function Z = mix_updateZ(X, trlabels, opt, W, D, Zin, U, V, delta)
 % this function is to update W with D and Z fixed
 % input   X is the training data,a matrix M by N, N data samples
 %         trlabels is the training data labels
@@ -33,8 +33,8 @@ H3H3t = H3*H3';
 DtD = D'*D;
 DtX = D'*X;
 WWt = W*W';
-WUDetaH3t = W*U*Delta*H3';
-WVtM1 = W*V'*M1;
+WUH3t = W*U*H3';
+WDeltaVtM1 = delta*W*V'*M1;
 normWWt = norm(WWt,'fro');
 L_term1 = norm(2*DtD,'fro');
 L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+eye(N),'fro');
@@ -80,10 +80,10 @@ function cost = calc_F(Z_curr)
 
     % calc g(W, Z, U, Delta), orthogonal term
     M = Z_curr*H3;
-    gwzu = norm(W'*M-U*Delta, 'fro')^2;            
+    gwzu = norm(W'*M-U, 'fro')^2;            
     
     % calc c(W, Z), whitening term
-    cwz = norm(M1*Z_curr'*W -V, 'fro')^2;
+    cwz = norm(M1*Z_curr'*W -V*delta, 'fro')^2;
     
     % calc cost
     cost = norm(X - D*Z_curr,'fro')^2 + opt.lambda1*norm1(Z_curr) ...
@@ -96,8 +96,8 @@ function g = grad_f(Z_curr)
     WWtZM1M1t = WWtZ*M1M1t;
     grad1 = DtD*Z_curr - DtX;
     grad2 = WWtZM1M1t - WWtZ*M2M2t + WWtZ;
-    grad3 = WWtZ*H3H3t - WUDetaH3t;
-    grad4 = WWtZM1M1t - WVtM1;
+    grad3 = WWtZ*H3H3t - WUH3t;
+    grad4 = WWtZM1M1t - WDeltaVtM1;
     g = 2*grad1 + 2*opt.mu*grad2 + 2*opt.nu*grad3 + 2*opt.beta*grad4; 
 end
 

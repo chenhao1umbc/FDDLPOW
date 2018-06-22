@@ -1,0 +1,1792 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2018 The MathWorks, Inc.
+                   R2018a (9.4.0.813654) 64-bit (glnxa64)
+                             February 23, 2018
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> 
+i_loop1 =
+
+     1
+
+
+ind1 =
+
+     1
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817         0         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817         0         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     2
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     3
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     4
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     5
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     6
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     7
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     8
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817         0         0         0         0         0
+
+
+ind1 =
+
+     9
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817    0.9817         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817    0.9817         0         0         0         0
+
+
+ind1 =
+
+    10
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817    0.9817    0.9817         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817    0.9817    0.9817         0         0         0
+
+
+ind1 =
+
+    11
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817    0.9817    0.9817    0.9817         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817    0.9817    0.9817    0.9817         0         0
+
+
+ind1 =
+
+    12
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817    0.9817    0.9817    0.9817    0.9817         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817    0.9817    0.9817    0.9817    0.9817         0
+
+
+ind1 =
+
+    13
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817    0.9817    0.9817    0.9817    0.9817    0.9817
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9817    0.9818    0.9817    0.9817    0.9817    0.9817    0.9817
+
+  Columns 8 through 13
+
+    0.9817    0.9817    0.9817    0.9817    0.9817    0.9817
+
+
+i_loop1 =
+
+     2
+
+
+ind1 =
+
+     1
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791         0         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713         0         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     2
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     3
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     4
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794    0.9794         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723    0.9723         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     5
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794    0.9794    0.9794         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723    0.9723    0.9723         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     6
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794    0.9794    0.9794    0.9794         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723    0.9723    0.9723    0.9723         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     7
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794    0.9794    0.9794    0.9794    0.9794
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723    0.9723    0.9723    0.9723    0.9723
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     8
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794    0.9794    0.9794    0.9794    0.9794
+
+  Columns 8 through 13
+
+    0.9794         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723    0.9723    0.9723    0.9723    0.9723
+
+  Columns 8 through 13
+
+    0.9723         0         0         0         0         0
+
+
+ind1 =
+
+     9
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794    0.9794    0.9794    0.9794    0.9794
+
+  Columns 8 through 13
+
+    0.9794    0.9794         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723    0.9723    0.9723    0.9723    0.9723
+
+  Columns 8 through 13
+
+    0.9723    0.9723         0         0         0         0
+
+
+ind1 =
+
+    10
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794    0.9794    0.9794    0.9794    0.9794
+
+  Columns 8 through 13
+
+    0.9794    0.9794    0.9794         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723    0.9723    0.9723    0.9723    0.9723
+
+  Columns 8 through 13
+
+    0.9723    0.9723    0.9723         0         0         0
+
+
+ind1 =
+
+    11
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794    0.9794    0.9794    0.9794    0.9794
+
+  Columns 8 through 13
+
+    0.9794    0.9794    0.9794    0.9794         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723    0.9723    0.9723    0.9723    0.9723
+
+  Columns 8 through 13
+
+    0.9723    0.9723    0.9723    0.9723         0         0
+
+
+ind1 =
+
+    12
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794    0.9794    0.9794    0.9794    0.9794
+
+  Columns 8 through 13
+
+    0.9794    0.9794    0.9794    0.9794    0.9794         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723    0.9723    0.9723    0.9723    0.9723
+
+  Columns 8 through 13
+
+    0.9723    0.9723    0.9723    0.9723    0.9723         0
+
+
+ind1 =
+
+    13
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9791    0.9788    0.9794    0.9794    0.9794    0.9794    0.9794
+
+  Columns 8 through 13
+
+    0.9794    0.9794    0.9794    0.9794    0.9794    0.9794
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9713    0.9703    0.9723    0.9723    0.9723    0.9723    0.9723
+
+  Columns 8 through 13
+
+    0.9723    0.9723    0.9723    0.9723    0.9723    0.9723
+
+
+i_loop1 =
+
+     3
+
+
+ind1 =
+
+     1
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708         0         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347         0         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     2
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     3
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     4
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708    0.9708         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340    0.9340         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     5
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708    0.9708    0.9708         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340    0.9340    0.9340         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     6
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708    0.9708    0.9708    0.9708         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340    0.9340    0.9340    0.9340         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     7
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708    0.9708    0.9708    0.9708    0.9708
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340    0.9340    0.9340    0.9340    0.9340
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     8
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708    0.9708    0.9708    0.9708    0.9708
+
+  Columns 8 through 13
+
+    0.9708         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340    0.9340    0.9340    0.9340    0.9340
+
+  Columns 8 through 13
+
+    0.9340         0         0         0         0         0
+
+
+ind1 =
+
+     9
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708    0.9708    0.9708    0.9708    0.9708
+
+  Columns 8 through 13
+
+    0.9708    0.9708         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340    0.9340    0.9340    0.9340    0.9340
+
+  Columns 8 through 13
+
+    0.9340    0.9340         0         0         0         0
+
+
+ind1 =
+
+    10
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708    0.9708    0.9708    0.9708    0.9708
+
+  Columns 8 through 13
+
+    0.9708    0.9708    0.9708         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340    0.9340    0.9340    0.9340    0.9340
+
+  Columns 8 through 13
+
+    0.9340    0.9340    0.9340         0         0         0
+
+
+ind1 =
+
+    11
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708    0.9708    0.9708    0.9708    0.9708
+
+  Columns 8 through 13
+
+    0.9708    0.9708    0.9708    0.9708         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340    0.9340    0.9340    0.9340    0.9340
+
+  Columns 8 through 13
+
+    0.9340    0.9340    0.9340    0.9340         0         0
+
+
+ind1 =
+
+    12
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708    0.9708    0.9708    0.9708    0.9708
+
+  Columns 8 through 13
+
+    0.9708    0.9708    0.9708    0.9708    0.9708         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340    0.9340    0.9340    0.9340    0.9340
+
+  Columns 8 through 13
+
+    0.9340    0.9340    0.9340    0.9340    0.9340         0
+
+
+ind1 =
+
+    13
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9708    0.9651    0.9708    0.9708    0.9708    0.9708    0.9708
+
+  Columns 8 through 13
+
+    0.9708    0.9708    0.9708    0.9708    0.9708    0.9708
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.9347    0.9162    0.9340    0.9340    0.9340    0.9340    0.9340
+
+  Columns 8 through 13
+
+    0.9340    0.9340    0.9340    0.9340    0.9340    0.9340
+
+
+i_loop1 =
+
+     4
+
+
+ind1 =
+
+     1
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402         0         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217         0         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     2
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     3
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     4
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403    0.9403         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215    0.8215         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     5
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403    0.9403    0.9402         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215    0.8215    0.8213         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     6
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403    0.9403    0.9402    0.9403         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215    0.8215    0.8213    0.8215         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     7
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403    0.9403    0.9402    0.9403    0.9403
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215    0.8215    0.8213    0.8215    0.8215
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     8
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403    0.9403    0.9402    0.9403    0.9403
+
+  Columns 8 through 13
+
+    0.9403         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215    0.8215    0.8213    0.8215    0.8215
+
+  Columns 8 through 13
+
+    0.8215         0         0         0         0         0
+
+
+ind1 =
+
+     9
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403    0.9403    0.9402    0.9403    0.9403
+
+  Columns 8 through 13
+
+    0.9403    0.9403         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215    0.8215    0.8213    0.8215    0.8215
+
+  Columns 8 through 13
+
+    0.8215    0.8215         0         0         0         0
+
+
+ind1 =
+
+    10
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403    0.9403    0.9402    0.9403    0.9403
+
+  Columns 8 through 13
+
+    0.9403    0.9403    0.9403         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215    0.8215    0.8213    0.8215    0.8215
+
+  Columns 8 through 13
+
+    0.8215    0.8215    0.8215         0         0         0
+
+
+ind1 =
+
+    11
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403    0.9403    0.9402    0.9403    0.9403
+
+  Columns 8 through 13
+
+    0.9403    0.9403    0.9403    0.9403         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215    0.8215    0.8213    0.8215    0.8215
+
+  Columns 8 through 13
+
+    0.8215    0.8215    0.8215    0.8215         0         0
+
+
+ind1 =
+
+    12
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403    0.9403    0.9402    0.9403    0.9403
+
+  Columns 8 through 13
+
+    0.9403    0.9403    0.9403    0.9403    0.9403         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215    0.8215    0.8213    0.8215    0.8215
+
+  Columns 8 through 13
+
+    0.8215    0.8215    0.8215    0.8215    0.8215         0
+
+
+ind1 =
+
+    13
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.9402    0.9370    0.9403    0.9403    0.9402    0.9403    0.9403
+
+  Columns 8 through 13
+
+    0.9403    0.9403    0.9403    0.9403    0.9403    0.9403
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.8217    0.8110    0.8215    0.8215    0.8213    0.8215    0.8215
+
+  Columns 8 through 13
+
+    0.8215    0.8215    0.8215    0.8215    0.8215    0.8215
+
+
+i_loop1 =
+
+     5
+
+
+ind1 =
+
+     1
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394         0         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182         0         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     2
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938         0         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     3
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135         0         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     4
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378    0.8378         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135    0.5133         0         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     5
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378    0.8378    0.8377         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135    0.5133    0.5130         0         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     6
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378    0.8378    0.8377    0.8378         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135    0.5133    0.5130    0.5133         0
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     7
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378    0.8378    0.8377    0.8378    0.8378
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135    0.5133    0.5130    0.5133    0.5133
+
+  Columns 8 through 13
+
+         0         0         0         0         0         0
+
+
+ind1 =
+
+     8
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378    0.8378    0.8377    0.8378    0.8378
+
+  Columns 8 through 13
+
+    0.8378         0         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135    0.5133    0.5130    0.5133    0.5133
+
+  Columns 8 through 13
+
+    0.5133         0         0         0         0         0
+
+
+ind1 =
+
+     9
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378    0.8378    0.8377    0.8378    0.8378
+
+  Columns 8 through 13
+
+    0.8378    0.8378         0         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135    0.5133    0.5130    0.5133    0.5133
+
+  Columns 8 through 13
+
+    0.5133    0.5133         0         0         0         0
+
+
+ind1 =
+
+    10
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378    0.8378    0.8377    0.8378    0.8378
+
+  Columns 8 through 13
+
+    0.8378    0.8378    0.8378         0         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135    0.5133    0.5130    0.5133    0.5133
+
+  Columns 8 through 13
+
+    0.5133    0.5133    0.5133         0         0         0
+
+
+ind1 =
+
+    11
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378    0.8378    0.8377    0.8378    0.8378
+
+  Columns 8 through 13
+
+    0.8378    0.8378    0.8378    0.8378         0         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135    0.5133    0.5130    0.5133    0.5133
+
+  Columns 8 through 13
+
+    0.5133    0.5133    0.5133    0.5133         0         0
+
+
+ind1 =
+
+    12
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378    0.8378    0.8377    0.8378    0.8378
+
+  Columns 8 through 13
+
+    0.8378    0.8378    0.8378    0.8378    0.8378         0
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135    0.5133    0.5130    0.5133    0.5133
+
+  Columns 8 through 13
+
+    0.5133    0.5133    0.5133    0.5133    0.5133         0
+
+
+ind1 =
+
+    13
+
+
+result_beta =
+
+  Columns 1 through 7
+
+    0.8394    0.8313    0.8378    0.8378    0.8377    0.8378    0.8378
+
+  Columns 8 through 13
+
+    0.8378    0.8378    0.8378    0.8378    0.8378    0.8378
+
+
+result_betaWEEK =
+
+  Columns 1 through 7
+
+    0.5182    0.4938    0.5135    0.5133    0.5130    0.5133    0.5133
+
+  Columns 8 through 13
+
+    0.5133    0.5133    0.5133    0.5133    0.5133    0.5133
+
+>> >> >> Elapsed time is 16683.162749 seconds.
+>> 

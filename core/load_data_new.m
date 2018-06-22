@@ -36,8 +36,8 @@ ttln_mix=100; % testing data is 100 mixture samples per combination
 
 %% loading data
 % loading non-mixture data for training
-nmdb1=['db449_6classq16&0.05n2_positive_M2_snr', num2str(SNR) ,'.mat']; % positive
-nmdb2=['db449_6classq16&0.05n2_negative_M2_snr', num2str(SNR) ,'.mat']; % negative
+nmdb1=['norm_db449_6classq16&0.05n2_positive_M2_snr', num2str(SNR) ,'.mat']; % positive
+nmdb2=['norm_db449_6classq16&0.05n2_negative_M2_snr', num2str(SNR) ,'.mat']; % negative
 load(nmdb1)
 load(nmdb2)
 % concatenate the positve and negative parts

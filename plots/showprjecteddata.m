@@ -5,10 +5,10 @@ clc
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 
-
-fln = 8; % feature length
+plottesting =0; % if plottesing == 1, the plot teing samples
+SNR = 0; % SNR could be 2000,20, 0, -5, -10, -20, -30
+fln = 1; % feature length
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3
-SNR = 2000;
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
     pctrl.equal = 1;
@@ -17,9 +17,8 @@ else
 end
 % load ('FDDLOW_k100_lmbd0.0001_mu0.001_Q16.mat')
 % load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
-% load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta0.001.mat')
-load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta10000.mat')
-% load('SNR-30FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
+load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
+% load('SNR0FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
 
 if exist('Dict')==1
     Dict_mix = Dict; % if loading FDDL
@@ -39,8 +38,9 @@ end
 % the equal power mixture, 400 samples per combination
 [Database]=load_data_new(mixture_n, SNR, pctrl);
 C = max(Database.tr_label); % how many classes
-
-% Z = sparsecoding_mix_cv(Dict_mix, Database, opts);
+if plottesting == 1
+ Z = sparsecoding_mix_cv(Dict_mix, Database, opts);
+end
 
 
 %% calculate fisher/orghogonal term value
@@ -94,7 +94,12 @@ PCA =Vq'*X0;
 symbolpool = {'*', 'o', 'h', 's', 'd', '^', 'p'};
 c = combnk(1:C,mixture_n);
 nn = size(Z,2)/size(c,1)/mixture_n; % how many samples per combo
-for jj = 1:1%size(c,1)
+if plottesting == 1
+    jjmax = size(c,1);
+else
+    jjmax = 1;
+end
+for jj = 1:jjmax
     figure
     plot3(PCA(1,1:cnt),PCA(2,1:cnt),PCA(3,1:cnt), symbolpool{1})
     grid on
@@ -103,13 +108,15 @@ for jj = 1:1%size(c,1)
     for ii = 2:C        
         plot3(PCA(1,1+(ii-1)*cnt:ii*cnt),PCA(2,1+(ii-1)*cnt:ii*cnt),PCA(3,1+(ii-1)*cnt:ii*cnt),symbolpool{ii})       
     end    
-%     % plot the testing data
-%     temp = aoos(Z(:,1+ nn*(jj-1):nn*jj), fln, nn);
-%     X = Vq'*W'*temp;    
-%     plot3(X(1,1:end),X(2,1:end),X(3,1:end),'x')
+    % plot the testing data
+    if plottesting == 1
+        temp = aoos(Z(:,1+ nn*(jj-1):nn*jj), fln, nn);
+        X = Vq'*W'*temp;    
+        plot3(X(1,1:end),X(2,1:end),X(3,1:end),'x')
+    end
     legend ('ble -1','bt -2','fhss1 -3','fhss2 -4','wifi1 -5','wifi2 -6', num2str(c(jj,:)))    
-%     % savefig(h,[num2str(c(jj,:)),'.fig'])    
-set(gcf,'color','w');
+    % savefig(h,[num2str(c(jj,:)),'.fig'])    
+    set(gcf,'color','w');
 end
 % close all
 %}

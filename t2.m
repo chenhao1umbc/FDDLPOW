@@ -9,11 +9,11 @@ addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 
 % do traing or do crossvalidation
-do_training = 1;
-do_result = 0;
+do_training = 0;
+do_result = 1;
 cv = 1; % validation or testing
 
-for uuu = [20, 0, -5, -10, -20]
+for uuu = 2000%[20, 0, -5, -10, -20, -30]
 % load data
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3
 SNR = uuu; %SNR 2000, 20, 0, -5, -10, -20, -30
@@ -58,7 +58,7 @@ end
 %% testing/cv part
 if do_result ==1      
     run doresult
-    save(['SNR', num2str(SNR),'tb2_results'],'result_nu','result_nuWEEK','sparsity_nu','tr_sparsity_nu')
+%     save(['SNR', num2str(SNR),'tb2_results'],'result_nu','result_nuWEEK','sparsity_nu','tr_sparsity_nu')
 end
 
 

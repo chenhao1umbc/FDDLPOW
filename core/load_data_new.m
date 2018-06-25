@@ -89,6 +89,7 @@ if N_c ==1
 else
     run ldd4_q16005n2
 end
+database.SNR = SNR;
 database.N_c = N_c; % how many classes of signals mixed
 database.featln=featln;
 database.tr_data=tr_dat;

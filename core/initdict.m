@@ -27,16 +27,16 @@ if fileexistance==2
     Z=Dict_mix.Z;
     W=Dict_mix.W;
     [H1, ~, H3] = getMH1H2H3(trlabels, Z);
-    delta = 0.2; 
+    delta = 1; 
     U = Dict_mix.U;   
-%     opt.max_iter=80;% because of good initialization
+    opt.max_iter=80;% because of good initialization
     Loss=zeros(3,opt.max_iter); 
 else    
     D=randn(M_d,opt.K);
     Z=randn(opt.K,N);
     W=randn(opt.K,opt.Q);
     [H1, ~, H3] = getMH1H2H3(trlabels, Z);
-    delta = 0.2;
+    delta = 1;
     U = mix_updateU(W, Z*H3);
     Loss=zeros(3,opt.max_iter);
 end 

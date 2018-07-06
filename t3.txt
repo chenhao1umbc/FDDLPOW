@@ -11,3057 +11,882 @@ For product information, visit www.mathworks.com.
 >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> 
 sparsity =
 
-    0.9999
+    0.3593
 
-one iter time: 46.0803 
 
-sparsity =
-
-    0.9996
-
-one iter time: 45.4738 
-
-sparsity =
-
-    0.9980
-
-one iter time: 44.3963 
-
-sparsity =
-
-    0.9966
-
-one iter time: 40.0863 
-
-sparsity =
-
-    0.9951
-
-one iter time: 46.8217 
-
-sparsity =
-
-    0.9937
-
-one iter time: 45.8069 
-
-sparsity =
-
-    0.9922
-
-one iter time: 41.7686 
-
-sparsity =
-
-    0.9907
-
-one iter time: 44.8361 
-
-sparsity =
-
-    0.9893
-
-one iter time: 42.6182 
-
-sparsity =
-
-    0.9878
-
-one iter time: 41.0101 
-
-sparsity =
-
-    0.9863
-
-one iter time: 38.1765 
-
-sparsity =
-
-    0.9849
-
-one iter time: 45.3817 
-
-sparsity =
-
-    0.9834
-
-one iter time: 40.4820 
-
-sparsity =
-
-    0.9819
-
-one iter time: 43.5385 
-
-sparsity =
-
-    0.9805
-
-one iter time: 43.0436 
-
-sparsity =
-
-    0.9791
-
-one iter time: 41.1391 
-
-sparsity =
-
-    0.9777
-
-one iter time: 45.5968 
-
-sparsity =
-
-    0.9763
-
-one iter time: 45.0228 
-
-sparsity =
-
-    0.9748
-
-one iter time: 43.0099 
-
-sparsity =
-
-    0.9735
-
-one iter time: 45.5117 
-
-sparsity =
-
-    0.9720
-
-one iter time: 46.0387 
-
-sparsity =
-
-    0.9706
-
-one iter time: 42.6262 
-
-sparsity =
-
-    0.9692
-
-one iter time: 44.1324 
-
-sparsity =
-
-    0.9678
-
-one iter time: 41.3953 
-
-sparsity =
-
-    0.9664
-
-one iter time: 45.5326 
-
-sparsity =
-
-    0.9650
-
-one iter time: 38.6254 
-
-sparsity =
-
-    0.9636
-
-one iter time: 44.0721 
-
-sparsity =
-
-    0.9621
-
-one iter time: 41.7279 
-
-sparsity =
-
-    0.9607
-
-one iter time: 38.9628 
-
-sparsity =
-
-    0.9594
-
-30 iters too sparse or non-sparse
-one iter time: 47.3428 
-
-sparsity =
-
-    0.9580
-
-one iter time: 45.7054 
-
-sparsity =
-
-    0.9566
-
-one iter time: 40.7562 
-
-sparsity =
-
-    0.9552
-
-one iter time: 45.5294 
-
-sparsity =
-
-    0.9537
-
-one iter time: 41.1984 
-
-sparsity =
-
-    0.9523
-
-one iter time: 43.4894 
-
-sparsity =
-
-    0.9509
-
-one iter time: 46.8786 
-
-sparsity =
-
-    0.9495
-
-one iter time: 42.0776 
-
-sparsity =
-
-    0.9481
-
-one iter time: 43.7755 
-
-sparsity =
-
-    0.9468
-
-one iter time: 42.7088 
-
-sparsity =
-
-    0.9454
-
-one iter time: 46.2602 
-
-sparsity =
-
-    0.9439
-
-one iter time: 42.9526 
-
-sparsity =
-
-    0.9426
-
-one iter time: 41.3280 
-
-sparsity =
-
-    0.9412
-
-one iter time: 40.5780 
-
-sparsity =
-
-    0.9398
-
-one iter time: 43.6086 
-
-sparsity =
-
-    0.9384
-
-one iter time: 42.1245 
-
-sparsity =
-
-    0.9370
-
-one iter time: 42.3503 
-
-sparsity =
-
-    0.9357
-
-one iter time: 41.4559 
-
-sparsity =
-
-    0.9343
-
-one iter time: 41.1916 
-
-sparsity =
-
-    0.9329
-
-one iter time: 43.9606 
-
-sparsity =
-
-    0.9315
-
-one iter time: 40.9667 
-
-sparsity =
-
-    0.9301
-
-one iter time: 39.6838 
-
-sparsity =
-
-    0.9287
-
-one iter time: 43.9161 
-
-sparsity =
-
-    0.9273
-
-one iter time: 40.2184 
-
-sparsity =
-
-    0.9260
-
-one iter time: 44.3150 
-
-sparsity =
-
-    0.9246
-
-one iter time: 44.3800 
-
-sparsity =
-
-    0.9233
-
-one iter time: 44.2200 
-
-sparsity =
-
-    0.9219
-
-one iter time: 45.8507 
-
-sparsity =
-
-    0.9205
-
-one iter time: 45.2257 
-
-sparsity =
-
-    0.9192
-
-one iter time: 43.9731 
-
-sparsity =
-
-    0.9178
-
-one iter time: 41.9207 
-
-sparsity =
-
-    0.9165
-
-one iter time: 44.3527 
-
-sparsity =
-
-    0.9153
-
-one iter time: 44.2640 
-
-sparsity =
-
-    0.9139
-
-one iter time: 45.4374 
-
-sparsity =
-
-    0.9126
-
-one iter time: 44.2265 
-
-sparsity =
-
-    0.9113
-
-one iter time: 43.6824 
-
-sparsity =
-
-    0.9100
-
-one iter time: 41.0474 
-
-sparsity =
-
-    0.9086
-
-one iter time: 43.6398 
-
-sparsity =
-
-    0.9074
-
-one iter time: 43.2152 
-
-sparsity =
-
-    0.9061
-
-one iter time: 46.2604 
-
-sparsity =
-
-    0.9049
-
-one iter time: 43.1517 
-
-sparsity =
-
-    0.9036
-
-one iter time: 44.9104 
-
-sparsity =
-
-    0.9023
-
-one iter time: 46.0003 
-
-sparsity =
-
-    0.9010
-
-one iter time: 44.8440 
-
-sparsity =
-
-    0.8998
-
-one iter time: 47.5952 
-
-sparsity =
-
-    0.8985
-
-one iter time: 44.6841 
-
-sparsity =
-
-    0.8973
-
-one iter time: 45.4385 
-
-sparsity =
-
-    0.8960
-
-one iter time: 42.7806 
-
-sparsity =
-
-    0.8948
-
-one iter time: 44.8970 
-
-sparsity =
-
-    0.8935
-
-one iter time: 43.4505 
-
-sparsity =
-
-    0.8923
-
-one iter time: 45.9441 
-
-sparsity =
-
-    0.8911
-
-one iter time: 43.9324 
-
-sparsity =
-
-    0.8899
-
-one iter time: 43.9733 
-
-sparsity =
-
-    0.8888
-
-one iter time: 41.0211 
-
-sparsity =
-
-    0.8876
-
-one iter time: 42.4439 
-
-sparsity =
-
-    0.8864
-
-one iter time: 42.5529 
-
-sparsity =
-
-    0.8853
-
-one iter time: 43.3849 
-
-sparsity =
-
-    0.8841
-
-one iter time: 40.8851 
-
-sparsity =
-
-    0.8829
-
-one iter time: 40.5303 
-
-sparsity =
-
-    0.8818
-
-one iter time: 44.0498 
-
-sparsity =
-
-    0.8806
-
-one iter time: 44.6515 
-
-sparsity =
-
-    0.8795
-
-one iter time: 42.1912 
-
-sparsity =
-
-    0.8783
-
-one iter time: 45.3180 
-
-sparsity =
-
-    0.8771
-
-one iter time: 41.5891 
-
-sparsity =
-
-    0.8760
-
-one iter time: 42.5978 
-
-sparsity =
-
-    0.8749
-
-one iter time: 44.7554 
-
-sparsity =
-
-    0.8738
-
-one iter time: 38.1048 
-
-sparsity =
-
-    0.8727
-
-one iter time: 39.2015 
-
-sparsity =
-
-    0.8717
-
-one iter time: 41.5856 
-
-sparsity =
-
-    0.8705
-
-one iter time: 41.9932 
-
-sparsity =
-
-    0.8694
-
-one iter time: 44.1219 
-
-sparsity =
-
-    1.0000
-
-one iter time: 44.6071 
-
-sparsity =
-
-    0.9997
-
-one iter time: 37.8076 
-
-sparsity =
-
-    0.9988
-
-one iter time: 43.5366 
-
-sparsity =
-
-    0.9980
-
-one iter time: 39.0067 
-
-sparsity =
-
-    0.9971
-
-one iter time: 39.5603 
-
-sparsity =
-
-    0.9962
-
-one iter time: 42.4231 
-
-sparsity =
-
-    0.9953
-
-one iter time: 39.1261 
-
-sparsity =
-
-    0.9944
-
-one iter time: 41.7959 
-
-sparsity =
-
-    0.9936
-
-one iter time: 43.0218 
-
-sparsity =
-
-    0.9927
-
-one iter time: 40.0974 
-
-sparsity =
-
-    0.9918
-
-one iter time: 44.3516 
-
-sparsity =
-
-    0.9910
-
-one iter time: 40.9473 
-
-sparsity =
-
-    0.9900
-
-one iter time: 43.3457 
-
-sparsity =
-
-    0.9891
-
-one iter time: 45.9962 
-
-sparsity =
-
-    0.9882
-
-one iter time: 43.1426 
-
-sparsity =
-
-    0.9874
-
-one iter time: 39.9039 
-
-sparsity =
-
-    0.9865
-
-one iter time: 41.7471 
-
-sparsity =
-
-    0.9856
-
-one iter time: 43.1738 
-
-sparsity =
-
-    0.9848
-
-one iter time: 45.5103 
-
-sparsity =
-
-    0.9839
-
-one iter time: 41.2170 
-
-sparsity =
-
-    0.9831
-
-one iter time: 42.5741 
-
-sparsity =
-
-    0.9822
-
-one iter time: 42.5859 
-
-sparsity =
-
-    0.9814
-
-one iter time: 41.2574 
-
-sparsity =
-
-    0.9805
-
-one iter time: 45.6351 
-
-sparsity =
-
-    0.9796
-
-one iter time: 46.0514 
-
-sparsity =
-
-    0.9788
-
-one iter time: 45.1228 
-
-sparsity =
-
-    0.9780
-
-one iter time: 44.6224 
-
-sparsity =
-
-    0.9771
-
-one iter time: 43.6883 
-
-sparsity =
-
-    0.9762
-
-one iter time: 39.8706 
-
-sparsity =
-
-    0.9754
-
-30 iters too sparse or non-sparse
-one iter time: 44.7400 
-
-sparsity =
-
-    0.9745
-
-one iter time: 40.5891 
-
-sparsity =
-
-    0.9736
-
-one iter time: 46.1268 
-
-sparsity =
-
-    0.9728
-
-one iter time: 43.4542 
-
-sparsity =
-
-    0.9719
-
-one iter time: 44.9389 
-
-sparsity =
-
-    0.9711
-
-one iter time: 43.7173 
-
-sparsity =
-
-    0.9702
-
-one iter time: 41.3764 
-
-sparsity =
-
-    0.9694
-
-one iter time: 41.0824 
-
-sparsity =
-
-    0.9686
-
-one iter time: 41.2475 
-
-sparsity =
-
-    0.9677
-
-one iter time: 41.9467 
-
-sparsity =
-
-    0.9669
-
-one iter time: 40.9380 
-
-sparsity =
-
-    0.9660
-
-one iter time: 44.3500 
-
-sparsity =
-
-    0.9652
-
-one iter time: 39.1956 
-
-sparsity =
-
-    0.9643
-
-one iter time: 47.0221 
-
-sparsity =
-
-    0.9635
-
-one iter time: 42.9345 
-
-sparsity =
-
-    0.9626
-
-one iter time: 39.7416 
-
-sparsity =
-
-    0.9618
-
-one iter time: 36.8516 
-
-sparsity =
-
-    0.9609
-
-one iter time: 43.0882 
-
-sparsity =
-
-    0.9601
-
-one iter time: 41.0753 
-
-sparsity =
-
-    0.9593
-
-one iter time: 39.6777 
-
-sparsity =
-
-    0.9584
-
-one iter time: 44.1467 
-
-sparsity =
-
-    0.9576
-
-one iter time: 44.0786 
-
-sparsity =
-
-    0.9567
-
-one iter time: 42.1129 
-
-sparsity =
-
-    0.9559
-
-one iter time: 41.2737 
-
-sparsity =
-
-    0.9551
-
-one iter time: 41.9246 
-
-sparsity =
-
-    0.9542
-
-one iter time: 39.7804 
-
-sparsity =
-
-    0.9534
-
-one iter time: 41.1957 
-
-sparsity =
-
-    0.9525
-
-one iter time: 39.0900 
-
-sparsity =
-
-    0.9517
-
-one iter time: 46.9529 
-
-sparsity =
-
-    0.9509
-
-one iter time: 40.1876 
-
-sparsity =
-
-    0.9500
-
-one iter time: 44.7348 
-
-sparsity =
-
-    0.9492
-
-one iter time: 41.1224 
-
-sparsity =
-
-    0.9484
-
-one iter time: 42.0362 
-
-sparsity =
-
-    0.9476
-
-one iter time: 40.5681 
-
-sparsity =
-
-    0.9468
-
-one iter time: 44.5050 
-
-sparsity =
-
-    0.9459
-
-one iter time: 38.1926 
-
-sparsity =
-
-    0.9451
-
-one iter time: 38.3459 
-
-sparsity =
-
-    0.9443
-
-one iter time: 41.3433 
-
-sparsity =
-
-    0.9435
-
-one iter time: 42.3665 
-
-sparsity =
-
-    0.9426
-
-one iter time: 40.2142 
-
-sparsity =
-
-    0.9418
-
-one iter time: 42.2369 
-
-sparsity =
-
-    0.9409
-
-one iter time: 40.2852 
-
-sparsity =
-
-    0.9401
-
-one iter time: 40.5319 
-
-sparsity =
-
-    0.9393
-
-one iter time: 41.5405 
-
-sparsity =
-
-    0.9384
-
-one iter time: 42.3770 
-
-sparsity =
-
-    0.9376
-
-one iter time: 40.4033 
-
-sparsity =
-
-    0.9367
-
-one iter time: 39.1299 
-
-sparsity =
-
-    0.9359
-
-one iter time: 42.5985 
-
-sparsity =
-
-    0.9351
-
-one iter time: 42.8125 
-
-sparsity =
-
-    0.9343
-
-one iter time: 41.3527 
-
-sparsity =
-
-    0.9335
-
-one iter time: 42.7827 
-
-sparsity =
-
-    0.9327
-
-one iter time: 44.4233 
-
-sparsity =
-
-    0.9318
-
-one iter time: 43.7325 
-
-sparsity =
-
-    0.9311
-
-one iter time: 40.9310 
-
-sparsity =
-
-    0.9302
-
-one iter time: 42.1096 
-
-sparsity =
-
-    0.9294
-
-one iter time: 41.5491 
-
-sparsity =
-
-    0.9286
-
-one iter time: 42.2606 
-
-sparsity =
-
-    0.9278
-
-one iter time: 41.3252 
-
-sparsity =
-
-    0.9270
-
-one iter time: 43.6740 
-
-sparsity =
-
-    0.9262
-
-one iter time: 37.8165 
-
-sparsity =
-
-    0.9254
-
-one iter time: 38.0220 
-
-sparsity =
-
-    0.9245
-
-one iter time: 40.5288 
-
-sparsity =
-
-    0.9237
-
-one iter time: 38.0348 
-
-sparsity =
-
-    0.9229
-
-one iter time: 37.4570 
-
-sparsity =
-
-    0.9221
-
-one iter time: 40.3771 
-
-sparsity =
-
-    0.9212
-
-one iter time: 39.5033 
-
-sparsity =
-
-    0.9204
-
-one iter time: 44.6258 
-
-sparsity =
-
-    0.9196
-
-one iter time: 44.0192 
-
-sparsity =
-
-    0.9188
-
-one iter time: 42.2235 
-
-sparsity =
-
-    0.9181
-
-one iter time: 44.0845 
-
-sparsity =
-
-    0.9172
-
-one iter time: 40.5142 
-
-sparsity =
-
-    1.0000
-
-one iter time: 45.1867 
-
-sparsity =
-
-    0.9999
-
-one iter time: 43.5942 
-
-sparsity =
-
-    0.9994
-
-one iter time: 40.8094 
-
-sparsity =
-
-    0.9990
-
-one iter time: 40.5852 
-
-sparsity =
-
-    0.9985
-
-one iter time: 43.3362 
-
-sparsity =
-
-    0.9980
-
-one iter time: 41.8932 
-
-sparsity =
-
-    0.9976
-
-one iter time: 44.2253 
-
-sparsity =
-
-    0.9971
-
-one iter time: 39.2115 
-
-sparsity =
-
-    0.9967
-
-one iter time: 40.6663 
-
-sparsity =
-
-    0.9962
-
-one iter time: 40.6156 
-
-sparsity =
-
-    0.9958
-
-one iter time: 42.9345 
-
-sparsity =
-
-    0.9953
-
-one iter time: 41.6994 
-
-sparsity =
-
-    0.9949
-
-one iter time: 42.8047 
-
-sparsity =
-
-    0.9945
-
-one iter time: 41.4208 
-
-sparsity =
-
-    0.9940
-
-one iter time: 43.9409 
-
-sparsity =
-
-    0.9936
-
-one iter time: 42.4991 
-
-sparsity =
-
-    0.9931
-
-one iter time: 43.7210 
-
-sparsity =
-
-    0.9927
-
-one iter time: 45.2089 
-
-sparsity =
-
-    0.9922
-
-one iter time: 46.0838 
-
-sparsity =
-
-    0.9918
-
-one iter time: 44.8241 
-
-sparsity =
-
-    0.9913
-
-one iter time: 41.5049 
-
-sparsity =
-
-    0.9909
-
-one iter time: 44.2827 
-
-sparsity =
-
-    0.9905
-
-one iter time: 42.5216 
-
-sparsity =
-
-    0.9900
-
-one iter time: 42.3588 
-
-sparsity =
-
-    0.9896
-
-one iter time: 42.5120 
-
-sparsity =
-
-    0.9892
-
-one iter time: 45.8857 
-
-sparsity =
-
-    0.9887
-
-one iter time: 43.0849 
-
-sparsity =
-
-    0.9883
-
-one iter time: 40.9641 
-
-sparsity =
-
-    0.9878
-
-one iter time: 42.8945 
-
-sparsity =
-
-    0.9874
-
-30 iters too sparse or non-sparse
-one iter time: 42.4656 
-
-sparsity =
-
-    0.9869
-
-one iter time: 38.4548 
-
-sparsity =
-
-    0.9865
-
-one iter time: 40.9633 
-
-sparsity =
-
-    0.9861
-
-one iter time: 41.5054 
-
-sparsity =
-
-    0.9856
-
-one iter time: 41.8942 
-
-sparsity =
-
-    0.9852
-
-one iter time: 46.3317 
-
-sparsity =
-
-    0.9847
-
-one iter time: 41.4929 
-
-sparsity =
-
-    0.9843
-
-one iter time: 55.1417 
-
-sparsity =
-
-    0.9839
-
-one iter time: 56.6747 
-
-sparsity =
-
-    0.9835
-
-one iter time: 54.8783 
-
-sparsity =
-
-    0.9830
-
-one iter time: 55.4745 
-
-sparsity =
-
-    0.9826
-
-one iter time: 54.8532 
-
-sparsity =
-
-    0.9821
-
-one iter time: 55.0196 
-
-sparsity =
-
-    0.9817
-
-one iter time: 54.5943 
-
-sparsity =
-
-    0.9812
-
-one iter time: 55.2264 
-
-sparsity =
-
-    0.9808
-
-one iter time: 54.8482 
-
-sparsity =
-
-    0.9803
-
-one iter time: 54.4902 
-
-sparsity =
-
-    0.9799
-
-one iter time: 55.2333 
-
-sparsity =
-
-    0.9795
-
-one iter time: 46.4227 
-
-sparsity =
-
-    0.9790
-
-one iter time: 42.2128 
-
-sparsity =
-
-    0.9786
-
-one iter time: 39.6024 
-
-sparsity =
-
-    0.9782
-
-one iter time: 42.6818 
-
-sparsity =
-
-    0.9778
-
-one iter time: 42.1433 
-
-sparsity =
-
-    0.9774
-
-one iter time: 38.2202 
-
-sparsity =
-
-    0.9769
-
-one iter time: 42.9352 
-
-sparsity =
-
-    0.9765
-
-one iter time: 42.8188 
-
-sparsity =
-
-    0.9760
-
-one iter time: 46.4491 
-
-sparsity =
-
-    0.9756
-
-one iter time: 44.1605 
-
-sparsity =
-
-    0.9751
-
-one iter time: 41.6512 
-
-sparsity =
-
-    0.9747
-
-one iter time: 43.6782 
-
-sparsity =
-
-    0.9743
-
-one iter time: 42.6608 
-
-sparsity =
-
-    0.9739
-
-one iter time: 45.4414 
-
-sparsity =
-
-    0.9735
-
-one iter time: 47.2892 
-
-sparsity =
-
-    0.9731
-
-one iter time: 40.5606 
-
-sparsity =
-
-    0.9726
-
-one iter time: 48.2024 
-
-sparsity =
-
-    0.9722
-
-one iter time: 47.6913 
-
-sparsity =
-
-    0.9718
-
-one iter time: 49.8139 
-
-sparsity =
-
-    0.9713
-
-one iter time: 54.1860 
-
-sparsity =
-
-    0.9709
-
-one iter time: 53.9747 
-
-sparsity =
-
-    0.9705
-
-one iter time: 53.4688 
-
-sparsity =
-
-    0.9701
-
-one iter time: 53.3554 
-
-sparsity =
-
-    0.9696
-
-one iter time: 53.4549 
-
-sparsity =
-
-    0.9692
-
-one iter time: 54.6389 
-
-sparsity =
-
-    0.9688
-
-one iter time: 53.5907 
-
-sparsity =
-
-    0.9683
-
-one iter time: 53.9157 
-
-sparsity =
-
-    0.9679
-
-one iter time: 53.6903 
-
-sparsity =
-
-    0.9675
-
-one iter time: 54.2544 
-
-sparsity =
-
-    0.9671
-
-one iter time: 54.0171 
-
-sparsity =
-
-    0.9666
-
-one iter time: 54.3192 
-
-sparsity =
-
-    0.9662
-
-one iter time: 54.0598 
-
-sparsity =
-
-    0.9658
-
-one iter time: 54.7970 
-
-sparsity =
-
-    0.9654
-
-one iter time: 53.6187 
-
-sparsity =
-
-    0.9649
-
-one iter time: 53.9093 
-
-sparsity =
-
-    0.9644
-
-one iter time: 54.5537 
-
-sparsity =
-
-    0.9640
-
-one iter time: 54.1922 
-
-sparsity =
-
-    0.9636
-
-one iter time: 54.8914 
-
-sparsity =
-
-    0.9632
-
-one iter time: 54.0419 
-
-sparsity =
-
-    0.9627
-
-one iter time: 54.1588 
-
-sparsity =
-
-    0.9623
-
-one iter time: 54.0723 
-
-sparsity =
-
-    0.9618
-
-one iter time: 54.1312 
-
-sparsity =
-
-    0.9614
-
-one iter time: 54.4785 
-
-sparsity =
-
-    0.9610
-
-one iter time: 54.3062 
-
-sparsity =
-
-    0.9606
-
-one iter time: 53.9103 
-
-sparsity =
-
-    0.9602
-
-one iter time: 54.2911 
-
-sparsity =
-
-    0.9597
-
-one iter time: 54.3129 
-
-sparsity =
-
-    0.9593
-
-one iter time: 54.2334 
-
-sparsity =
-
-    0.9589
-
-one iter time: 54.3690 
-
-sparsity =
-
-    0.9584
-
-one iter time: 53.9247 
-
-sparsity =
-
-    0.9580
-
-one iter time: 54.1577 
-
-sparsity =
-
-    0.9576
-
-one iter time: 53.9182 
-
-sparsity =
-
-    0.9572
-
-one iter time: 54.2424 
-
-sparsity =
-
-    1.0000
-
-one iter time: 54.0760 
-
-sparsity =
-
-    1.0000
-
-one iter time: 52.8593 
-
-sparsity =
-
-    0.9999
-
-one iter time: 53.7338 
-
-sparsity =
-
-    0.9998
-
-one iter time: 53.4356 
-
-sparsity =
-
-    0.9997
-
-one iter time: 53.1506 
-
-sparsity =
-
-    0.9996
-
-one iter time: 53.5405 
-
-sparsity =
-
-    0.9995
-
-one iter time: 53.7949 
-
-sparsity =
-
-    0.9995
-
-one iter time: 53.7654 
-
-sparsity =
-
-    0.9994
-
-one iter time: 53.4642 
-
-sparsity =
-
-    0.9993
-
-one iter time: 53.3377 
-
-sparsity =
-
-    0.9992
-
-one iter time: 53.8055 
-
-sparsity =
-
-    0.9991
-
-one iter time: 53.8422 
-
-sparsity =
-
-    0.9990
-
-one iter time: 53.6677 
-
-sparsity =
-
-    0.9990
-
-one iter time: 54.2356 
-
-sparsity =
-
-    0.9989
-
-one iter time: 53.5217 
-
-sparsity =
-
-    0.9988
-
-one iter time: 53.4807 
-
-sparsity =
-
-    0.9987
-
-one iter time: 53.9644 
-
-sparsity =
-
-    0.9986
-
-one iter time: 53.2741 
-
-sparsity =
-
-    0.9985
-
-one iter time: 53.4917 
-
-sparsity =
-
-    0.9985
-
-one iter time: 53.0176 
-
-sparsity =
-
-    0.9984
-
-one iter time: 53.4871 
-
-sparsity =
-
-    0.9983
-
-one iter time: 53.7232 
-
-sparsity =
-
-    0.9982
-
-one iter time: 53.6209 
-
-sparsity =
-
-    0.9981
-
-one iter time: 53.3011 
-
-sparsity =
-
-    0.9981
-
-one iter time: 53.8108 
-
-sparsity =
-
-    0.9980
-
-one iter time: 53.8868 
-
-sparsity =
-
-    0.9979
-
-one iter time: 53.7663 
-
-sparsity =
-
-    0.9978
-
-one iter time: 52.1334 
-
-sparsity =
-
-    0.9977
-
-one iter time: 43.3823 
-
-sparsity =
-
-    0.9976
-
-30 iters too sparse or non-sparse
-one iter time: 44.7527 
-
-sparsity =
-
-    0.9975
-
-one iter time: 43.2134 
-
-sparsity =
-
-    0.9974
-
-one iter time: 42.7733 
-
-sparsity =
-
-    0.9973
-
-one iter time: 42.0086 
-
-sparsity =
-
-    0.9973
-
-one iter time: 40.8724 
-
-sparsity =
-
-    0.9972
-
-one iter time: 45.6460 
-
-sparsity =
-
-    0.9971
-
-one iter time: 45.0587 
-
-sparsity =
-
-    0.9970
-
-one iter time: 43.9274 
-
-sparsity =
-
-    0.9969
-
-one iter time: 42.8497 
-
-sparsity =
-
-    0.9968
-
-one iter time: 43.1570 
-
-sparsity =
-
-    0.9967
-
-one iter time: 43.7704 
-
-sparsity =
-
-    0.9966
-
-one iter time: 41.5167 
-
-sparsity =
-
-    0.9965
-
-one iter time: 44.6265 
-
-sparsity =
+delta =
 
-    0.9964
+    0.1681
 
-one iter time: 40.1872 
+one iter time: 271.5327 
 
 sparsity =
 
-    0.9963
+    0.3676
 
-one iter time: 40.2330 
 
-sparsity =
+delta =
 
-    0.9962
+    0.1628
 
-one iter time: 46.1877 
+one iter time: 265.8722 
 
 sparsity =
 
-    0.9962
+    0.3717
 
-one iter time: 42.1246 
 
-sparsity =
+delta =
 
-    0.9961
+    0.1603
 
-one iter time: 44.9016 
+one iter time: 260.5085 
 
 sparsity =
 
-    0.9960
+    0.3747
 
-one iter time: 46.2948 
 
-sparsity =
+delta =
 
-    0.9959
+    0.1596
 
-one iter time: 43.3834 
+one iter time: 269.5114 
 
 sparsity =
 
-    0.9958
+    0.3767
 
-one iter time: 42.9248 
 
-sparsity =
+delta =
 
-    0.9957
+    0.1593
 
-one iter time: 43.6210 
+one iter time: 269.6685 
 
 sparsity =
 
-    0.9956
+    0.3772
 
-one iter time: 45.7299 
 
-sparsity =
+delta =
 
-    0.9955
+    0.1588
 
-one iter time: 42.6284 
+one iter time: 266.2821 
 
 sparsity =
 
-    0.9954
+    0.3775
 
-one iter time: 41.9185 
 
-sparsity =
+delta =
 
-    0.9953
+    0.1586
 
-one iter time: 41.8510 
+one iter time: 265.9365 
 
 sparsity =
 
-    0.9953
+    0.3873
 
-one iter time: 47.2123 
 
-sparsity =
+delta =
 
-    0.9952
+    0.1584
 
-one iter time: 40.1882 
+one iter time: 46.3379 
 
 sparsity =
 
-    0.9951
+    0.3871
 
-one iter time: 39.9515 
 
-sparsity =
+delta =
 
-    0.9950
+    0.1583
 
-one iter time: 44.1698 
+one iter time: 46.0393 
 
 sparsity =
 
-    0.9949
+    0.3870
 
-one iter time: 42.8538 
 
-sparsity =
+delta =
 
-    0.9948
+    0.1583
 
-one iter time: 44.0759 
+one iter time: 45.9333 
 
 sparsity =
 
-    0.9947
+    0.3869
 
-one iter time: 40.8551 
 
-sparsity =
+delta =
 
-    0.9947
+    0.1583
 
-one iter time: 40.6366 
+one iter time: 45.6534 
 
 sparsity =
 
-    0.9946
+    0.3868
 
-one iter time: 38.2907 
 
-sparsity =
+delta =
 
-    0.9945
+    0.1583
 
-one iter time: 41.6870 
+one iter time: 44.4072 
 
 sparsity =
 
-    0.9944
+    0.3867
 
-one iter time: 41.2453 
 
-sparsity =
+delta =
 
-    0.9943
+    0.1583
 
-one iter time: 42.0907 
+one iter time: 43.9561 
 
 sparsity =
 
-    0.9942
+    0.3866
 
-one iter time: 39.8175 
 
-sparsity =
+delta =
 
-    0.9941
+    0.1583
 
-one iter time: 43.5776 
+one iter time: 45.9333 
 
 sparsity =
 
-    0.9940
+    0.3866
 
-one iter time: 42.1366 
 
-sparsity =
+delta =
 
-    0.9939
+    0.1583
 
-one iter time: 40.5707 
+one iter time: 42.2651 
 
 sparsity =
 
-    0.9938
+    0.3865
 
-one iter time: 39.7043 
 
-sparsity =
+delta =
 
-    0.9938
+    0.1583
 
-one iter time: 41.0534 
+one iter time: 40.3430 
 
 sparsity =
 
-    0.9937
+    0.3865
 
-one iter time: 39.5328 
 
-sparsity =
+delta =
 
-    0.9936
+    0.1583
 
-one iter time: 41.6661 
+one iter time: 43.2000 
 
 sparsity =
 
-    0.9935
+    0.3864
 
-one iter time: 46.8959 
 
-sparsity =
+delta =
 
-    0.9934
+    0.1583
 
-one iter time: 45.1182 
+one iter time: 45.0235 
 
 sparsity =
 
-    0.9933
+    0.3864
 
-one iter time: 44.1923 
 
-sparsity =
+delta =
 
-    0.9932
+    0.1583
 
-one iter time: 41.8083 
+one iter time: 43.7009 
 
 sparsity =
 
-    0.9932
+    0.3863
 
-one iter time: 46.8193 
 
-sparsity =
+delta =
 
-    0.9931
+    0.1583
 
-one iter time: 44.2177 
+one iter time: 41.5907 
 
 sparsity =
 
-    0.9930
+    0.3862
 
-one iter time: 40.8078 
 
-sparsity =
+delta =
 
-    0.9929
+    0.1583
 
-one iter time: 43.1769 
+one iter time: 45.6840 
 
 sparsity =
 
-    0.9928
+    0.3861
 
-one iter time: 42.4219 
 
-sparsity =
+delta =
 
-    0.9927
+    0.1583
 
-one iter time: 44.5748 
+one iter time: 41.6798 
 
 sparsity =
 
-    0.9926
+    0.3861
 
-one iter time: 43.6158 
 
-sparsity =
+delta =
 
-    0.9926
+    0.1583
 
-one iter time: 45.9381 
+one iter time: 45.2536 
 
 sparsity =
 
-    0.9925
+    0.3861
 
-one iter time: 44.8620 
 
-sparsity =
+delta =
 
-    0.9924
+    0.1583
 
-one iter time: 41.3634 
+one iter time: 42.5140 
 
 sparsity =
 
-    0.9923
+    0.3860
 
-one iter time: 42.6199 
 
-sparsity =
+delta =
 
-    0.9922
+    0.1583
 
-one iter time: 44.7512 
+one iter time: 42.3472 
 
 sparsity =
 
-    0.9921
+    0.3859
 
-one iter time: 43.4714 
 
-sparsity =
+delta =
 
-    0.9920
+    0.1583
 
-one iter time: 39.6000 
+one iter time: 44.8991 
 
 sparsity =
 
-    0.9919
+    0.3859
 
-one iter time: 46.3687 
 
-sparsity =
+delta =
 
-    0.9919
+    0.1583
 
-one iter time: 45.5331 
+one iter time: 41.3816 
 
 sparsity =
 
-    0.9918
+    0.3858
 
-one iter time: 44.7891 
 
-sparsity =
+delta =
 
-    0.9917
+    0.1583
 
-one iter time: 42.4068 
+one iter time: 44.1770 
 
 sparsity =
 
-    0.9916
+    0.3858
 
-one iter time: 46.8854 
 
-sparsity =
+delta =
 
-    0.9915
+    0.1583
 
-one iter time: 41.1331 
+one iter time: 38.7790 
 
 sparsity =
 
-    0.9914
+    0.3857
 
-one iter time: 44.4435 
 
-sparsity =
+delta =
 
-    1.0000
+    0.1583
 
-one iter time: 48.2847 
+one iter time: 41.5613 
 
 sparsity =
 
-    1.0000
+    0.3856
 
-one iter time: 46.2304 
 
-sparsity =
+delta =
 
-    1.0000
+    0.1583
 
-one iter time: 42.7631 
+one iter time: 41.7338 
 
 sparsity =
 
-    0.9999
+    0.3856
 
-one iter time: 49.8910 
 
-sparsity =
+delta =
 
-    0.9999
+    0.1583
 
-one iter time: 39.5524 
+one iter time: 42.8194 
 
 sparsity =
 
-    0.9998
+    0.3855
 
-one iter time: 42.2199 
 
-sparsity =
+delta =
 
-    0.9998
+    0.1583
 
-one iter time: 43.1386 
+one iter time: 43.2549 
 
 sparsity =
 
-    0.9997
+    0.3855
 
-one iter time: 41.5694 
 
-sparsity =
+delta =
 
-    0.9997
+    0.1583
 
-one iter time: 41.8536 
+one iter time: 44.8846 
 
 sparsity =
 
-    0.9997
+    0.3854
 
-one iter time: 43.1627 
 
-sparsity =
+delta =
 
-    0.9996
+    0.1583
 
-one iter time: 45.5391 
+one iter time: 42.2057 
 
 sparsity =
 
-    0.9996
+    0.3853
 
-one iter time: 45.1171 
 
-sparsity =
+delta =
 
-    0.9995
+    0.1583
 
-one iter time: 46.5563 
+one iter time: 40.0760 
 
 sparsity =
 
-    0.9995
+    0.3853
 
-one iter time: 42.9116 
 
-sparsity =
+delta =
 
-    0.9995
+    0.1583
 
-one iter time: 46.6846 
+one iter time: 43.5275 
 
 sparsity =
 
-    0.9994
+    0.3852
 
-one iter time: 47.1962 
 
-sparsity =
+delta =
 
-    0.9994
+    0.1583
 
-one iter time: 46.5043 
+one iter time: 43.2251 
 
 sparsity =
 
-    0.9993
+    0.3852
 
-one iter time: 43.7945 
 
-sparsity =
+delta =
 
-    0.9993
+    0.1583
 
-one iter time: 46.9373 
+one iter time: 46.2273 
 
 sparsity =
 
-    0.9992
+    0.3851
 
-one iter time: 43.8671 
 
-sparsity =
+delta =
 
-    0.9992
+    0.1582
 
-one iter time: 40.9691 
+one iter time: 42.3143 
 
 sparsity =
 
-    0.9991
+    0.3850
 
-one iter time: 44.0475 
 
-sparsity =
+delta =
 
-    0.9991
+    0.1582
 
-one iter time: 42.5203 
+one iter time: 42.8508 
 
 sparsity =
 
-    0.9990
+    0.3850
 
-one iter time: 47.3562 
 
-sparsity =
+delta =
 
-    0.9990
+    0.1582
 
-one iter time: 38.8004 
+one iter time: 43.2456 
 
 sparsity =
 
-    0.9990
+    0.3849
 
-one iter time: 38.0889 
 
-sparsity =
+delta =
 
-    0.9989
+    0.1582
 
-one iter time: 40.1426 
+one iter time: 41.9864 
 
 sparsity =
 
-    0.9989
+    0.3848
 
-one iter time: 47.9420 
 
-sparsity =
+delta =
 
-    0.9988
+    0.1582
 
-one iter time: 55.1808 
+one iter time: 44.1956 
 
 sparsity =
 
-    0.9988
+    0.3848
 
-30 iters too sparse or non-sparse
-one iter time: 55.4654 
 
-sparsity =
+delta =
 
-    0.9988
+    0.1582
 
-one iter time: 55.8375 
+one iter time: 41.2217 
 
 sparsity =
 
-    0.9987
+    0.3847
 
-one iter time: 55.5282 
 
-sparsity =
+delta =
 
-    0.9987
+    0.1582
 
-one iter time: 55.3652 
+one iter time: 47.4901 
 
 sparsity =
 
-    0.9986
+    0.3847
 
-one iter time: 55.5205 
 
-sparsity =
+delta =
 
-    0.9986
+    0.1582
 
-one iter time: 55.0715 
+one iter time: 42.5883 
 
 sparsity =
 
-    0.9985
+    0.3846
 
-one iter time: 55.5825 
 
-sparsity =
+delta =
 
-    0.9985
+    0.1582
 
-one iter time: 55.5953 
+one iter time: 43.0549 
 
 sparsity =
 
-    0.9985
+    0.3845
 
-one iter time: 55.6462 
 
-sparsity =
+delta =
 
-    0.9984
+    0.1582
 
-one iter time: 55.9296 
+one iter time: 47.2469 
 
 sparsity =
 
-    0.9984
+    0.3845
 
-one iter time: 55.6440 
 
-sparsity =
+delta =
 
-    0.9983
+    0.1582
 
-one iter time: 55.1582 
+one iter time: 44.9102 
 
 sparsity =
 
-    0.9983
+    0.3844
 
-one iter time: 55.4886 
 
-sparsity =
+delta =
 
-    0.9982
+    0.1582
 
-one iter time: 56.1062 
+one iter time: 38.7474 
 
 sparsity =
 
-    0.9982
+    0.3844
 
-one iter time: 55.3824 
 
-sparsity =
+delta =
 
-    0.9981
+    0.1582
 
-one iter time: 54.9616 
+one iter time: 38.1392 
 
 sparsity =
 
-    0.9981
+    0.3843
 
-one iter time: 54.9415 
 
-sparsity =
+delta =
 
-    0.9980
+    0.1582
 
-one iter time: 55.6400 
+one iter time: 42.3487 
 
 sparsity =
 
-    0.9980
+    0.3843
 
-one iter time: 54.7777 
 
-sparsity =
+delta =
 
-    0.9980
+    0.1582
 
-one iter time: 55.2946 
+one iter time: 43.9241 
 
 sparsity =
 
-    0.9979
+    0.3842
 
-one iter time: 55.2638 
 
-sparsity =
+delta =
 
-    0.9979
+    0.1582
 
-one iter time: 56.2617 
+one iter time: 43.0421 
 
 sparsity =
 
-    0.9978
+    0.3842
 
-one iter time: 55.7301 
 
-sparsity =
+delta =
 
-    0.9978
+    0.1582
 
-one iter time: 56.1602 
+one iter time: 45.4876 
 
 sparsity =
 
-    0.9977
+    0.3841
 
-one iter time: 55.2123 
 
-sparsity =
+delta =
 
-    0.9977
+    0.1582
 
-one iter time: 56.0564 
+one iter time: 44.3463 
 
 sparsity =
 
-    0.9976
+    0.3840
 
-one iter time: 55.9786 
 
-sparsity =
+delta =
 
-    0.9976
+    0.1582
 
-one iter time: 55.5255 
+one iter time: 44.0250 
 
 sparsity =
 
-    0.9975
+    0.3840
 
-one iter time: 55.0763 
 
-sparsity =
+delta =
 
-    0.9975
+    0.1582
 
-one iter time: 54.8387 
+one iter time: 42.8757 
 
 sparsity =
 
-    0.9974
+    0.3840
 
-one iter time: 55.4371 
 
-sparsity =
+delta =
 
-    0.9974
+    0.1582
 
-one iter time: 55.0130 
+one iter time: 44.6292 
 
 sparsity =
 
-    0.9974
+    0.3839
 
-one iter time: 54.9896 
 
-sparsity =
+delta =
 
-    0.9973
+    0.1582
 
-one iter time: 55.4078 
+one iter time: 44.6768 
 
 sparsity =
 
-    0.9973
+    0.3838
 
-one iter time: 55.5331 
 
-sparsity =
+delta =
 
-    0.9972
+    0.1582
 
-one iter time: 55.9156 
+one iter time: 40.5584 
 
 sparsity =
 
-    0.9972
+    0.3838
 
-one iter time: 55.8397 
 
-sparsity =
+delta =
 
-    0.9972
+    0.1582
 
-one iter time: 55.6674 
+one iter time: 41.1077 
 
 sparsity =
 
-    0.9971
+    0.3837
 
-one iter time: 55.8130 
 
-sparsity =
+delta =
 
-    0.9971
+    0.1582
 
-one iter time: 55.9749 
+one iter time: 42.4113 
 
 sparsity =
 
-    0.9970
+    0.3837
 
-one iter time: 55.5182 
 
-sparsity =
+delta =
 
-    0.9970
+    0.1582
 
-one iter time: 55.2291 
+one iter time: 43.2543 
 
 sparsity =
 
-    0.9969
+    0.3836
 
-one iter time: 55.4898 
 
-sparsity =
+delta =
 
-    0.9969
+    0.1582
 
-one iter time: 56.5037 
+one iter time: 43.3369 
 
 sparsity =
 
-    0.9968
+    0.3836
 
-one iter time: 54.5226 
 
-sparsity =
+delta =
 
-    0.9968
+    0.1582
 
-one iter time: 55.6845 
+one iter time: 42.4341 
 
 sparsity =
 
-    0.9967
+    0.3835
 
-one iter time: 55.3159 
 
-sparsity =
+delta =
 
-    0.9967
+    0.1582
 
-one iter time: 55.5565 
+one iter time: 43.8955 
 
 sparsity =
 
-    0.9967
+    0.3835
 
-one iter time: 56.4968 
 
-sparsity =
+delta =
 
-    0.9966
+    0.1582
 
-one iter time: 55.5621 
+one iter time: 43.3146 
 
 sparsity =
 
-    0.9966
+    0.3834
 
-one iter time: 56.3704 
 
-sparsity =
+delta =
 
-    0.9965
+    0.1582
 
-one iter time: 55.6016 
+one iter time: 43.7978 
 
 sparsity =
 
-    0.9965
+    0.3834
 
-one iter time: 56.0505 
 
-sparsity =
+delta =
 
-    0.9964
+    0.1582
 
-one iter time: 54.8088 
+one iter time: 41.5512 
 
 sparsity =
 
-    0.9964
+    0.3833
 
-one iter time: 55.5695 
 
-sparsity =
+delta =
 
-    0.9964
+    0.1582
 
-one iter time: 55.5740 
+one iter time: 42.2912 
 
 sparsity =
 
-    0.9963
+    0.3833
 
-one iter time: 55.1696 
 
-sparsity =
+delta =
 
-    0.9963
+    0.1582
 
-one iter time: 56.4139 
+one iter time: 38.3421 
 
 sparsity =
 
-    0.9962
+    0.3833
 
-one iter time: 55.4662 
 
-sparsity =
+delta =
 
-    0.9962
+    0.1582
 
-one iter time: 55.6026 
+one iter time: 42.0327 
 
 sparsity =
 
-    0.9961
+    0.3832
 
-one iter time: 55.6277 
 
-sparsity =
+delta =
 
-    0.9961
+    0.1582
 
-one iter time: 53.6032 
+one iter time: 45.7669 
 
 sparsity =
 
-    0.9960
+    0.3831
 
-one iter time: 55.8557 
 
-sparsity =
+delta =
 
-    0.9960
+    0.1582
 
-one iter time: 56.0176 
+one iter time: 42.2166 
 
 sparsity =
 
-    0.9959
+    0.3831
 
-one iter time: 55.3202 
 
-sparsity =
+delta =
 
-    0.9959
+    0.1582
 
-one iter time: 55.7459 
+one iter time: 42.4097 
 
 sparsity =
 
-    0.9958
+    0.3831
 
-one iter time: 55.7748 
 
-sparsity =
+delta =
 
-    0.9958
+    0.1582
 
-one iter time: 55.5374 
+one iter time: 39.9444 
 
 sparsity =
 
-    0.9958
+    0.3830
 
-one iter time: 55.6169 
 
-sparsity =
+delta =
 
-    0.9957
+    0.1582
 
-one iter time: 55.7150 
+one iter time: 41.1578 
 
 sparsity =
-
-    0.9957
-
-one iter time: 55.7480 
->> >> >> 
-result_beta =
-
-    0.8378         0         0         0         0
-
-
-result_betaWEEK =
-
-    0.5133         0         0         0         0
-
-
-result_beta =
-
-    0.8378    0.8378         0         0         0
-
-
-result_betaWEEK =
-
-    0.5133    0.5133         0         0         0
-
-
-result_beta =
-
-    0.8378    0.8378    0.8378         0         0
-
-
-result_betaWEEK =
-
-    0.5133    0.5133    0.5133         0         0
-
-
-result_beta =
-
-    0.8378    0.8378    0.8378    0.8378         0
-
-
-result_betaWEEK =
-
-    0.5133    0.5133    0.5133    0.5133         0
-
-
-result_beta =
 
-    0.8378    0.8378    0.8378    0.8378    0.8378
+    0.3830
 
 
-result_betaWEEK =
+delta =
 
-    0.5133    0.5133    0.5133    0.5133    0.5133
+    0.1582
 
->> >> >> >> Elapsed time is 24497.116864 seconds.
+one iter time: 38.9253 
+>> >> >> >> >> >> >> Elapsed time is 5045.898262 seconds.
 >> 

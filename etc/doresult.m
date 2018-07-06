@@ -2,10 +2,12 @@ result_beta = zeros(length(K),length(beta));
 sparsity_beta = zeros(length(K),length(beta));
 tr_sparsity_beta = zeros(length(K),length(beta));
 result_betaWEEK = zeros(length(K),length(beta));
+
 for ind1 = 1: length(beta)
     [opts]=loadoptions(K,lbmd,mu,Q,nu,beta(ind1), SNR);
-    if exist(opts.mixnm, 'file')
-        load(opts.mixnm)                            
+    nm = ['SNR', num2str(SNR), opts.mixnm];
+    if exist(nm, 'file')
+        load(nm)                            
         % run prep_ZF 
         if exist('Dict')==1
             Dict_mix = Dict;

@@ -53,25 +53,26 @@ for ii = 1:opt.max_iter
         Loss(2,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,delta);
     end
     
-    % update U, with D and Z fixed.
-    M = Z*H3;
-    U = mix_updateU(W, M);
-
-    % update Delta
+    % update W
     [~, N]=size(Z);
     M1 = eye(N) - H1;
-    Y = M1*Z'*W;    
-    delta = sum(sum(V.*Y))/norm(V,'fro')^2;       
+    Y = M1*Z'*W; 
+    M = Z*H3;
+    W = mix_updateW(opt, M1, H1, H2, M, delta, U, V, Z);    
+    if opt.losscalc
+        Loss(3,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,delta);
+    end     
+    
+    % update U, with D and Z fixed.    
+    U = mix_updateU(W, M);
 
     % updtae V
     V = mix_updateV(Y, delta);
 
-    % update W
-    W = mix_updateW(opt, M1, H1, H2, M, delta, U, V, Z);    
-    if opt.losscalc
-        Loss(3,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,delta);
-    end    
-    
+    % update Delta   
+    delta = sum(sum(V.*Y))/norm(V,'fro')^2
+   
+
     % show loss function value
     if opt.losscalc
         Dict.Loss = Loss;

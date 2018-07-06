@@ -16,9 +16,10 @@ else
     pctrl.equal = 0;
 end
 % load ('FDDLOW_k100_lmbd0.0001_mu0.001_Q16.mat')
-% load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
-load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
-% load('SNR0FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
+load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
+% load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
+% load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
+% load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta1e-05.mat')
 
 if exist('Dict')==1
     Dict_mix = Dict; % if loading FDDL
@@ -44,7 +45,7 @@ end
 
 
 %% calculate fisher/orghogonal term value
-%{  
+%{  1
 sparsity = mean(sum(Z ~= 0))
 X = Database.tr_data;
 N = size(Z,2);
@@ -65,7 +66,7 @@ if isfield(Dict_mix, 'V')
     cWZDelta = norm(WtZM1' - delta*V, 'fro')^2; % whitening term
     Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ + opts.beta*cWZDelta;
 end
-WtZM1*WtZM1'
+norm(WtZM1*WtZM1','fro')
 
 % sum(abs(Z(:)))
 % opts.lambda1*sum(abs(Z(:)))
@@ -99,6 +100,7 @@ if plottesting == 1
 else
     jjmax = 1;
 end
+axislimits = [-1 1 -1 1 -1 1];
 for jj = 1:jjmax
     figure
     plot3(PCA(1,1:cnt),PCA(2,1:cnt),PCA(3,1:cnt), symbolpool{1})
@@ -108,6 +110,7 @@ for jj = 1:jjmax
     for ii = 2:C        
         plot3(PCA(1,1+(ii-1)*cnt:ii*cnt),PCA(2,1+(ii-1)*cnt:ii*cnt),PCA(3,1+(ii-1)*cnt:ii*cnt),symbolpool{ii})       
     end    
+    axis(axislimits)
     % plot the testing data
     if plottesting == 1
         temp = aoos(Z(:,1+ nn*(jj-1):nn*jj), fln, nn);

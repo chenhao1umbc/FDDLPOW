@@ -10,7 +10,7 @@ addpath(genpath('.././data'))
 
 
 % do traing or do crossvalidation
-do_training = 1;
+do_training = 0;
 do_result = 1;
 cv = 1; % validation or testing
 
@@ -43,8 +43,8 @@ SNR = 2000;
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 nu= 0.01 ;
-beta = 100; % or 0.14
-beta = [3e3 5e3 1e4 5e4 1e5];
+beta = 0; % or 0.14
+beta = [1e-6 1e-5 1e-4 1e-3 1e-2 1e-1 1 10 100];
 
 if do_training ==1
     for ind1 = 1: length(beta)
@@ -60,8 +60,9 @@ end
 %% testing part
 if do_result ==1      
     run doresult
+    save('tb3_results20dbNc3','result_beta','result_betaWEEK','sparsity_beta','tr_sparsity_beta')
 end
 
  
-save('tb3_results20dbNc3','result_beta','result_betaWEEK','sparsity_beta','tr_sparsity_beta')
+
 toc

@@ -5,7 +5,7 @@ function V = mix_updateV(Y_in, delta)
 %         W is the projection, K by Q
 % output is V, the orthogonal constrain
 
-Y = Y_in*delta;
+Y = Y_in/delta;
 [u,~,v] = svd(Y);
 V = u * eye(size(u,1), size(v, 1)) * v';    
 

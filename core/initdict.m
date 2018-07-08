@@ -29,7 +29,7 @@ if fileexistance==2
     [H1, ~, H3] = getMH1H2H3(trlabels, Z);
     delta = 1; 
     U = Dict_mix.U;   
-    opt.max_iter=80;% because of good initialization
+    opt.max_iter = 70;% because of good initialization
     Loss=zeros(3,opt.max_iter); 
 else    
     D=randn(M_d,opt.K);

@@ -1,4 +1,4 @@
-function [D, Z, W, U, V, delta, Loss, opt]=initdict(X,trlabels,opt)
+function [D, Z, W, U, V, Delta, Loss, opt]=initdict(X,trlabels,opt)
 % This fucntio is to initialize Dictionary
 % The input is  X, the training data, a matrix M by N, N data samples
 %             trlabels is the labels of training data, like[1,1,1,1,2,2,3,3,3]             
@@ -27,7 +27,7 @@ if fileexistance==2
     Z=Dict_mix.Z;
     W=Dict_mix.W;
     [H1, ~, H3] = getMH1H2H3(trlabels, Z);
-    delta = 1; 
+    Delta = ones(1, opts.C); 
     U = Dict_mix.U;   
     opt.max_iter=80;% because of good initialization
     Loss=zeros(3,opt.max_iter); 
@@ -36,14 +36,14 @@ else
     Z=randn(opt.K,N);
     W=randn(opt.K,opt.Q);
     [H1, ~, H3] = getMH1H2H3(trlabels, Z);
-    delta = 1;
+    Delta = ones(1, opts.C); 
     U = mix_updateU(W, Z*H3);
     Loss=zeros(3,opt.max_iter);
 end 
     [~, N]=size(Z);
     M1 = eye(N) - H1;
     Y = M1*Z'*W; 
-    V = mix_updateV(Y, delta);
+    V = mix_updateV(Y, Delta);
     
     
 end % end of function file

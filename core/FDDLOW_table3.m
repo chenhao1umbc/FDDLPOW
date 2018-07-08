@@ -15,7 +15,7 @@ function [Dict]=FDDLOW_table3(X,trlabels,opt)
 % The output is Dict, a struct with D,W,Z,X, Loss(the loss function value)
 
 % initialize Dictionary
-[D, Z, W, U, V, delta, Loss, opt] = initdict(X,trlabels,opt); % max_iter will change for existing dictionary
+[D, Z, W, U, V, Delta, Loss, opt] = initdict(X,trlabels,opt); % max_iter will change for existing dictionary
 
 % main loop
 for ii = 1:opt.max_iter   
@@ -28,7 +28,7 @@ for ii = 1:opt.max_iter
     optD.showconverge = false;
     D = DDLMD_updateD(X,optD,D,Z);
     if opt.losscalc
-        Loss(1,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,delta);
+        Loss(1,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,Delta);
     end
         
     % update Z, with D Uand W fixed
@@ -40,7 +40,7 @@ for ii = 1:opt.max_iter
     optZ.showcost= true*optZ.showprogress;
     optZ.max_Ziter = 20; % for Z update
     optZ.Zthreshold = 1e-6;        
-    Z = mix_updateZ(X,trlabels,optZ, W, D, Z, U, V, delta); 
+    Z = mix_updateZ(X,trlabels,optZ, W, D, Z, U, V, Delta); 
     [H1, H2, H3] = getMH1H2H3(trlabels, Z); % get M, H1, and H2 for updating W and U.
     sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
     if 0.3 == ii/opt.max_iter
@@ -50,7 +50,7 @@ for ii = 1:opt.max_iter
         end
     end
     if opt.losscalc
-        Loss(2,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,delta);
+        Loss(2,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,Delta);
     end
     
     % update W
@@ -58,19 +58,19 @@ for ii = 1:opt.max_iter
     M1 = eye(N) - H1;
     Y = M1*Z'*W; 
     M = Z*H3;
-    W = mix_updateW(opt, M1, H1, H2, M, delta, U, V, Z);    
+    W = mix_updateW(opt, M1, H1, H2, M, Delta, U, V, Z);    
     if opt.losscalc
-        Loss(3,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,delta);
+        Loss(3,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,Delta);
     end     
     
     % update U, with D and Z fixed.    
     U = mix_updateU(W, M);
 
     % updtae V
-    V = mix_updateV(Y, delta);
+    V = mix_updateV(Y, Delta);
 
     % update Delta   
-    delta = sum(sum(V.*Y))/norm(V,'fro')^2
+    Delta = sum(sum(V.*Y))/norm(V,'fro')^2
    
 
     % show loss function value
@@ -91,7 +91,7 @@ for ii = 1:opt.max_iter
             Dict.Z = Z;
             Dict.U = U;
             Dict.V = V;
-            Dict.Delta = delta;
+            Dict.Delta = Delta;
             Dict_mix = Dict;
             opts = opt;
             save([opts.mixnm(1:end-4),'_',num2str(ii)],'Dict_mix','opts')
@@ -106,7 +106,7 @@ Dict.W = W;
 Dict.Z = Z;
 Dict.U = U;
 Dict.V = V;
-Dict.Delta = delta;
+Dict.Delta = Delta;
 Dict.iter = ii;
 
 end % end of the file

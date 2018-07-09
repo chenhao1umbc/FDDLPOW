@@ -50,7 +50,7 @@ if do_training ==1
     for ind1 = 1: length(beta)
         [opts]=loadoptions(K,lbmd,mu,Q,nu,beta(ind1), SNR);
         % for table 1 algorithm
-        Dict_mix = FDDLOW_table3(Database.tr_data,Database.tr_label,opts);
+        Dict_mix = FDDLOW_table3(Database.tr_data, opts);
         if Dict_mix.iter > 30
             save(['SNR', num2str(SNR), opts.mixnm],'Dict_mix','opts')
         end

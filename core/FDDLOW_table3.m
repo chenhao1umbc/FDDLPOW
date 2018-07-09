@@ -1,4 +1,4 @@
-function [Dict]=FDDLOW_table3(X,trlabels,opt)
+function [Dict]=FDDLOW_table3(X, opt)
 
 % This fucntion is designed to train the dictionary in table 3, FDDLOW
 %
@@ -25,9 +25,10 @@ M2M2t = M2*M2';
 H3H3t = H3*H3';
 opt.N = N;
 opt.Nc = Nc;
+H_bar_i = M1(1:Nc, 1:Nc);
 
 % initialize Dictionary
-[D, Z, W, U, V, Delta, Loss, opt] = initdict(X, M1, H3, opt); % max_iter will change for existing dictionary
+[D, Z, W, U, V, Delta, Loss, opt] = initdict(X, H_bar_i, H3, opt); % max_iter will change for existing dictionary
 
 % main loop
 for ii = 1:opt.max_iter   
@@ -40,7 +41,7 @@ for ii = 1:opt.max_iter
     optD.showconverge = false;
     D = DDLMD_updateD(X,optD,D,Z);
     if opt.losscalc
-        Loss(1,ii) = Loss_mix(X, H3, M1, M2, opt,W,D,Z,U,V,Delta);
+        Loss(1,ii) = Loss_mix(X, H_bar_i, H3, M1, M2, opt,W,D,Z,U,V,Delta);
     end
         
     % update Z, with D Uand W fixed
@@ -58,7 +59,7 @@ for ii = 1:opt.max_iter
     optZ.showcost= true*optZ.showprogress;
     optZ.max_Ziter = 20; % for Z update
     optZ.Zthreshold = 1e-6;        
-    Z = mix_updateZ(X, H3, optZ, W, D, Z, U, V, Delta); 
+    Z = mix_updateZ(X,H_bar_i, H3, optZ, W, D, Z, U, V, Delta); 
     sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
     if 0.3 == ii/opt.max_iter
         if sparsity > 0.6 || sparsity < 0.1
@@ -67,23 +68,23 @@ for ii = 1:opt.max_iter
         end
     end
     if opt.losscalc
-        Loss(2,ii) = Loss_mix(X, H3, M1, M2, opt,W,D,Z,U,V,Delta);
+        Loss(2,ii) = Loss_mix(X, H_bar_i, H3, M1, M2, opt,W,D,Z,U,V,Delta);
     end
     
     % update W
-    W = mix_updateW(opt, M1, M2, H3, Delta, U, V,  Z);    
+    W = mix_updateW(opt,H_bar_i, M1, M2, H3, Delta, U, V,  Z);    
     if opt.losscalc
-        Loss(3,ii) = Loss_mix(X, H3, M1, M2, opt,W,D,Z,U,V,Delta);
+        Loss(3,ii) = Loss_mix(X, H_bar_i, H3, M1, M2, opt,W,D,Z,U,V,Delta);
     end     
     
     % update U, with D and Z fixed.    
     U = mix_updateU(W, Z, H3);
 
     % updtae V
-    V = mix_updateV(M1, Z, W, Delta, opt);
+    V = mix_updateV(H_bar_i, Z, W, Delta, opt);
 
     % update Delta   
-    Delta = mix_updateDelta(M1, Z, W, V, opt);
+    Delta = mix_updateDelta(H_bar_i, Z, W, V, opt);
    
 
     % show loss function value
@@ -98,7 +99,7 @@ for ii = 1:opt.max_iter
         end
     end
     if opt.savedict
-        if mod(ii,60) == 0
+        if mod(ii,30) == 0
             Dict.D = D;
             Dict.W = W;
             Dict.Z = Z;

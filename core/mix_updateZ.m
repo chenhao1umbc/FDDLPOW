@@ -1,4 +1,4 @@
-function Z = mix_updateZ(X, H3, opt, W, D, Zin, U, V, Delta)
+function Z = mix_updateZ(X,H_bar_i, H3, opt, W, D, Zin, U, V, Delta)
 % this function is to update W with D and Z fixed
 % input   X is the training data,a matrix M by N, N data samples
 %         trlabels is the training data labels
@@ -19,11 +19,11 @@ function Z = mix_updateZ(X, H3, opt, W, D, Zin, U, V, Delta)
 % pre-cacularion
 
 Z = Zin;
-M1 = opt.M1;% M1 is H_bar
+Nc = opt.Nc;
 M2M2t = opt.M2M2t;
 M1M1t = opt.M1M1t;
 H3H3t = opt.H3H3t;
-
+H_bar_iSq = H_bar_i^2 ;
 DtD = D'*D;
 DtX = D'*X;
 WWt = W*W';
@@ -34,13 +34,10 @@ normWWt = norm(WWt,'fro');
 L_term1 = norm(2*DtD,'fro');
 L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+eye(opt.N),'fro'); 
 L_term3 = 2*opt.nu*normWWt*norm(H3H3t, 'fro');  
-Nc = opt.Nc;
-H_bar_i = zeros(opt.N);
+
 sum_norm_H_bar_i = 0;
 for i = 1: opt.C
-    H_bar_i(1+Nc*(i-1):Nc*i, 1+Nc*(i-1):Nc*i) =...
-        M1(1+Nc*(i-1):Nc*i, 1+Nc*(i-1):Nc*i);% M1 is H_bar
-    sum_norm_H_bar_i = sum_norm_H_bar_i + norm(H_bar_i'*H_bar_i, 'fro');
+    sum_norm_H_bar_i = sum_norm_H_bar_i + norm(H_bar_iSq, 'fro');
 end
 L_term4 = 2* opt.beta * normWWt * sum_norm_H_bar_i;
 L = L_term1 + L_term2 + L_term3 + L_term4;
@@ -75,7 +72,9 @@ for iter = 1:opt.max_Ziter
 end
 
 %% cost function
-function cost = calc_F(Z_curr)
+function cost = calc_F(Z_curr)   
+    
+    WtZ = W'*Z_curr;
     % calc fisherterm
     SW = Z_curr*M1M1t*Z_curr';
     SB = Z_curr*M2M2t'*Z_curr';
@@ -87,12 +86,9 @@ function cost = calc_F(Z_curr)
     
     % calc Omega(W, Z), whitening term
     OmegaWZDeltaV = 0;    
-    for ii = 1:opt.C
-        H_bar_ii = zeros(opt.N);
-        H_bar_ii(1+Nc*(ii-1):Nc*ii, 1+Nc*(ii-1):Nc*ii) =...
-            M1(1+Nc*(ii-1):Nc*ii, 1+Nc*(ii-1):Nc*ii); % M1 is H_bar
+    for ind = 1:opt.C
         OmegaWZDeltaV = OmegaWZDeltaV + ...
-            norm(H_bar_ii*WtZ' - Delta(ii)*V{ii}, 'fro')^2;
+            norm(H_bar_i*WtZ(:, 1+Nc*(ind-1):Nc*ind)' - Delta(ind)*V{ind}, 'fro')^2;
     end
     
     % calc cost
@@ -108,12 +104,9 @@ function g = grad_f(Z_curr)
     grad2 = WWtZM1M1t - WWtZ*M2M2t + WWtZ;
     grad3 = WWtZ*H3H3t - WUH3t;
     
-    grad4 = 0;
+    grad4 = zeros(opt.K, opt.N);
     for ii = 1:opt.C    
-        H_bar_ii = zeros(opt.N);
-        H_bar_ii(1+Nc*(ii-1):Nc*ii, 1+Nc*(ii-1):Nc*ii) =...
-            M1(1+Nc*(ii-1):Nc*ii, 1+Nc*(ii-1):Nc*ii); % M1 is H_bar
-        grad4 = grad4 + WWtZ*H_bar_ii*H_bar_ii' - W*Delta(ii)*V{ii}'*H_bar_ii';
+        grad4(:, 1+Nc*(ii-1):Nc*ii)=  WWtZ(:, 1+Nc*(ii-1):Nc*ii)*H_bar_iSq - W*Delta(ii)*V{ii}'*H_bar_i;
     end
     g = 2*grad1 + 2*opt.mu*grad2 + 2*opt.nu*grad3 + 2*opt.beta*grad4; 
 end

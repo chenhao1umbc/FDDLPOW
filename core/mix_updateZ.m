@@ -1,4 +1,4 @@
-function Z = mix_updateZ(X, trlabels, opt, W, D, Zin, U, V, delta)
+function Z = mix_updateZ(X, H3, M1, M2,  opt, W, D, Zin, U, V, delta)
 % this function is to update W with D and Z fixed
 % input   X is the training data,a matrix M by N, N data samples
 %         trlabels is the training data labels
@@ -19,15 +19,7 @@ function Z = mix_updateZ(X, trlabels, opt, W, D, Zin, U, V, delta)
 % pre-cacularion
 
 Z = Zin;
-C = max(trlabels);
-[K, N]=size(Z);
-Nc = N / C;
-H1 = kron(eye(C),ones(Nc)/Nc);
-H2 = ones(N)/N;
-H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
-M1 = eye(N) - H1;
-M2 = H1 - H2;
-M1M1t = M1*M1';
+M1M1t = M1*M1';% M1 is H_bar
 M2M2t = M2*M2';
 H3H3t = H3*H3';
 DtD = D'*D;
@@ -37,7 +29,7 @@ WUH3t = W*U*H3';
 WDeltaVtM1 = delta*W*V'*M1;
 normWWt = norm(WWt,'fro');
 L_term1 = norm(2*DtD,'fro');
-L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+eye(N),'fro');
+L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+eye(opt.N),'fro');
 L_term3 = 2*opt.nu*normWWt*norm(H3H3t, 'fro');  
 L_term4 = 2* opt.beta * normWWt * norm(M1M1t, 'fro');
 L = L_term1 + L_term2 + L_term3 + L_term4;

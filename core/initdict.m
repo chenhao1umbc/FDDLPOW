@@ -1,4 +1,4 @@
-function [D, Z, W, U, V, Delta, Loss, opt]=initdict(X,trlabels,opt)
+function [D, Z, W, U, V, Delta, Loss, opt]=initdict(X, M1, H3, opt)
 % This fucntio is to initialize Dictionary
 % The input is  X, the training data, a matrix M by N, N data samples
 %             trlabels is the labels of training data, like[1,1,1,1,2,2,3,3,3]             
@@ -11,14 +11,12 @@ function [D, Z, W, U, V, Delta, Loss, opt]=initdict(X,trlabels,opt)
 %                 opt.losscalc -if true then calculate loss fucntion
 % The output is Dict, a struct with D,W,Z, Loss(the loss function value)
 
-C=max(trlabels); % how many classes
-[M_d,N]=size(X); % M is the data dimension, N is the # of samples
+[M_d, ~]=size(X); % M is the data dimension, N is the # of samples
 rng(opt.rng)
 
 % check checking the existing Dictionary
-opts = opt;
-nm = ['FDDLOW_mix','_k',num2str(opts.K),'_lmbd',num2str(opts.lambda1),...
-    '_mu',num2str(opts.mu),'_Q',num2str(opts.Q),'_nu',num2str(opts.nu),...
+nm = ['FDDLOW_mix','_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1),...
+    '_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'_nu',num2str(opt.nu),...
     '_beta',num2str(-1),'.mat' ];
 fileexistance=exist(nm);
 if fileexistance==2
@@ -26,24 +24,19 @@ if fileexistance==2
     D=Dict_mix.D;
     Z=Dict_mix.Z;
     W=Dict_mix.W;
-    [H1, ~, H3] = getMH1H2H3(trlabels, Z);
-    Delta = ones(1, opts.C); 
+    Delta = ones(1, opt.C); 
     U = Dict_mix.U;   
     opt.max_iter=80;% because of good initialization
     Loss=zeros(3,opt.max_iter); 
 else    
     D=randn(M_d,opt.K);
-    Z=randn(opt.K,N);
-    W=randn(opt.K,opt.Q);
-    [H1, ~, H3] = getMH1H2H3(trlabels, Z);
-    Delta = ones(1, opts.C); 
+    Z=randn(opt.K,opt.N);
+    W=randn(opt.K,opt.Q);d
+    Delta = ones(1, opt.C); 
     U = mix_updateU(W, Z*H3);
     Loss=zeros(3,opt.max_iter);
 end 
-    [~, N]=size(Z);
-    M1 = eye(N) - H1;
-    Y = M1*Z'*W; 
-    V = mix_updateV(Y, Delta);
+    V = mix_updateV(M1, Z, W, Delta, opt);
     
     
 end % end of function file

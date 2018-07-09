@@ -12,10 +12,21 @@ function [Dict]=FDDLOW_table3(X,trlabels,opt)
 %                 opt.mu -mu the coeffecient for fisher term
 %                 opt.max_iter - the maximum iteration
 %                 opt.losscalc -if true then calculate loss fucntion
-% The output is Dict, a struct with D,W,Z,X, Loss(the loss function value)
+% The output is Dict, a struct with D,W,Z,X,Delta,U,V, Loss(the loss function value)
+
+C = opt.C;
+[~, N]=size(X);
+Nc =N/C;
+[H1, H2, H3] = getMH1H2H3(N, Nc, C);
+M1 = eye(N) - H1;
+M2 = H1 - H2;
+opt.N = N;
+opt.Nc = Nc;
+% opt.M1 = M1;
+% opt.M2 = M2;
 
 % initialize Dictionary
-[D, Z, W, U, V, Delta, Loss, opt] = initdict(X,trlabels,opt); % max_iter will change for existing dictionary
+[D, Z, W, U, V, Delta, Loss, opt] = initdict(X, M1, H3, opt); % max_iter will change for existing dictionary
 
 % main loop
 for ii = 1:opt.max_iter   
@@ -28,7 +39,7 @@ for ii = 1:opt.max_iter
     optD.showconverge = false;
     D = DDLMD_updateD(X,optD,D,Z);
     if opt.losscalc
-        Loss(1,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,Delta);
+        Loss(1,ii) = Loss_mix(X, H3, M1, M2, opt,W,D,Z,U,V,Delta);
     end
         
     % update Z, with D Uand W fixed
@@ -40,8 +51,7 @@ for ii = 1:opt.max_iter
     optZ.showcost= true*optZ.showprogress;
     optZ.max_Ziter = 20; % for Z update
     optZ.Zthreshold = 1e-6;        
-    Z = mix_updateZ(X,trlabels,optZ, W, D, Z, U, V, Delta); 
-    [H1, H2, H3] = getMH1H2H3(trlabels, Z); % get M, H1, and H2 for updating W and U.
+    Z = mix_updateZ(X, H3, M1, M2, optZ, W, D, Z, U, V, Delta); 
     sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
     if 0.3 == ii/opt.max_iter
         if sparsity > 0.6 || sparsity < 0.1
@@ -50,7 +60,7 @@ for ii = 1:opt.max_iter
         end
     end
     if opt.losscalc
-        Loss(2,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,Delta);
+        Loss(2,ii) = Loss_mix(X, H3, M1, M2, opt,W,D,Z,U,V,Delta);
     end
     
     % update W
@@ -60,7 +70,7 @@ for ii = 1:opt.max_iter
     M = Z*H3;
     W = mix_updateW(opt, M1, H1, H2, M, Delta, U, V, Z);    
     if opt.losscalc
-        Loss(3,ii) = DDLMD_Loss_mix(X,trlabels,opt,W,D,Z,U,V,Delta);
+        Loss(3,ii) = Loss_mix(X, H3, M1, M2, opt,W,D,Z,U,V,Delta);
     end     
     
     % update U, with D and Z fixed.    

@@ -1,4 +1,4 @@
-function W = mix_updateW(opt, M1, H1, H2, M, delta, U, V,  Z)
+function W = mix_updateW(opt, M1, M2, H3, Delta, U, V,  Z)
 % this function is to update W with D and Z fixed, for the mixture cases
 % input   X is the training data,a matrix M by N, N data samples
 %         trlabels is the training data labels
@@ -18,9 +18,22 @@ function W = mix_updateW(opt, M1, H1, H2, M, delta, U, V,  Z)
 nu = opt.nu;
 mu = opt.mu;
 beta = opt.beta;
-M2 = (H1-H2);
-W = pinv(nu*M*M' + (mu+beta)*Z*M1^2*Z' - mu*Z*M2^2*Z' + mu*Z*Z')*...
-    (nu*M*U'+ beta*Z*M1*V*delta);
+Nc = opt.Nc;
+M = Z*H3;
+
+ZH_bar_iH_bar_iZt = 0;
+ZHbar_iDeltaV = 0;
+for ii = 1: opt.C
+    H_bar_i = zeros(opt.N);
+    H_bar_i(1+Nc*(ii-1):Nc*ii, 1+Nc*(ii-1):Nc*ii) =...
+        H_bar(1+Nc*(ii-1):Nc*ii, 1+Nc*(ii-1):Nc*ii);% M1 is H_bar
+    ZH_bar_iH_bar_iZt = ZH_bar_iH_bar_iZt + Z*H_bar_i'*H_bar_i*Z';
+    
+    ZHbar_iDeltaV = ZHbar_iDeltaV + Z*H_bar_i'*V{ii}*Delta(ii);
+end
+
+W = pinv(nu*M*M' + mu*Z*M1^2*Z' - mu*Z*M2^2*Z' + mu*Z*Z' +  beta* ZH_bar_iH_bar_iZt)*...
+    (nu*M*U'+ beta*ZHbar_iDeltaV);
 
 
 end % end of fucntion file

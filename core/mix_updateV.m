@@ -9,8 +9,8 @@ function V = mix_updateV(H_bar, Z, W, Delta, opt)
 
 Nc = opt.Nc;
 V = cell(1, opt.C);
-H_bar_i = zeros(opt.N);
-for ii = 1:C
+for ii = 1: opt.C
+    H_bar_i = zeros(opt.N);
     H_bar_i(1+Nc*(ii-1):Nc*ii, 1+Nc*(ii-1):Nc*ii) =...
         H_bar(1+Nc*(ii-1):Nc*ii, 1+Nc*(ii-1):Nc*ii);% M1 is H_bar
     Y = H_bar_i*Z'*W/Delta(ii);

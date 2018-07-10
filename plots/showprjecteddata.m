@@ -18,7 +18,7 @@ end
 % load ('FDDLOW_k100_lmbd0.0001_mu0.001_Q16.mat')
 % load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
 % load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
-load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
+load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100000.mat')
 % load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta0.0001.mat')
 
 if exist('Dict')==1

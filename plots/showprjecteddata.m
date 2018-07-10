@@ -74,9 +74,11 @@ if isfield(Dict_mix, 'V')
     Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ + opts.beta*OmegaWZDeltaV;
 end
 % norm(WtZM1*WtZM1','fro')
-    for ii = 1:C    
-        norm(H_bar_i*WtZ(:, 1+ Nc*(ii-1): Nc*ii)' - Delta(ii)*V{ii}, 'fro')^2 % perclass whitening term
-    end
+for ii = 1:C    
+    a{ii} = H_bar_i*WtZ(:, 1+ Nc*(ii-1): Nc*ii)';
+    b{ii} = Delta(ii)*V{ii};
+    norm(a{ii} - b{ii}, 'fro')^2 % perclass whitening term
+end
 % sum(abs(Z(:)))
 % opts.lambda1*sum(abs(Z(:)))
 % fWZ

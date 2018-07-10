@@ -16,10 +16,10 @@ else
     pctrl.equal = 0;
 end
 % load ('FDDLOW_k100_lmbd0.0001_mu0.001_Q16.mat')
-load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
+% load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
 % load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
-% load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
-% load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta1e-05.mat')
+load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
+% load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta0.0001.mat')
 
 if exist('Dict')==1
     Dict_mix = Dict; % if loading FDDL
@@ -33,7 +33,7 @@ end
 
 if isfield(Dict_mix, 'V')
     V = Dict_mix.V;
-    delta = Dict_mix.Delta;
+    Delta = Dict_mix.Delta;
 end
 
 % the equal power mixture, 400 samples per combination
@@ -55,6 +55,8 @@ H2 = ones(N)/N;
 H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
 M1 = eye(N) - H1;
 M2 = H1 - H2;
+H_bar_i = M1(1:Nc, 1:Nc);
+
 WtZ = W'*Z;
 WtZM1 = WtZ*M1;
 fWZ = norm(WtZM1, 'fro')^2 - norm(WtZ*M2, 'fro')^2 +norm(WtZ,'fro')^2; % fisher term
@@ -63,11 +65,18 @@ if isfield(Dict_mix, 'U')
     Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ;
 end
 if isfield(Dict_mix, 'V')
-    cWZDelta = norm(WtZM1' - delta*V, 'fro')^2; % whitening term
-    Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ + opts.beta*cWZDelta;
+%     cWZDelta = norm(WtZM1' - delta*V, 'fro')^2; % overall whitening term
+    OmegaWZDeltaV = 0;
+    for ii = 1:C    
+        OmegaWZDeltaV = OmegaWZDeltaV + ...
+            norm(H_bar_i*WtZ(:, 1+ Nc*(ii-1): Nc*ii)' - Delta(ii)*V{ii}, 'fro')^2;% perclass whitening term
+    end
+    Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ + opts.beta*OmegaWZDeltaV;
 end
-norm(WtZM1*WtZM1','fro')
-
+% norm(WtZM1*WtZM1','fro')
+    for ii = 1:C    
+        norm(H_bar_i*WtZ(:, 1+ Nc*(ii-1): Nc*ii)' - Delta(ii)*V{ii}, 'fro')^2 % perclass whitening term
+    end
 % sum(abs(Z(:)))
 % opts.lambda1*sum(abs(Z(:)))
 % fWZ

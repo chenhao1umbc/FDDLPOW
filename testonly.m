@@ -10,15 +10,16 @@ addpath(genpath('.././data'))
 
 
 % do traing or do crossvalidation
-do_training = 1;
+do_training = 0;
 do_result = 1;
-cv = 1; % validation or testing
+cv = 0; % validation or testing
 
-
+for mixn = [2, 3]
+for id = [0 3, 6, 10, 20]
 % load data
-mixture_n = 3; % mixture_n classes mixture, = 1,2,3
+mixture_n = mixn % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
-pctrl.db = 20; % dynamic ratio is 0 3, 6, 10, 20 db
+pctrl.db = id; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -43,7 +44,7 @@ SNR = 2000;
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 nu= 0.01 ;
-beta = 1e-4; % or 0.14
+beta = 1e-5; % or 0.14
 % beta = [1e-6 1e-5 1e-4 1e-3 1e-2 1e-1 1 10 100];
 
 if do_training ==1
@@ -60,9 +61,10 @@ end
 %% testing part
 if do_result ==1      
     run doresult
-    save('tb3_results20dbNc3','result_beta','result_betaWEEK','sparsity_beta','tr_sparsity_beta')
+%     save('tb3_results20dbNc3','result_beta','result_betaWEEK','sparsity_beta','tr_sparsity_beta')
 end
 
- 
+end
+end
 
 toc

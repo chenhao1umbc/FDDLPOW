@@ -60,8 +60,8 @@ for ii = 1:opt.max_iter
     optZ.showcost= true*optZ.showprogress;
     optZ.max_Ziter = 20; % for Z update
     optZ.Zthreshold = 1e-6;        
-%     Z = mix_updateZ(X,H_bar_i, H3, optZ, W, D, Z, U, V, Delta); 
-%     sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
+    Z = mix_updateZ(X,H_bar_i, H3, optZ, W, D, Z, U, V, Delta); 
+    sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
     if 0.3 == ii/opt.max_iter
         if sparsity > 0.6 || sparsity < 0.1
             fprintf('30 iters too sparse or non-sparse\n')

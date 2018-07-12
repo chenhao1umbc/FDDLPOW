@@ -18,7 +18,7 @@ end
 % load ('FDDLOW_k100_lmbd0.0001_mu0.001_Q16.mat')
 % load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
 % load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
-load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta0.1.mat')
+load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta1.mat')
 
 if exist('Dict')==1
     Dict_mix = Dict; % if loading FDDL
@@ -64,22 +64,13 @@ if isfield(Dict_mix, 'U')
     Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ;
 end
 if isfield(Dict_mix, 'V')
-    OmegaWZDeltaV = norm(WtZM1' - Delta*V, 'fro')^2; % overall whitening term
-%     OmegaWZDeltaV = 0;
-%     for ii = 1:C    
-%         OmegaWZDeltaV = OmegaWZDeltaV + ...
-%             norm(H_bar_i*WtZ(:, 1+ Nc*(ii-1): Nc*ii)' - Delta(ii)*V{ii}, 'fro')^2;% perclass whitening term
-%     end
-%     Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ + opts.beta*OmegaWZDeltaV;
-%     
-% sum(abs(Z(:)))
-% opts.lambda1*sum(abs(Z(:)))
-% fWZ
-% opts.mu*fWZ
-% gWZ
-% opts.nu*gWZ
-% OmegaWZDeltaV
-% opts.beta*OmegaWZDeltaV    
+%     OmegaWZDeltaV = norm(WtZM1' - Delta*V, 'fro')^2; % overall whitening term
+    OmegaWZDeltaV = 0;
+    for ii = 1:C    
+        OmegaWZDeltaV = OmegaWZDeltaV + ...
+            norm(H_bar_i*WtZ(:, 1+ Nc*(ii-1): Nc*ii)' - Delta(ii)*V{ii}, 'fro')^2;% perclass whitening term
+    end
+    Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ + opts.beta*OmegaWZDeltaV;
 
 %     for ii = 1:C    
 %         a{ii} = H_bar_i*WtZ(:, 1+ Nc*(ii-1): Nc*ii)';
@@ -90,6 +81,15 @@ end
 
 Projected_WithinClass_covariance = norm(WtZM1*WtZM1','fro')
 Frobenius_norm_W = norm(W, 'fro')
+
+% sum(abs(Z(:)))
+% opts.lambda1*sum(abs(Z(:)))
+% fWZ
+% opts.mu*fWZ
+% gWZ
+% opts.nu*gWZ
+% cWZDelta
+% opts.beta*cWZDelta
 %}
 
 %% MDS / PCA
@@ -125,7 +125,7 @@ for jj = 1:jjmax
         plot3(PCA(1,1+(ii-1)*cnt:ii*cnt),PCA(2,1+(ii-1)*cnt:ii*cnt),PCA(3,1+(ii-1)*cnt:ii*cnt),symbolpool{ii})       
     end    
 %     axis(axislimits)
-    %  plot the testing data
+    % plot the testing data
     if plottesting == 1
         temp = aoos(Z(:,1+ nn*(jj-1):nn*jj), fln, nn);
         X = Vq'*W'*temp;    

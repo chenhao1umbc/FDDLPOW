@@ -8,8 +8,7 @@ function Delta = mix_updateDelta(H_bar_i, Z, W, V, opt)
 Delta = ones(1, opt.C);
 Nc = opt.Nc;
 for ii = 1: opt.C
-    Delta(ii) = sum(sum(V{ii}.*(H_bar_i*Z(:, 1+ Nc*(ii-1): Nc*ii)'*W)))/norm(V{ii}, 'fro')^2;
-   
+    Delta(ii) = sum(sum(V{ii}.*(H_bar_i*Z(:, 1+ Nc*(ii-1): Nc*ii)'*W)))/norm(V{ii}, 'fro')^2;   
 end
 
 

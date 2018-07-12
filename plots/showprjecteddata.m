@@ -16,9 +16,9 @@ else
     pctrl.equal = 0;
 end
 % load ('FDDLOW_k100_lmbd0.0001_mu0.001_Q16.mat')
-% load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
+load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta-1.mat')
 % load('FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100.mat')
-load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta100000.mat')
+% load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta0.1.mat')
 % load('SNR2000FDDLOW_mix_k100_lmbd0.0001_mu0.001_Q16_nu0.01_beta0.0001.mat')
 
 if exist('Dict')==1
@@ -72,12 +72,13 @@ if isfield(Dict_mix, 'V')
             norm(H_bar_i*WtZ(:, 1+ Nc*(ii-1): Nc*ii)' - Delta(ii)*V{ii}, 'fro')^2;% perclass whitening term
     end
     Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ + opts.beta*OmegaWZDeltaV;
-end
-% norm(WtZM1*WtZM1','fro')
-for ii = 1:C    
-    a{ii} = H_bar_i*WtZ(:, 1+ Nc*(ii-1): Nc*ii)';
-    b{ii} = Delta(ii)*V{ii};
-    norm(a{ii} - b{ii}, 'fro')^2 % perclass whitening term
+
+    % norm(WtZM1*WtZM1','fro')
+    for ii = 1:C    
+        a{ii} = H_bar_i*WtZ(:, 1+ Nc*(ii-1): Nc*ii)';
+        b{ii} = Delta(ii)*V{ii};
+        norm(a{ii} - b{ii}, 'fro')^2 % perclass whitening term
+    end
 end
 % sum(abs(Z(:)))
 % opts.lambda1*sum(abs(Z(:)))

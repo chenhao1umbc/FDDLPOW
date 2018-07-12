@@ -18,6 +18,7 @@ rng(opt.rng)
 nm = ['FDDLOW_mix','_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1),...
     '_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'_nu',num2str(opt.nu),...
     '_beta',num2str(-1),'.mat' ];
+nm = opt.Dictnm;
 fileexistance=exist(nm);
 if fileexistance==2
     load(nm)
@@ -26,7 +27,7 @@ if fileexistance==2
     W=Dict_mix.W;
     Delta = ones(1, opt.C); 
     U = Dict_mix.U;   
-    opt.max_iter=80;% because of good initialization
+    % opt.max_iter=80;% because of good initialization
     Loss=zeros(3,opt.max_iter); 
 else    
     D=randn(M_d,opt.K);

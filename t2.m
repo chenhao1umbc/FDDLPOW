@@ -9,7 +9,7 @@ addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 
 % do traing or do crossvalidation
-do_training = 0;
+do_training = 1;
 do_result = 1;
 cv = 1; % validation or testing
 

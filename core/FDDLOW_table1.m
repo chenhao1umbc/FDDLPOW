@@ -15,7 +15,7 @@ function [Dict]=FDDLOW_table1(X,trlabels,opt)
 % The output is Dict, a struct with D,W,Z, Loss(the loss function value)
 
 % initialize Dictionary
-[D, Z, W, ~, ~, ~, Loss, opt]=initdict(X,trlabels,opt); % max_iter will change for existing dictionary
+[D, Z, W, Loss, opt]=initdict(X,trlabels,opt); % max_iter will change for existing dictionary
 
 % main loop
 for ii=1:opt.max_iter  

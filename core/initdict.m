@@ -1,4 +1,4 @@
-function [D, Z, W, U, V, Delta, Loss, opt]=initdict(X, H_bar_i, H3, opt)
+function [D,Z,W,Loss,opt]=initdict(X,trlabels,opt)
 % This fucntio is to initialize Dictionary
 % The input is  X, the training data, a matrix M by N, N data samples
 %             trlabels is the labels of training data, like[1,1,1,1,2,2,3,3,3]             
@@ -11,38 +11,16 @@ function [D, Z, W, U, V, Delta, Loss, opt]=initdict(X, H_bar_i, H3, opt)
 %                 opt.losscalc -if true then calculate loss fucntion
 % The output is Dict, a struct with D,W,Z, Loss(the loss function value)
 
-[M_d, ~]=size(X); % M is the data dimension, N is the # of samples
+C=max(trlabels); % how many classes
+[~, N]=size(X); % M is the data dimension, N is the # of samples
 rng(opt.rng)
 
-% check checking the existing Dictionary
-nm = ['FDDLOW_mix','_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1),...
-    '_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'_nu',num2str(opt.nu),...
-    '_beta',num2str(-1),'.mat' ];
-% nm = opt.Dictnm;
-fileexistance=exist(nm);
-if fileexistance==2
-    load(nm)
-%     D=Dict_mix.D;
-%     Z=Dict_mix.Z;
-%     W=Dict_mix.W;
-%     U = Dict_mix.U; 
-    D = Dict.D;
-    Z = Dict.Z;
-    W = Dict.W;
-    U = mix_updateU(W, Z, H3);
-    Delta = ones(1, opt.C); 
-      
-    % opt.max_iter=80;% because of good initialization
-    Loss=zeros(3,opt.max_iter); 
-else    
-    D=randn(M_d,opt.K);
-    Z=randn(opt.K,opt.N);
-    W=randn(opt.K,opt.Q);d
-    Delta = ones(1, opt.C); 
-    U = mix_updateU(W, Z, H3);
-    Loss=zeros(3,opt.max_iter);
-end 
-    V = mix_updateV(H_bar_i, Z, W, Delta, opt);
-    
-    
+ind = randperm(N);
+D=X(:, ind(1:opt.K));
+Z=randn(opt.K,N);
+W=randn(opt.K,opt.Q);
+[M, ~, ~] = getMH1H2_t2(trlabels, Z);
+Loss=zeros(1,opt.max_iter);
+
+
 end % end of function file

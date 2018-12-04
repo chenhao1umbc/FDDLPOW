@@ -3,7 +3,7 @@ function Loss=Loss_mix(X, H_bar_i, H3, M1, M2, opt,W,D,Z,U,V,Delta)
 
 WtZ = W'*Z;
 WtZM1 = WtZ*M1;
-fWZ = norm(WtZM1, 'fro')^2 - norm(WtZ*M2, 'fro')^2 +norm(WtZ,'fro')^2;
+fWZ = norm(WtZM1, 'fro')^2 - norm(WtZ*M2, 'fro')^2 + 1.1*norm(WtZ,'fro')^2;
 gWZDelta = norm(WtZ*H3 -U, 'fro')^2;
 
 OmegaWZDeltaV = 0;

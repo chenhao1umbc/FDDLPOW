@@ -18,7 +18,7 @@ function W = mix_updateW_t2(opt, H1, H2, M, U, Z)
 nu = opt.nu;
 mu = opt.mu;
 N = length(H1(:,1));
-W = pinv(nu*M*M' + mu*Z*(eye(N)-H1)^2*Z' - mu*Z*(H1-H2)^2*Z' + mu*Z*Z')*nu*M*U';
+W = pinv(nu*M*M' + mu*Z*(eye(N)-H1)^2*Z' - mu*Z*(H1-H2)^2*Z' + mu*1.1*Z*Z')*nu*M*U';
 
 
 end % end of fucntion file

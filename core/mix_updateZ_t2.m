@@ -35,9 +35,9 @@ DtX = D'*X;
 WWt = W*W';
 WUH3t = W*U*H3';
 normWWt = norm(WWt,'fro');
-L_term1 = norm(2*DtD,'fro');
-L_term3 = 2*opt.nu*normWWt*norm(H3H3t, 'fro');  
-L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+eye(N),'fro');
+L_term1 = norm(2*DtD,'fro'); 
+L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+1.1*eye(N),'fro');
+L_term3 = 2*opt.nu*normWWt*norm(H3H3t, 'fro'); 
 L = L_term1 + L_term2 + L_term3;
 
 % main loop
@@ -72,7 +72,7 @@ function cost = calc_F(Z_curr)
     % calc fisherterm
 
     [SW,SB]=calcfisher(Z_curr,trlabels,opt);
-    fisherterm=trace(W'*SW*W)-trace(W'*SB*W)+norm(W'*Z_curr, 'fro')^2;
+    fisherterm=trace(W'*SW*W)-trace(W'*SB*W)+1.1*norm(W'*Z_curr, 'fro')^2;
 
     % calc g(W, Z, U)
     M = Z_curr*H3;

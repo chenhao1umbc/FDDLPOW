@@ -78,7 +78,7 @@ function cost = calc_F(Z_curr)
     % calc fisherterm
     SW = Z_curr*M1M1t*Z_curr';
     SB = Z_curr*M2M2t'*Z_curr';
-    fisherterm=trace(W'*SW*W)-trace(W'*SB*W)+norm(W'*Z_curr, 'fro')^2;
+    fisherterm=trace(W'*SW*W)-trace(W'*SB*W)+1.1*norm(W'*Z_curr, 'fro')^2;
 
     % calc g(W, Z, U, Delta), orthogonal term
     M = Z_curr*H3;

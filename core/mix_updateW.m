@@ -28,7 +28,7 @@ for ii = 1: opt.C
     ZHbar_iDeltaV = ZHbar_iDeltaV + Z(:, 1+ Nc*(ii-1): Nc*ii)*H_bar_i'*V{ii}*Delta(ii);
 end
 
-W = pinv(nu*M*M' + mu*Z*M1^2*Z' - mu*Z*M2^2*Z' + mu*Z*Z' +  beta* ZH_bar_iH_bar_iZt)*...
+W = pinv(nu*M*M' + mu*Z*M1^2*Z' - mu*Z*M2^2*Z' + mu*1.1*Z*Z' +  beta* ZH_bar_iH_bar_iZt)*...
     (nu*M*U'+ beta*ZHbar_iDeltaV);
 
 

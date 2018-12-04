@@ -14,7 +14,7 @@ function Zout=DDLMD_updateZ(X,trlabels,opt,W,D,Zin)
 %             opt.losscalc -if true then calculate loss fucntion
 % output is Z, the sparse coefficient,a matrix K by N
 % the FISTA algorithm is from A. Beck and M. Teboulle, "A fast iterative shrinkage-thresholding
-% algorithm for linear inverse problems", SIAM Journal on Imaging Sciences, vol. 2, no. 1, pp. 183–202, 2009
+% algorithm for linear inverse problems", SIAM Journal on Imaging Sciences, vol. 2, no. 1, pp. 183ï¿½202, 2009
 
 C=max(trlabels);
 N=length(trlabels);
@@ -22,27 +22,28 @@ Nc=N/C;
 %diagONE=blockones(C,Nc);
 H1 = kron(eye(C),ones(Nc)/Nc);
 H2 = ones(N)/N;
-M = (eye(N) - H1)^2 - (H1 - H2)^2 + eye(N);
+M = (eye(N) - H1)^2 - (H1 - H2)^2 + 1.1*eye(N);
 DtX = D'*X;
 DtD = D'*D;
 WWt = W*W';
 opt.showprogress=opt.showconverge; % show the FISTA progress
 
-L = max(eig(2*D'*D)) + 4*opt.mu*max(eig(W*W'));
+% L = max(eig(2*D'*D)) + 4*opt.mu*max(eig(W*W'));
+normWWt = norm(WWt,'fro');
+L_term1 = 2*norm(DtD,'fro'); 
+L_term2 = 2 * opt.mu * normWWt * norm(M,'fro');
+L = L_term1 + L_term2 ;
 Zout=fista(Zin, L, opt.lambda1, opt, @calc_F, @grad);
 
 % convex function f
 function cost = calc_F(Z)
     [SW,SB]=calcfisher(Z,trlabels,opt);
-    fisherterm=trace(W'*SW*W)-trace(W'*SB*W)+norm(W'*Z, 'fro')^2;
-%     fisherterm2=norm(W'*Z*(eye(Nc*C)-1/Nc*diagONE),'fro')^2-....
-%         norm(W'*Z*(1/Nc*diagONE-1/Nc/C*ones(C*Nc)),'fro')^2+norm(W'*Z, 'fro')^2; % double check the value
+    fisherterm=trace(W'*SW*W)-trace(W'*SB*W)+ 1.1*norm(W'*Z, 'fro')^2;
     cost = norm((X - D*Z), 'fro')^2 + opt.mu*fisherterm + opt.lambda1*norm1(Z); 
 end
 
 % gradiant of f
 function g = grad(Z)
-    %g = 2*D'*(D*Z-X)+opt.mu*W*W'*(4*Z-Z*4/Nc*diagONE+2/C/Nc*Z*ones(C*Nc));
     g = 2*(DtD*Z - DtX + opt.mu*WWt*Z*M);
 end
 

@@ -4,7 +4,7 @@ C=max(trlabels);
 N = size(X,2);
 Nc = N / C;
 [SW,SB]=calcfisher(Z,trlabels,opt);
-fWZ=trace(W'*SW*W)-trace(W'*SB*W)+norm(W'*Z,'fro')^2;
+fWZ=trace(W'*SW*W)-trace(W'*SB*W)+1.1*norm(W'*Z,'fro')^2;
 
 gWZ=0;
 % indC=1:C;

@@ -58,7 +58,7 @@ H_bar_i = M1(1:Nc, 1:Nc);
 
 WtZ = W'*Z;
 WtZM1 = WtZ*M1;
-fWZ = norm(WtZM1, 'fro')^2 - norm(WtZ*M2, 'fro')^2 +norm(WtZ,'fro')^2; % fisher term
+fWZ = norm(WtZM1, 'fro')^2 - norm(WtZ*M2, 'fro')^2 + 1.1*norm(WtZ,'fro')^2; % fisher term
 if isfield(Dict_mix, 'U')
     gWZ = norm(WtZ*H3 -U, 'fro')^2; % orthogonal term
     Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ;

@@ -52,7 +52,21 @@ I thought if spectrogram is linear transformation.
 I guess spectrogram can give me better result, because just PCA is not reasonable to me
 
 
+
 Dec 4 2018
+What I want:
+1. finish the testing code
+2. get the data matrix using spectrogram
+3. some results for PCA data
+What I did:
+I visualized the trained dictionary:
+	Problem:
+	the projection W is just identity matrix not updated.
+The Sw-SB+ZZ.T is low rank, I changed code to fit it.
+	Problem:
+	we were using Sw-SB+ZZ.T, now in the paper we have Sw-SB+ \alpha ZZ.T
+I fixed this alpha problem, in loss update Z, W, Lipchiz constant
+
 
 
 

@@ -1,0 +1,60 @@
+This is the experiment log file to track what I did, what is the problem and what is the result for GRID dataset
+
+
+Nov 26 2018
+What I want:
+1. put data into one matrix
+2. input the data to FDDLOW to process to see the result
+What I did:
+I unzipped the GRID file
+I plot the length of all the files
+	Problem:
+	Not all the files are the same length
+I found the min length and truncate the files to 27000
+	Problem:
+	Should I use spectrogram or not
+
+
+Nov 28 2018
+What I want:
+1. put data into one matrix
+2. prepare two version one is fft+PCA one is just pca
+What I did:
+I put the calculated PCA per class which is 1000d in to onefile
+	problem
+	I realized there will be information loss, I cannot use 1000d
+I coded to use PCA on the whole dataset
+I tried fft of the data, but it was too large. I would to do just pca
+
+
+Nov 30 2018
+What I want:
+1. put data into one matrix
+2. fix the code to make it run
+What I did:
+I plot the PCA result
+	Problem:
+	I did not see clear distinguish between 10 classes
+Ignore it, hope to see how classification is
+I kept on coding
+
+
+
+Dec 3 2018
+What I want:
+1. train the dictionary to have some preliminary result
+What I did:
+I fixed all the codes and loading data
+	Problem:
+	I found there are more trouble than I thought. Testing part is not done
+I let it train the dictionary.
+I thought if spectrogram is linear transformation.
+I guess spectrogram can give me better result, because just PCA is not reasonable to me
+
+
+Dec 4 2018
+
+
+
+
+

@@ -68,8 +68,8 @@ if exist(opts.Dictnm, 'file')
     end
     Z = sparsecoding_mix_test(Dict_mix, Database, opts); %%%%% cv or test
     W = Dict_mix.W;
-    C = max(Database.tr_label);
-    N = size(Database.tr_label,2);
+    C = max(Database.tr_label(1,:));
+    N = size(Database.tr_label(1,:),2);
     Nc = N / C;
     opts.C = C; % 6 classes
     featln = Database.featln;

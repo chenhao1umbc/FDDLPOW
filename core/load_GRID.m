@@ -15,13 +15,20 @@ function [database] = load_GRID(N_c, SNR, pctrl)
 if nargin < 1
     N_c = 1;
     SNR = 2000;
-    pctrl.equal = 1; % equal power
+    pctrl.equal = true; % equal power
 elseif nargin < 2
     SNR = 2000;
-    pctrl.equal = 1; % equal power
+    pctrl.equal = true; % equal power
 elseif nargin < 3
-    pctrl.equal = 1; % equal power    
+    pctrl.equal = true; % equal power    
 end
+
+if pctrl.db == 0
+    pctrl.equal = 1;
+else
+    pctrl.equal = 0;
+end
+
 
 whichclass = 1: 10;% S1 to S10
 nClass = length(whichclass);

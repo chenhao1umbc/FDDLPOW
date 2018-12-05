@@ -66,9 +66,15 @@ The Sw-SB+ZZ.T is low rank, I changed code to fit it.
 	Problem:
 	we were using Sw-SB+ZZ.T, now in the paper we have Sw-SB+ \alpha ZZ.T
 I fixed this alpha problem, in loss update Z, W, Lipchiz constant
+Retrain the dictionary with updated code
 
 
-
-
-
+Dec 5 2018
+What I want:
+1. finish the testing code
+2. get the data matrix using spectrogram
+3. some results for PCA data
+What I did:
+I checked the newly trained dictionary
+I finished the testing code and got some result of just using PCA with non-mixture
 

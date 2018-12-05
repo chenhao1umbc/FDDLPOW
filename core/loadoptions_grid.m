@@ -30,6 +30,11 @@ opts.k_neighbors=5; % how many neighors
 opts.kNNmethod=1; % 1 for averaging; 2 for max pooling needs more computation
 opts.dataset = 'grid'; % LMdata 4
 
+% for mixture algorithm
+opts.nu=nu;
+opts.beta = beta;
+opts.mixcase=true;
+
 if whichtable == 1
 opts.Dictnm =['FDDLP',opts.dataset,'_k',num2str(opts.K),'_lmbd',num2str(opts.lambda1)...
     ,'_mu',num2str(opts.mu),'_Q',num2str(opts.Q),'.mat' ];
@@ -46,12 +51,5 @@ opts.Dictnm =['FDDLPOW',opts.dataset,'_k',num2str(opts.K),'_lmbd',num2str(opts.l
     '_beta',num2str(opts.beta), '_Q',num2str(opts.Q),'.mat' ];
 end
 
-% for mixture algorithm
-opts.nu=nu;
-opts.beta = beta;
-opts.mixcase=true;
-opts.mixnm =['FDDLOW_mix','_k',num2str(opts.K),'_lmbd',num2str(opts.lambda1)...
-    ,'_mu',num2str(opts.mu),'_Q',num2str(opts.Q),'_nu',num2str(opts.nu),...
-    '_beta',num2str(opts.beta),'.mat' ];
 
 end % end of the function file

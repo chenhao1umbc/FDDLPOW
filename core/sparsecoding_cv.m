@@ -1,10 +1,9 @@
-function Z_testmix=sparsecoding_mix_test(Dict,database,opt)
-% this function is used for sparse coding for the testing/cv data is mixture
+function Z_cv=sparsecoding_cv(Dict,database,opt)
+% this function is used for sparse coding for the testing/cv data
 % min norm2(x-Dz)^2+lambda1*norm1(z)
 
 D=Dict.D;
-X=database.test_mixdata;
-
+X=database.cv_data;
 opt.max_iter = 2000;
 opt.threshold=1e-5;
 opt.showprogress=false; % show the FISTA progress
@@ -12,7 +11,7 @@ rng(0)
 Zinit=randn(opt.K,size(X,2));
 
 L = max(eig(2*D'*D));  
-Z_testmix=fista(Zinit, L, opt.lambda1, opt, @calc_F,@grad);
+Z_cv=fista(Zinit, L, opt.lambda1, opt, @calc_F,@grad);
 
 % cost function
 function cost = calc_F(Z)

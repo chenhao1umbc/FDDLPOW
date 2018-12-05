@@ -77,4 +77,6 @@ What I want:
 What I did:
 I checked the newly trained dictionary
 I finished the testing code and got some result of just using PCA with non-mixture
-
+	Problem:
+	The pure PCA for this task it is too low, 40% accurace
+I will try spectrogram or I need to change dataset.

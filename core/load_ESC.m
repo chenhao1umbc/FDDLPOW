@@ -41,7 +41,7 @@ ttln_mix = 10; % testing data is 100 mixture samples per combination
 
 %% loading data
 % loading non-mixture data for training
-load 'esc10.mat' % data variable name is grid5k
+load 'ESC10.mat' % data variable name is grid5k
 label = zeros(2, 400); % 1000 per class, 10 classes
 label(1, :) = labels;% class index key
 label(2, :) = 1:400; % primary key 0 to N for all the classes

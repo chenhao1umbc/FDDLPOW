@@ -16,6 +16,7 @@ function W=DDLMD_updateW(trlabels,opt,Z)
 
 [SW,SB]=calcfisher(Z,trlabels,opt);
 A = SW-SB+1.1*Z*Z';
+A = (A +A')/2;
 [V,D]=eig(A);  % lbd is eig value, increasing to right
 [d_sorted,I] = sort(diag(D));
 ind = find(d_sorted> 1e-7); % in case A is low rank

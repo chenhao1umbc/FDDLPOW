@@ -32,22 +32,21 @@ end
 
 whichclass = 1: 10;% S1 to S10
 nClass = length(whichclass);
-trln = 600; % trainging 300 per class
-cvln = 200; % cross-validation data is 50 per class
-ttln = 200; % testing data is 40 per class
+trln = 20; % trainging 300 per class
+cvln = 10; % cross-validation data is 50 per class
+ttln = 10; % testing data is 40 per class
 perClassln = cvln+ ttln + trln;
-cvln_mix = 100; % cross-validation data is 100 mixture samples per combination
-ttln_mix = 100; % testing data is 100 mixture samples per combination
+cvln_mix = 10; % cross-validation data is 100 mixture samples per combination
+ttln_mix = 10; % testing data is 100 mixture samples per combination
 
 %% loading data
 % loading non-mixture data for training
-load 'GRID3k.mat' % data variable name is grid5k
-label = zeros(2, 1e4); % 1000 per class, 10 classes
-label(1, :) = sum(kron(diag(1:nClass), ones(1, perClassln)),1);% class index key
-label(2, :) = 1:1e4; % primary key 0 to N for all the classes
+load 'esc10.mat' % data variable name is grid5k
+label = zeros(2, 400); % 1000 per class, 10 classes
+label(1, :) = labels;% class index key
+label(2, :) = 1:400; % primary key 0 to N for all the classes
 
-grid3k = norm_data(grid3k); % normalize the data
-dwl = [grid3k; label]; % data with labels
+dwl = [data; label]; % data with labels
 
 rng(100)
 ind = randperm(perClassln);

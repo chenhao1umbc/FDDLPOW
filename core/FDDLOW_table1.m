@@ -19,8 +19,7 @@ function [Dict]=FDDLOW_table1(X,trlabels,opt)
 
 % main loop
 for ii=1:opt.max_iter  
-    ii
-    tic
+%     tic
     % update D, with W and Z fixed
     optD=opt;
     optD.max_iter=500;
@@ -38,15 +37,15 @@ for ii=1:opt.max_iter
     optZ.max_Ziter = 10; % for Z update
     optZ.Zthreshold = 1e-6; 
     Z=DDLMD_updateZ(X,trlabels,optZ,W,D,Z);
-    sparsity=mean(sum(Z ~= 0))/opt.K   % avg number of nonzero elements in cols of Z
-    if ii == 10
-        if sparsity < 0.2 || sparsity >0.9
-            fprintf('too sparse or non-sparse\n')
-            break;            
-        end
-    end
-    if ii == 30
-        if sparsity > 0.5 || sparsity < 0.1
+    sparsity=mean(sum(Z ~= 0))/opt.K;   % avg number of nonzero elements in cols of Z
+%     if ii == 20
+%         if sparsity < 0.2 || sparsity >0.9
+%             fprintf('too sparse or non-sparse\n')
+%             break;            
+%         end
+%     end
+    if ii == 40
+        if sparsity > 0.7 || sparsity < 0.05
             fprintf('too sparse or non-sparse \n')
             break;            
         end
@@ -70,8 +69,8 @@ for ii=1:opt.max_iter
         pause(.1);
     end
     
-    if opt.savedict
-        if mod(ii,30)==0
+    if opt.savedict*0
+        if mod(ii,40)==0
             Dict.D=D;
             Dict.W=W;
             Dict.Z=Z;
@@ -79,8 +78,7 @@ for ii=1:opt.max_iter
             save([opts.Dictnm(1:end-4),'_',num2str(ii)],'Dict','opts')
         end
     end
-    
-    toc
+%     toc
 end
 
 Dict.D=D;

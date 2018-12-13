@@ -69,6 +69,7 @@ I fixed this alpha problem, in loss update Z, W, Lipchiz constant
 Retrain the dictionary with updated code
 
 
+
 Dec 5 2018
 What I want:
 1. finish the testing code
@@ -80,3 +81,16 @@ I finished the testing code and got some result of just using PCA with non-mixtu
 	Problem:
 	The pure PCA for this task it is too low, 40% accurace
 I will try spectrogram or I need to change dataset.
+
+
+
+Dec 6 2018
+What I want:
+1. get the data matrix result using spectrogram
+What I did:
+I checked the SVD result of spectrogram data
+	Problem:
+	It shows all the elements as zeros
+I re-run the code to see the result
+I modify the loading data to train and test the dictionary
+I check the first 3 trained dictionary to plot Loss and Z

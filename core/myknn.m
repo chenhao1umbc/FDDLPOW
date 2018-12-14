@@ -12,8 +12,10 @@ end
 labels = Database.tr_label(1,:);
 if cvortest(1) % do cv
     cvtlabel = Database.cv_label;
+%     cvtlabel = aoos(Database.cv_label,Database.featln,size(Database.cv_label, 2));
 else
     cvtlabel = Database.test_label;
+    cvtlabel = aoos(Database.test_label,Database.featln,size(Database.test_label, 2));
 end
 
 Mdl = fitcknn( Xtr',labels','NumNeighbors',k,'Standardize',1);

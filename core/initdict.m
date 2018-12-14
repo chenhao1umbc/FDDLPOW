@@ -12,11 +12,12 @@ function [D,Z,W,Loss,opt]=initdict(X,trlabels,opt)
 % The output is Dict, a struct with D,W,Z, Loss(the loss function value)
 
 C=max(trlabels); % how many classes
-[~, N]=size(X); % M is the data dimension, N is the # of samples
+[d, N]=size(X); % M is the data dimension, N is the # of samples
 rng(opt.rng)
 
 ind = randperm(N);
-D=X(:, ind(1:opt.K));
+% D=X(:, ind(1:opt.K));
+D = randn(d, opt.K);
 Z=randn(opt.K,N);
 W=randn(opt.K,opt.Q);
 [M, ~, ~] = getMH1H2_t2(trlabels, Z);

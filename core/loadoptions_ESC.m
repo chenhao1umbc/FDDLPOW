@@ -18,13 +18,13 @@ opts.C = 10; % total of C = 6 classes
 opts.rng = 0; % for dictionary initialization
 opts.SNR = SNR;
 opts.K=K;
-opts.Q=Q;
+opts.Q=floor(Q);
 opts.lambda1=lambda1;                                        
 opts.mu=mu;
 opts.showconverge = false;
 %opts.threshold=1e-8;% for FISTA sparse coding
 opts.savedict=true;
-opts.max_iter=100;
+opts.max_iter= 200;
 opts.losscalc=true;
 opts.k_neighbors=5; % how many neighors
 opts.kNNmethod=1; % 1 for averaging; 2 for max pooling needs more computation

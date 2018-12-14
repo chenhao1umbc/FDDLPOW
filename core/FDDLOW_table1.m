@@ -44,12 +44,12 @@ for ii=1:opt.max_iter
 %             break;            
 %         end
 %     end
-    if ii == 40
-        if sparsity > 0.7 || sparsity < 0.05
-            fprintf('too sparse or non-sparse \n')
-            break;            
-        end
-    end
+%     if ii == 40
+%         if sparsity > 0.7 || sparsity < 0.05
+%             fprintf('too sparse or non-sparse \n')
+%             break;            
+%         end
+%     end
     
     % update W, with D and Z fixed
     optW=opt;
@@ -60,6 +60,11 @@ for ii=1:opt.max_iter
     if opt.losscalc
         Loss(ii)=DDLMD_Loss(X,trlabels,opt,W,D,Z);
         Dict.Loss=Loss;
+        if ii > 1            
+        if abs(Loss(ii-1) - Loss(ii)) < 1e-5
+            break;
+        end
+        end
     end
     if opt.showconverge
         figure(400);

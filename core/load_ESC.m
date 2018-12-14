@@ -32,6 +32,7 @@ end
 
 whichclass = 1: 10;% S1 to S10
 nClass = length(whichclass);
+featln = 5;
 trln = 20; % trainging 300 per class
 cvln = 10; % cross-validation data is 50 per class
 ttln = 10; % testing data is 40 per class
@@ -41,11 +42,12 @@ ttln_mix = 10; % testing data is 100 mixture samples per combination
 
 %% loading data
 % loading non-mixture data for training
-load 'ESC10.mat' % data variable name is grid5k
-label = zeros(2, 400); % 1000 per class, 10 classes
-label(1, :) = labels;% class index key
-label(2, :) = 1:400; % primary key 0 to N for all the classes
+load 'ESC10more_f800.mat' % data variable name is grid5k
+label = zeros(2, size(labels,2)); % 10 classes, 400 samples perclass originally
+label = labels;% class index key
+% label(2, :) = 1:size(labels,2); % primary key 0 to N for all the classes
 
+data = norm_data(data(:,:));
 dwl = [data; label]; % data with labels
 
 rng(100)
@@ -54,22 +56,35 @@ ind_tr = ind(1:trln);
 ind_cv = ind(trln+1:trln+cvln);
 ind_tt = ind(trln+cvln+1:end);
 
-[d, ~] = size(dwl); % data d
-dwl_tr = zeros(d, trln*nClass);
-dwl_cv = zeros(d, cvln*nClass);
-dwl_tt = zeros(d, ttln*nClass);
-for i = 1:nClass
-    dwl_tr(:, trln*(i-1) + 1:trln*i ) = dwl(:, perClassln*(i-1) + ind_tr);
-    dwl_cv(:, cvln*(i-1) + 1:cvln*i ) = dwl(:, perClassln*(i-1) + ind_cv);
-    dwl_tt(:, ttln*(i-1) + 1:ttln*i ) = dwl(:, perClassln*(i-1) + ind_tt);
-end
-tr_dat = dwl_tr(1:d-2, :); % samples
-cv_dat = dwl_cv(1:d-2, :);
-tt_dat = dwl_tt(1:d-2, :);
-trls = dwl_tr(d-1:end, :); % labels
-cvls = dwl_cv(d-1:end, :);
-ttls = dwl_tt(d-1:end, :);
+[d, ~] = size(dwl); % data dimension d 
+n_tr_p = trln*featln;
+n_cv_p = cvln*featln;
+n_tt_p = ttln*featln;
+n_tr = n_tr_p*nClass;
+n_cv = n_cv_p*nClass;
+n_tt = n_tt_p*nClass;
 
+trls=zeros(1,n_tr);
+cvls=zeros(1,n_cv);
+dwl_tr=zeros(d,n_tr);
+dwl_cv=zeros(d,n_cv);
+dwl_tt=zeros(d,n_tt);
+
+for ii = 1:nClass    
+    dwl_tr(:,n_tr_p*(ii-1)+1:n_tr_p*ii) = dwl(:,(whichclass(ii)-1)*...
+        featln*40+getindx(ind_tr,featln)); % training samples         
+    dwl_cv(:,n_cv_p*(ii-1)+1:n_cv_p*ii) = dwl(:,(whichclass(ii)-1)*...
+        featln*40+getindx(ind_cv,featln)); 
+    dwl_tt(:,n_tt_p*(ii-1)+1:n_tt_p*ii) = dwl(:,(whichclass(ii)-1)*...
+        featln*40+getindx(ind_tt,featln)); 
+end
+
+tr_dat = dwl_tr(1:d-1, :); % samples
+cv_dat = dwl_cv(1:d-1, :);
+tt_dat = dwl_tt(1:d-1, :);
+trls = dwl_tr(end, :); % labels
+cvls = dwl_cv(end, :);
+ttls = dwl_tt(end, :);
 
 if N_c  == 1
     cv_mixdat = cv_dat;
@@ -84,7 +99,7 @@ else % to be modified
 end
 database.SNR = SNR;
 database.N_c = N_c; % how many classes of signals mixed
-database.featln = 1;
+database.featln = featln;
 database.tr_data = tr_dat;
 database.tr_label = trls;
 database.cv_data = cv_dat;

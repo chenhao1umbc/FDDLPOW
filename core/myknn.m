@@ -9,17 +9,19 @@ if sum(cvortest) == 2
     error(' error from file myknn.m')
 end
 
-labels = Database.tr_label(1,:);
+% labels = Database.tr_label;
+labels = aoos(Database.tr_label,Database.featln,size(Database.tr_label, 2));
 if cvortest(1) % do cv
-    cvtlabel = Database.cv_label;
-%     cvtlabel = aoos(Database.cv_label,Database.featln,size(Database.cv_label, 2));
+%     cvtlabel = Database.cv_label;
+    cvtlabel = aoos(Database.cv_label,Database.featln,size(Database.cv_label, 2));
 else
-    cvtlabel = Database.test_label;
+%     cvtlabel = Database.test_label;
     cvtlabel = aoos(Database.test_label,Database.featln,size(Database.test_label, 2));
 end
 
 Mdl = fitcknn( Xtr',labels','NumNeighbors',k,'Standardize',1);
 prelabel = predict(Mdl, Xcvortest');
+
 a = prelabel - cvtlabel(1,:)';
 acc = length(a(a ==0))/length(a);
 

@@ -16,10 +16,10 @@ cvortest = [1, 0]; % [docv, dotest] cannot be [1, 1]
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 
-K = 100;
+K = 50;
 lbmd = 0.01;
-mu= 0.00001;
-Q = 0.1;% this is wq without negative
+mu= 0.01;
+Q = 0.50;% this is wq without negative
 SNR = 2000;
 
 % K = [ 50, 75, 100, 125];
@@ -62,11 +62,11 @@ for ind4 = 1:length(Q)
     load(opts.Dictnm,'Dict','opts')
     if Dict.iter >40
         Z = sparsecoding(Dict,Database,opts,mixture_n, cvortest);
-%         Z = aoos(Z,Database.featln, size(Z, 2));
-%         Xtestorcv = Z;
-%         Xtr = Dict.Z;
-        Xtestorcv = Dict.W'*Z;
-        Xtr = Dict.W'*Dict.Z;
+        Z = aoos(Z,Database.featln, size(Z, 2));
+        Xtestorcv = Z;
+        Xtr = aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
+%         Xtestorcv = Dict.W'*Z;
+%         Xtr = Dict.W'*aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
         % KNN classifier
         acc_knn(ind1, ind2, ind3, ind4) = myknn(Xtr, Xtestorcv, Database, cvortest); % k = 5    
         acc_svm(ind1, ind2, ind3, ind4) = mysvm(Xtr, Xtestorcv, Database, cvortest);

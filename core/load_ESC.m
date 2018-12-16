@@ -1,4 +1,4 @@
-function [database] = load_GRID(N_c, SNR, pctrl)
+function [database] = load_ESC(N_c, SNR, pctrl)
 
 % This function is made to load testing, cross-validation, and traing data with their labels
 % The dataset is called GRID, we only take 10 people out of 34. 
@@ -91,7 +91,7 @@ if N_c  == 1
     cvmixls = cvls;
     tt_mixdat = tt_dat;
     ttmixls = ttls;
-else % to be modified
+else % to be modified ***************
     cv_mixdat = cv_dat;
     cvmixls = cvls;
     tt_mixdat = tt_dat;

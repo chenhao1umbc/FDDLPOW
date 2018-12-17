@@ -10,13 +10,13 @@ if sum(cvortest) == 2
 end
 
 labels = Database.tr_label;
-labels = aoos(Database.tr_label,Database.featln,size(Database.tr_label, 2));
+% labels = aoos(Database.tr_label,Database.featln,size(Database.tr_label, 2));
 if cvortest(1) % do cv
-%     cvtlabel = Database.cv_label;
+    cvtlabel = Database.cv_label;
     cvtlabel = aoos(Database.cv_label,Database.featln,size(Database.cv_label, 2));
 else
-%     cvtlabel = Database.test_label;
-    cvtlabel = aoos(Database.test_label,Database.featln,size(Database.test_label, 2));
+    cvtlabel = Database.test_label;
+%     cvtlabel = aoos(Database.test_label,Database.featln,size(Database.test_label, 2));
 end
 
 Mdl = fitcecoc( Xtr',labels');

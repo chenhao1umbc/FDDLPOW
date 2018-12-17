@@ -42,15 +42,17 @@ ttln_mix = 10; % testing data is 100 mixture samples per combination
 
 %% loading data
 % loading non-mixture data for training
-load 'ESC10more_f800.mat' % data variable name is grid5k
-label = zeros(2, size(labels,2)); % 10 classes, 400 samples perclass originally
+% load 'ESC10_f100t5.mat'
+% load 'ESC10more_f800.mat'
+load 'sct_esc10_16_0.25.mat'
 label = labels;% class index key
+% label = zeros(2, size(labels,2)); % 10 classes, 400 samples perclass originally
 % label(2, :) = 1:size(labels,2); % primary key 0 to N for all the classes
 
 data = norm_data(data(:,:));
 dwl = [data; label]; % data with labels
 
-rng(100)
+rng(10)
 ind = randperm(perClassln);
 ind_tr = ind(1:trln);
 ind_cv = ind(trln+1:trln+cvln);

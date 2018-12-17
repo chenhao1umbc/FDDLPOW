@@ -37,19 +37,13 @@ for ii=1:opt.max_iter
     optZ.max_Ziter = 10; % for Z update
     optZ.Zthreshold = 1e-6; 
     Z=DDLMD_updateZ(X,trlabels,optZ,W,D,Z);
-    sparsity=mean(sum(Z ~= 0))/opt.K;   % avg number of nonzero elements in cols of Z
-%     if ii == 20
-%         if sparsity < 0.2 || sparsity >0.9
-%             fprintf('too sparse or non-sparse\n')
-%             break;            
-%         end
-%     end
-%     if ii == 40
-%         if sparsity > 0.7 || sparsity < 0.05
-%             fprintf('too sparse or non-sparse \n')
-%             break;            
-%         end
-%     end
+    if 0.3 == ii/opt.max_iter
+        sparsity=mean(sum(Z ~= 0))/opt.K;   % avg number of nonzero elements in cols of Z
+        if sparsity > 0.95 || sparsity < 0.05
+            fprintf('30 percent iters too sparse or non-sparse\n')
+            break;            
+        end
+    end
     
     % update W, with D and Z fixed
     optW=opt;

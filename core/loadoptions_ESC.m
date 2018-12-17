@@ -14,6 +14,13 @@ if nargin < 6
     beta = 1;
     SNR = 2000;
 end
+if nargin < 7
+    beta = 1;
+    SNR = 2000;
+end
+if nargin < 8
+    SNR = 2000;
+end
 opts.C = 10; % total of C = 6 classes
 opts.rng = 0; % for dictionary initialization
 opts.SNR = SNR;

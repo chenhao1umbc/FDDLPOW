@@ -44,7 +44,8 @@ ttln_mix = 10; % testing data is 100 mixture samples per combination
 % loading non-mixture data for training
 % load 'ESC10_f100t5.mat'
 % load 'ESC10more_f800.mat'
-load 'sct_esc10_16_0.25.mat'
+% load 'sct_esc10_16_0.25.mat'
+load 'sct_esc10_16_0.25_down100.mat'
 label = labels;% class index key
 % label = zeros(2, size(labels,2)); % 10 classes, 400 samples perclass originally
 % label(2, :) = 1:size(labels,2); % primary key 0 to N for all the classes

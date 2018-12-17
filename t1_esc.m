@@ -17,9 +17,9 @@ mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 
 % K = 100;
-% lbmd = 0.01;
-% mu= 0.1;
-% Q = 0.16;% this is wq without negative
+% lbmd = 0.05;
+% mu= 0.05;
+% Q = 1;% this is wq without negative
 SNR = 2000;
 
 K = [20, 40, 60, 80, 100, 120 ];
@@ -42,7 +42,7 @@ for ind4 = 1:length(Q)
         sparsity=mean(sum(Dict.Z ~= 0))/opts.K
 %         dt = datestr(datetime);
 %         dt((datestr(dt) == ':')) = '_'; % for windows computer
-        save(['.././tempdict/', opts.Dictnm],'Dict','opts')    
+        save(['.././tempdict_downsampling/', opts.Dictnm],'Dict','opts')    
     end 
 end
 end
@@ -52,7 +52,7 @@ end
 
 %% testing part
 if sum(cvortest)
-addpath(genpath('.././tempdict'))
+addpath(genpath('.././tempdict_downsampling'))
 acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q));
 acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
 for ind1 = 1: length(K)

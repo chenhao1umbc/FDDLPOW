@@ -29,10 +29,8 @@ else
     pctrl.equal = 0;
 end
 
-
 whichclass = 1: 10;% S1 to S10
 nClass = length(whichclass);
-featln = 5;
 trln = 20; % trainging 300 per class
 cvln = 10; % cross-validation data is 50 per class
 ttln = 10; % testing data is 40 per class
@@ -42,18 +40,18 @@ ttln_mix = 10; % testing data is 100 mixture samples per combination
 
 %% loading data
 % loading non-mixture data for training
-% load 'ESC10_f100t5.mat'
-% load 'ESC10more_f800.mat'
-% load 'sct_esc10_16_0.25.mat'
-load 'sct_esc10_16_0.25_down100.mat'
+% load 'sct_esc10_16_0.25_m2.mat'
+% load 'sct_esc10_16_0.25_m3_renorm.mat'
+load 'sct_esc10_16_0.25_m3_log.mat'
 label = labels;% class index key
-% label = zeros(2, size(labels,2)); % 10 classes, 400 samples perclass originally
-% label(2, :) = 1:size(labels,2); % primary key 0 to N for all the classes
+% data = aoos(data, featln, size(data,2));
+% label = aoos(labels, featln, size(labels,2));
+% featln = 1;
 
 data = norm_data(data(:,:));
 dwl = [data; label]; % data with labels
 
-rng(10)
+rng(100)
 ind = randperm(perClassln);
 ind_tr = ind(1:trln);
 ind_cv = ind(trln+1:trln+cvln);
@@ -114,4 +112,11 @@ database.cv_mixlabel = cvmixls;
 database.test_mixdata = tt_mixdat;
 database.test_mixlabel = ttmixls;
 database.cvln_mix  = cvln_mix; % samples for training in logistis regression
+
+% database = myshuffle(database,10);
+% temp = database.test_data(:,1:end/2);
+% database.test_data(:,1:end/2) = database.cv_data(:, 1:end/2);
+% database.cv_data(:, 1:end/2) = temp;
+
+
 end % end of the function file

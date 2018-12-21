@@ -28,7 +28,7 @@ opt.Nc = Nc;
 H_bar_i = M1(1:Nc, 1:Nc);
 
 % initialize Dictionary
-[D, Z, W, U, V, Delta, Loss, opt] = initdict(X, H_bar_i, H3, opt); 
+[D, Z, W, U, V, Delta, Loss, opt] = initdict_t3(X, H_bar_i, H3, opt); 
 % max_iter will change for existing dictionary
 
 % main loop
@@ -61,11 +61,11 @@ for ii = 1:opt.max_iter
     optZ.max_Ziter = 20; % for Z update
     optZ.Zthreshold = 1e-6;        
     Z = mix_updateZ(X,H_bar_i, H3, optZ, W, D, Z, U, V, Delta); 
-    sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
     if 0.3 == ii/opt.max_iter
-        if sparsity > 0.6 || sparsity < 0.1
-            fprintf('30 iters too sparse or non-sparse\n')
-%             break;            
+        sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
+        if sparsity > 0.9 || sparsity < 0.05
+            fprintf('30 percent iters too sparse or non-sparse\n')
+            break;            
         end
     end
     if opt.losscalc
@@ -107,19 +107,6 @@ for ii = 1:opt.max_iter
             title('Cost function for mixture case');
             xlabel({'Iterations';'--from DDLMD\_mix.m'});
             pause(.1);
-        end
-    end
-    if opt.savedict
-        if mod(ii,30) == 0
-            Dict.D = D;
-            Dict.W = W;
-            Dict.Z = Z;
-            Dict.U = U;
-            Dict.V = V;
-            Dict.Delta = Delta;
-            Dict_mix = Dict;
-            opts = opt;
-            save([opts.mixnm(1:end-4),'_',num2str(ii)],'Dict_mix','opts')
         end
     end
     

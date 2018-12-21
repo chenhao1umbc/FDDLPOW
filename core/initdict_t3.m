@@ -15,29 +15,25 @@ function [D, Z, W, U, V, Delta, Loss, opt]=initdict_t3(X, H_bar_i, H3, opt)
 rng(opt.rng)
 
 % check checking the existing Dictionary
-nm = ['FDDLOW_mix','_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1),...
-    '_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'_nu',num2str(opt.nu),...
-    '_beta',num2str(-1),'.mat' ];
-% nm = opt.Dictnm;
+% nm = ['FDDLOW_mix','_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1),...
+%     '_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'_nu',num2str(opt.nu),...
+%     '_beta',num2str(-1),'.mat' ];
+nm = ['esc_FDDLPO',opt.dataset,'_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1)...
+    ,'_mu',num2str(opt.mu),'_nu',num2str(opt.nu), '_Q',num2str(opt.Q),'.mat' ];
 fileexistance=exist(nm);
 if fileexistance==2
     load(nm)
-%     D=Dict_mix.D;
-%     Z=Dict_mix.Z;
-%     W=Dict_mix.W;
-%     U = Dict_mix.U; 
     D = Dict.D;
     Z = Dict.Z;
     W = Dict.W;
     U = mix_updateU(W, Z, H3);
-    Delta = ones(1, opt.C); 
-      
-    % opt.max_iter=80;% because of good initialization
+    Delta = ones(1, opt.C);       
+    opt.max_iter=80;% because of good initialization
     Loss=zeros(3,opt.max_iter); 
 else    
     D=randn(M_d,opt.K);
     Z=randn(opt.K,opt.N);
-    W=randn(opt.K,opt.Q);d
+    W=randn(opt.K,opt.Q);
     Delta = ones(1, opt.C); 
     U = mix_updateU(W, Z, H3);
     Loss=zeros(3,opt.max_iter);

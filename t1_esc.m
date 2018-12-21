@@ -27,9 +27,10 @@ lbmd = [0.005, 0.01,0.04, 0.07, 0.1 0.4, 0.7, 1 ];
 mu = [1, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 5e-4, 1e-4];
 Q = [1, 0.9, 0.75, 0.5, 0.3 ]; % prtion
 
-[Database] = load_ESC(mixture_n, SNR, pctrl);
+
 
 %% load data
+[Database] = load_ESC(mixture_n, SNR, pctrl);
 for f = 1:5
 f
 seed = f*100;% change ramdom seed to do m-fold cv   
@@ -45,8 +46,6 @@ for ind4 = 1:length(Q)
     Dict = FDDLOW_table1(Database.tr_data,Database.tr_label,opts);    
     if Dict.iter/opts.max_iter > 0.3
         sparsity = mean(sum(Dict.Z ~= 0))/opts.K
-%         dt = datestr(datetime);
-%         dt((datestr(dt) == ':')) = '_'; % for windows computer
         save(['.././tempresult/', opts.Dictnm],'Dict','opts')    
     end 
 end
@@ -89,8 +88,8 @@ dt((datestr(dt) == ':')) = '_'; % for windows computer
 save(['.././tempresult/m3log',dt, 't1_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
 
 end
-meanknn = mean(maxknn);
-meansvm = mean(maxsvm);
+meanknn = max(max(max(max(sum(acc_knn,5)/5))));
+meansvm = max(max(max(max(sum(acc_svm,5)/5))));
 dt = datestr(datetime);
 dt((datestr(dt) == ':')) = '_'; % for windows computer
 save([dt, 'm3log_t1_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...

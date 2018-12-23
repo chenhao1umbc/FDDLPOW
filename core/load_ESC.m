@@ -93,10 +93,7 @@ if N_c  == 1
     tt_mixdat = tt_dat;
     ttmixls = ttls;
 else % to be modified ***************
-    cv_mixdat = cv_dat;
-    cvmixls = cvls;
-    tt_mixdat = tt_dat;
-    ttmixls = ttls;
+    [cv_mixdat, cvmixls, tt_mixdat, ttmixls] = loadmixesc(N_c, SNR, pctrl);
 end
 database.SNR = SNR;
 database.N_c = N_c; % how many classes of signals mixed
@@ -112,11 +109,5 @@ database.cv_mixlabel = cvmixls;
 database.test_mixdata = tt_mixdat;
 database.test_mixlabel = ttmixls;
 database.cvln_mix  = cvln_mix; % samples for training in logistis regression
-
-% database = myshuffle(database,10);
-% temp = database.test_data(:,1:end/2);
-% database.test_data(:,1:end/2) = database.cv_data(:, 1:end/2);
-% database.cv_data(:, 1:end/2) = temp;
-
 
 end % end of the function file

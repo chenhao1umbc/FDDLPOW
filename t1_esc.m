@@ -10,7 +10,7 @@ addpath(genpath('.././data'))
 
 %% load settings
 % do traing or do crossvalidation
-do_training = 1;
+do_training = 0;
 cvortest = [1, 0]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
@@ -31,6 +31,8 @@ Q = [1, 0.9, 0.75, 0.5, 0.3 ]; % prtion
 
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);
+acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q));
+acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
 for f = 1:5
 f
 seed = f*100;% change ramdom seed to do m-fold cv   
@@ -57,8 +59,6 @@ end
 %% cross-val part
 if sum(cvortest)
 addpath(genpath('.././tempresult'))
-acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q));
-acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
 for ind1 = 1: length(K)
 for ind2 = 1: length(lbmd)
 for ind3= 1: length(mu)   
@@ -86,7 +86,6 @@ end
 dt = datestr(datetime);
 dt((datestr(dt) == ':')) = '_'; % for windows computer
 save(['.././tempresult/m3log',dt, 't1_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
-
 end
 meanknn = max(max(max(max(sum(acc_knn,5)/5))));
 meansvm = max(max(max(max(sum(acc_svm,5)/5))));

@@ -30,7 +30,7 @@ Q = [1, 0.9, 0.75, 0.5, 0.3 ]; % prtion
 [Database] = load_ESC(mixture_n, SNR, pctrl);
 
 %% load data
-for f = 1:5
+for f = 2:5
 f
 seed = f*100;% change ramdom seed to do m-fold cv   
 Database = myshuffle(Database,seed);

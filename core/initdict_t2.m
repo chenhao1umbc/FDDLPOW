@@ -16,10 +16,9 @@ C=max(trlabels); % how many classes
 rng(opt.rng)
 
 % check checking the existing Dictionary
-opt.Dictnm =['esc_FDDLP',opt.dataset,'_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1)...
+nm = ['esc_FDDLP',opt.dataset,'_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1)...
     ,'_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'.mat' ];
-nm = opt.Dictnm;
-fileexistance=exist(nm);
+fileexistance = exist(nm);
 if fileexistance==2
     load(nm)
     D=Dict.D;

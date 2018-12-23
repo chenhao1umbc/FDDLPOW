@@ -10,7 +10,7 @@ addpath(genpath('.././data'))
 
 %% load settings
 % do traing or do crossvalidation
-do_training = 1;
+do_training = 0;
 cvortest = [1, 0]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
@@ -27,10 +27,13 @@ lbmd = [0.005, 0.01,0.04, 0.07, 0.1 0.4, 0.7, 1 ];
 mu = [1, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 5e-4, 1e-4];
 Q = [1, 0.9, 0.75, 0.5, 0.3 ]; % prtion
 
-[Database] = load_ESC(mixture_n, SNR, pctrl);
+
 
 %% load data
-for f = 2:5
+[Database] = load_ESC(mixture_n, SNR, pctrl);
+acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q));
+acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
+for f = 1:5
 f
 seed = f*100;% change ramdom seed to do m-fold cv   
 Database = myshuffle(Database,seed);
@@ -45,8 +48,6 @@ for ind4 = 1:length(Q)
     Dict = FDDLOW_table1(Database.tr_data,Database.tr_label,opts);    
     if Dict.iter/opts.max_iter > 0.3
         sparsity = mean(sum(Dict.Z ~= 0))/opts.K
-%         dt = datestr(datetime);
-%         dt((datestr(dt) == ':')) = '_'; % for windows computer
         save(['.././tempresult/', opts.Dictnm],'Dict','opts')    
     end 
 end
@@ -58,8 +59,6 @@ end
 %% cross-val part
 if sum(cvortest)
 addpath(genpath('.././tempresult'))
-acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q));
-acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
 for ind1 = 1: length(K)
 for ind2 = 1: length(lbmd)
 for ind3= 1: length(mu)   
@@ -87,10 +86,9 @@ end
 dt = datestr(datetime);
 dt((datestr(dt) == ':')) = '_'; % for windows computer
 save(['.././tempresult/m3log',dt, 't1_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
-
 end
-meanknn = mean(maxknn);
-meansvm = mean(maxsvm);
+meanknn = max(max(max(max(sum(acc_knn,5)/5))));
+meansvm = max(max(max(max(sum(acc_svm,5)/5))));
 dt = datestr(datetime);
 dt((datestr(dt) == ':')) = '_'; % for windows computer
 save([dt, 'm3log_t1_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...

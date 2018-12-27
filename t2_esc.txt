@@ -1,0 +1,2512 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2018 The MathWorks, Inc.
+                   R2018b (9.5.0.944444) 64-bit (glnxa64)
+                              August 28, 2018
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> 
+f =
+
+     1
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.4374
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2725
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.4037
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.7031
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.7111
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.6827
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.5056
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1743
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.6804
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1688
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1870
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1911
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1835
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1815
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1857
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1889
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1877
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1835
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1883
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu7_Q30.mat'
+
+
+maxknn =
+
+    0.1400
+
+
+maxsvm =
+
+    0.1400
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu5_Q30.mat'
+
+
+maxknn =
+
+    0.3700
+
+
+maxsvm =
+
+    0.3400
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu3_Q30.mat'
+
+
+maxknn =
+
+    0.3700
+
+
+maxsvm =
+
+    0.3400
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu1_Q30.mat'
+
+
+maxknn =
+
+    0.3700
+
+
+maxsvm =
+
+    0.3400
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.7_Q30.mat'
+
+
+maxknn =
+
+    0.3700
+
+
+maxsvm =
+
+    0.3400
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.5_Q30.mat'
+
+
+maxknn =
+
+    0.3700
+
+
+maxsvm =
+
+    0.3400
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.3_Q30.mat'
+
+
+maxknn =
+
+    0.3700
+
+
+maxsvm =
+
+    0.3400
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.1_Q30.mat'
+
+
+maxknn =
+
+    0.6000
+
+
+maxsvm =
+
+    0.4700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.07_Q30.mat'
+
+
+maxknn =
+
+    0.6000
+
+
+maxsvm =
+
+    0.4700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.05_Q30.mat'
+
+
+maxknn =
+
+    0.6100
+
+
+maxsvm =
+
+    0.6100
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.03_Q30.mat'
+
+
+maxknn =
+
+    0.8100
+
+
+maxsvm =
+
+    0.7900
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.01_Q30.mat'
+
+
+maxknn =
+
+    0.8100
+
+
+maxsvm =
+
+    0.7900
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.005_Q30.mat'
+
+
+maxknn =
+
+    0.8100
+
+
+maxsvm =
+
+    0.7900
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.003_Q30.mat'
+
+
+maxknn =
+
+    0.8100
+
+
+maxsvm =
+
+    0.7900
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.001_Q30.mat'
+
+
+maxknn =
+
+    0.8100
+
+
+maxsvm =
+
+    0.7900
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0007_Q30.mat'
+
+
+maxknn =
+
+    0.8100
+
+
+maxsvm =
+
+    0.7900
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0005_Q30.mat'
+
+
+maxknn =
+
+    0.8100
+
+
+maxsvm =
+
+    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0003_Q30.mat'
+
+
+maxknn =
+
+    0.8100
+
+
+maxsvm =
+
+    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0001_Q30.mat'
+
+
+maxknn =
+
+    0.8100
+
+
+maxsvm =
+
+    0.8700
+
+
+f =
+
+     2
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2257
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2301
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1859
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2400
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2381
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2680
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1933
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2534
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2451
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2380
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2380
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2368
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2367
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2367
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2367
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2363
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2363
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2361
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2360
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2360
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu7_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8100
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu5_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8100
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu3_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8100
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu1_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8100
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.7_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8100
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.5_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8100
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.3_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8100
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.1_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8100
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.07_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.05_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.03_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.01_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.007_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.005_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.003_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.001_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0007_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0005_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0003_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0001_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700
+
+
+f =
+
+     3
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2425
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2413
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2494
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2463
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2522
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2584
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2863
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2323
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2379
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1837
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1792
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2355
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2354
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2354
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2364
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2372
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2372
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2369
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2371
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu7_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu5_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu3_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu1_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.7_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.5_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.3_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.1_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.07_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    0.8300
+
+
+maxsvm =
+
+    0.8700    0.8700    0.8700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.05_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.03_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.01_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.007_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.005_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.003_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.001_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0007_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0005_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0003_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0001_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700
+
+
+f =
+
+     4
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2633
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2328
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2297
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2423
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.1907
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2331
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2542
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2521
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2407
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2354
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2340
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2337
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2335
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2338
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2338
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2336
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2336
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2335
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2335
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2335
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu7_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu5_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu3_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu1_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.7_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.5_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.3_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.1_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.07_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.05_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.03_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.01_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.007_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.005_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.003_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.001_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0007_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0005_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0003_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0001_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700
+
+
+f =
+
+     5
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2594
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2432
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2353
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2419
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2514
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2821
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2559
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2535
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2433
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2392
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2380
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2382
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2382
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2382
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2381
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2381
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2382
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2382
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2382
+
+
+ans =
+
+    'good from  initdict_t2'
+
+
+sparsity =
+
+    0.2382
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu7_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu5_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu3_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu1_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.7_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.5_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.3_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.1_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.07_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.05_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.03_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.01_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.007_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.005_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.003_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.001_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0007_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0005_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0003_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+
+ans =
+
+    'esc_FDDLPOESC10_k60_lmbd0.04_mu0.01_nu0.0001_Q30.mat'
+
+
+maxknn =
+
+    0.8100    0.8300    1.0000    1.0000    1.0000
+
+
+maxsvm =
+
+    0.8700    0.8700    0.9700    0.9700    0.9700
+
+>> >> >> >> >> >> Elapsed time is 2517.533982 seconds.
+>> 

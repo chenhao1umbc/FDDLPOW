@@ -11,7 +11,7 @@ addpath(genpath('.././data'))
 %% load settings
 % do traing or do crossvalidation
 do_training = 1;
-cvortest = [1, 0]; % [docv, dotest] cannot be [1, 1]
+cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
@@ -19,7 +19,7 @@ pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 K = 60;
 lbmd = 0.04;
 mu= 0.01;
-Q = 0.5;% this is wq without negative
+Q = 0.75;% this is wq without negative
 SNR = 2000;
 
 %%%%%%%%%%%%%%%%%% step-1 5 fold's cross-validation %%%%%%%%%%%%%%%%%
@@ -35,10 +35,10 @@ SNR = 2000;
 %%%%%%%%%%%%%%%%%% step-1 5 fold's cross-validation %%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%% step-2 fine tuning 5 fold's cross-validation %%%%%%%%%%%%%%%%%
-K = 60;
-lbmd = 0.025:0.005:0.055;
-mu = [0.005 0.008 0.01 0.012 0.015 ];
-Q = [0.6, 0.5, 0.4 ]; % prtion
+% K = 60;
+% lbmd = 0.025:0.005:0.055;
+% mu = [0.005 0.008 0.01 0.012 0.015 ];
+% Q = [0.6, 0.5, 0.4 ]; % prtion
 % result is 
 % K = 60;
 % lbmd = 0.055;

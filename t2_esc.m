@@ -11,7 +11,7 @@ addpath(genpath('.././data'))
 %% load settings
 % do traing or do crossvalidation
 do_training = 1;
-cvortest = [1, 0]; % [docv, dotest] cannot be [1, 1]
+cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
@@ -19,16 +19,15 @@ pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 K = 60;
 lbmd = 0.04;
 mu= 0.01;
-Q = 0.5;% this is wq without negative
+Q = 0.75;% this is wq without negative
 SNR = 2000;
 
 % K = [20, 40, 60, 80, 100, 120 ];
 % lbmd = [0.005, 0.01,0.04, 0.07, 0.1 0.4, 0.7, 1 ];
 % mu = [1, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 5e-4, 1e-4];
 % Q = [1, 0.9, 0.75, 0.5, 0.3 ]; % prtion
-% nu = [1, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 5e-4, 1e-4];
-nu = [7, 5, 3, 1, 0.7, 0.5, 0.3, 0.1, 0.07, 0.05, 0.03, 0.01, 0.007, 0.005, 0.003, 0.001,7e-4, 5e-4, 3e-4, 1e-4];
-
+% nu = [7, 5, 3, 1, 0.7, 0.5, 0.3, 0.1, 0.07, 0.05, 0.03, 0.01, 0.007, 0.005, 0.003, 0.001,7e-4, 5e-4, 3e-4, 1e-4];
+nu = 0.05;
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);
 acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q), length(nu));
@@ -83,9 +82,9 @@ for ind5 = 1:length(nu)
     end
 end
 end
-dt = datestr(datetime);
-dt((datestr(dt) == ':')) = '_'; % for windows computer
-save(['.././tempresult/m3log',dt, '_t2_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
+% dt = datestr(datetime);
+% dt((datestr(dt) == ':')) = '_'; % for windows computer
+% save(['.././tempresult/m3log',dt, '_t2_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
 end
 end
 end

@@ -110,7 +110,7 @@ for ii = 1:opt.max_iter
         end
     end
     
-fprintf('one iter time: %6.4f \n',toc-t1)
+% fprintf('one iter time: %6.4f \n',toc-t1)
 end
 
 Dict.D = D;

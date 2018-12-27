@@ -31,7 +31,7 @@ SNR = 2000;
 % K = 60;
 % lbmd = 0.04;
 % mu= 0.01;
-% Q = 0.5;% this is wq without negative, 
+% Q = 0.75;% this is wq without negative, 
 %%%%%%%%%%%%%%%%%% step-1 5 fold's cross-validation %%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%% step-2 fine tuning 5 fold's cross-validation %%%%%%%%%%%%%%%%%
@@ -50,7 +50,7 @@ SNR = 2000;
 [Database] = load_ESC(mixture_n, SNR, pctrl);
 acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q));
 acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
-for f = 1:5
+for f = 2%1:5
 f
 seed = f*100;% change ramdom seed to do m-fold cv   
 Database = myshuffle(Database,seed);
@@ -84,10 +84,10 @@ for ind4 = 1:length(Q)
     if exist(opts.Dictnm, 'file')        
     load(opts.Dictnm,'Dict','opts')
     if Dict.iter >40
-        Z = sparsecoding(Dict,Database,opts,mixture_n, cvortest);
+        Z = Database.test_data; %sparsecoding(Dict,Database,opts,mixture_n, cvortest);
         Z = aoos(Z,Database.featln, size(Z, 2));
-        Xtestorcv = Dict.W'*Z;
-        Xtr = Dict.W'*Dict.Z;%aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
+        Xtestorcv = Z;%Dict.W'*Z;
+        Xtr = Database.tr_data;%Dict.W'*Dict.Z;%aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
         % KNN classifier
         acc_knn(ind1, ind2, ind3, ind4, f) = myknn(Xtr, Xtestorcv, Database, cvortest); % k = 5    
         acc_svm(ind1, ind2, ind3, ind4, f) = mysvm(Xtr, Xtestorcv, Database, cvortest);

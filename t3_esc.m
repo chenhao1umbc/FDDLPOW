@@ -7,21 +7,22 @@ tic
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
+addpath(genpath('.././tempresult/'))
 
 %% load settings
 % do traing or do crossvalidation
-do_training = 0;
+do_training = 1;
 cvortest = [1, 0]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 
-K = 20;
-lbmd = 0.01;
+K = 60;
+lbmd = 0.04;
 mu= 0.01;
-Q = 1;% this is wq without negative
+Q = 0.75;% this is wq without negative
 nu = 0.05;
-beta = 0.001;
+beta = 0.005;
 SNR = 2000;
 
 % K = [20, 40, 60, 80, 100, 120 ];
@@ -100,6 +101,6 @@ meanknn = max(max(max(max(max(max(sum(acc_knn,7)/5))))));
 meansvm = max(max(max(max(max(max(sum(acc_svm,7)/5))))));
 dt = datestr(datetime);
 dt((datestr(dt) == ':')) = '_'; % for windows computer
-save([dt, '_m3log_t2_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...
+save([dt, '_m3log_t3_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...
     'meansvm','meanknn', 'lbmd', 'mu', 'Q', 'nu', 'seed')
 toc

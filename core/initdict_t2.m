@@ -36,7 +36,6 @@ else
     [M, ~, ~] = getMH1H2_t2(trlabels, Z);
     U = mix_updateU_t2(W, M);
     Loss=zeros(4,opt.max_iter);
-    'good from  initdict_t2'
 end 
 
 end % end of function file

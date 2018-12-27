@@ -30,6 +30,7 @@ if fileexistance==2
     Delta = ones(1, opt.C);       
     opt.max_iter=80;% because of good initialization
     Loss=zeros(3,opt.max_iter); 
+    'good init '
 else    
     D=randn(M_d,opt.K);
     Z=randn(opt.K,opt.N);

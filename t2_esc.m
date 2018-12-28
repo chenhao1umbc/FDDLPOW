@@ -83,9 +83,9 @@ for ind5 = 1:length(nu)
     end
 end
 end
-dt = datestr(datetime);
-dt((datestr(dt) == ':')) = '_'; % for windows computer
-save(['.././tempresult/m3log',dt, '_t2_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
+% dt = datestr(datetime);
+% dt((datestr(dt) == ':')) = '_'; % for windows computer
+% save(['.././tempresult/m3log',dt, '_t2_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
 end
 end
 end
@@ -93,8 +93,8 @@ end
 end
 meanknn = max(max(max(max(max(sum(acc_knn,6)/5)))));
 meansvm = max(max(max(max(max(sum(acc_svm,6)/5)))));
-dt = datestr(datetime);
-dt((datestr(dt) == ':')) = '_'; % for windows computer
-save([dt, '_m3log_t2_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...
-    'meansvm','meanknn', 'lbmd', 'mu', 'Q', 'nu', 'seed')
+% dt = datestr(datetime);
+% dt((datestr(dt) == ':')) = '_'; % for windows computer
+% save([dt, '_m3log_t2_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...
+%     'meansvm','meanknn', 'lbmd', 'mu', 'Q', 'nu', 'seed')
 toc

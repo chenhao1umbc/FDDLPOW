@@ -18,9 +18,9 @@ mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 
 K = 60;
-lbmd = 0.045;
-mu= 0.015;
-Q = 0.6;% this is wq without negative
+lbmd = 0.04;
+mu= 0.01;
+Q = 0.75;% this is wq without negative
 SNR = 2000;
 
 %%%%%%%%%%%%%%%%%% step-1 5 fold's cross-validation %%%%%%%%%%%%%%%%%
@@ -37,9 +37,9 @@ SNR = 2000;
 
 %%%%%%%%%%%%%%%%%% step-2 fine tuning 5 fold's cross-validation %%%%%%%%%%%%%%%%%
 % K = 60;
-lbmd = 0.025:0.005:0.055;
-mu = [0.005 0.008 0.01 0.012 0.015 ];
-Q = [0.9, 0.8, 0.7, 0.6]; % prtion
+% lbmd = 0.025:0.005:0.055;
+% mu = [0.005 0.008 0.01 0.012 0.015 ];
+% Q = [0.9, 0.8, 0.7, 0.6]; % prtion
 % result is 
 % K = 60;
 % lbmd = 0.045;
@@ -107,8 +107,8 @@ end
 end
 meanknn = max(max(max(max(sum(acc_knn,5)/5))));
 meansvm = max(max(max(max(sum(acc_svm,5)/5))));
-dt = datestr(datetime);
-dt((datestr(dt) == ':')) = '_'; % for windows computer
-save([dt, 'm3log_t1_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...
-    'meansvm','meanknn', 'lbmd', 'mu', 'Q', 'seed')
+% dt = datestr(datetime);
+% dt((datestr(dt) == ':')) = '_'; % for windows computer
+% save([dt, 'm3log_t1_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...
+%     'meansvm','meanknn', 'lbmd', 'mu', 'Q', 'seed')
 toc

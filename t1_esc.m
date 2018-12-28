@@ -18,7 +18,7 @@ mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 
 K = 60;
-lbmd = 0.045;
+lbmd = 0.04;
 mu= 0.015;
 Q = 0.6;% this is wq without negative
 SNR = 2000;

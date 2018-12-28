@@ -7,6 +7,7 @@ tic
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
+addpath(genpath('.././tempresult'))
 
 %% load settings
 % do traing or do crossvalidation
@@ -82,9 +83,9 @@ for ind5 = 1:length(nu)
     end
 end
 end
-% dt = datestr(datetime);
-% dt((datestr(dt) == ':')) = '_'; % for windows computer
-% save(['.././tempresult/m3log',dt, '_t2_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
+dt = datestr(datetime);
+dt((datestr(dt) == ':')) = '_'; % for windows computer
+save(['.././tempresult/m3log',dt, '_t2_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
 end
 end
 end

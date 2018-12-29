@@ -17,10 +17,10 @@ cvortest = [1, 0]; % [docv, dotest] cannot be [1, 1]
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 
-K = 60;
-lbmd = 0.04;
-mu= 0.01;
-Q = 0.75;% this is wq without negative
+% K = 60;
+% lbmd = 0.04;
+% mu= 0.01;
+% Q = 0.75;% this is wq without negative
 SNR = 2000;
 
 %%%%%%%%%%%%%%%%%% step-1 5 fold's cross-validation %%%%%%%%%%%%%%%%%
@@ -41,10 +41,10 @@ SNR = 2000;
 % mu = [0.005 0.008 0.01 0.012 0.015 ];
 % Q = [0.9, 0.8, 0.7, 0.6]; % prtion
 % result is 
-% K = 60;
-% lbmd = 0.045;
-% mu= 0.015;
-% Q = 0.6;% this is wq without negative
+K = 60;
+lbmd = 0.025;
+mu= 0.005;
+Q = 0.9;% this is wq without negative
 %%%%%%%%%%%%%%%%%% step-2 5 fold's cross-validation %%%%%%%%%%%%%%%%%
 
 %% load data

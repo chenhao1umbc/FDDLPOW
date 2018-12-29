@@ -7,7 +7,7 @@ tic
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
-addpath(genpath('.././tempresult'))
+% addpath(genpath('.././tempresult'))
 
 %% load settings
 % do traing or do crossvalidation

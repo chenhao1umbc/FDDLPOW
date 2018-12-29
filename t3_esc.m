@@ -36,7 +36,7 @@ SNR = 2000;
 [Database] = load_ESC(mixture_n, SNR, pctrl);
 acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q), length(nu), length(beta));
 acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q), length(nu), length(beta));
-for f = 1:5
+for f = 1:4
 f
 seed = f*100;% change ramdom seed to do m-fold cv   
 Database = myshuffle(Database,seed);
@@ -66,6 +66,8 @@ end
 %% testing part
 if sum(cvortest)
 addpath(genpath('.././tempresult'))
+acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q), length(nu), length(beta));
+acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q), length(nu), length(beta));
 for ind1 = 1: length(K)
 for ind2 = 1: length(lbmd)
 for ind3= 1: length(mu)   
@@ -88,9 +90,9 @@ for ind6 = 1:length(beta)
     end
 end
 end
-dt = datestr(datetime);
-dt((datestr(dt) == ':')) = '_'; % for windows computer
-save(['.././tempresult/m3log',dt, '_t3_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
+% dt = datestr(datetime);
+% dt((datestr(dt) == ':')) = '_'; % for windows computer
+% save(['.././tempresult/m3log',dt, '_t3_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
 end
 end
 end
@@ -99,8 +101,8 @@ end
 end
 meanknn = max(max(max(max(max(max(sum(acc_knn,7)/5))))));
 meansvm = max(max(max(max(max(max(sum(acc_svm,7)/5))))));
-dt = datestr(datetime);
-dt((datestr(dt) == ':')) = '_'; % for windows computer
-save([dt, '_m3log_t3_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...
-    'meansvm','meanknn', 'lbmd', 'mu', 'Q', 'nu', 'seed')
+% dt = datestr(datetime);
+% dt((datestr(dt) == ':')) = '_'; % for windows computer
+% save([dt, '_m3log_t3_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...
+%     'meansvm','meanknn', 'lbmd', 'mu', 'Q', 'nu', 'seed')
 toc

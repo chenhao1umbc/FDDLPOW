@@ -44,9 +44,7 @@ ttln_mix = 10; % testing data is 100 mixture samples per combination
 % load 'sct_esc10_16_0.25_m3_renorm.mat'
 load 'sct_esc10_16_0.25_m3_log.mat'
 label = labels;% class index key
-% data = aoos(data, featln, size(data,2));
-% label = aoos(labels, featln, size(labels,2));
-% featln = 1;
+
 
 data = norm_data(data(:,:));
 dwl = [data; label]; % data with labels
@@ -93,7 +91,7 @@ if N_c  == 1
     tt_mixdat = tt_dat;
     ttmixls = ttls;
 else % to be modified ***************
-    [cv_mixdat, cvmixls, tt_mixdat, ttmixls] = loadmixesc(N_c, SNR, pctrl);
+    [cv_mixdat, cvmixls, tt_mixdat, ttmixls] = loadmixesc(pctrl);
 end
 database.SNR = SNR;
 database.N_c = N_c; % how many classes of signals mixed

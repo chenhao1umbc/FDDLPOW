@@ -90,9 +90,10 @@ if N_c  == 1
     cvmixls = cvls;
     tt_mixdat = tt_dat;
     ttmixls = ttls;
-else % to be modified ***************
+else 
     [cv_mixdat, cvmixls, tt_mixdat, ttmixls] = loadmixesc(pctrl);
 end
+database.pctrl = pctrl;
 database.SNR = SNR;
 database.N_c = N_c; % how many classes of signals mixed
 database.featln = featln;

@@ -12,8 +12,8 @@ addpath(genpath('.././data'))
 % do traing or do crossvalidation
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 
-mixture_n = 1; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
-pctrl.db = 0; % dynamic ratio is 0 3, 5, 10, 15 db
+mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
+pctrl.db = 3; % dynamic ratio is 0 3, 5, 10, 15 db
 
 K = 60;
 lbmd = 0.025;

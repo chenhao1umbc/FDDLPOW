@@ -11,13 +11,45 @@ if nargin <2
 end
 
 nm1 = 'sct_esc10_16_0.25_m3_log_mix';
-if pctrl.db == 0    
+if pctrl.db == 0    % equal power
     nm2 = '0  0.mat';
     nm = [nm1 nm2];    
+    load(nm);
+    Data = {data};
+    Labels = {labels};
+else % power diff
+    nm2 = [num2str(pctrl.db), '  0.mat'];
+    nm = [nm1 nm2];    
+    load(nm);
+    data0 = data;
+    label0 = labels;    
+    nm2 = ['0  ', num2str(pctrl.db), '.mat'];
+    nm = [nm1 nm2];    
+    load(nm);
+    Data = {data0, data}; % testing data with power diff
+    Labels = {label0, labels};
+end
+
+rng(10)
+ind = randperm(200);
+ind_cv = getindx(ind(1:100),featln); % get the cv data index
+ind_tt = getindx(ind(101:end),featln);
+cv_mixdat = [];
+tt_mixdat = [];
+cvmixls = [];
+ttmixls = [];
+for i = 1: length(Data)
+    for ii = 1:45 % length(Data{i})/featln/200
+    tp = Data{i};
+    cv_mixdat = [cv_mixdat, tp(:, (ii-1)*800 + ind_cv)];
+    tt_mixdat = [tt_mixdat, tp(:, (ii-1)*800 + ind_tt)];
+    tp_l = Labels{i};
+    cvmixls = [cvmixls, tp_l(:, (ii-1)*800 + ind_cv)];
+    ttmixls = [ttmixls, tp_l(:, (ii-1)*800 + ind_tt)];
+    end
 end
 
 
-load(nm);
 
 
 

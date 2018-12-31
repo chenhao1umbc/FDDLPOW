@@ -13,7 +13,7 @@ addpath(genpath('.././data'))
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
-pctrl.db = 10; % dynamic ratio is 0 3, 5, 10, 15 db
+pctrl.db = 15; % dynamic ratio is 0 3, 5, 10, 15 db
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -27,7 +27,7 @@ Q = 0.9;% this is wq without negative
 nu = 0.03;
 beta = 0.01;
 SNR = 2000;
-table_n = 1; % algorithm number
+table_n = 3; % algorithm number
 
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);
@@ -71,3 +71,4 @@ end
 %     'nu', 'beta', 'pctrl','mixture_n', 'seed')
 end
 toc
+figure

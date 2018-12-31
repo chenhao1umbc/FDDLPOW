@@ -12,7 +12,7 @@ for ind1 = 1: length(beta)
         if exist('Dict')==1
             Dict_mix = Dict;
         end
-        if cv == 1;
+        if cv == 1
             Z = sparsecoding_mix_cv(Dict_mix, Database, opts); %%%%% cv or test **************
         else
             Z = sparsecoding_mix_test(Dict_mix, Database, opts);

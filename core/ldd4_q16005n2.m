@@ -22,7 +22,7 @@ end
 cv_mixdat=[];tt_mixdat=[];cvmixls=[];ttmixls=[];
 c = combnk(1:6, N_c); % ble bt fhss1 zb
 
-r00t = '.././data/SNout_LMdata4/q16005n2/norm_mix';
+r00t = '.././data/RF/SNout_LMdata4/q16005n2/norm_mix';
 part1 ='db449_1classq16&0.05n2_positive_M2_snr';
 part2 = 'db449_1classq16&0.05n2_negative_M2_snr';
 
@@ -47,7 +47,7 @@ for indx_p = 1:N_c
             cvind=[cvind;featln*h1+ii-featln];
             ttind=[ttind;featln*h2+ii-featln];
         end   
-        cv_dat_temp=db.features(:,cvind); % testing samples
+        cv_dat_temp=db.features(:,cvind); % cv samples
         tt_dat_temp=db.features(:,ttind); % testing samples
         cv_mixdat=[cv_mixdat,cv_dat_temp];
         cvmixls=[cvmixls,indCl*ones(1,size(cv_dat_temp,2))];

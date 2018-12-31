@@ -1,6 +1,20 @@
 clear 
 clc
 
+a1 = [0.6418 0.6388 0.6334 0.6081 0.5786];
+a2 = [0.6984 0.6852 0.6723 0.6372 0.5929];
+a3 = [0.6975 0.6892 0.6777 0.6434 0.6028];
+db = [0, 3, 5, 10, 15];
+hold on
+plot(db, a1, '--x');
+plot(db, a2, ':+');
+plot(db, a3, '-^');
+legend('FDDLP', 'FDDLPO', 'FDDLPOW')
+ylim([0.4, 0.70])
+xticks([0, 3, 5, 10, 15])
+xlabel 'Power difference'
+ylabel('Accuracy')
+title 'L = 2 classification accuracy'
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
@@ -43,33 +57,8 @@ if plottesting == 1
 end
 
 
-%% calculate fisher/orghogonal term value
-%{
-sparsity = mean(sum(Z ~= 0))
-X = Database.tr_data;
-N = size(Z,2);
-Nc = N / C;
-H1 = kron(eye(C),ones(Nc)/Nc);
-H2 = ones(N)/N;
-H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
-M1 = eye(N) - H1;
-M2 = H1 - H2;
-H_bar_i = M1(1:Nc, 1:Nc);
-
-WtZ = W'*Z;
-WtZM1 = WtZ*M1;
-fWZ = norm(WtZM1, 'fro')^2 - norm(WtZ*M2, 'fro')^2 + 1.1*norm(WtZ,'fro')^2; % fisher term
-if isfield(Dict_mix, 'U')
-    gWZ = norm(WtZ*H3 -U, 'fro')^2; % orthogonal term
-    Loss=norm(X-D*Z,'fro')^2+opts.lambda1*sum(abs(Z(:)))+opts.mu*fWZ+opts.nu*gWZ;
-end
-
-Projected_WithinClass_covariance = norm(WtZM1*WtZM1','fro')
-Frobenius_norm_W = norm(W, 'fro')
-%}
-
 %% MDS / PCA
-%{1
+%{ 
 Cn = size(Dict_mix.Z, 2)/C; % how many sampless per classes/combinations
 temp = aoos(Dict_mix.Z(:,1:end), fln, size(Dict_mix.Z, 2));
 % temp = Dict_mix.Z(:,1:f:1200*n);
@@ -113,60 +102,4 @@ end
 % close all
 %}
 
-%% shouw projected data
-%{ 
-% show plots
-
-for ii = 1:C
-    mc = mean(Dict_mix.Z(:,1+end/C*(ii-1):end/C*ii),2);
-    temp = aoos(Dict_mix.Z, fln, size(Dict_mix.Z,2));
-    proj_tr1{ii} = mc'*W*W'*temp/norm(W'*mc,2);
-    figure(100);
-    subplot(3,floor(C/3),ii);
-    plot(proj_tr1{1, ii},'x')
-    title(['projected training data--class',num2str(ii),' m\_tilde Z'])
-    
-    t = proj_tr1{ii};
-    varProj(ii) = var(t(t>0.5)); 
-    
-    WtZ_c = W'*Dict_mix.Z(:,1+end/C*(ii-1):end/C*ii);
-    sigma_c2{ii} = (WtZ_c - W'*mc)*(WtZ_c - W'*mc)'/(size(Dict_mix.Z,2)/C-1);
-    all_sigma_c2(ii) = trace(sigma_c2{ii});
-    figure(30)
-    hold on
-    plot(diag(sigma_c2{ii}))
-    xlabel('dimension #')
-    ylabel('variance of each dimension')    
-    legend('ble','bt','fhss1','fhss2','wifi1','wifi2')
-
-%     figure(31);
-%     subplot(3,floor(n/3),ii);
-%     t = proj_tr{1, ii};
-%     histfit(t(t>0),10)
-    
-%     temp = aoos(Z(:,1:end/2), fln, size(Z,2)/2);
-%     proj2{ii} = mc'*W*W'*temp/norm(W'*mc,2);
-%     figure(40);
-%     subplot(3,floor(n/3),ii);
-%     plot(proj2{1, ii},'x')
-%     grid minor
-%     title(['projected miture testing data--class',num2str(ii),' m\_tildeW^TZ'])
-%     xlabel('samples number')
-     
-%     figure(41);
-%     subplot(3,floor(n/3),ii);
-%     t = proj2{1, ii};
-%     histfit(t(t>0),10)    
-end
-
-figure
-plot(varProj)
-xlabel('class#')
-ylabel('projected variance')
-
-figure
-plot(all_sigma_c2)
-xlabel('class#')
-ylabel('sum of covariance diagnal')
-%}
 

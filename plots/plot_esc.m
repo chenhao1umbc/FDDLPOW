@@ -18,6 +18,7 @@ title 'L = 2 classification accuracy'
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
+addpath(genpath('.././FDDLPOW'))
 
 plottesting =0; % if plottesing == 1, the plot teing samples
 SNR = 0; % SNR could be 2000,20, 0, -5, -10, -20, -30

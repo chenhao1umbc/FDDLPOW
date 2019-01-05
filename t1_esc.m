@@ -6,6 +6,7 @@ clc;
 tic
 
 addpath(genpath('.././fddlow'))
+addpath(genpath('.././FDDLPOW'))
 addpath(genpath('.././data'))
 % addpath(genpath('.././tempresult'))
 

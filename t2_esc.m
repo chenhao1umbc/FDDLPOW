@@ -7,6 +7,7 @@ tic
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
+addpath(genpath('.././FDDLPOW'))
 % addpath(genpath('.././tempresult'))
 
 %% load settings

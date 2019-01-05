@@ -7,7 +7,7 @@ tic
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
-
+addpath(genpath('.././FDDLPOW'))
 %% load settings
 % do traing or do crossvalidation
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]

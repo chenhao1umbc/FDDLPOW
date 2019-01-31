@@ -11,7 +11,7 @@ addpath(genpath('.././data'))
 
 %% load settings
 % do traing or do crossvalidation
-do_training = 1;
+do_training = 0;
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
@@ -51,7 +51,7 @@ Q = 0.9;% this is wq without negative
 [Database] = load_ESC(mixture_n, SNR, pctrl);
 acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q));
 acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
-for f = 1
+for f = 1:5
 f
 seed = f*100;% change ramdom seed to do m-fold cv   
 Database = myshuffle(Database,seed);
@@ -77,8 +77,8 @@ end
 %% cross-val part
 if sum(cvortest)
 addpath(genpath('.././tempresult'))
-acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q));
-acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
+% acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q));
+% acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
 for ind1 = 1: length(K)
 for ind2 = 1: length(lbmd)
 for ind3= 1: length(mu)   

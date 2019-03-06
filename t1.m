@@ -13,7 +13,7 @@ do_training = 0;
 do_cv = 1;
 
 % load data
-mixture_n = 0; % mixture_n classes mixture, = 1,2,3
+mixture_n = 1; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
 pctrl.db = uuu; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0

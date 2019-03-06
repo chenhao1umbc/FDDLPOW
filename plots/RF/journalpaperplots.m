@@ -1,4 +1,25 @@
 
+close all
+clear
+clc;
+tic
+
+addpath(genpath('.././fddlow'))
+addpath(genpath('.././data'))
+
+%% Plot the training samples for each class
+[Database]=load_data_new(1, 2000);
+name = {'BLE','BT','FHSS1','FHSS2','WIFI1','WIFI2'};
+for i = 1:6
+figure
+imagesc(Database.tr_data(:,1+14400/6*(i-1):14400/6*(i-1)+800))
+title(['Deep scattering spectrum of ', name{i},' training data'])
+xlabel('Sample index')
+ylabel('Frequency index')
+set(gcf,'color','w');
+end
+
+%% Results Plot
 
 lgwithmix_alg2 = [0.9700 	0.9527 	0.8127 	0.3353 	0.2000 ];
 lgwithmix_alg3 = [0.9980 	0.9960 	0.9560 	0.4180 	0.2047 ];

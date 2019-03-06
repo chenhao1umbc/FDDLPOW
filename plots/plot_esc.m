@@ -23,7 +23,12 @@ y = [66.7 72.7 67.5 75.8 78.2 81.2 83.8 86.6];
 bar(c,y, 0.6)
 title('Non-mixture classification accuracy')
 
+
 %%
+addpath(genpath('.././fddlow'))
+addpath(genpath('.././data'))
+addpath(genpath('.././FDDLPOW'))
+
 
 plottesting =0; % if plottesing == 1, the plot teing samples
 SNR = 0; % SNR could be 2000,20, 0, -5, -10, -20, -30

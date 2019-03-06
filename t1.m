@@ -7,6 +7,7 @@ tic
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
+addpath(genpath('.././FDDLPOW'))
 for uuu = [ 0 3  6 10 20]
 % do traing or do crossvalidation
 do_training = 0;

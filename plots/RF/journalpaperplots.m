@@ -2,12 +2,13 @@
 close all
 clear
 clc;
-tic
+
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 
 %% Plot the training samples for each class
+%{
 [Database]=load_data_new(1, 2000);
 name = {'BLE','BT','FHSS1','FHSS2','WIFI1','WIFI2'};
 for i = 1:6
@@ -18,9 +19,47 @@ xlabel('Sample index')
 ylabel('Frequency index')
 set(gcf,'color','w');
 end
+%}
+
 
 %% Results Plot
 
+FDDL=[0.9993 0.99166 0.9965 0.969833333 0.816833333];
+FDDLO=[1 1 1 0.9957 0.8974];
+FDDLOW = [1 1 0.9998 0.9948 0.9128];
+% week signal
+FDDL_=[0.9993 0.9983 0.993 0.9397 0.6337];
+FDDLO_=[1 1 1 0.9913 0.7893];
+FDDLOW_= [1 1 0.9997 0.9897 0.8152];
+
+
+figure
+plot(FDDL,'x-')
+hold on
+plot(FDDLO,'^-')
+plot(FDDLOW, 'o-')
+
+plot(FDDL_,'x:')
+plot(FDDLO_,'^:')
+plot(FDDLOW_, 'o:')
+
+legend('alg. 1 and NN classifier, overall accuracy',...
+    'alg. 2 and NN classifier, overall accuracy',...
+    'alg. 3 and NN classifier, overall accuracy',...
+    'alg. 1 and NN classifier for weak component',...
+    'alg. 2 and NN classifier for weak component',...
+    'alg. 3 and NN classifier for weak component','Location', 'southwest');
+grid on
+% grid minor
+ylim([0.4, 1.02])
+title ('L = 2')
+xticklabels({'0db','','3db','','6db','','10db','','20db'})
+xlabel('Dynamic ratio in dB')
+ylabel 'Accuracy'
+set(gcf,'color','w');
+
+
+%%
 lgwithmix_alg2 = [0.9700 	0.9527 	0.8127 	0.3353 	0.2000 ];
 lgwithmix_alg3 = [0.9980 	0.9960 	0.9560 	0.4180 	0.2047 ];
 lgnomix_alg2 = [0.8440 	0.7993 	0.7020 	0.4660 	0.2187 ];

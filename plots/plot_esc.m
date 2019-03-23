@@ -1,5 +1,13 @@
 clear 
 clc
+
+%%
+c =  categorical({'k-NN','Random forest','SVM','DSS+kNN', 'DSS+SVM','FDDLP','FDDLPO','FDDLPOW'});
+y = [66.7 72.7 67.5 75.8 78.2 81.2 83.8 86.6];
+bar(c,y, 0.6)
+title('Non-mixture classification accuracy')
+
+
 %%
 a1 = [0.6418 0.6388 0.6334 0.6081 0.5786];
 a2 = [0.6984 0.6852 0.6723 0.6372 0.5929];

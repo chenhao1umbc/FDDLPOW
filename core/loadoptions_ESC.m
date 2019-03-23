@@ -1,4 +1,4 @@
-function [opts]=loadoptions_ESC(whichtable, K,lambda1,mu,Q,nu,beta, SNR)
+function [opts]=loadoptions_ESC(whichalg, K,lambda1,mu,Q,nu,beta, SNR)
 % this fucntion is made to load the options for dictionary learning
 %             opt are the training/testing options with
 %                 opt.K -the number of atoms in Dictionary
@@ -42,17 +42,17 @@ opts.nu=nu;
 opts.beta = beta;
 opts.mixcase=true;
 
-if whichtable == 1
+if whichalg == 1
 opts.Dictnm =['esc_FDDLP',opts.dataset,'_k',num2str(opts.K),'_lmbd',num2str(opts.lambda1)...
     ,'_mu',num2str(opts.mu),'_Q',num2str(opts.Q),'.mat' ];
 end
 
-if whichtable == 2
+if whichalg == 2
 opts.Dictnm =['esc_FDDLPO',opts.dataset,'_k',num2str(opts.K),'_lmbd',num2str(opts.lambda1)...
     ,'_mu',num2str(opts.mu),'_nu',num2str(opts.nu), '_Q',num2str(opts.Q),'.mat' ];
 end
 
-if whichtable == 3
+if whichalg == 3
 opts.Dictnm =['esc_FDDLPOW',opts.dataset,'_k',num2str(opts.K),'_lmbd',num2str(opts.lambda1),...
     '_mu',num2str(opts.mu),'_nu',num2str(opts.nu),...
     '_beta',num2str(opts.beta), '_Q',num2str(opts.Q),'.mat' ];

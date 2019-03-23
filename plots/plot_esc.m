@@ -1,18 +1,39 @@
 clear 
 clc
+close all 
 
-%%
-c =  categorical({'k-NN','Random forest','SVM','DSS+kNN', 'DSS+SVM','FDDLP','FDDLPO','FDDLPOW'});
-y = [66.7 72.7 67.5 75.8 78.2 81.2 83.8 86.6];
+addpath(genpath('.././fddlow'))
+addpath(genpath('.././data'))
+addpath(genpath('.././FDDLPOW'))
+
+%% bar chart
+c =  categorical({'k-NN','Random forest','SVM','DSS+kNN', 'DSS+Random forest', 'DSS+SVM',...
+    'Alg1+kNN','Alg1+SVM','Alg1+Random forest'...
+    'Alg2+kNN','Alg2+SVM','Alg2+Random forest'...
+    'Alg3+kNN','Alg3+SVM','Alg3+Random forest'});
+alg1_knn = [90 81 90 90 92];
+alg1_rdf = [86 80 89 88 90];
+alg1_svm = [85 83 85 83 92];
+alg2_knn = [93 84 92 88 93];
+alg2_rdf = [92 82 92 88 90];
+alg2_svm = [87 83 89 86 86];
+alg3_knn = [91 87 87 92 92];
+alg3_rdf = [91 87 88 90 91];
+alg3_svm = [82 85 84 88 83];
+y = [66.7 72.7 67.5 75.8, 78.7, 78.2 ...
+    mean(alg1_knn) mean(alg1_svm) mean(alg1_rdf) ...
+    mean(alg2_knn) mean(alg2_svm) mean(alg2_rdf) ...
+    mean(alg3_knn) mean(alg3_svm) mean(alg3_rdf)];
 bar(c,y, 0.6)
 title('Non-mixture classification accuracy')
+set(gcf,'color','w')
 
-
-%%
+%% L=2
 a1 = [0.6418 0.6388 0.6334 0.6081 0.5786];
 a2 = [0.6984 0.6852 0.6723 0.6372 0.5929];
 a3 = [0.6975 0.6892 0.6777 0.6434 0.6028];
 db = [0, 3, 5, 10, 15];
+figure
 hold on
 plot(db, a1, '--x');
 plot(db, a2, ':+');
@@ -25,19 +46,9 @@ xlabel 'Dynamic range'
 ylabel('Accuracy')
 title 'L = 2 classification accuracy'
 
-%%
-c =  categorical({'k-NN','Random forest','SVM','DSS+kNN', 'DSS+SVM','FDDLP','FDDLPO','FDDLPOW'});
-y = [66.7 72.7 67.5 75.8 78.2 81.2 83.8 86.6];
-bar(c,y, 0.6)
-title('Non-mixture classification accuracy')
 
 
 %%
-addpath(genpath('.././fddlow'))
-addpath(genpath('.././data'))
-addpath(genpath('.././FDDLPOW'))
-
-
 plottesting =0; % if plottesing == 1, the plot teing samples
 SNR = 0; % SNR could be 2000,20, 0, -5, -10, -20, -30
 fln = 1; % feature length

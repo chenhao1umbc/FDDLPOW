@@ -12,7 +12,7 @@ addpath(genpath('.././FDDLPOW'))
 % do traing or do crossvalidation
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 
-mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
+mixture_n = 1; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
 pctrl.db = 15; % dynamic ratio is 0 3, 5, 10, 15 db
 if pctrl.db == 0
     pctrl.equal = 1;
@@ -27,13 +27,13 @@ Q = 0.9;% this is wq without negative
 nu = 0.03;
 beta = 0.01;
 SNR = 2000;
-table_n = 3; % algorithm number
+alg_n = 1; % algorithm number
 
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);
 %% cross-val part
 addpath(genpath('.././tempresult'))
-[opts]=loadoptions_ESC(table_n ,K,lbmd,mu,Q*K,nu, beta);    
+[opts]=loadoptions_ESC(alg_n ,K,lbmd,mu,Q*K,nu, beta);    
 if exist(opts.Dictnm, 'file')
 load(opts.Dictnm,'Dict','opts')
 Z = sparsecoding(Dict,Database,opts,mixture_n, cvortest);
@@ -63,6 +63,11 @@ if mixture_n == 1
 % KNN classifier
 acc_knn_test = myknn(Xtr, Xtestorcv, Database, cvortest); % k = 5    
 acc_svm_test = mysvm(Xtr, Xtestorcv, Database, cvortest);
+acc_rdf_test = myrndfrst(Xtr, Xtestorcv, Database, cvortest);
+
+% DSS_knn_test = myknn(Database.tr_data, Database.test_data, Database, cvortest); % k = 5    
+% DSS_svm_test = mysvm(Database.tr_data, Database.test_data, Database, cvortest);
+% DSS_rdf_test = myrndfrst(Database.tr_data, Database.test_data, Database, cvortest);
 end
 
 % dt = datestr(datetime);

@@ -12,8 +12,8 @@ addpath(genpath('.././FDDLPOW'))
 % do traing or do crossvalidation
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 
-mixture_n = 1; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
-pctrl.db = 15; % dynamic ratio is 0 3, 5, 10, 15 db
+mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
+pctrl.db = 3; % dynamic ratio is 0 3, 5, 10, 15 db
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -27,7 +27,7 @@ Q = 0.9;% this is wq without negative
 nu = 0.03;
 beta = 0.01;
 SNR = 2000;
-alg_n = 1; % algorithm number
+alg_n = 3; % algorithm number
 
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);
@@ -41,23 +41,8 @@ Z = aoos(Z,Database.featln, size(Z, 2));
 Xtestorcv = Dict.W'*Z;
 Xtr = Dict.W'*Dict.Z;
 
-W = Dict.W;
-C = max(Database.tr_label);
-N = size(Database.tr_label,2);
-Nc = N / C;
-opts.C = C; % 6 classes
-featln = Database.featln;
-opts.n = Database.N_c;                
-H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
-M = Dict.Z*H3;
-% zero forcing
-H = W'*M;
-result = pinv(H)*W'*Z;
-[~, labels_pre] = sort(result, 1, 'descend');
-opts.Ncombs = max(Database.cv_mixlabel);
-opts.ln_test = size(Database.test_mixlabel, 2)/featln;
-opts.equal = pctrl.equal;
-[acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
+% run do_esc_zf % output acc_all acc_weak acc_weak_av
+[acc_weak, acc_weak_av, acc_all] =mymlknn(Xtr, Xtestorcv, Database, cvortest);
 
 if mixture_n == 1
 % KNN classifier

@@ -49,7 +49,7 @@ label = labels;% class index key
 data = norm_data(data(:,:));
 dwl = [data; label]; % data with labels
 
-rng(105)
+rng(1000)
 ind = randperm(perClassln);
 ind_tr = ind(1:trln);
 ind_cv = ind(trln+1:trln+cvln);

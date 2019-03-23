@@ -3,27 +3,10 @@ close all
 clear
 clc;
 
-
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 
-%% Plot the training samples for each class
-%{
-[Database]=load_data_new(1, 2000);
-name = {'BLE','BT','FHSS1','FHSS2','WIFI1','WIFI2'};
-for i = 1:6
-figure
-imagesc(Database.tr_data(:,1+14400/6*(i-1):14400/6*(i-1)+800))
-title(['Deep scattering spectrum of ', name{i},' training data'])
-xlabel('Sample index')
-ylabel('Frequency index')
-set(gcf,'color','w');
-end
-%}
-
-
-%% Results Plot
-
+%% Results Plot L = 2 for alg1 alg2 alg3
 FDDL=[0.9993 0.99166 0.9965 0.969833333 0.816833333];
 FDDLO=[1 1 1 0.9957 0.8974];
 FDDLOW = [1 1 0.9998 0.9948 0.9128];
@@ -31,7 +14,6 @@ FDDLOW = [1 1 0.9998 0.9948 0.9128];
 FDDL_=[0.9993 0.9983 0.993 0.9397 0.6337];
 FDDLO_=[1 1 1 0.9913 0.7893];
 FDDLOW_= [1 1 0.9997 0.9897 0.8152];
-
 
 figure
 plot(FDDL,'x-')
@@ -59,7 +41,22 @@ ylabel 'Accuracy'
 set(gcf,'color','w');
 
 
-%%
+%% Plot the training samples for each class
+%{
+[Database]=load_data_new(1, 2000);
+name = {'BLE','BT','FHSS1','FHSS2','WIFI1','WIFI2'};
+for i = 1:6
+figure
+imagesc(Database.tr_data(:,1+14400/6*(i-1):14400/6*(i-1)+800))
+title(['Deep scattering spectrum of ', name{i},' training data'])
+xlabel('Sample index')
+ylabel('Frequency index')
+set(gcf,'color','w');
+end
+%}
+
+%% Using the logistic regression vs Zero-Forcing
+%{
 lgwithmix_alg2 = [0.9700 	0.9527 	0.8127 	0.3353 	0.2000 ];
 lgwithmix_alg3 = [0.9980 	0.9960 	0.9560 	0.4180 	0.2047 ];
 lgnomix_alg2 = [0.8440 	0.7993 	0.7020 	0.4660 	0.2187 ];
@@ -90,3 +87,4 @@ xlabel('Dynamic ratio in dB')
 ylabel 'accuracy for weaker signal'
 ylim([0,1])
 set(gcf,'color','w');
+%}

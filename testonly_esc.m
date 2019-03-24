@@ -60,7 +60,7 @@ opts.equal = pctrl.equal;
 % run zero-forcing
 [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
 % run knn
-[acc_weak, acc_weak_av, acc_all] = mymlknn(Xtr, Xtestorcv, cvortest, opts);
+[acc_weak_knn, acc_weak_av_knn, acc_all_knn] = mymlknn(Xtr, Xtestorcv, cvortest, opts);
 
 if mixture_n == 1
 % KNN classifier

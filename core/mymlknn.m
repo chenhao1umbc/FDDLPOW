@@ -1,31 +1,25 @@
-function [acc_weak, acc_weak_av, acc_all] = mymlknn(Xtr, Xcvortest, Database, cvortest, k)
+function [acc_weak, acc_weak_av, acc_all] = mymlknn(Xtr, Xcvortest, cvortest, opts)
 % perform k-neareast neighbors
 
 if nargin < 5
-    k = 5;
+    opts.k = 5;
+    opts.C = 10;
+end
+if ~isfield(opts, 'k')
+    opts.k = 5;
 end
 if sum(cvortest) ~= 1
     error(' error from file myknn.m')
 end
 
-opts.C = C; % 10 classes
-featln = Database.featln;
-opts.n = Database.N_c; 
-opts.Ncombs = max(Database.cv_mixlabel);
-opts.equal = pctrl.equal;
-
-if cvortest(1) % do cv
-    opts.ln_test = size(Database.cv_mixlabel, 2)/featln;
-else
-    opts.ln_test = size(Database.test_mixlabel, 2)/featln;
-end
-
-labels_pre = mlknn(Xtr, Xcvortest, k);
+labels_pre = mlknn(Xtr, Xcvortest,opts);
 [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
 
-    function labels_pre = mlknn(train, cvtest, k)
+    function labels_pre = mlknn(train, cvtest, opts)
         % this function is calculated the nearest summation five samples for each class
         % return label vector for the test sample sorted by distance
+        k = opts.k;
+        C = opts.C;
         n_tr = size(train,2); % total training samples
         n_ts = size(cvtest,2); % total testing/cv samples
         dist = 1000*ones(n_tr, 1);
@@ -33,7 +27,7 @@ labels_pre = mlknn(Xtr, Xcvortest, k);
         ntrperC = n_tr/C;
         for ii = 1:n_ts
             for i = 1:n_tr            
-                dist(i) = norm(train(:,i),cvtest(:,ii));
+                dist(i) = norm(train(:,i)-cvtest(:,ii));
             end
             for i = 1:C
                 result(i,ii) = sum(mink(dist(1+(i-1)*ntrperC: ntrperC*i), k));

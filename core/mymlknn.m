@@ -29,15 +29,17 @@ labels_pre = mlknn(Xtr, Xcvortest, k);
         n_tr = size(train,2); % total training samples
         n_ts = size(cvtest,2); % total testing/cv samples
         dist = 1000*ones(n_tr, 1);
+        result = ones(C, n_ts);
+        ntrperC = n_tr/C;
         for ii = 1:n_ts
             for i = 1:n_tr            
                 dist(i) = norm(train(:,i),cvtest(:,ii));
             end
             for i = 1:C
-                result(i, = mink(dist((i-1)*), k);
+                result(i,ii) = sum(mink(dist(1+(i-1)*ntrperC: ntrperC*i), k));
             end
         end    
-        labels_pre
+        [~, labels_pre] = sort(result, 1, 'ascend');
     end % end of the function
 
 end % end of the file

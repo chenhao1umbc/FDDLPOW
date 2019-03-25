@@ -13,7 +13,7 @@ addpath(genpath('.././FDDLPOW'))
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
-pctrl.db = 3; % dynamic ratio is 0 3, 5, 10, 15 db
+pctrl.db = 5; % dynamic ratio is 0 3, 5, 10, 15 db
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -27,10 +27,11 @@ Q = 0.9;% this is wq without negative
 nu = 0.03;
 beta = 0.01;
 SNR = 2000;
-alg_n = 1; % algorithm number
+alg_n = 2; % algorithm number
 
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);
+
 %% cross-val part
 addpath(genpath('.././tempresult'))
 [opts]=loadoptions_ESC(alg_n ,K,lbmd,mu,Q*K,nu, beta);    
@@ -60,7 +61,7 @@ opts.equal = pctrl.equal;
 % run zero-forcing
 [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
 % run knn
-[acc_weak_knn, acc_weak_av_knn, acc_all_knn] = mymlknn(Xtr, Xtestorcv, cvortest, opts);
+[acc_weak_mlknn, acc_weak_av_mlknn, acc_all_mlknn] = mymlknn(Xtr, Xtestorcv, cvortest, opts);
 
 if mixture_n == 1
 % KNN classifier

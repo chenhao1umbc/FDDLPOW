@@ -36,20 +36,20 @@ a1_zf = [0.6418 0.6388 0.6334 0.6081 0.5786];
 a2_zf = [0.6984 0.6852 0.6723 0.6372 0.5929];
 a3_zf = [0.6975 0.6892 0.6777 0.6434 0.6028];
 
-a1_nn = [0.6048 0.6084 0.6046 0.5899 0.5663];
-a2_nn = [0.5952 0.5949 0 0 0] ;
-a3_nn = [0 0 0 0 0];
+a2_nn = [0.5936 0.5964 0.5975 0.5865 0.5622]; %a1 
+a3_nn = [0.6059 0.6037 0.5982 0.5894 0.5670]; %a2
+a1_nn = [0.5746 0.5756 0.5753 0.5689 0.5587]; %a3
 
 db = [0, 3, 5, 10, 15];
 figure
 hold on
-plot(db, a1_zf, '--x');
-plot(db, a2_zf, ':+');
+plot(db, a1_zf, '--^');
+plot(db, a2_zf, ':^');
 plot(db, a3_zf, '-^');
 
 plot(db, a1_nn, '--x');
-plot(db, a2_nn, ':+');
-plot(db, a3_nn, '-^');
+plot(db, a2_nn, ':x');
+plot(db, a3_nn, '-x');
 legend('Alg.1 and zero-forcing', 'Alg.2 and zero-forcing', 'Alg.3 and zero-forcing',...
     'Alg.1 and k-NN', 'Alg.2 and k-NN', 'Alg.3 and k-NN')
 ylim([0.4, 0.70])
@@ -58,8 +58,6 @@ set(gcf,'color','w');
 xlabel 'Dynamic range'
 ylabel('Accuracy')
 title 'L = 2 classification accuracy'
-
-
 
 %%
 plottesting =0; % if plottesing == 1, the plot teing samples

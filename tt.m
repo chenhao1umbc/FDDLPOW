@@ -10,14 +10,6 @@ addpath(genpath('.././data'))
 addpath(genpath('.././FDDLPOW'))
 
 %% load settings
-% do traing or do crossvalidation
-cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
-pctrl.db = 0; % dynamic ratio is 0 3, 5, 10, 15 db
-if pctrl.db == 0
-    pctrl.equal = 1;
-else
-    pctrl.equal = 0;
-end
 K = 60;
 lbmd = 0.025;
 mu= 0.005;
@@ -25,9 +17,24 @@ Q = 0.9;% this is wq without negative
 nu = 0.03;
 beta = 0.01;
 SNR = 2000;
-alg_n = 1; % algorithm number
-mixture_n = 1; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
+algdbtable = zeros(3, 5);
+for i =1:3
+alg_n = i; % algorithm number
+mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
+% do traing or do crossvalidation
+cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
+for ii = 1:5
+alldb = [0, 3, 5, 10, 15];
+pctrl.db = alldb(ii); % dynamic ratio is 0 3, 5, 10, 15 db
+if pctrl.db == 0
+    pctrl.equal = 1;
+else
+    pctrl.equal = 0;
+end
 
+acc_weak_av_mlknn = zeros(10,1);
+acc_all_mlknn = zeros(10,1);
+for iii = 1:10
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);
 
@@ -60,7 +67,7 @@ opts.equal = pctrl.equal;
 % run zero-forcing
 [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
 % run knn
-[acc_weak_mlknn, acc_weak_av_mlknn, acc_all_mlknn] = mymlknn(aoos(Xtr,...
+[~, acc_weak_av_mlknn(iii), acc_all_mlknn(iii)] = mymlknn(aoos(Xtr,...
     Database.featln, size(Xtr, 2)), Xtestorcv, cvortest, opts);
 
 if mixture_n == 1
@@ -79,5 +86,7 @@ end
 % save([dt, '_test_results'], 'acc_knn_test', 'acc_svm_test','K', 'lbmd', 'mu', 'Q',...
 %     'nu', 'beta', 'pctrl','mixture_n', 'seed')
 end
-toc
-figure
+end % end of iii 10 runs for each alg
+algdbtable(i,ii) = mean(acc_all_mlknn)
+end % end of ii, each db)
+end % end of alg index

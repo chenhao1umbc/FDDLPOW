@@ -80,4 +80,6 @@ end
 %     'nu', 'beta', 'pctrl','mixture_n', 'seed')
 end
 toc
+
+% run tt.m % automatically run 20 shuffles
 figure

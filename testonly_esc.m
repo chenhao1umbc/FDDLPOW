@@ -25,8 +25,8 @@ Q = 0.9;% this is wq without negative
 nu = 0.03;
 beta = 0.01;
 SNR = 2000;
-alg_n = 1; % algorithm number
-mixture_n = 1; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
+alg_n = 3; % algorithm number
+mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
 
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);
@@ -78,7 +78,10 @@ end
 % dt((datestr(dt) == ':')) = '_'; % for windows computer
 % save([dt, '_test_results'], 'acc_knn_test', 'acc_svm_test','K', 'lbmd', 'mu', 'Q',...
 %     'nu', 'beta', 'pctrl','mixture_n', 'seed')
+else
+    fprintf('no dictionary found \n')
 end
+
 toc
 
 % run tt.m % automatically run 20 shuffles

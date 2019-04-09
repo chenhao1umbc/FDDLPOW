@@ -14,8 +14,8 @@ do_training = 0;
 do_result = 1;
 cv = 0; % validation or testing
 
-for mixn = 3%[2, 3]
-for id = [0, 3, 6, 10, 20]
+for mixn = [2, 3]
+for id = [0 3, 6, 10, 20]
 % load data
 mixture_n = mixn % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
@@ -43,8 +43,9 @@ SNR = 2000;
 % one is K = 100, lambda = 1e-4, mu = 1e-3, nu = 0.01
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-nu= 0.01 ;
-beta = 0.0001; % beta = -1, for alg2
+ 
+numbernu= 0.01 ;
+beta = 1e-5; % beta = 0, for alg2
   
 result_beta = zeros(length(K),length(beta));
 sparsity_beta = zeros(length(K),length(beta));
@@ -52,13 +53,9 @@ tr_sparsity_beta = zeros(length(K),length(beta));
 result_betaWEEK = zeros(length(K),length(beta));
 
 [opts]=loadoptions(K,lbmd,mu,Q,nu,beta, SNR);
-if SNR == 2000   
-load(opts.mixnm) 
-else
 nm = ['SNR', num2str(SNR), opts.mixnm];
-load(nm)
-end
-                           
+
+load(nm)                            
 % run prep_ZF 
 if exist('Dict')==1
     Dict_mix = Dict;
@@ -90,7 +87,10 @@ else
 end
 opts.ln_test = N_t/featln;
 opts.equal = pctrl.equal;
-[acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);  
+[acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
+       
+
+
 
 end
 end

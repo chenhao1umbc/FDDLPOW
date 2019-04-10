@@ -13,7 +13,7 @@ addpath(genpath('.././FDDLPOW'))
 do_training = 0;
 do_result = 1;
 cv = 0; % validation or testing
-
+Alg_n = 1;
 for mixn = 3%[2, 3]
 for id = [0, 3, 6, 10, 20]
 % load data
@@ -25,11 +25,9 @@ if pctrl.db == 0
 else
     pctrl.equal = 0;
 end
-
 % the equal power mixture, 400 samples per combination
 [Database]=load_data_new(mixture_n, SNR, pctrl);
-% [Database]=load_data;
-% Database = load_data_spectr(1);
+
 
 %% training dictionary
 % load settings
@@ -44,8 +42,12 @@ SNR = 2000;
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 nu= 0.01 ;
-beta = 0.0001; % beta = -1, for alg2
-  
+if Alg_n == 2
+    beta = -1;
+else
+    beta = 0.0001; % beta = -1, for alg2
+end
+
 result_beta = zeros(length(K),length(beta));
 sparsity_beta = zeros(length(K),length(beta));
 tr_sparsity_beta = zeros(length(K),length(beta));
@@ -53,7 +55,11 @@ result_betaWEEK = zeros(length(K),length(beta));
 
 [opts]=loadoptions(K,lbmd,mu,Q,nu,beta, SNR);
 if SNR == 2000   
-load(opts.mixnm) 
+if Alg_n ==1
+    load(opts.Dictnm)
+else
+    load(opts.mixnm) 
+end
 else
 nm = ['SNR', num2str(SNR), opts.mixnm];
 load(nm)
@@ -94,5 +100,4 @@ opts.equal = pctrl.equal;
 
 end
 end
-
 toc

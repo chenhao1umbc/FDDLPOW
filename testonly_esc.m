@@ -59,9 +59,12 @@ opts.ln_test = size(Database.test_mixlabel, 2)/featln;
 opts.equal = pctrl.equal;
 % run zero-forcing
 [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
-% run knn
-[acc_weak_mlknn, acc_weak_av_mlknn, acc_all_mlknn] = mymlknn(aoos(Xtr,...
+% run mlknn
+[acc_weak_mlsvm, acc_weak_av_mlsvm, acc_all_mlsvm] = mymlsvm(aoos(Xtr,...
     Database.featln, size(Xtr, 2)), Xtestorcv, cvortest, opts);
+% % run mlknn
+% [acc_weak_mlknn, acc_weak_av_mlknn, acc_all_mlknn] = mymlknn(aoos(Xtr,...
+%     Database.featln, size(Xtr, 2)), Xtestorcv, cvortest, opts);
 
 if mixture_n == 1
 % KNN classifier

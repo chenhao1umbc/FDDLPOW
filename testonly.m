@@ -9,13 +9,10 @@ addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 addpath(genpath('.././FDDLPOW'))
 
-% do traing or do crossvalidation
-do_training = 0;
-do_result = 1;
 cv = 0; % validation or testing
-Alg_n = 1;
+Alg_n = 2;
 for mixn = 3%[2, 3]
-for id = [0, 3, 6, 10, 20]
+for id = 10;%[0, 3, 6, 10, 20]
 % load data
 mixture_n = mixn % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
@@ -47,11 +44,6 @@ if Alg_n == 2
 else
     beta = 0.0001; % beta = -1, for alg2
 end
-
-result_beta = zeros(length(K),length(beta));
-sparsity_beta = zeros(length(K),length(beta));
-tr_sparsity_beta = zeros(length(K),length(beta));
-result_betaWEEK = zeros(length(K),length(beta));
 
 [opts]=loadoptions(K,lbmd,mu,Q,nu,beta, SNR);
 if SNR == 2000   
@@ -97,7 +89,8 @@ end
 opts.ln_test = N_t/featln;
 opts.equal = pctrl.equal;
 [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);  
-
+acc_all
+acc_weak_av
 end
 end
 toc

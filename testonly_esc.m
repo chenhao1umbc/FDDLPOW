@@ -84,5 +84,5 @@ end
 
 toc
 
-% run tt.m % automatically run 20 shuffles
+% run tt_esc.m % automatically run 20 shuffles
 figure

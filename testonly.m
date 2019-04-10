@@ -11,8 +11,8 @@ addpath(genpath('.././FDDLPOW'))
 
 cv = 0; % validation or testing
 Alg_n = 2;
-for mixn = 3%[2, 3]
-for id = 10;%[0, 3, 6, 10, 20]
+for mixn = [2, 3]
+for id = [0, 3, 6, 10, 20]
 % load data
 mixture_n = mixn % mixture_n classes mixture, = 1,2,3
 SNR = 2000;

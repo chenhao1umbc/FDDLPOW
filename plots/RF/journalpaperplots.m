@@ -25,16 +25,52 @@ plot(FDDL_,'x:')
 plot(FDDLO_,'^:')
 plot(FDDLOW_, 'o:')
 
-legend('alg. 1 and NN classifier, overall accuracy',...
-    'alg. 2 and NN classifier, overall accuracy',...
-    'alg. 3 and NN classifier, overall accuracy',...
-    'alg. 1 and NN classifier for weak component',...
-    'alg. 2 and NN classifier for weak component',...
-    'alg. 3 and NN classifier for weak component','Location', 'southwest');
+legend('alg. 1 and Zero-forcing classifier, overall accuracy',...
+    'alg. 2 and Zero-forcing classifier, overall accuracy',...
+    'alg. 3 and Zero-forcing classifier, overall accuracy',...
+    'alg. 1 and Zero-forcing classifier for weak component',...
+    'alg. 2 and Zero-forcing classifier for weak component',...
+    'alg. 3 and Zero-forcing classifier for weak component','Location', 'southwest');
 grid on
 % grid minor
 ylim([0.4, 1.02])
 title ('L = 2')
+xticklabels({'0db','','3db','','6db','','10db','','20db'})
+xlabel('Dynamic ratio in dB')
+ylabel 'Accuracy'
+set(gcf,'color','w');
+
+%% Results Plot L = 3 for alg1 alg2 alg3
+alg1 = [0.9651, 0.9579, 0.9386, 0.8988, 0.8143];
+alg1_w = [0.9651, 0.9233, 0.8440,0.6988, 0.4428];
+
+alg2 = [0.9816, 0.9797, 0.9710, 0.9434, 0.8401];
+alg2_w = [0.9816, 0.9723, 0.9350,0.8303, 0.5203];
+
+alg3 = [0.9812, 0.9794, 0.9633, 0.9369, 0.8446];
+alg3_w = [0.9812, 0.9720, 0.9215,0.8155, 0.5337];
+
+
+figure
+plot(alg1,'x-')
+hold on
+plot(alg2,'^-')
+plot(alg3, 'o-')
+
+plot(alg1_w,'x:')
+plot(alg2_w,'^:')
+plot(alg3_w, 'o:')
+
+legend('alg. 1 and Zero-forcing classifier, overall accuracy',...
+    'alg. 2 and Zero-forcing classifier, overall accuracy',...
+    'alg. 3 and Zero-forcing classifier, overall accuracy',...
+    'alg. 1 and Zero-forcing classifier for weak component',...
+    'alg. 2 and Zero-forcing classifier for weak component',...
+    'alg. 3 and Zero-forcing classifier for weak component','Location', 'southwest');
+grid on
+% grid minor
+% ylim([0.4, 1.02])
+title ('L = 3')
 xticklabels({'0db','','3db','','6db','','10db','','20db'})
 xlabel('Dynamic ratio in dB')
 ylabel 'Accuracy'

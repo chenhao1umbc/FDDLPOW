@@ -13,8 +13,8 @@ addpath(genpath('.././FDDLPOW'))
 % do traing or do crossvalidation
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 alg_n = 3; % algorithm number
-pctrl.db = 15; % dynamic ratio is 0 3, 5, 10, 15 db
-mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
+pctrl.db = 15; % dynamic ratio is 0 3, 5, 10, 15 db for L>=2
+L = 1; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -29,14 +29,14 @@ beta = 0.01;
 SNR = 2000;
 
 %% load data
-[Database] = load_ESC(mixture_n, SNR, pctrl);
+[Database] = load_ESC(L, SNR, pctrl);
 
 %% cross-val part
 addpath(genpath('.././tempresult'))
 [opts]=loadoptions_ESC(alg_n ,K,lbmd,mu,Q*K,nu, beta);    
 if exist(opts.Dictnm, 'file')
 load(opts.Dictnm,'Dict','opts')
-Z = sparsecoding(Dict,Database,opts,mixture_n, cvortest);
+Z = sparsecoding(Dict,Database,opts,L, cvortest);
 Z = aoos(Z,Database.featln, size(Z, 2));
 Xtestorcv = Dict.W'*Z;
 Xtr = Dict.W'*Dict.Z;
@@ -66,7 +66,7 @@ opts.equal = pctrl.equal;
 % [acc_weak_mlknn, acc_weak_av_mlknn, acc_all_mlknn] = mymlknn(aoos(Xtr,...
 %     Database.featln, size(Xtr, 2)), Xtestorcv, cvortest, opts);
 
-if mixture_n == 1
+if L == 1
 % KNN classifier
 acc_knn_test = myknn(Xtr, Xtestorcv, Database, cvortest); % k = 5    
 acc_svm_test = mysvm(Xtr, Xtestorcv, Database, cvortest);

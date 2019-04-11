@@ -11,11 +11,11 @@ addpath(genpath('.././FDDLPOW'))
 
 cv = 0; % validation or testing
 if2weak = 1; % two weak components in the mixture
-Alg_n = 2;
+Alg_n = 3;
 for mixn = 3%[2, 3]
-for id = 3%[0, 3, 6, 10, 20]
+for id = [3, 6, 10, 20]
 % load data
-mixture_n = mixn; % mixture_n classes mixture, = 1,2,3
+L = mixn; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
 pctrl.db = id; % dynamic ratio is 0 3, 6, 10, 20 db
 pctrl.if2weak = if2weak; % only works for mixture_n == 3
@@ -25,7 +25,7 @@ else
     pctrl.equal = 0;
 end
 % the equal power mixture, 400 samples per combination
-[Database]=load_data_new(mixture_n, SNR, pctrl);
+[Database]=load_data_new(L, SNR, pctrl);
 
 %% load settings
 K = 100;

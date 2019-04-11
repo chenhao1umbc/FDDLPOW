@@ -6,7 +6,7 @@ function [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts)
     
     acc_t = zeros(C, n);
     % run mix_ntable
-    for section = 1:n    
+    for section = 1:n % if 4,5,6 mixture with 033, 303, 330, there are 3 sections
         sect = labels_pre(:,1+(section-1)*ln_test/n:section*ln_test/n);
         % we only care about lower power accurcy
         [acc_t(:,section)] = mix_table_power(ln_test/n, section, sect, Ncombs);

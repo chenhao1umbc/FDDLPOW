@@ -15,7 +15,11 @@ if N_c == 3 % 3 class mixture
         if pctrl.equal == 1% equal power cases
             Power{indx_p} = zeros(1,N_c); % only 0 0 0 
         else
-            Power{indx_p} = circshift([0, pctrl.db, pctrl.db], indx_p-1); 
+            if pctrl.if2weak == 1 %[3 0 0] the order is specific
+                Power{indx_p} = circshift([pctrl.db, 0, 0], indx_p-1); 
+            else
+                Power{indx_p} = circshift([0, pctrl.db, pctrl.db], indx_p-1);
+            end
         end
     end
 end
@@ -25,12 +29,19 @@ c = combnk(1:6, N_c); % ble bt fhss1 zb
 r00t = '.././data/RF/SNout_LMdata4/q16005n2/norm_mix';
 part1 ='db449_1classq16&0.05n2_positive_M2_snr';
 part2 = 'db449_1classq16&0.05n2_negative_M2_snr';
-
+if pctrl.if2weak == 1
+part1 ='norm_db449_1classq16&0.05n2_positive_M2_snr';
+part2 = 'norm_db449_1classq16&0.05n2_negative_M2_snr'; 
+end
 for indx_p = 1:N_c
     for indCl=1:size(c,1)
         indClnm = c(indCl, :);
         nmdb1=[r00t,num2str(indClnm), part1, num2str(SNR), 'power_',num2str(Power{indx_p}),'.mat']; 
-        nmdb2=[r00t,num2str(indClnm), part2, num2str(SNR), 'power_',num2str(Power{indx_p}),'.mat'];   
+        nmdb2=[r00t,num2str(indClnm), part2, num2str(SNR), 'power_',num2str(Power{indx_p}),'.mat'];  
+        if pctrl.if2weak == 1
+        nmdb1=[r00t,num2str(indClnm), part1, num2str(SNR), '.matpower_',num2str(Power{indx_p}),'.mat']; 
+        nmdb2=[r00t,num2str(indClnm), part2, num2str(SNR), '.matpower_',num2str(Power{indx_p}),'.mat']; 
+        end
         load(nmdb1)
         load(nmdb2)
         % concatenate the positve and negative parts

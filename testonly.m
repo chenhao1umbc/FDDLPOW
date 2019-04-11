@@ -10,13 +10,15 @@ addpath(genpath('.././data'))
 addpath(genpath('.././FDDLPOW'))
 
 cv = 0; % validation or testing
+if2weak = 1; % two weak components in the mixture
 Alg_n = 2;
-for mixn = [2, 3]
-for id = [0, 3, 6, 10, 20]
+for mixn = 3%[2, 3]
+for id = 3%[0, 3, 6, 10, 20]
 % load data
-mixture_n = mixn % mixture_n classes mixture, = 1,2,3
+mixture_n = mixn; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
 pctrl.db = id; % dynamic ratio is 0 3, 6, 10, 20 db
+pctrl.if2weak = if2weak; % only works for mixture_n == 3
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -25,9 +27,7 @@ end
 % the equal power mixture, 400 samples per combination
 [Database]=load_data_new(mixture_n, SNR, pctrl);
 
-
-%% training dictionary
-% load settings
+%% load settings
 K = 100;
 lbmd = 1e-4;
 mu=1e-3;
@@ -57,7 +57,7 @@ nm = ['SNR', num2str(SNR), opts.mixnm];
 load(nm)
 end
                            
-% run prep_ZF 
+%% run prep_ZF 
 if exist('Dict')==1
     Dict_mix = Dict;
 end
@@ -88,7 +88,12 @@ else
 end
 opts.ln_test = N_t/featln;
 opts.equal = pctrl.equal;
-[acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);  
+
+if if2weak ==1
+[acc_weak, acc_weak_av, acc_all] = calc_labels2w(labels_pre, opts);  
+else
+[acc_strong, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);  
+end
 acc_all
 acc_weak_av
 end

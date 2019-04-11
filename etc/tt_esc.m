@@ -1,4 +1,5 @@
 % table 1, 2,3 test data only no training
+% move the file to the main folder or the path is not correct
 
 close all
 clear
@@ -15,13 +16,13 @@ lbmd = 0.025;
 mu= 0.005;
 Q = 0.9;% this is wq without negative
 nu = 0.03;
-beta = 0.01;
+beta = 5e-4;
 SNR = 2000;
 algdbtable = zeros(3, 5);
-algdbtable_knn = zeros(3, 5);
+algdbtable_svm = zeros(3, 5);
 for i = 3%1:3
 alg_n = i; % algorithm number
-mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
+L = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
 % do traing or do crossvalidation
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 for ii = 1:5
@@ -37,14 +38,14 @@ acc_weak_av_mlknn = zeros(10,1);
 acc_all_mlknn = zeros(10,1);
 for iii = 1%1:20
 %% load data
-[Database] = load_ESC(mixture_n, SNR, pctrl);
+[Database] = load_ESC(L, SNR, pctrl);
 
 %% cross-val part
 addpath(genpath('.././tempresult'))
 [opts]=loadoptions_ESC(alg_n ,K,lbmd,mu,Q*K,nu, beta);    
 if exist(opts.Dictnm, 'file')
 load(opts.Dictnm,'Dict','opts')
-Z = sparsecoding(Dict,Database,opts,mixture_n, cvortest);
+Z = sparsecoding(Dict,Database,opts,L, cvortest);
 Z = aoos(Z,Database.featln, size(Z, 2));
 Xtestorcv = Dict.W'*Z;
 Xtr = Dict.W'*Dict.Z;
@@ -67,14 +68,14 @@ opts.ln_test = size(Database.test_mixlabel, 2)/featln;
 opts.equal = pctrl.equal;
 % run zero-forcing
 [acc_weak, acc_weak_av, acc_all(iii)] = calc_labels(labels_pre, opts);
-% run mlknn
-[acc_weak_mlsvm, acc_weak_av_mlsvm, acc_all_mlsvm] = mymlsvm(aoos(Xtr,...
+% run svm
+[acc_weak_mlsvm, acc_weak_av_mlsvm, acc_all_mlsvm(iii)] = mymlsvm(aoos(Xtr,...
     Database.featln, size(Xtr, 2)), Xtestorcv, cvortest, opts);
 % % run mlknn
 % [acc_weak_mlknn, acc_weak_av_mlknn, acc_all_mlknn] = mymlknn(aoos(Xtr,...
 %     Database.featln, size(Xtr, 2)), Xtestorcv, cvortest, opts);
 
-if mixture_n == 1
+if L == 1
 % KNN classifier
 acc_knn_test = myknn(Xtr, Xtestorcv, Database, cvortest); % k = 5    
 acc_svm_test = mysvm(Xtr, Xtestorcv, Database, cvortest);
@@ -90,8 +91,8 @@ end
 % save([dt, '_test_results'], 'acc_knn_test', 'acc_svm_test','K', 'lbmd', 'mu', 'Q',...
 %     'nu', 'beta', 'pctrl','mixture_n', 'seed')
 end
-end % end of iii 10 runs for each alg
+end % end of iii 20 runs for each alg
 algdbtable(i,ii) = mean(acc_all)
-algdbtable_knn(i,ii) = mean(acc_all_mlknn)
+algdbtable_svm(i,ii) = mean(acc_all_mlsvm)
 end % end of ii, each db)
 end % end of alg index

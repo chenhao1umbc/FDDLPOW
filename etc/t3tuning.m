@@ -12,7 +12,7 @@ addpath(genpath('.././FDDLPOW'))
 %% load settings
 % do traing or do crossvalidation
 do_training = 0;
-cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
+cvortest = [1, 0]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
 pctrl.db = 10; % dynamic ratio is 0 3, 6, 10, 20 db
@@ -32,7 +32,7 @@ beta = [7, 5, 3, 1, 0.7, 0.5, 0.3, 0.1, 0.07, 0.05, 0.03, 0.02, 0.017,...
 
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl); 
-fmax =10; acc_ZF = zeros( length(beta), fmax);
+fmax =10; acc = zeros( length(beta), fmax);
 for f = 1:fmax
 seed = f*100;% change ramdom seed to do m-fold cv   
 Database = myshuffle(Database,seed);
@@ -49,39 +49,39 @@ for ind6 = 1:length(beta)
     Z = aoos(Z,Database.featln, size(Z, 2));
     Xtestorcv = Dict.W'*Z;
     Xtr = Dict.W'*Dict.Z;
-    W = Dict.W;
-    C = max(Database.tr_label);
-    N = size(Database.tr_label,2);
-    Nc = N / C;
-    opts.C = C; % 10 classes
-    featln = Database.featln;
-    opts.n = Database.N_c;                
-    H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
-    M = Dict.Z*H3;
-    % zero forcing
-    H = W'*M;
-    result = pinv(H)*W'*Z;
-    [~, labels_pre] = sort(result, 1, 'descend');
+    opts.n = Database.N_c; 
+    opts.C = max(Database.tr_label); % 10 classe
     opts.Ncombs = max(Database.cv_mixlabel);
-    opts.ln_test = size(Database.test_mixlabel, 2)/featln;
+    opts.ln_test = size(Database.test_mixlabel, 2)/Database.featln;
     opts.equal = pctrl.equal;
-    % run zero-forcing
-    [~, ~, acc_all] = calc_labels(labels_pre, opts);
     
-    % tuning based on non-miture
-    acc_ZF(ind6,f) = acc_all; % k = 5    
+%     % run zero-forcing
+%     W = Dict.W;
+%     C = opts.C;
+%     N = size(Database.tr_label,2);
+%     Nc = N / C;
+%     featln = Database.featln;                   
+%     H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
+%     M = Dict.Z*H3;
+%     % zero forcing
+%     H = W'*M;
+%     result = pinv(H)*W'*Z;
+%     [~, labels_pre] = sort(result, 1, 'descend');%     %         
+%     [~, ~, acc_all] = calc_labels(labels_pre, opts);
+%     acc(ind6,f) = acc_all
+    
+    % run svm
+    [~, ~, acc_all] = mymlsvm(aoos(Xtr,...
+    Database.featln, size(Xtr, 2)), Xtestorcv, cvortest, opts);
+    acc(ind6,f) = acc_all; % k = 5    
     toc
     end
 end
 end
 dt = datestr(datetime);
 dt((datestr(dt) == ':')) = '_'; % for windows computer
-save(['.././tempresult/m3log',dt, '_t3_results'], 'acc_ZF', 'beta', 'seed')
+save(['.././tempresult/m3log',dt, '_t3_results'], 'acc', 'beta', 'seed')
 toc
 end
 
-% dt = datestr(datetime);
-% dt((datestr(dt) == ':')) = '_'; % for windows computer
-% save([dt, '_m3log_t3_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...
-%     'meansvm','meanknn', 'lbmd', 'mu', 'Q', 'nu', 'seed')
 toc

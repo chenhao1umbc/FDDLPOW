@@ -7,52 +7,59 @@ addpath(genpath('.././data'))
 addpath(genpath('.././FDDLPOW'))
 
 %% bar chart
+% zero forcing
+% {'Alg.1+Zero-forcing','Alg.2+Zero-forcing','Alg.3+Zero-forcing'}
+% 86.2 87.8 88.6
+
+
 names = {'k-NN','Random forest','SVM','DSS+kNN', 'DSS+Random forest', 'DSS+SVM',...
     'Alg.1+k-NN','Alg.1+SVM','Alg.1+Random forest',...
     'Alg.2+k-NN','Alg.2+SVM','Alg.2+Random forest',...
     'Alg.3+k-NN','Alg.3+SVM','Alg.3+Random forest',...
-    'Alg.1+Zero-forcing','Alg.2+Zero-forcing','Alg.3+Zero-forcing'};
+    };
 c =  categorical(names);
-alg1_knn = [90 81 90 90 92];
+alg1_knn = [85 83 85 83 92];
 alg1_rdf = [86 80 89 88 90];
-alg1_svm = [85 83 85 83 92];
-alg2_knn = [93 84 92 88 93];
+alg1_svm = [90 81 90 90 92];
+alg2_knn = [87 83 89 86 86];
 alg2_rdf = [92 82 92 88 90];
-alg2_svm = [87 83 89 86 86];
-alg3_knn = [91 87 87 92 92];
+alg2_svm = [93 84 92 88 93];
+alg3_knn = [82 85 84 88 83];
 alg3_rdf = [91 87 88 90 91];
-alg3_svm = [82 85 84 88 83];
+alg3_svm = [91 87 87 92 92];
 y = [66.7 72.7 67.5 75.8, 78.7, 78.2 ...
     mean(alg1_knn) mean(alg1_svm) mean(alg1_rdf) ...
     mean(alg2_knn) mean(alg2_svm) mean(alg2_rdf) ...
     mean(alg3_knn) mean(alg3_svm) mean(alg3_rdf) ...
-    81.2 83.8 86.6];
+    ];
 bar(c, y, 0.6)
 title('Non-mixture classification accuracy')
 set(gcf,'color','w')
 
 %% L=2
 a1_zf = [0.6418 0.6388 0.6334 0.6081 0.5786];
-a2_zf = [0.6984 0.6852 0.6723 0.6372 0.5929];
-a3_zf = [0.6975 0.6892 0.6777 0.6434 0.6028];
+a2_zf = [0.7022 0.6959 0.6884 0.6425 0.5956];
+a3_zf = [0.7224 0.7161 0.7077 0.6733 0.6321]; % beta 1
+% a3_zf = [0.7049 0.7011 0.6908 0.6513 0.6112]; % beta 5e-4
 
-a2_nn = [0.5936 0.5964 0.5975 0.5865 0.5622]; %a1 
-a3_nn = [0.6059 0.6037 0.5982 0.5894 0.5670]; %a2
-a1_nn = [0.5746 0.5756 0.5753 0.5689 0.5587]; %a3
+a1_svm = [0.5746 0.5756 0.5753 0.5689 0.5587];
+a2_svm = [0.5936 0.5964 0.5916 0.5765 0.5622]; 
+a3_svm = [0.5969 0.5981 0.5975 0.5767 0.5606]; % beta 5e-4
+
 
 db = [0, 3, 5, 10, 15];
 figure
 hold on
-plot(db, a1_zf, '--^');
-plot(db, a2_zf, ':^');
-plot(db, a3_zf, '-^');
+plot(db, a1_zf, 'r--^');
+plot(db, a2_zf, 'm:^');
+plot(db, a3_zf, 'b-^');
 
-plot(db, a1_nn, '--x');
-plot(db, a2_nn, ':x');
-plot(db, a3_nn, '-x');
+plot(db, a1_svm, 'r--x');
+plot(db, a2_svm, 'm:x');
+plot(db, a3_svm, 'b-x');
 legend('Alg.1 and zero-forcing', 'Alg.2 and zero-forcing', 'Alg.3 and zero-forcing',...
-    'Alg.1 and k-NN', 'Alg.2 and k-NN', 'Alg.3 and k-NN')
-ylim([0.4, 0.70])
+    'Alg.1 and SVM', 'Alg.2 and SVM', 'Alg.3 and SVM')
+ylim([0.4, 0.75])
 xticks([0, 3, 5, 10, 15])
 set(gcf,'color','w');
 xlabel 'Dynamic range'

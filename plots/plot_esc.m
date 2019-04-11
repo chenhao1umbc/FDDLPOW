@@ -78,7 +78,7 @@ lbmd = 0.025;
 mu= 0.005;
 Q = 0.9;% this is wq without negative
 nu = 0.03;
-beta = 0.01;
+beta = 1;
 SNR = 2000;
 table_n = 3; % algorithm number
 
@@ -106,7 +106,7 @@ end
 
 
 %% MDS / PCA
-%{ 
+% { 
 Cn = size(Dict_mix.Z, 2)/C; % how many sampless per classes/combinations
 temp = aoos(Dict_mix.Z(:,1:end), fln, size(Dict_mix.Z, 2));
 % temp = Dict_mix.Z(:,1:f:1200*n);

@@ -12,7 +12,9 @@ addpath(genpath('.././FDDLPOW'))
 %% load settings
 % do traing or do crossvalidation
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
-pctrl.db = 0; % dynamic ratio is 0 3, 5, 10, 15 db
+alg_n = 3; % algorithm number
+pctrl.db = 15; % dynamic ratio is 0 3, 5, 10, 15 db
+mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -25,8 +27,6 @@ Q = 0.9;% this is wq without negative
 nu = 0.03;
 beta = 0.01;
 SNR = 2000;
-alg_n = 3; % algorithm number
-mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
 
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);

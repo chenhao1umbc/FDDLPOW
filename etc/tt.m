@@ -19,7 +19,7 @@ beta = 0.01;
 SNR = 2000;
 algdbtable = zeros(3, 5);
 algdbtable_knn = zeros(3, 5);
-for i =1:3
+for i = 3%1:3
 alg_n = i; % algorithm number
 mixture_n = 2; % mixture_n classes mixture, = 1,2 (1 means non -mixture)
 % do traing or do crossvalidation
@@ -35,7 +35,7 @@ end
 
 acc_weak_av_mlknn = zeros(10,1);
 acc_all_mlknn = zeros(10,1);
-for iii = 1:20
+for iii = 1%1:20
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);
 
@@ -67,8 +67,11 @@ opts.ln_test = size(Database.test_mixlabel, 2)/featln;
 opts.equal = pctrl.equal;
 % run zero-forcing
 [acc_weak, acc_weak_av, acc_all(iii)] = calc_labels(labels_pre, opts);
-% run knn
-% [~, acc_weak_av_mlknn(iii), acc_all_mlknn(iii)] = mymlknn(aoos(Xtr,...
+% run mlknn
+[acc_weak_mlsvm, acc_weak_av_mlsvm, acc_all_mlsvm] = mymlsvm(aoos(Xtr,...
+    Database.featln, size(Xtr, 2)), Xtestorcv, cvortest, opts);
+% % run mlknn
+% [acc_weak_mlknn, acc_weak_av_mlknn, acc_all_mlknn] = mymlknn(aoos(Xtr,...
 %     Database.featln, size(Xtr, 2)), Xtestorcv, cvortest, opts);
 
 if mixture_n == 1

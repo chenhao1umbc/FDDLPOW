@@ -1,4 +1,4 @@
-function Z = mix_updateZ(X, trlabels, opt, W, D, Zin, U, V, delta)
+function Z = mix_updateZ(X,H_bar_i, H3, opt, W, D, Zin, U, V, Delta)
 % this function is to update W with D and Z fixed
 % input   X is the training data,a matrix M by N, N data samples
 %         trlabels is the training data labels
@@ -19,27 +19,27 @@ function Z = mix_updateZ(X, trlabels, opt, W, D, Zin, U, V, delta)
 % pre-cacularion
 
 Z = Zin;
-C = max(trlabels);
-[K, N]=size(Z);
-Nc = N / C;
-H1 = kron(eye(C),ones(Nc)/Nc);
-H2 = ones(N)/N;
-H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
-M1 = eye(N) - H1;
-M2 = H1 - H2;
-M1M1t = M1*M1';
-M2M2t = M2*M2';
-H3H3t = H3*H3';
+Nc = opt.Nc;
+M2M2t = opt.M2M2t;
+M1M1t = opt.M1M1t;
+H3H3t = opt.H3H3t;
+H_bar_iSq = H_bar_i^2 ;
 DtD = D'*D;
 DtX = D'*X;
 WWt = W*W';
 WUH3t = W*U*H3';
-WDeltaVtM1 = delta*W*V'*M1;
 normWWt = norm(WWt,'fro');
+
+% calculate L, which is the Lipch. bound
 L_term1 = norm(2*DtD,'fro');
-L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+eye(N),'fro');
+L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+eye(opt.N),'fro'); 
 L_term3 = 2*opt.nu*normWWt*norm(H3H3t, 'fro');  
-L_term4 = 2* opt.beta * normWWt * norm(M1M1t, 'fro');
+
+sum_norm_H_bar_i = 0;
+for i = 1: opt.C
+    sum_norm_H_bar_i = sum_norm_H_bar_i + norm(H_bar_iSq, 'fro');
+end
+L_term4 = 2* opt.beta * normWWt * sum_norm_H_bar_i;
 L = L_term1 + L_term2 + L_term3 + L_term4;
 
 % main loop
@@ -72,22 +72,28 @@ for iter = 1:opt.max_Ziter
 end
 
 %% cost function
-function cost = calc_F(Z_curr)
+function cost = calc_F(Z_curr)   
+    
+    WtZ = W'*Z_curr;
     % calc fisherterm
     SW = Z_curr*M1M1t*Z_curr';
     SB = Z_curr*M2M2t'*Z_curr';
-    fisherterm=trace(W'*SW*W)-trace(W'*SB*W)+norm(W'*Z_curr, 'fro')^2;
+    fisherterm=trace(W'*SW*W)-trace(W'*SB*W)+1.1*norm(W'*Z_curr, 'fro')^2;
 
     % calc g(W, Z, U, Delta), orthogonal term
     M = Z_curr*H3;
     gwzu = norm(W'*M-U, 'fro')^2;            
     
-    % calc c(W, Z), whitening term
-    cwz = norm(M1*Z_curr'*W -V*delta, 'fro')^2;
+    % calc Omega(W, Z), whitening term
+    OmegaWZDeltaV = 0;    
+    for ind = 1:opt.C
+        OmegaWZDeltaV = OmegaWZDeltaV + ...
+            norm(H_bar_i*WtZ(:, 1+Nc*(ind-1):Nc*ind)' - Delta(ind)*V{ind}, 'fro')^2;
+    end
     
     % calc cost
     cost = norm(X - D*Z_curr,'fro')^2 + opt.lambda1*norm1(Z_curr) ...
-        + opt.mu*fisherterm + opt.nu*gwzu + opt.beta*cwz;
+        + opt.mu*fisherterm + opt.nu*gwzu + opt.beta*OmegaWZDeltaV;
 end
 
 %% gradiant of f
@@ -97,7 +103,11 @@ function g = grad_f(Z_curr)
     grad1 = DtD*Z_curr - DtX;
     grad2 = WWtZM1M1t - WWtZ*M2M2t + WWtZ;
     grad3 = WWtZ*H3H3t - WUH3t;
-    grad4 = WWtZM1M1t - WDeltaVtM1;
+    
+    grad4 = zeros(opt.K, opt.N);
+    for ii = 1:opt.C    
+        grad4(:, 1+Nc*(ii-1):Nc*ii)=  WWtZ(:, 1+Nc*(ii-1):Nc*ii)*H_bar_iSq - W*Delta(ii)*V{ii}'*H_bar_i;
+    end
     g = 2*grad1 + 2*opt.mu*grad2 + 2*opt.nu*grad3 + 2*opt.beta*grad4; 
 end
 

@@ -7,7 +7,7 @@ tic
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
-
+addpath(genpath('.././FDDLPOW'))
 
 % do traing or do crossvalidation
 do_training = 1;
@@ -43,14 +43,14 @@ SNR = 2000;
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 nu= 0.01 ;
-beta = 0; % or 0.14
-beta = [1e-6 1e-5 1e-4 1e-3 1e-2 1e-1 1 10 100];
+beta = 1e-4; % or 0.14
+% beta = [1e-6 1e-5 1e-4 1e-3 1e-2 1e-1 1 10 100];
 
 if do_training ==1
     for ind1 = 1: length(beta)
         [opts]=loadoptions(K,lbmd,mu,Q,nu,beta(ind1), SNR);
         % for table 1 algorithm
-        Dict_mix = FDDLOW_table3(Database.tr_data,Database.tr_label,opts);
+        Dict_mix = FDDLOW_table3(Database.tr_data, opts);
         if Dict_mix.iter > 30
             save(['SNR', num2str(SNR), opts.mixnm],'Dict_mix','opts')
         end

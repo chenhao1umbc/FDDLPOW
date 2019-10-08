@@ -15,12 +15,11 @@ function [Dict]=FDDLOW_table1(X,trlabels,opt)
 % The output is Dict, a struct with D,W,Z, Loss(the loss function value)
 
 % initialize Dictionary
-[D, Z, W, ~, ~, ~, Loss, opt]=initdict(X,trlabels,opt); % max_iter will change for existing dictionary
+[D, Z, W, Loss, opt]=initdict(X,trlabels,opt); % max_iter will change for existing dictionary
 
 % main loop
 for ii=1:opt.max_iter  
-    ii
-    tic
+%     tic
     % update D, with W and Z fixed
     optD=opt;
     optD.max_iter=500;
@@ -38,16 +37,10 @@ for ii=1:opt.max_iter
     optZ.max_Ziter = 10; % for Z update
     optZ.Zthreshold = 1e-6; 
     Z=DDLMD_updateZ(X,trlabels,optZ,W,D,Z);
-    sparsity=mean(sum(Z ~= 0))/opt.K   % avg number of nonzero elements in cols of Z
-    if ii == 10
-        if sparsity < 0.2 || sparsity >0.9
-            fprintf('too sparse or non-sparse\n')
-            break;            
-        end
-    end
-    if ii == 30
-        if sparsity > 0.5 || sparsity < 0.1
-            fprintf('too sparse or non-sparse \n')
+    if 0.3 == ii/opt.max_iter
+        sparsity=mean(sum(Z ~= 0))/opt.K;   % avg number of nonzero elements in cols of Z
+        if sparsity > 0.95 || sparsity < 0.05
+            fprintf('30 percent iters too sparse or non-sparse\n')
             break;            
         end
     end
@@ -61,6 +54,11 @@ for ii=1:opt.max_iter
     if opt.losscalc
         Loss(ii)=DDLMD_Loss(X,trlabels,opt,W,D,Z);
         Dict.Loss=Loss;
+        if ii > 1            
+        if abs(Loss(ii-1) - Loss(ii)) < 1e-5
+            break;
+        end
+        end
     end
     if opt.showconverge
         figure(400);
@@ -70,8 +68,8 @@ for ii=1:opt.max_iter
         pause(.1);
     end
     
-    if opt.savedict
-        if mod(ii,30)==0
+    if opt.savedict*0
+        if mod(ii,40)==0
             Dict.D=D;
             Dict.W=W;
             Dict.Z=Z;
@@ -79,8 +77,7 @@ for ii=1:opt.max_iter
             save([opts.Dictnm(1:end-4),'_',num2str(ii)],'Dict','opts')
         end
     end
-    
-    toc
+%     toc
 end
 
 Dict.D=D;

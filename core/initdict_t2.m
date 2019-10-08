@@ -16,8 +16,9 @@ C=max(trlabels); % how many classes
 rng(opt.rng)
 
 % check checking the existing Dictionary
-nm = opt.Dictnm;
-fileexistance=exist(nm);
+nm = ['esc_FDDLP',opt.dataset,'_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1)...
+    ,'_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'.mat' ];
+fileexistance = exist(nm);
 if fileexistance==2
     load(nm)
     D=Dict.D;
@@ -25,8 +26,9 @@ if fileexistance==2
     W=Dict.W;
     [M, ~, ~] = getMH1H2_t2(trlabels, Z);
     U = mix_updateU_t2(W, M);        
-    opt.max_iter= 80;% because of good initialization
+    opt.max_iter= 120;% because of good initialization
     Loss=zeros(4,opt.max_iter);
+    'good from  initdict_t2'
 else    
     D=randn(M_d,opt.K);
     Z=randn(opt.K,N);

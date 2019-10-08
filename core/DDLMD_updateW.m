@@ -15,10 +15,13 @@ function W=DDLMD_updateW(trlabels,opt,Z)
 % output is W, the projection matrix, K by Q
 
 [SW,SB]=calcfisher(Z,trlabels,opt);
-M = SW-SB+Z*Z';
-[V,D]=eig(M);  % lbd is eig value, increasing to right
+A = SW-SB+1.1*Z*Z';
+A = (A +A')/2;
+[V,D]=eig(A);  % lbd is eig value, increasing to right
 [d_sorted,I] = sort(diag(D));
-W = V(:,I(1:opt.Q));
+ind = find(d_sorted> 1e-7); % in case A is low rank
+Wdimension = min(opt.Q, length(ind));% which eigen vector to pick
+W = V(:,I(ind(1:Wdimension)));
 
 if opt.ploteig
     figure(300);

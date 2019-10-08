@@ -3,7 +3,7 @@ clc
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
-
+addpath(genpath('.././FDDLPOW'))
 % load('DDLMDmix4_k100_lmbd1.5_mu0.1_Q16_nu1000iter_100.mat') %FDDLO
 % load(['rng',num2str(ii), 'FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta1.7.mat'])
 load('FDDLOW_mix_k100_lmbd1.5_mu0.1_Q16_nu1000_beta1.7.mat')

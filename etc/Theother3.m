@@ -1,6 +1,9 @@
-function theother3 = Theother3(a)
+function theother3 = Theother3(a,C)
 % this is a funciton to get the counter-combinations
-theother3 = 1:6;
+if nargin <2
+    C = 6;
+end
+theother3 = 1:C;
 for ii = 1:length(a)
     theother3(theother3 == a(ii))= [];
 end

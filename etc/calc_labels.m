@@ -1,12 +1,12 @@
 function [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts)
-    n = opts.n;
-    C = opts.C;
+    n = opts.n; % how many components in the mixture
+    C = opts.C; % total number of classes
     Ncombs = opts.Ncombs;
     ln_test = opts.ln_test;
     
     acc_t = zeros(C, n);
     % run mix_ntable
-    for section = 1:n    
+    for section = 1:n % if 4,5,6 mixture with 033, 303, 330, there are 3 sections
         sect = labels_pre(:,1+(section-1)*ln_test/n:section*ln_test/n);
         % we only care about lower power accurcy
         [acc_t(:,section)] = mix_table_power(ln_test/n, section, sect, Ncombs);
@@ -19,7 +19,7 @@ function [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts)
         for indCl=1:Ncombs
             temp = c(indCl,:);
             indClnm(1) = temp(whichpart); % find the week signal
-            indClnm(2:C) = Theother3(indClnm(1)); % find non-week signal
+            indClnm(2:C) = Theother3(indClnm(1), C); % find non-week signal
             for ii0=1:ln_test_part/Ncombs          
                 acc0(indClnm(1))=acc0(indClnm(1))+length(find...
                     (labels_pre_part(1:n,ii0+(indCl-1)*ln_test_part/Ncombs)==indClnm(1)));            

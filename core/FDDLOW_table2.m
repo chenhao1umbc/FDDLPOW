@@ -41,11 +41,11 @@ for ii = 1:opt.max_iter
     optZ.max_Ziter = 20; % for Z update
     optZ.Zthreshold = 1e-6;        
     Z = mix_updateZ_t2(X,trlabels,optZ, W, D, Z, U); 
-    [M, H1, H2] = getMH1H2_t2(trlabels, Z); % get M, H1, and H2 for updating W and U.
-    sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
+    [M, H1, H2] = getMH1H2_t2(trlabels, Z); % get M, H1, and H2 for updating W and U.    
     if 0.3 == ii/opt.max_iter
-        if sparsity > 0.6 || sparsity < 0.1
-            fprintf('30 iters too sparse or non-sparse\n')
+        sparsity = mean(sum(Z ~= 0))/opt.K;      % avg number of nonzero elements in cols of Z
+        if sparsity > 0.9 || sparsity < 0.05
+            fprintf('30 percent iters too sparse or non-sparse\n')
             break;            
         end
     end
@@ -66,6 +66,11 @@ for ii = 1:opt.max_iter
     if opt.losscalc
         Loss(4,ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z);
         Dict.Loss = Loss;
+        if ii > 1            
+        if abs(Loss(end, ii-1) - Loss(end, ii)) < 1e-5
+            break;
+        end
+        end
         if opt.showconverge 
             figure(800);            
             semilogy(vec(Loss(:,1:ii)));        
@@ -74,19 +79,8 @@ for ii = 1:opt.max_iter
             pause(.1);
         end
     end
-    if opt.savedict
-        if mod(ii,30) == 0
-            Dict.D = D;
-            Dict.W = W;
-            Dict.Z = Z;
-            Dict.U = U;
-            Dict_mix = Dict;
-            opts = opt;
-            save([opts.mixnm(1:end-4),'_',num2str(ii)],'Dict_mix','opts')
-        end
-    end
     
-fprintf('one iter time: %6.4f \n',toc-t1)
+% fprintf('one iter time: %6.4f \n',toc-t1)
 end
 
 Dict.D = D;

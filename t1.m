@@ -7,13 +7,14 @@ tic
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
+addpath(genpath('.././FDDLPOW'))
 for uuu = [ 0 3  6 10 20]
 % do traing or do crossvalidation
 do_training = 0;
 do_cv = 1;
 
 % load data
-mixture_n = 3; % mixture_n classes mixture, = 1,2,3
+mixture_n = 1; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
 pctrl.db = uuu; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
@@ -74,7 +75,7 @@ if do_cv ==1
                     if exist('Dict')==1
                         Dict_mix = Dict;
                     end
-                    Z = sparsecoding_mix_test(Dict_mix, Database, opts); %%%%% cv or test
+                    Z = sparsecoding_test(Dict_mix, Database, opts); %%%%% cv or test
                     W = Dict_mix.W;
                     C = max(Database.tr_label);
                     N = size(Database.tr_label,2);

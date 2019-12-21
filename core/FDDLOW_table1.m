@@ -19,7 +19,6 @@ function [Dict]=FDDLOW_table1(X,trlabels,opt)
 
 % main loop
 for ii=1:opt.max_iter  
-    ii
     %     tic
         % update D, with W and Z fixed
         optD=opt;

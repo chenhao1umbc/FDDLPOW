@@ -8,11 +8,11 @@ tic
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././FDDLPOW'))
 addpath(genpath('.././data'))
-% addpath(genpath('.././tempresult'))
+addpath(genpath('.././tempresult'))
 
 %% load settings
 % do traing or do crossvalidation
-do_training = 0;
+do_training = 1;
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
@@ -25,10 +25,10 @@ pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 SNR = 2000;
 
 %%%%%%%%%%%%%%%%%% step-1 5 fold's cross-validation %%%%%%%%%%%%%%%%%
-% K = [20, 40, 60, 80, 100, 120 ];
-% lbmd = [0.005, 0.01,0.04, 0.07, 0.1 0.4, 0.7, 1 ];
-% mu = [1, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 5e-4, 1e-4];
-% Q = [1, 0.9, 0.75, 0.5, 0.3 ]; % prtion
+K = [20, 40, 60, 80, 100, 120 ];
+lbmd = [0.005, 0.01,0.04, 0.07, 0.1 0.4, 0.7, 1 ];
+mu = [1, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 5e-4, 1e-4];
+Q = [1, 0.9, 0.8]; % prtion
 % result is cv = 0.8124 
 % K = 60;
 % lbmd = 0.04;
@@ -42,17 +42,18 @@ SNR = 2000;
 % mu = [0.005 0.008 0.01 0.012 0.015 ];
 % Q = [0.9, 0.8, 0.7, 0.6]; % prtion
 % result is 
-K = 60;
-lbmd = 0.025;
-mu= 0.005;
-Q = 0.9;% this is wq without negative
+% K = 60;
+% lbmd = 0.025;
+% mu= 0.005;
+% Q = 0.9;% this is wq without negative
+
 %%%%%%%%%%%%%%%%%% step-2 5 fold's cross-validation %%%%%%%%%%%%%%%%%
 
 %% load data
 [Database] = load_ESC(mixture_n, SNR, pctrl);
 acc_knn = zeros(length(K), length(lbmd), length(mu),length(Q));
 acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
-for f = 1:5
+for f = [1]
 f
 seed = f*100;% change ramdom seed to do m-fold cv   
 Database = myshuffle(Database,seed);
@@ -82,12 +83,12 @@ addpath(genpath('.././tempresult'))
 % acc_svm = zeros(length(K), length(lbmd), length(mu),length(Q));
 for ind1 = 1: length(K)
 for ind2 = 1: length(lbmd)
-for ind3= 1: length(mu)   
+for ind3 = 1: length(mu)   
 for ind4 = 1:length(Q)
     [opts]=loadoptions_ESC(1,K(ind1),lbmd(ind2),mu(ind3),Q(ind4)*K(ind1) );
     if exist(opts.Dictnm, 'file')        
     load(opts.Dictnm,'Dict','opts')
-    if Dict.iter >40
+     if Dict.iter/opts.max_iter > 0.3
         Z = sparsecoding(Dict,Database,opts,mixture_n, cvortest);
         Z = aoos(Z,Database.featln, size(Z, 2));
         Xtestorcv = Dict.W'*Z;
@@ -108,8 +109,8 @@ end
 % dt((datestr(dt) == ':')) = '_'; % for windows computer
 % save(['.././tempresult/m3log',dt, 't1_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'seed')
 end
-meanknn = max(max(max(max(sum(acc_knn,5)/5))));
-meansvm = max(max(max(max(sum(acc_svm,5)/5))));
+meanknn = max(max(max(max(sum(acc_knn,5)/5))))
+meansvm = max(max(max(max(sum(acc_svm,5)/5))))
 % dt = datestr(datetime);
 % dt((datestr(dt) == ':')) = '_'; % for windows computer
 % save([dt, 'm3log_t1_results'], 'acc_knn', 'acc_svm', 'maxknn', 'maxsvm', 'K',...

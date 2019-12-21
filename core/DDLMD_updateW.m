@@ -19,9 +19,10 @@ A = SW-SB+1.1*Z*Z';
 A = (A +A')/2;
 [V,D]=eig(A);  % lbd is eig value, increasing to right
 [d_sorted,I] = sort(diag(D));
-ind = find(d_sorted> 1e-7); % in case A is low rank
-Wdimension = min(opt.Q, length(ind));% which eigen vector to pick
-W = V(:,I(ind(1:Wdimension)));
+% ind = find(d_sorted> 1e-7); % in case A is low rank
+% Wdimension = min(opt.Q, length(ind));% which eigen vector to pick
+% W = V(:,I(ind(1:Wdimension)));
+W = V(:, I(1:opt.Q));
 
 if opt.ploteig
     figure(300);

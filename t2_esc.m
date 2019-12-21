@@ -15,7 +15,7 @@ addpath(genpath('.././FDDLPOW'))
 do_training = 1;
 cvortest = [0, 1]; % [docv, dotest] cannot be [1, 1]
 
-mixture_n = 1; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
+mixture_n = 0; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 
 K = 60;

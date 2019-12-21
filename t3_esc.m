@@ -12,7 +12,7 @@ addpath(genpath('.././tempresult/'))
 
 %% load settings
 % do traing or do crossvalidation
-do_training = 0;
+do_training = 1;
 cvortest = [1, 0]; % [docv, dotest] cannot be [1, 1]
 
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3 (1 means non -mixture)

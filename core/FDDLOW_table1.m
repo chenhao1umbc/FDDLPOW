@@ -16,31 +16,34 @@ function [Dict]=FDDLOW_table1(X,trlabels,opt)
 
 % initialize Dictionary
 [D, Z, W, Loss, opt]=initdict(X,trlabels,opt); % max_iter will change for existing dictionary
-
+N = size(X, 2);
 % main loop
 for ii=1:opt.max_iter  
     %     tic
-        % update D, with W and Z fixed
-        optD=opt;
-        optD.max_iter=500;
-        optD.threshold=5e-5;
-        optD.showconverge=false;
-        D=DDLMD_updateD(X,optD,D,Z);
+    % update D, with W and Z fixed
+    optD=opt;
+    optD.max_iter=500;
+    optD.threshold=5e-5;
+    optD.showconverge=false;
+    D=DDLMD_updateD(X,optD,D,Z);
 
+
+    % update Z, with D and W fixed
+    optZ=opt;
+    optZ.max_iter=500;  % for fista iters
+    optZ.threshold=1e-6;
+    optZ.showprogress = false; % show inside of fista
+    optZ.showconverge = false; % show updateZ
+    optZ.showcost= true*optZ.showprogress;     
+    optZ.max_Ziter = 20; % for Z update
+    optZ.Zthreshold = 1e-6; 
     while 1
-        % update Z, with D and W fixed
-        optZ=opt;
-        optZ.max_iter=500;  % for fista iters
-        optZ.threshold=1e-6;
-        optZ.showprogress = false; % show inside of fista
-        optZ.showconverge = false; % show updateZ
-        optZ.showcost= true*optZ.showprogress;         
-        Z=DDLMD_updateZ(X,trlabels,optZ,W,D,Z);
-        
+        Z=DDLMD_updateZ(X,trlabels,optZ,W,D,Z);        
         a = sum(abs(Z), 2);
-        if sum(a ==0) >0 
-            disp('In the while loop...')
-            D(:, a==0) = X(:,randi([1, 800],[sum(a ==0),1])); 
+        nn =  sum(a ==0);
+        if nn  >0 
+%             disp('In the while loop...')
+            D(:, a==0) = X(:,randi([1, N],[nn,1])); 
             Z = randn(size(Z));
         else
             break;

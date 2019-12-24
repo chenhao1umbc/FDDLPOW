@@ -10,8 +10,8 @@ addpath(genpath('.././data'))
 addpath(genpath('.././FDDLPOW'))
 for uuu = [ 0 3  6 10 20]
 % do traing or do crossvalidation
-do_training = 0;
-do_cv = 1;
+do_training = 1;
+do_cv = 0;
 
 % load data
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3

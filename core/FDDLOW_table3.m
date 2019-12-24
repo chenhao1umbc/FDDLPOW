@@ -59,8 +59,20 @@ for ii = 1:opt.max_iter
     optZ.showconverge = false; % show updateZ
     optZ.showcost= true*optZ.showprogress;
     optZ.max_Ziter = 20; % for Z update
-    optZ.Zthreshold = 1e-6;        
-    Z = mix_updateZ(X,H_bar_i, H3, optZ, W, D, Z, U, V, Delta); 
+    optZ.Zthreshold = 1e-6;   
+    while 1
+        Z = mix_updateZ(X,H_bar_i, H3, optZ, W, D, Z, U, V, Delta); 
+        a = sum(abs(Z), 2);
+        nn = sum(a ==0);
+        if  nn >0 
+%             disp('In the while loop...')
+            D(:, a==0) = X(:,randi([1, N],[nn,1])); 
+            Z = randn(size(Z));
+        else
+            break;
+        end
+    end
+    
     if 0.3 == ii/opt.max_iter
         sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
         if sparsity > 0.9 || sparsity < 0.05

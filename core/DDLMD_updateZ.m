@@ -33,8 +33,14 @@ normWWt = norm(WWt,'fro');
 L_term1 = 2*norm(DtD,'fro'); 
 L_term2 = 2 * opt.mu * normWWt * norm(M,'fro');
 L = L_term1 + L_term2 ;
-Zout=fista(Zin, L, opt.lambda1, opt, @calc_F, @grad);
-
+sqrt_numelx = sqrt(numel(Zin));
+for i = 1:20
+    Zout=fista(Zin, L, opt.lambda1, opt, @calc_F, @grad);
+    e = norm(Zin - Zout,'fro')/sqrt_numelx;
+    if e < opts.threshold
+        break;
+    end
+end
 % convex function f
 function cost = calc_F(Z)
     [SW,SB]=calcfisher(Z,trlabels,opt);

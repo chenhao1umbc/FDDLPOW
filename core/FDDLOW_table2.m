@@ -16,7 +16,7 @@ function [Dict]=FDDLOW_table2(X,trlabels,opt)
 
 % initialize Dictionary
 [D, Z, W, U, Loss, opt] = initdict_t2(X,trlabels,opt); % max_iter will change for existing dictionary
-
+N = size(X, 2);
 % main loop
 for ii = 1:opt.max_iter   
     t1 = toc;
@@ -34,14 +34,26 @@ for ii = 1:opt.max_iter
     % update Z, with D Uand W fixed
     optZ = opt;
     optZ.max_iter = 500; % for fista
-    optZ.threshold = 1e-5;
+    optZ.threshold = 1e-6;
     optZ.showprogress = false; % show inside of fista
     optZ.showconverge = false; % show updateZ
     optZ.showcost= true*optZ.showprogress;
     optZ.max_Ziter = 20; % for Z update
-    optZ.Zthreshold = 1e-6;        
-    Z = mix_updateZ_t2(X,trlabels,optZ, W, D, Z, U); 
-    [M, H1, H2] = getMH1H2_t2(trlabels, Z); % get M, H1, and H2 for updating W and U.    
+    optZ.Zthreshold = 1e-6; 
+    while 1
+        Z = mix_updateZ_t2(X,trlabels,optZ, W, D, Z, U);           
+        a = sum(abs(Z), 2);
+        nn = sum(a ==0);
+        if nn >0 
+%             disp('In the while loop...')
+            D(:, a==0) = X(:,randi([1, N],[nn,1])); 
+            Z = randn(size(Z));
+        else
+            break;
+        end
+    end
+    [M, H1, H2] = getMH1H2_t2(trlabels, Z); % get M, H1, and H2 for updating W and U.
+    
     if 0.3 == ii/opt.max_iter
         sparsity = mean(sum(Z ~= 0))/opt.K;      % avg number of nonzero elements in cols of Z
         if sparsity > 0.9 || sparsity < 0.05
@@ -56,7 +68,7 @@ for ii = 1:opt.max_iter
     % update U, with D and Z fixed.
     U = mix_updateU_t2(W, M);
     
-    % update W, with D Uand Z fixed
+    % update W, with D U and Z fixed
     W = mix_updateW_t2(opt, H1, H2, M, U, Z);
     if opt.losscalc
         Loss(3,ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z);

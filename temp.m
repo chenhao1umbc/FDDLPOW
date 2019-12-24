@@ -30,15 +30,15 @@ end
 
 %% training dictionary
 % % load settings
-% K = 100;
-% lbmd = 1e-4;
-% mu=1e-3;
-% Q=16;% this is wq without negative
-% SNR = 2000;
-% nu= 1e3;
-% beta = 1;
+K = 100;
+lbmd = 1e-4;
+mu=1e-3;
+Q=16;% this is wq without negative
+SNR = 2000;
+nu= 1e3;
+beta = 1;
 
-K = [100, 150, 200, 250];
+K = [100, 150];
 lbmd = [0.01, 0.005, 0.001, 1e-4];
 mu = [1, 0.1, 0.01, 0.001 0.0001];
 

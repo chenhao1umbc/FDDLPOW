@@ -43,7 +43,7 @@ beta = 1;
 % lbmd = [0.01, 0.005, 0.001, 1e-4];
 % mu = [1, 0.1, 0.01, 0.001 0.0001];
 
-for Q = [32 48]    
+for Q = [16 32 48]    
 for ind1 = 1: length(K)
     for ind2 = 1: length(lbmd)
         for ind3= 1: length(mu)

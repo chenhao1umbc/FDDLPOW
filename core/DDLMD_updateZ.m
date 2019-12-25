@@ -34,12 +34,13 @@ L_term1 = 2*norm(DtD,'fro');
 L_term2 = 2 * opt.mu * normWWt * norm(M,'fro');
 L = L_term1 + L_term2 ;
 sqrt_numelx = sqrt(numel(Zin));
-for i = 1:20
+for i = 1:opt.max_Ziter
     Zout=fista(Zin, L, opt.lambda1, opt, @calc_F, @grad);
     e = norm(Zin - Zout,'fro')/sqrt_numelx;
-    if e < opts.threshold
+    if e < opt.threshold
         break;
     end
+    Zin = Zout;
 end
 % convex function f
 function cost = calc_F(Z)

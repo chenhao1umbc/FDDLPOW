@@ -14,7 +14,7 @@ do_training = 1;
 do_cv = 0;
 
 % load data
-mixture_n = 2; % mixture_n classes mixture, = 1,2,3
+mixture_n = 1; % mixture_n classes mixture, = 1,2,3
 SNR = 2000;
 pctrl.db = uuu; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
@@ -43,7 +43,7 @@ beta = 1;
 % lbmd = [0.01, 0.005, 0.001, 1e-4];
 % mu = [1, 0.1, 0.01, 0.001 0.0001];
 
-for Q = [32 48]    
+for Q = [64 80 96]    
 for ind1 = 1: length(K)
     for ind2 = 1: length(lbmd)
         for ind3= 1: length(mu)
@@ -51,9 +51,9 @@ for ind1 = 1: length(K)
             % for table 1 algorithm
             if do_training ==1
                 Dict = FDDLOW_table1(Database.tr_data,Database.tr_label,opts);
-                if Dict.iter > 30
+%                 if Dict.iter > 30
                     save(opts.Dictnm,'Dict','opts')
-                end
+%                 end
             end 
 
         end

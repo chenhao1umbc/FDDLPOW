@@ -19,7 +19,6 @@ function [Dict]=FDDLOW_table1(X,trlabels,opt)
 N = size(X, 2);
 % main loop
 for ii=1:opt.max_iter  
-    %     tic
     % update D, with W and Z fixed
     optD=opt;
     optD.max_iter=500;
@@ -27,7 +26,7 @@ for ii=1:opt.max_iter
     optD.showconverge=false;
     D=DDLMD_updateD(X,optD,D,Z);
 
-
+    
     % update Z, with D and W fixed
     optZ=opt;
     optZ.max_iter=500;  % for fista iters
@@ -35,14 +34,14 @@ for ii=1:opt.max_iter
     optZ.showprogress = false; % show inside of fista
     optZ.showconverge = false; % show updateZ
     optZ.showcost= true*optZ.showprogress;     
-    optZ.max_Ziter = 20; % for Z update
+    optZ.max_Ziter = 10; % for Z update
     optZ.Zthreshold = 1e-6; 
     while 1
         Z=DDLMD_updateZ(X,trlabels,optZ,W,D,Z);        
         a = sum(abs(Z), 2);
         nn =  sum(a ==0);
         if nn  >0 
-%             disp('In the while loop...')
+            disp('In the while loop...')
             D(:, a==0) = X(:,randi([1, N],[nn,1])); 
             Z = randn(size(Z));
         else
@@ -89,7 +88,6 @@ for ii=1:opt.max_iter
             save([opts.Dictnm(1:end-4),'_',num2str(ii)],'Dict','opts')
         end
     end
-%     toc
 end
 
 Dict.D=D;

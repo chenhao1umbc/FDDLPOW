@@ -58,7 +58,7 @@ for ii = 1:opt.max_iter
     optZ.showprogress = false; % show inside of fista
     optZ.showconverge = false; % show updateZ
     optZ.showcost= true*optZ.showprogress;
-    optZ.max_Ziter = 20; % for Z update
+    optZ.max_Ziter = 10; % for Z update
     optZ.Zthreshold = 1e-6;   
     while 1
         Z = mix_updateZ(X,H_bar_i, H3, optZ, W, D, Z, U, V, Delta); 

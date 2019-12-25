@@ -38,11 +38,10 @@ SNR = 2000;
 
 for ind1 = 1: length(K)
 for ind2 = 1: length(lbmd)
-for ind3= 1: length(mu)
-    
-    [opts]=loadoptions(K(ind1),lbmd(ind2),mu(ind3),Q,nu,beta, SNR)
+for ind3= 1: length(mu)   
     % for table 1 algorithm
     if do_training ==1
+        [opts]=loadoptions(K(ind1),lbmd(ind2),mu(ind3),Q,nu,beta, SNR)
         Dict = FDDLOW_table1(Database.tr_data,Database.tr_label,opts);
         save(opts.Dictnm,'Dict','opts')
     end

@@ -1,0 +1,32 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2019 The MathWorks, Inc.
+              R2019a Update 5 (9.6.0.1174912) 64-bit (glnxa64)
+                               July 31, 2019
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> opts = 
+  struct with fields:
+
+               C: 6
+             rng: 0
+             SNR: 2000
+               K: 100
+               Q: 32
+         lambda1: 1.0000e-03
+              mu: 1
+    showconverge: 0
+        savedict: 0
+        max_iter: 200
+        losscalc: 1
+     k_neighbors: 3
+       kNNmethod: 1
+         dataset: '4'
+          Dictnm: 'FDDLOW_k100_lmbd0.001_mu1_Q32.mat'
+              nu: 1000
+            beta: 1
+         mixcase: 1
+           mixnm: 'FDDLOW_mix_k100_lmbd0.001_mu1_Q32_nu1000_beta1.mat'

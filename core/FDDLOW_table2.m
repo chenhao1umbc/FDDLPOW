@@ -45,9 +45,10 @@ for ii = 1:opt.max_iter
         a = sum(abs(Z), 2);
         nn = sum(a ==0);
         if nn >0 
-%             disp('In the while loop...')
+            ii
+            disp('In the while loop...')
             D(:, a==0) = X(:,randi([1, N],[nn,1])); 
-            Z = randn(size(Z));
+            Z(a==0,:) = ones(nn, N);
         else
             break;
         end

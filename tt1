@@ -14,10 +14,10 @@ For product information, visit www.mathworks.com.
                C: 6
              rng: 0
              SNR: 2000
-               K: 100
-               Q: 32
-         lambda1: 1.0000e-03
-              mu: 1
+               K: 50
+               Q: 30
+         lambda1: 0.0100
+              mu: 1.0000e-03
     showconverge: 0
         savedict: 0
         max_iter: 200
@@ -25,8 +25,11 @@ For product information, visit www.mathworks.com.
      k_neighbors: 3
        kNNmethod: 1
          dataset: '4'
-          Dictnm: 'FDDLOW_k100_lmbd0.001_mu1_Q32.mat'
+          Dictnm: 'FDDLOW_k50_lmbd0.01_mu0.001_Q30.mat'
               nu: 1000
             beta: 1
          mixcase: 1
-           mixnm: 'FDDLOW_mix_k100_lmbd0.001_mu1_Q32_nu1000_beta1.mat'
+           mixnm: 'FDDLOW_mix_k50_lmbd0.01_mu0.001_Q30_nu1000_beta1.mat'
+ii =
+     1
+In the while loop...

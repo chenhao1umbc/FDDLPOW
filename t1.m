@@ -19,19 +19,19 @@ cvortest = 1;  % 1 means cv, 0 means test
 
 %% training dictionary
 % load settings
-K = 50;
+K = 100;
 lbmd = 0.01;
 mu=0.001;
 nu= 1e3;
 beta = 1;
-Q= 45;% this is wq without negative
-SNR = 0;
+Q= 32;% this is wq without negative
+SNR = 20;
 
 % K = [50, 100, 150, 200, 250];
 % lbmd = [0.1, 0.01, 0.001, 1e-4];
 % mu = [1, 0.1, 0.01, 0.001 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
-% Q = [16, 32, 48, 64, 80, 96]; % [50, 45, 40, 30, 15, 8]
+% Q = [10 20 30 50 75 100];
 
 [Database]=load_data_new(mixture_n, SNR, pctrl);
 
@@ -57,11 +57,13 @@ if do_cv ==1
 % tr_sparsity_K_lambda_mu = zeros(length(K),length(lbmd),length(mu));
 % result_K_lambda_muWEEK = zeros(length(K),length(lbmd),length(mu));
 
-% for Q = [30, 32]
+for Q = [10 20 30 50 75 100]
 for ind1 = 1: length(K)
 for ind2 = 1: length(lbmd)
 for ind3 = 1: length(mu)
+
     [opts]=loadoptions(K(ind1),lbmd(ind2),mu(ind3),Q,nu,beta, SNR);
+    opts.Dictnm
     if exist(opts.Dictnm, 'file') load(opts.Dictnm,'Dict','opts'), else break; end
     % run prep_ZF 
     if exist('Dict')==1    Dict_mix = Dict; opts,   end
@@ -76,20 +78,24 @@ for ind3 = 1: length(mu)
         acc_knn = myknn(Xtr, Xtestorcv, Database, cvortest) % k = 5 
     end
 
-%     run calc_M
-%     % zero forcing
-%     H = W'*M;
-%     r_zf = pinv(H)*W'*Z;
-%     [~, labels_pre] = sort(r_zf, 1, 'descend');
-%     
-%     % matched filter
-%     r_matched = H'*W'*Z;
-%     [~, labels_pre_mf] = sort(r_zf, 1, 'descend');
-%     
-%     % calculate accuracy
-%     [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
-%     [t, tt, ttt] = calc_labels(labels_pre_mf, opts);
-% 
+    run calc_M
+    % zero forcing
+    H = W'*M;
+    r_zf = pinv(H)*W'*Z;
+    [~, labels_pre] = sort(r_zf, 1, 'descend');
+    
+    % matched filter
+    r_matched = H'*W'*Z;
+    [~, labels_pre_mf] = sort(r_zf, 1, 'descend');
+    
+    % calculate accuracy
+    if Database.N_c == 1
+        acc_ZF = myZFMF(labels_pre, Database, cvortest)
+        acc_MF = myZFMF(labels_pre_mf, Database, cvortest)
+    else
+        [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
+        [t, tt, ttt] = calc_labels(labels_pre_mf, opts);
+    end
 %     result_K_lambda_mu(ind1, ind2, ind3) = acc_all;
 %     result_K_lambda_muWEEK(ind1, ind2, ind3) = acc_weak_av;
 %     sparsity_K_lambda_mu(ind1, ind2, ind3) = mean(sum(Z ~= 0))/K(ind1);
@@ -105,7 +111,7 @@ end
 end
 end
 end
-% end
+end
 % save('t1_results_','result_K_lambda_mu','result_K_lambda_muWEEK',...
 %     'sparsity_K_lambda_mu','tr_sparsity_K_lambda_mu')
 toc

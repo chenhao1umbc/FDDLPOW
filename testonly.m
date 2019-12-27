@@ -20,7 +20,7 @@ cvortest = 0;  % 1 means cv, 0 means test
 
 %% training dictionary
 % load settings
-K = 50;
+K = 100;
 lbmd = 0.01;
 mu = 0.001;
 nu= 1e3;
@@ -28,23 +28,24 @@ beta = 1;
 Q= 15;% this is wq without negative
 
 % K = [50, 100];
-% lbmd = [0.001 0.003 0.005 0.008 0.01 0.013 0.015, 0.018];
+lbmd = [0.001 0.003 0.005 0.008 0.01 0.013 0.015, 0.018];
 % mu = [0.01, 0.001 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
 % Q = [16, 32, 48, 64, 80, 96]; % [50, 45, 40, 30, 15, 8]
-% Q = [30, 32];
+Q = [10 20 30 50 75 100];
 
 SNR = 0;
-[Database]=load_data_new(mixture_n, SNR, pctrl);
-
-%% CV/testing part
-for f = 1:1
 % [Database]=load_data_new(mixture_n, SNR, pctrl);
+r = zeros(6, 8, 5); % Q, lambda, folds 
+r1 = r; r2= r;
+%% CV/testing part
+for f = 1:2
+[Database]=load_data_new(mixture_n, SNR, pctrl);
 if do_cv ==1      
-for Q = 15%[30, 32]
+for indQ = 1: length(Q)
 for ind1 = 1: length(K)
 for ind3 = 1: length(mu)
-[opts]=loadoptions(K(ind1),0.01,mu(ind3),Q,nu,beta, SNR);
+[opts]=loadoptions(K(ind1),0.01,mu(ind3),Q(indQ),nu,beta, SNR);
 if exist(opts.Dictnm, 'file') load(opts.Dictnm,'Dict','opts'), else break; end
 for ind2 = 1: length(lbmd)
     opts.lambda1 = lbmd(ind2); 
@@ -58,14 +59,35 @@ for ind2 = 1: length(lbmd)
         Xtr = Dict.W'*Dict.Z;%aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
         % KNN classifier
         acc_knn = myknn(Xtr, Xtestorcv, Database, cvortest) % k = 5 
+        r(indQ, ind2, f) = acc_knn;
     end
+    
+    run calc_M
+    % zero forcing
+    H = W'*M;
+    r_zf = pinv(H)*W'*Z;
+    [~, labels_pre] = sort(r_zf, 1, 'descend');
+    
+    % matched filter
+    r_matched = H'*W'*Z;
+    [~, labels_pre_mf] = sort(r_zf, 1, 'descend');
+    
+    % calculate accuracy
+    if Database.N_c == 1
+        acc_ZF = myZFMF(labels_pre, Database, cvortest)
+        acc_MF = myZFMF(labels_pre_mf, Database, cvortest)
+        r1(indQ, ind2, f) = acc_ZF;
+        r2(indQ, ind2, f) = acc_MF;
+    else
+        [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
+       
 end
 end 
 end
 end
 end
 end
-% end
+end
 % save('t1_results_','result_K_lambda_mu','result_K_lambda_muWEEK',...
 %     'sparsity_K_lambda_mu','tr_sparsity_K_lambda_mu')
 toc

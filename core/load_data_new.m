@@ -47,7 +47,7 @@ for ii=1:449*6
 end
 db.features=[db.features;db2.features];
 
-rng(1000)
+% rng(1000)
 ind = randperm(449);
 ind_tr = ind(1:trln);
 ind_cv = ind(trln+1:trln+cvln);

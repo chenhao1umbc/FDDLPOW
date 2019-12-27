@@ -21,25 +21,25 @@ cvortest = 1;  % 1 means cv, 0 means test
 %% training dictionary
 % load settings
 K = 100;
-lbmd = 1e-4;
+lbmd = 0.01;
 mu=1e-3;
 nu= 1e3;
 beta = 1;
 Q=32;% this is wq without negative
 SNR = 2000;
 
-K = [50];
-lbmd = [0.01];
-mu = [0.001, 0.0001];
+% K = [50, 100, 150, 200];
+% lbmd = [0.1, 0.01, 0.001, 0.0001];
+mu = [0.1, 0.001];
 % SNR = [2000, 20, 0, -5, -10, -20];
-% Q = [16, 32, 48, 64, 80, 96];
+% Q = [10, 20, 30, 50, 75, 100];
 
 [Database]=load_data_new(mixture_n, SNR, pctrl);
 
 for ind1 = 1: length(K)
 for ind2 = 1: length(lbmd)
 for ind3= 1: length(mu)
-for Q = [30, 15, 8]
+for Q = [50, 75, 100]
     [opts]=loadoptions(K(ind1),lbmd(ind2),mu(ind3),Q,nu,beta, SNR)
     % for table 1 algorithm
     if do_training ==1

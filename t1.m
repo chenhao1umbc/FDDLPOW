@@ -9,8 +9,8 @@ addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 addpath(genpath('.././FDDLPOW'))
 % do traing or do crossvalidation
-do_training = 1;
-do_cv = 0;
+do_training = 0;
+do_cv = 1;
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 pctrl.if2weak = 0; % if 2 weak components in mixture of 3
@@ -19,13 +19,13 @@ cvortest = 1;  % 1 means cv, 0 means test
 
 %% training dictionary
 % load settings
-K = 100;
-lbmd = 1e-4;
-mu=1e-3;
+K = 50;
+lbmd = 0.01;
+mu=0.001;
 nu= 1e3;
 beta = 1;
-Q=8;% this is wq without negative
-SNR = 2000;
+Q= 45;% this is wq without negative
+SNR = 0;
 
 % K = [50, 100, 150, 200, 250];
 % lbmd = [0.1, 0.01, 0.001, 1e-4];
@@ -57,7 +57,7 @@ if do_cv ==1
 % tr_sparsity_K_lambda_mu = zeros(length(K),length(lbmd),length(mu));
 % result_K_lambda_muWEEK = zeros(length(K),length(lbmd),length(mu));
 
-for Q = (1:6) *16
+% for Q = [30, 32]
 for ind1 = 1: length(K)
 for ind2 = 1: length(lbmd)
 for ind3 = 1: length(mu)
@@ -105,7 +105,7 @@ end
 end
 end
 end
-end
+% end
 % save('t1_results_','result_K_lambda_mu','result_K_lambda_muWEEK',...
 %     'sparsity_K_lambda_mu','tr_sparsity_K_lambda_mu')
 toc

@@ -48,7 +48,7 @@ for ii = 1:opt.max_iter
             ii
             disp('In the while loop...')
             D(:, a==0) = X(:,randi([1, N],[nn,1])); 
-            Z(a==0,:) = ones(nn, N);
+            Z(a==0,:) = rand(nn, N);
         else
             break;
         end

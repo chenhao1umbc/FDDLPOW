@@ -55,6 +55,9 @@ end
 end
 
 %% CV/testing part
+SNR = 20;
+r = zeros(length(mu),length(lbmd), length(Q), length(K), 5); % Q, lambda, folds 
+r_zf = r; r_mf = r;
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR, pctrl, f);
 
@@ -64,13 +67,13 @@ if do_cv ==1
 % tr_sparsity_K_lambda_mu = zeros(length(K),length(lbmd),length(mu));
 % result_K_lambda_muWEEK = zeros(length(K),length(lbmd),length(mu));
 
-for indK = 1: length(K)
+for indk = 1: length(K)
 for indq = 1: length(Q) 
 for indl = 1: length(lbmd)
 for indm = 1: length(mu)
 
-    [opts]=loadoptions(K(indK),lbmd(indl),mu(indm),Q(indq),nu,beta, SNR, f);
-    opts.Dictnm
+    [opts]=loadoptions(K(indk),lbmd(indl),mu(indm),Q(indq),1000,1, SNR, f);
+    disp(opts.Dictnm)
     if exist(opts.Dictnm, 'file') load(opts.Dictnm,'Dict','opts'), else break; end
     % run prep_ZF 
     if exist('Dict')==1    Dict_mix = Dict; opts,   end
@@ -82,7 +85,8 @@ for indm = 1: length(mu)
         Xtestorcv = Dict.W'*Z;
         Xtr = Dict.W'*Dict.Z;%aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
         % KNN classifier
-        acc_knn = myknn(Xtr, Xtestorcv, Database, cvortest) % k = 5 
+        acc_knn = myknn(Xtr, Xtestorcv, Database, cvortest) % k = 5 ;
+        r(indm, indl, indq, indk, f-999) = acc_knn;
     end
 
     run calc_M
@@ -99,10 +103,13 @@ for indm = 1: length(mu)
     if Database.N_c == 1
         acc_ZF = myZFMF(labels_pre, Database, cvortest)
         acc_MF = myZFMF(labels_pre_mf, Database, cvortest)
+        r_zf(indm, indl, indq, indk, f-999) = acc_ZF;
+        r_mf(indm, indl, indq, indk, f-999) = acc_MF;
     else
         [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
         [t, tt, ttt] = calc_labels(labels_pre_mf, opts);
     end
+    
 %     result_K_lambda_mu(ind1, ind2, ind3) = acc_all;
 %     result_K_lambda_muWEEK(ind1, ind2, ind3) = acc_weak_av;
 %     sparsity_K_lambda_mu(ind1, ind2, ind3) = mean(sum(Z ~= 0))/K(ind1);

@@ -21,7 +21,7 @@ cvortest = 1;  % 1 means cv, 0 means test
 % load settings
 K = [25, 50, 100, 150];
 lbmd = [0.1, 0.01, 0.001, 00001];
-mu = [0.1, 0.01, 0.01, 0.001, 0.0001];
+mu = [1, 0.1, 0.01, 0.01, 0.001, 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
 Q = [10 20 25 30 40 50 75 100 150];
 
@@ -47,7 +47,7 @@ for indm = 1: length(mu)
     disp(opts.Dictnm)
     if exist(opts.Dictnm, 'file') load(opts.Dictnm,'Dict','opts'), else break; end
     % run prep_ZF 
-    if exist('Dict')==1    Dict_mix = Dict; opts,   end
+    if exist('Dict')==1    Dict_mix = Dict;   end
     Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest);
     Z = aoos(Z,Database.featln, size(Z, 2));
     

@@ -78,9 +78,9 @@ for ii=1:opt.max_iter
     end
     
     % stopping criterion
-    deltaD = max(abs(D(:) - D_old(:)));
-    deltaZ = max(abs(Z(:) - Z_old(:)));
-    deltaW = max(abs(W(:) - W_old(:)));
+    deltaD = max(abs(D(:) - D_old(:)))
+    deltaZ = max(abs(Z(:) - Z_old(:)))
+    deltaW = max(abs(W(:) - W_old(:)))
     delta = max([deltaD,deltaZ,deltaW]);
     if delta < opt.th
         break;

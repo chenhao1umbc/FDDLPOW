@@ -55,9 +55,7 @@ ind_tt = ind(trln+cvln+1:end);
 
 rng(rseed);
 tr_cv = [ind_tr, ind_cv];
-tr_cv(randperm(trln+cvln));
-ind_tr = tr_cv(1:trln);
-ind_cv = tr_cv(trln+1:trln+cvln);
+tr_cv(randperm(449))
 
 n_r = size(db.features,1);
 n_tr_p = trln*featln;

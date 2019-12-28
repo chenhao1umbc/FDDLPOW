@@ -63,7 +63,7 @@ for ii=1:opt.max_iter
         Loss(ii)=DDLMD_Loss(X,trlabels,opt,W,D,Z);
         Dict.Loss=Loss;
         if ii > 1
-            if abs(Loss(ii-1) - Loss(ii))/Loss(ii) < opt.th
+            if abs(Loss(ii-1) - Loss(ii))/Loss(ii) < 1e-4
                 break;
             end
         end
@@ -78,9 +78,9 @@ for ii=1:opt.max_iter
     end
     
     % stopping criterion
-    deltaD = max(abs(D(:) - D_old(:)))
-    deltaZ = max(abs(Z(:) - Z_old(:)))
-    deltaW = max(abs(W(:) - W_old(:)))
+    deltaD = max(abs(D(:) - D_old(:)));
+    deltaZ = max(abs(Z(:) - Z_old(:)));
+    deltaW = max(abs(W(:) - W_old(:)));
     delta = max([deltaD,deltaZ,deltaW]);
     if delta < opt.th
         break;

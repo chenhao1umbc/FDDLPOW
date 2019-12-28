@@ -36,31 +36,37 @@ iter = 0;
 cost=zeros(opts.max_iter,1);
 E=zeros(opts.max_iter,1);
 sqrt_numelx = sqrt(numel(Xinit));
+
 %% MAIN LOOP
 while  iter < opts.max_iter
     iter = iter + 1;
     x_new = shrinkage(y_old - Linv*feval(grad, y_old), lambdaLiv);
     t_new = 0.5*(1 + sqrt(1 + 4*t_old^2));
     y_new = x_new + (t_old - 1)/t_new * (x_new - x_old);
-    %% check stop criteria
+    
+    % check stop criteria
     e = norm(x_new - x_old,'fro')/sqrt_numelx;
     if e < opts.threshold
         break;
     end
-    %% update
+    
+    % update
     x_old = x_new;
     t_old = t_new;
     y_old = y_new;
-    %% show progress
-    if opts.showprogress
+    
+    % show progress
+    if opts.showprogress        
+        E(iter) = e;
+        
         if opts.showcost
             cost(iter) = feval(calc_F, x_new);
         end
-        E(iter)=e;
     end 
 end
 X = x_new;
 
+%% show progress
 if opts.showprogress
     figure(200);    
 
@@ -80,4 +86,5 @@ if opts.showprogress
     xlabel({'iterations';'-- from file "fista.m"'})
     pause(.1);
 end
-end % end of the function file
+
+end

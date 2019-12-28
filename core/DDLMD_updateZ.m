@@ -16,36 +16,35 @@ function Zout=DDLMD_updateZ(X,trlabels,opt,W,D,Zin)
 % the FISTA algorithm is from A. Beck and M. Teboulle, "A fast iterative shrinkage-thresholding
 % algorithm for linear inverse problems", SIAM Journal on Imaging Sciences, vol. 2, no. 1, pp. 183�202, 2009
 
+persistent C N Nc H1 H2 M
+
+if isempty(C)
+
 C=max(trlabels);
 N=length(trlabels);
 Nc=N/C;
-%diagONE=blockones(C,Nc);
 H1 = kron(eye(C),ones(Nc)/Nc);
 H2 = ones(N)/N;
 M = (eye(N) - H1)^2 - (H1 - H2)^2 + 1.1*eye(N);
+
+end
+
 DtX = D'*X;
 DtD = D'*D;
 WWt = W*W';
-opt.showprogress=opt.showconverge; % show the FISTA progress
 
 % L = max(eig(2*D'*D)) + 4*opt.mu*max(eig(W*W'));
 normWWt = norm(WWt,'fro');
 L_term1 = 2*norm(DtD,'fro'); 
 L_term2 = 2 * opt.mu * normWWt * norm(M,'fro');
-L = L_term1 + L_term2 ;
-sqrt_numelx = sqrt(numel(Zin));
-for i = 1:opt.max_Ziter
-    Zout=fista(Zin, L, opt.lambda1, opt, @calc_F, @grad);
-    e = norm(Zin - Zout,'fro')/sqrt_numelx;
-    if e < opt.threshold
-        break;
-    end
-    Zin = Zout;
-end
+L = L_term1 + L_term2;
+
+Zout = fista(Zin, L, opt.lambda1, opt, @calc_F, @grad);
+
 % convex function f
 function cost = calc_F(Z)
-    [SW,SB]=calcfisher(Z,trlabels,opt);
-    fisherterm=trace(W'*SW*W)-trace(W'*SB*W)+ 1.1*norm(W'*Z, 'fro')^2;
+    [SW,SB] = calcfisher(Z,trlabels,opt);
+    fisherterm = trace(W'*SW*W)-trace(W'*SB*W)+ 1.1*norm(W'*Z, 'fro')^2;
     cost = norm((X - D*Z), 'fro')^2 + opt.mu*fisherterm + opt.lambda1*norm1(Z); 
 end
 
@@ -54,4 +53,4 @@ function g = grad(Z)
     g = 2*(DtD*Z - DtX + opt.mu*WWt*Z*M);
 end
 
-end % end of the function file
+end % end of function

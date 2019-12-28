@@ -1,4 +1,4 @@
-function [opts]=loadoptions(K,lambda1,mu,Q,nu,beta, SNR)
+function [opts]=loadoptions(K,lambda1,mu,Q,nu,beta, SNR,fold)
 % this fucntion is made to load the options for dictionary learning
 %             opt are the training/testing options with
 %                 opt.K -the number of atoms in Dictionary
@@ -22,15 +22,17 @@ opts.Q=Q;
 opts.lambda1=lambda1;                                        
 opts.mu=mu;
 opts.showconverge = false;
-%opts.threshold=1e-8;% for FISTA sparse coding
+opts.threshold=1e-4;% for FISTA sparse coding
 opts.savedict=false;
-opts.max_iter=200;
+opts.max_iter = 200;
+opts.min_iter = 5;
 opts.losscalc=true;
 opts.k_neighbors=3; % how many neighors
 opts.kNNmethod=1; % 1 for averaging; 2 for max pooling needs more computation
 opts.dataset = '4'; % LMdata 4
-opts.Dictnm =['FDDLOW','_k',num2str(opts.K),'_lmbd',num2str(opts.lambda1)...
-    ,'_mu',num2str(opts.mu),'_Q',num2str(opts.Q),'.mat' ];
+opts.rng = fold;
+opts.Dictnm =['dict1','_k',num2str(opts.K),'_lmbd',num2str(opts.lambda1)...
+    ,'_mu',num2str(opts.mu),'_Q',num2str(opts.Q),'_rng',num2str(opts.rng),'.mat' ];
 
 % for mixture algorithm
 opts.nu=nu;
@@ -39,5 +41,7 @@ opts.mixcase=true;
 opts.mixnm =['FDDLOW_mix','_k',num2str(opts.K),'_lmbd',num2str(opts.lambda1)...
     ,'_mu',num2str(opts.mu),'_Q',num2str(opts.Q),'_nu',num2str(opts.nu),...
     '_beta',num2str(opts.beta),'.mat' ];
+
+opts.th = 1e-3; % for outer loop
 
 end % end of the function file

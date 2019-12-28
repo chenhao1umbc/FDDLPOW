@@ -16,7 +16,7 @@ mixture_n = 1; % mixture_n classes mixture, = 1,2,3
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 pctrl.if2weak = 0; % if 2 weak components in mixture of 3
 if pctrl.db == 0     pctrl.equal = 1; else    pctrl.equal = 0; end
-cvortest = 0;  % 1 means cv, 0 means test
+cvortest = 1;  % 1 means cv, 0 means test
 
 %% training dictionary
 % load settings
@@ -28,18 +28,19 @@ beta = 1;
 Q= 15;% this is wq without negative
 
 % K = [50, 100];
-lbmd = [0.001 0.003 0.005 0.008 0.01 0.013 0.015, 0.018];
+lbmd = 0.01*2.^(-8:7);
 % mu = [0.01, 0.001 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
-% Q = [16, 32, 48, 64, 80, 96]; % [50, 45, 40, 30, 15, 8]
+% Q = [16, 32, 48, 64, 80, 96]; 
 Q = [10 20 30 50 75 100];
+% Q = [50, 45, 40, 30, 15, 8];
 
-SNR = 0;
+SNR = 20;
 % [Database]=load_data_new(mixture_n, SNR, pctrl);
-r = zeros(6, 8, 5); % Q, lambda, folds 
+r = zeros(length(Q), length(lbmd), 5); % Q, lambda, folds 
 r1 = r; r2= r;
 %% CV/testing part
-for f = 1:2
+for f = 1
 [Database]=load_data_new(mixture_n, SNR, pctrl);
 if do_cv ==1      
 for indQ = 1: length(Q)

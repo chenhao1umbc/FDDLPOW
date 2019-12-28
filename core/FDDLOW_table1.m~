@@ -34,7 +34,7 @@ for ii=1:opt.max_iter
     optZ=opt;
     optZ.max_iter=100;  % for fista iters
     optZ.threshold=1e-4;    
-    optZ.showprogress = false; % show updateZ
+    optZ.showprogress = true; % show updateZ
     optZ.showcost= optZ.showprogress;  
     Z_old = Z;
     while true
@@ -63,7 +63,7 @@ for ii=1:opt.max_iter
         Loss(ii)=DDLMD_Loss(X,trlabels,opt,W,D,Z);
         Dict.Loss=Loss;
         if ii > 1
-            if abs(Loss(ii-1) - Loss(ii))/Loss(ii) < opt.th
+            if abs(Loss(ii-1) - Loss(ii)) < 1e-5
                 break;
             end
         end

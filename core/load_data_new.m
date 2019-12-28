@@ -1,4 +1,4 @@
-function [database]=load_data_new(N_c, SNR, pctrl)
+function [database]=load_data_new(N_c, SNR, pctrl, rseed)
 
 %This function is made to load the newly generated sacttering output with
 %q[16, 0.05], n =2
@@ -47,7 +47,8 @@ for ii=1:449*6
 end
 db.features=[db.features;db2.features];
 
-% rng(1000)
+rng(rseed);
+
 ind = randperm(449);
 ind_tr = ind(1:trln);
 ind_cv = ind(trln+1:trln+cvln);

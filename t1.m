@@ -64,12 +64,12 @@ if do_cv ==1
 % tr_sparsity_K_lambda_mu = zeros(length(K),length(lbmd),length(mu));
 % result_K_lambda_muWEEK = zeros(length(K),length(lbmd),length(mu));
 
-for Q = [10 20 30 50 75 100]
-for ind1 = 1: length(K)
-for ind2 = 1: length(lbmd)
-for ind3 = 1: length(mu)
+for indK = 1: length(K)
+for indq = 1: length(Q) 
+for indl = 1: length(lbmd)
+for indm = 1: length(mu)
 
-    [opts]=loadoptions(K(ind1),lbmd(ind2),mu(ind3),Q,nu,beta, SNR);
+    [opts]=loadoptions(K(indK),lbmd(indl),mu(indm),Q(indq),nu,beta, SNR, f);
     opts.Dictnm
     if exist(opts.Dictnm, 'file') load(opts.Dictnm,'Dict','opts'), else break; end
     % run prep_ZF 

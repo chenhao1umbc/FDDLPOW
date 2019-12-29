@@ -26,7 +26,7 @@ mu = [1, 0.1, 0.01, 0.001, 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
 Q = [10 20 25 30 40 50 75 100 150];
 
-SNR = 0;
+SNR = 20;
 r = zeros(length(mu), 7, length(lbmd), length(Q), length(K), 5); % Q, lambda, folds 
 r_zf = r; r_mf = r;
 %% CV/testing part

@@ -8,6 +8,7 @@ tic
 
 addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
+% addpath(genpath('D:\Stored_Data\data'))
 addpath(genpath('.././FDDLPOW'))
 % do traing or do crossvalidation
 do_training = 0;
@@ -20,16 +21,16 @@ cvortest = 1;  % 1 means cv, 0 means test
 
 % load settings
 K = [25, 50, 100, 150];
-lbmd = [0.1, 0.01, 0.001, 00001];
-mu = [1, 0.1, 0.01, 0.01, 0.001, 0.0001];
+lbmd = [0.1, 0.01, 0.001, 0.0001];
+mu = [1, 0.1, 0.01, 0.001, 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
 Q = [10 20 25 30 40 50 75 100 150];
 
-SNR = 20;
-r = zeros(length(mu),length(lbmd), length(Q), length(K), 5); % Q, lambda, folds 
+SNR = 0;
+r = zeros(length(mu), 7, length(lbmd), length(Q), length(K), 5); % Q, lambda, folds 
 r_zf = r; r_mf = r;
 %% CV/testing part
-for f = 1000:1004
+for f = 1000:1001
 [Database]=load_data_new(mixture_n, SNR, pctrl, f);
 
 if do_cv ==1      
@@ -39,15 +40,19 @@ if do_cv ==1
 % result_K_lambda_muWEEK = zeros(length(K),length(lbmd),length(mu));
 
 for indk = 1: length(K)
-for indq = 1: length(Q) 
 for indl = 1: length(lbmd)
 for indm = 1: length(mu)
-
+for indq = 1: length(Q) 
+    
     [opts]=loadoptions(K(indk),lbmd(indl),mu(indm),Q(indq),1000,1, SNR, f);
-    disp(opts.Dictnm)
     if exist(opts.Dictnm, 'file') load(opts.Dictnm,'Dict','opts'), else break; end
+    disp(opts.Dictnm)
+    
+    lmb_range = lbmd(indl)*(5.^(-3:3));
+    for indll = 1:length(lmb_range)        
     % run prep_ZF 
     if exist('Dict')==1    Dict_mix = Dict;   end
+    opts.lambda1 = lmb_range(indll);
     Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest);
     Z = aoos(Z,Database.featln, size(Z, 2));
     
@@ -57,7 +62,7 @@ for indm = 1: length(mu)
         Xtr = Dict.W'*Dict.Z;%aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
         % KNN classifier
         acc_knn = myknn(Xtr, Xtestorcv, Database, cvortest) % k = 5 ;
-        r(indm, indl, indq, indk, f-999) = acc_knn;
+        r(indm, indll, indl, indq, indk, f-999) = acc_knn;
     end
 
     run calc_M
@@ -74,12 +79,14 @@ for indm = 1: length(mu)
     if Database.N_c == 1
         acc_ZF = myZFMF(labels_pre, Database, cvortest)
         acc_MF = myZFMF(labels_pre_mf, Database, cvortest)
-        r_zf(indm, indl, indq, indk, f-999) = acc_ZF;
-        r_mf(indm, indl, indq, indk, f-999) = acc_MF;
+        r_zf(indm, indll, indl, indq, indk, f-999) = acc_ZF;
+        r_mf(indm, indll, indl, indq, indk, f-999) = acc_MF;
     else
         [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
         [t, tt, ttt] = calc_labels(labels_pre_mf, opts);
     end
+    
+    end 
     
 %     result_K_lambda_mu(ind1, ind2, ind3) = acc_all;
 %     result_K_lambda_muWEEK(ind1, ind2, ind3) = acc_weak_av;
@@ -93,6 +100,7 @@ for indm = 1: length(mu)
 %                 opts.mu*fWZ
 end 
 end
+save('20db_r_mf_zf', 'r', 'r_mf', 'r_zf')
 end
 end
 end

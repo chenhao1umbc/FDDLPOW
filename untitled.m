@@ -27,7 +27,7 @@ mu = [1, 0.1, 0.01, 0.001, 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
 Q = [10 20 25 30 40 50 75 100 150];
 
-SNR = 20;
+SNR = 0;
 r = zeros(length(mu), 7, length(lbmd), length(Q), length(K), 5); % Q, lambda, folds 
 r_zf = r; r_mf = r;
 %% CV/testing part
@@ -69,8 +69,8 @@ for indq = 1: length(Q)
     run calc_M
     % zero forcing
     H = W'*M;
-    r_zeroforcing = pinv(H)*W'*Z;
-    [~, labels_pre] = sort(r_zeroforcing, 1, 'descend');
+    r_zf = pinv(H)*W'*Z;
+    [~, labels_pre] = sort(r_zf, 1, 'descend');
     
     % matched filter
     r_matched = H'*W'*Z;
@@ -102,11 +102,11 @@ for indq = 1: length(Q)
 end 
 end
 end
-save('20dbK_100_r_mf_zf', 'r', 'r_mf', 'r_zf')
+save('0dbK_100_r_mf_zf', 'r', 'r_mf', 'r_zf')
 end
 end
 end
-save('20dbK_100_r_mf_zf', 'r', 'r_mf', 'r_zf')
+save('0dbK_100_r_mf_zf', 'r', 'r_mf', 'r_zf')
 % save('t1_results_','result_K_lambda_mu','result_K_lambda_muWEEK',...
 %     'sparsity_K_lambda_mu','tr_sparsity_K_lambda_mu')
 toc

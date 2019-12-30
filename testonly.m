@@ -20,7 +20,8 @@ if pctrl.db == 0     pctrl.equal = 1; else    pctrl.equal = 0; end
 cvortest = 1;  % 1 means cv, 0 means test
 
 % load settings
-K = [25, 50, 100, 150];
+K = 100;
+% K = [25, 50, 100, 150];
 lbmd = [0.1, 0.01, 0.001, 0.0001];
 mu = [1, 0.1, 0.01, 0.001, 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
@@ -30,7 +31,7 @@ SNR = 20;
 r = zeros(length(mu), 7, length(lbmd), length(Q), length(K), 5); % Q, lambda, folds 
 r_zf = r; r_mf = r;
 %% CV/testing part
-for f = 1000:1001
+for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR, pctrl, f);
 
 if do_cv ==1      
@@ -61,7 +62,7 @@ for indq = 1: length(Q)
         Xtestorcv = Dict.W'*Z;
         Xtr = Dict.W'*Dict.Z;%aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
         % KNN classifier
-        acc_knn = myknn(Xtr, Xtestorcv, Database, cvortest) % k = 5 ;
+        acc_knn = myknn(Xtr, Xtestorcv, Database, cvortest); % k = 5 ;
         r(indm, indll, indl, indq, indk, f-999) = acc_knn;
     end
 
@@ -73,12 +74,12 @@ for indq = 1: length(Q)
     
     % matched filter
     r_matched = H'*W'*Z;
-    [~, labels_pre_mf] = sort(r_zf, 1, 'descend');
+    [~, labels_pre_mf] = sort(r_matched, 1, 'descend');
     
     % calculate accuracy
     if Database.N_c == 1
-        acc_ZF = myZFMF(labels_pre, Database, cvortest)
-        acc_MF = myZFMF(labels_pre_mf, Database, cvortest)
+        acc_ZF = myZFMF(labels_pre, Database, cvortest);
+        acc_MF = myZFMF(labels_pre_mf, Database, cvortest);
         r_zf(indm, indll, indl, indq, indk, f-999) = acc_ZF;
         r_mf(indm, indll, indl, indq, indk, f-999) = acc_MF;
     else
@@ -100,11 +101,12 @@ for indq = 1: length(Q)
 %                 opts.mu*fWZ
 end 
 end
-save('20db_r_mf_zf', 'r', 'r_mf', 'r_zf')
+end
+save('20dbK_100_r_mf_zf', 'r', 'r_mf', 'r_zf')
 end
 end
 end
-end
+save('20dbK_100_r_mf_zf', 'r', 'r_mf', 'r_zf')
 % save('t1_results_','result_K_lambda_mu','result_K_lambda_muWEEK',...
 %     'sparsity_K_lambda_mu','tr_sparsity_K_lambda_mu')
 toc

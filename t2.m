@@ -30,18 +30,18 @@ end
 
 %% training dictionary
 % load settings
-K = 100;
-lbmd = 1e-4;
-mu=1e-3;
-Q=16;% this is wq without negative
+K = 25;
+lbmd = 0.01;
+mu=0.1;
+Q=6;% this is wq without negative
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % from table one we know that there are combinationes accuracy is above 0.99
 % one is K = 100, lambda = 1e-4, mu = 1e-3
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-nu= 0.01;
+% nu= 0.01;
 beta = -1;
-% nu = [ 0.003 0.005 0.007 0.01 0.03 0.05 0.07 0.1];
+nu = [1e-4 5e-4 1e-3 5e-3 1e-2 5e-2 0.1 0.5 1];
    
 for ind1 = 1: length(nu)
     [opts]=loadoptions(K,lbmd,mu,Q,nu(ind1),beta, SNR);

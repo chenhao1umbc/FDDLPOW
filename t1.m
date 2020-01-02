@@ -59,7 +59,10 @@ SNR = 20;
 r = zeros(length(mu),length(lbmd), length(Q), length(K), 5); % Q, lambda, folds 
 r_zf = r; r_mf = r;
 for f = 1000:1004
-[Database]=load_data_new(mixture_n, SNR, pctrl, f);
+% Database = load_data_new(mixture_n, SNR, pctrl, f);
+
+[Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
+Database.cv_data = awgn(Database.cv_data, SNR, 'measured');
 
 if do_cv ==1      
 % result_K_lambda_mu = zeros(length(K),length(lbmd),length(mu));
@@ -74,7 +77,7 @@ for indm = 1: length(mu)
 
     [opts]=loadoptions(K(indk),lbmd(indl),mu(indm),Q(indq),1000,1, SNR, f);
     disp(opts.Dictnm)
-    if exist(opts.Dictnm, 'file') load(opts.Dictnm,'Dict','opts'), else break; end
+    if exist(opts.Dictnm, 'file') load(opts.Dictnm,'Dict','opts'), else continue; end
     % run prep_ZF 
     if exist('Dict')==1    Dict_mix = Dict; opts,   end
     Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest);

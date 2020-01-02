@@ -10,6 +10,8 @@ addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 % addpath(genpath('D:\Stored_Data\data'))
 addpath(genpath('.././FDDLPOW'))
+SNR_INF = 2000;
+
 % do traing or do crossvalidation
 do_training = 0;
 do_cv = 1;
@@ -20,19 +22,27 @@ if pctrl.db == 0     pctrl.equal = 1; else    pctrl.equal = 0; end
 cvortest = 1;  % 1 means cv, 0 means test
 
 % load settings
-K = 100;
-% K = [25, 50, 100, 150];
-lbmd = [0.1, 0.01, 0.001, 0.0001];
-mu = [1, 0.1, 0.01, 0.001, 0.0001];
+K = 25;
+lbmd = 0.01;
+mu=0.1;
+nu= 1e3;
+beta = 1;
+Q= 6;
+% K = [10, 25, 50];
+% lbmd = [0.1, 0.01, 0.001, 0.0001];
+% mu = [1, 0.1, 0.01, 0.001, 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
-Q = [10 20 25 30 40 50 75 100 150];
+% Q = [10 20 25 30 40 50 75 100 150];
 
 SNR = 0;
 r = zeros(length(mu), 7, length(lbmd), length(Q), length(K), 5); % Q, lambda, folds 
 r_zf = r; r_mf = r;
 %% CV/testing part
 for f = 1000:1004
-[Database]=load_data_new(mixture_n, SNR, pctrl, f);
+% Database = load_data_new(mixture_n, SNR, pctrl, f);
+
+[Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
+Database.cv_data = awgn(Database.cv_data, SNR, 'measured');
 
 if do_cv ==1      
 % result_K_lambda_mu = zeros(length(K),length(lbmd),length(mu));
@@ -69,8 +79,8 @@ for indq = 1: length(Q)
     run calc_M
     % zero forcing
     H = W'*M;
-    r_zf = pinv(H)*W'*Z;
-    [~, labels_pre] = sort(r_zf, 1, 'descend');
+    r_zeroforcing = pinv(H)*W'*Z;
+    [~, labels_pre] = sort(r_zeroforcing, 1, 'descend');
     
     % matched filter
     r_matched = H'*W'*Z;
@@ -102,11 +112,11 @@ for indq = 1: length(Q)
 end 
 end
 end
-save('0dbK_100_r_mf_zf', 'r', 'r_mf', 'r_zf')
+% save(['Q6_awgn',num2str(SNR),'dbK_',num2str(K(indk)),'_r_mf_zf'], 'r', 'r_mf', 'r_zf')
 end
 end
 end
-save('0dbK_100_r_mf_zf', 'r', 'r_mf', 'r_zf')
+
 % save('t1_results_','result_K_lambda_mu','result_K_lambda_muWEEK',...
 %     'sparsity_K_lambda_mu','tr_sparsity_K_lambda_mu')
 toc

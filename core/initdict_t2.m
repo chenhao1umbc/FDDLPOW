@@ -11,29 +11,27 @@ function [D,Z,W,U,Loss,opt]=initdict_t2(X,trlabels,opt)
 %                 opt.losscalc -if true then calculate loss fucntion
 % The output is Dict, a struct with D,W,Z, Loss(the loss function value)
 
-C=max(trlabels); % how many classes
-[M_d,N]=size(X); % M is the data dimension, N is the # of samples
 rng(opt.rng)
 
 % check checking the existing Dictionary
-nm = ['esc_FDDLP',opt.dataset,'_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1)...
-    ,'_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'.mat' ];
-fileexistance = exist(nm);
+% nm = ['esc_FDDLP',opt.dataset,'_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1)...
+%     ,'_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'.mat' ];
+fileexistance = exist(opt.Dictnm);
 if fileexistance==2
-    load(nm)
+    load(opt.Dictnm)
     D=Dict.D;
     Z=Dict.Z;
     W=Dict.W;
-    [M, ~, ~] = getMH1H2_t2(trlabels, Z);
+    M = getM_t2(opt.K, opt.C, opt.Nc, Z);
     U = mix_updateU_t2(W, M);        
     opt.max_iter= 120;% because of good initialization
     Loss=zeros(4,opt.max_iter);
-    'good from  initdict_t2'
+    disp('good from  initdict_t2')
 else    
-    D=randn(M_d,opt.K);
-    Z=randn(opt.K,N);
+    D=randn(opt.M_d,opt.K);
+    Z=randn(opt.K,opt.N);
     W=randn(opt.K,opt.Q);
-    [M, ~, ~] = getMH1H2_t2(trlabels, Z);
+    M = getM_t2(opt.K, opt.C, opt.Nc, Z);
     U = mix_updateU_t2(W, M);
     Loss=zeros(4,opt.max_iter);
 end 

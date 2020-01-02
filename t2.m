@@ -12,11 +12,11 @@ addpath(genpath('.././FDDLPOW'))
 do_training = 1;
 do_result = 1;
 cv = 1; % validation or testing
+SNR_INF = 2000;
 
-for uuu = 2000%[20, 0, -5, -10, -20, -30]
 % load data
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3
-SNR = uuu; %SNR 2000, 20, 0, -5, -10, -20, -30
+
 pctrl.db = 10; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
     pctrl.equal = 1;
@@ -24,44 +24,39 @@ else
     pctrl.equal = 0;
 end
 
-% the equal power mixture, 400 samples per combination
-[Database]=load_data_new(mixture_n, SNR, pctrl);
-
-
 %% training dictionary
 % load settings
 K = 25;
 lbmd = 0.01;
 mu=0.1;
 Q=6;% this is wq without negative
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% from table one we know that there are combinationes accuracy is above 0.99
-% one is K = 100, lambda = 1e-4, mu = 1e-3
-% another is K = 100, lambda = 1e-3, mu = 0.1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% nu= 0.01;
+nu= 0.01;
 beta = -1;
 nu = [1e-4 5e-4 1e-3 5e-3 1e-2 5e-2 0.1 0.5 1];
-   
-for ind1 = 1: length(nu)
-    [opts]=loadoptions(K,lbmd,mu,Q,nu(ind1),beta, SNR);
+
+tic
+for f = 1000:1004
+[Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
+for indn = 1: length(nu)
+    [opts]=loadoptions(K,lbmd,mu,Q,nu(indn),beta, SNR_INF, f);
     % for table 1 algorithm
     if do_training ==1
-        Dict_mix = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
-        if Dict_mix.iter > 30
-            save(['SNR', num2str(SNR), opts.mixnm],'Dict_mix','opts')
-        end
+        Dict = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
+        save(opts.Dict2nm,'Dict','opts')
     end
 end
+end
+toc
 
 
 %% testing/cv part
+for f = 1000:1004
+[Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
 if do_result ==1      
     run doresult
 %     save(['SNR', num2str(SNR),'tb2_results'],'result_nu','result_nuWEEK','sparsity_nu','tr_sparsity_nu')
 end
-
-
 end
+
 toc
 

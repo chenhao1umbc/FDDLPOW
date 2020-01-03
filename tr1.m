@@ -32,7 +32,7 @@ mu=0.1;
 Q=6;% this is wq without negative
 nu= 0.01;
 beta = -1;
-nu = [0.1];
+nu = [5e-3];
 
 tic
 for f = 1000:1004

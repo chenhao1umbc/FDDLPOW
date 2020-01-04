@@ -17,7 +17,7 @@ SNR_INF = 2000;
 % load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3
 
-pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
+pctrl.db = 10; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -27,8 +27,8 @@ if mixture_n < 3  pctrl.if2weak = 0; end
 
 % load settings
 K = 25;
-lbmd = 0.01;
-mu=0.1;
+lbmd = 0.001;
+mu=0.01;
 Q=6;% this is wq without negative
 nu= 0.05;
 beta = -1;

@@ -70,4 +70,8 @@ if do_result ==1
 end
 end
 end
+sum(zf.acc,2)/5
+sum(mf.acc,2)/5
+sum(zf.acc_weak,2)/5
+sum(mf.acc_weak,2)/5
 toc

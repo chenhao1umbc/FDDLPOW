@@ -1,12 +1,12 @@
-W = Dict_mix.W;
+W = Dict.W;
 C = max(Database.tr_label);
 N = size(Database.tr_label,2);
 Nc = N / C;
 opts.C = C; % 6 classes
 featln = Database.featln;
 opts.n = Database.N_c;                
-H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
-M = Dict_mix.Z*H3;
+H0 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
+M = Dict.Z*H0;
 
 
 

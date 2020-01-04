@@ -24,7 +24,7 @@ if fileexistance==2
     W=Dict.W;
     M = getM_t2(opt.K, opt.C, opt.Nc, Z);
     U = mix_updateU_t2(W, M);        
-%     opt.max_iter= 120;% because of good initialization
+    opt.max_iter= 100;% because of good initialization
     Loss=zeros(4,opt.max_iter);
     disp('good from  initdict_t2')
 else    

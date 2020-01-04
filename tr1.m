@@ -32,14 +32,14 @@ mu=0.1;
 Q=6;% this is wq without negative
 nu= 0.01;
 beta = -1;
-nu = [5e-3];
+nu = 10;
 
 tic
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
 for indn = 1: length(nu)
     [opts]=loadoptions(K,lbmd,mu,Q,nu(indn),beta, SNR_INF, f);
-    % for table 1 algorithm
+    if exist(opts.Dict2nm, 'file') continue; end
     if do_training ==1
         Dict = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
         save(opts.Dict2nm,'Dict','opts')
@@ -47,3 +47,5 @@ for indn = 1: length(nu)
 end
 end
 toc
+
+run tr2.m

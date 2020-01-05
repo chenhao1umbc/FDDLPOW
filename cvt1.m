@@ -1,4 +1,4 @@
-% table 2
+% table 1
 
 close all
 clear

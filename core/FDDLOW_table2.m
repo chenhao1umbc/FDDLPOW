@@ -20,23 +20,20 @@ C = max(trlabels);
 Nc = N / C;
 H1 = kron(eye(C),ones(Nc)/Nc);
 H2 = ones(N)/N;
+S = 1.1*eye(N) - 2*H1 + H2;
 opt_init = opt;
 opt_init.C = C; opt_init.N = N; opt_init.Nc = Nc; opt_init.M_d = M_d;
 [D, Z, W, U, Loss, opt] = initdict_t2(X,trlabels,opt_init); % max_iter will change for existing dictionary
 
-
 % main loop
-for ii = 1:opt.max_iter   
-    ii
+for ii = 1:opt.max_iter 
+%     ii
     % update D, with U W and Z fixed
     optD = opt;
     optD.max_iter = 500;
     optD.threshold = 1e-4;
     optD.showconverge = false;
-    D = DDLMD_updateD(X,optD,D,Z);
-    if opt.losscalc
-        Loss(1,ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z);
-    end        
+    D = DDLMD_updateD(X,optD,D,Z);    
     
     % update Z, with D Uand W fixed
     optZ = opt;
@@ -48,11 +45,12 @@ for ii = 1:opt.max_iter
     optZ.max_Ziter = 1; % for Z update
     optZ.Zthreshold = 1e-4; 
     while 1
-        Z = mix_updateZ_t2(X,trlabels,optZ, W, D, Z, U);           
+        Z = mix_updateZ_t2(X,trlabels,optZ, W, D, Z, U, H1, H2);           
         a = sum(abs(Z), 2);
         nn = sum(a ==0);
         if nn >0 
             disp('In the while loop...')
+            ii
             D(:, a==0) = X(:,randi([1, N],[nn,1])); 
             Z(a==0,:) = rand(nn, N);
         else
@@ -61,25 +59,18 @@ for ii = 1:opt.max_iter
     end
     M = getM_t2(opt.K, opt.C, Nc, Z); % get M, H1, and H2 for updating W and U.
     
-    if opt.losscalc
-        Loss(2,ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z);
-    end
-    
     % update U, with D and Z fixed.
     U = mix_updateU_t2(W, M);
     
     % update W, with D U and Z fixed
-    W = mix_updateW_t2(opt, H1, H2, M, U, Z);
-    if opt.losscalc
-        Loss(3,ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z);
-    end    
+    W = mix_updateW_t2(opt, S, M, U, Z); 
     
     % show loss function value
     if opt.losscalc
-        Loss(4,ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z);
+        Loss(ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
         Dict.Loss = Loss;
-        if ii > 1            
-        if abs(Loss(4, ii-1) - Loss(4, ii))/Loss(ii) < 1e-3
+        if ii > 3            
+        if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 1e-3
             break;
         end
         end

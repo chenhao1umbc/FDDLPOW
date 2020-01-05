@@ -25,7 +25,7 @@ if fileexistance==2
     M = getM_t2(opt.K, opt.C, opt.Nc, Z);
     U = mix_updateU_t2(W, M);        
     opt.max_iter= 100;% because of good initialization
-    Loss=zeros(4,opt.max_iter);
+    Loss=zeros(1,opt.max_iter);
     disp('good from  initdict_t2')
 else    
     D=randn(opt.M_d,opt.K);
@@ -33,7 +33,7 @@ else
     W=randn(opt.K,opt.Q);
     M = getM_t2(opt.K, opt.C, opt.Nc, Z);
     U = mix_updateU_t2(W, M);
-    Loss=zeros(4,opt.max_iter);
+    Loss=zeros(0,opt.max_iter);
 end 
 
 end % end of function file

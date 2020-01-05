@@ -29,7 +29,7 @@ if mixture_n < 3  pctrl.if2weak = 0; end
 K = 25;
 lbmd = 0.01;
 mu = 0.1;
-Q = 10;
+Q = 25;
 nu= 0.01;
 beta = -1;
 

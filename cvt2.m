@@ -17,7 +17,7 @@ SNR_INF = 2000;
 % load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3
 
-pctrl.db = 10; % dynamic ratio is 0 3, 6, 10, 20 db
+pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -29,11 +29,10 @@ if mixture_n < 3  pctrl.if2weak = 0; end
 K = 25;
 lbmd = 0.01;
 mu=0.1;
-Q=6;% this is wq without negative
-nu= 0.05;
+Q=25;% this is wq without negative
+nu= 10;
 beta = -1;
 % nu = [1e-4 5e-4 1e-3 5e-3 1e-2 5e-2 0.1 0.5];
-nu= [0.005];
 
 %% testing/cv part
 [Database]=load_data_new(2, SNR_INF, pctrl, 1000);

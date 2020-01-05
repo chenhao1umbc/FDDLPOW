@@ -1,4 +1,4 @@
-function Z = mix_updateZ_t2(X, trlabels, opt, W, D, Zin, U)
+function Z = mix_updateZ_t2(X, trlabels, opt, W, D, Zin, U, H1, H2)
 % this function is to update W with D and Z fixed
 % input   X is the training data,a matrix M by N, N data samples
 %         trlabels is the training data labels
@@ -22,8 +22,8 @@ Z = Zin;
 C = max(trlabels);
 [K, N]=size(Z);
 Nc = N / C;
-H1 = kron(eye(C),ones(Nc)/Nc);
-H2 = ones(N)/N;
+% H1 = kron(eye(C),ones(Nc)/Nc);
+% H2 = ones(N)/N;
 H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
 M1 = eye(N) - H1;
 M2 = H1 - H2;

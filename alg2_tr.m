@@ -27,27 +27,27 @@ if mixture_n < 3  pctrl.if2weak = 0; end
 %% training dictionary
 % load settings
 K = 25;
-lbmd = 0.01;
-mu = 0.1;
-Q = 10;
+lbmd = 0.001;
+mu=[ 1 0.1 0.01 0.001 1e-4] ;
+Q= [25 20 10 6];
 nu= 0.01;
 beta = -1;
+%nu= [0.005, 0.01, 0.05 0.1 0.5];
 
 % K = [50, 100, 150, 200, 250];
 % lbmd = [0.1, 0.01, 0.001, 1e-4];
-mu = [1, 0.1, 0.01, 0.001 0.0001];
+% mu = [1, 0.1, 0.01, 0.001 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
 % Q = [6 10 20 30 50 75 100];
-nu = [0.0001, 0.001, 0.01 0.1 1];
-
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
 tic
-for indm = 1: length(mu)
-for indn = 1: length(nu)   
+for indq = 1: length(Q)
+for ind2 = 1: length(lbmd)
+for ind3 = 1: length(mu)   
     % for table 1 algorithm
     if do_training ==1
-        [opts] = loadoptions(K,lbmd,mu(indm),Q,nu(indn),beta,SNR_INF,f);
+        [opts] = loadoptions(K,lbmd(ind2),mu(ind3),Q(indq),nu,beta,SNR_INF,f);
         if exist(opts.Dict2nm, 'file') continue; end
         disp(opts.Dict2nm)
         Dict = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);

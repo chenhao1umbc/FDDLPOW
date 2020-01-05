@@ -107,6 +107,7 @@ end
 
 %% MDS / PCA
 % { 
+fln = 1; % 1 means no average over one sample
 Cn = size(Dict_mix.Z, 2)/C; % how many sampless per classes/combinations
 temp = aoos(Dict_mix.Z(:,1:end), fln, size(Dict_mix.Z, 2));
 % temp = Dict_mix.Z(:,1:f:1200*n);
@@ -137,11 +138,11 @@ for jj = 1:jjmax
     end    
 %     axis(axislimits)
     %  plot the testing data
-    if plottesting == 1
-        temp = aoos(Z(:,1+ nn*(jj-1):nn*jj), fln, nn);
-        X = Vq'*W'*temp;    
-        plot3(X(1,1:end),X(2,1:end),X(3,1:end),'x')
-    end
+%     if plottesting == 1
+%         temp = aoos(Z(:,1+ nn*(jj-1):nn*jj), fln, nn);
+%         X = Vq'*W'*temp;    
+%         plot3(X(1,1:end),X(2,1:end),X(3,1:end),'x')
+%     end
     legend ('Chainsaw','Clock tick','Cracking fire','Crying baby',...
         'Dog','Helicopter','Rain','Rooster','Sea waves','Sneezing', num2str(c(jj,:)))    
     % savefig(h,[num2str(c(jj,:)),'.fig'])    

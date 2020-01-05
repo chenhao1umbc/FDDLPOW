@@ -5,7 +5,8 @@ Nc = N / C;
 opts.C = C; % 6 classes
 featln = Database.featln;
 opts.n = Database.N_c;                
-H0 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
+% H0 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
+H0 = kron(eye(6),ones(2400, 1)/2400); 
 M = Dict.Z*H0;
 
 

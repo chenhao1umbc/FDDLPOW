@@ -27,14 +27,14 @@ if mixture_n < 3  pctrl.if2weak = 0; end
 
 % load settings
 K = 25;
-lbmd = 0.0001;
+lbmd = 0.001;
 mu=0.1;
 Q=25;% this is wq without negative
 nu= 0.1;
 beta = -1;
 
-mu = [1 0.1 0.01 1e-3 1e-4];
-nu = [1 5 10];
+% mu = [1 0.1 0.01 1e-3 1e-4];
+nu = [1 2 5 10 20];
 
 
 %% testing/cv part
@@ -43,7 +43,7 @@ zf.acc = zeros(5,5,5); mf.acc = zeros(5,5,5);
 zf.acc_weak = zeros(5,5,5); mf.acc_weak = zeros(5,5,5);
 for indn = 1:length(nu)
 for indm = 1:length(mu)
-for f = 1000:1001
+for f = 1000:1004
 if do_result ==1      
     % run doresult
     [opts]=loadoptions(K,lbmd,mu(indm),Q,nu(indn),beta, SNR_INF, f);
@@ -74,7 +74,7 @@ end
 end
 end
 end
-nf = 2;
+nf = 5;
 sum(zf.acc,3)/nf
 sum(mf.acc,3)/nf
 sum(zf.acc_weak,3)/nf

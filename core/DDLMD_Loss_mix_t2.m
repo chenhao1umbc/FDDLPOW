@@ -3,8 +3,7 @@ function Loss=DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U)
 [SW,SB]=calcfisher(Z,trlabels,opt);
 fWZ=trace(W'*SW*W)-trace(W'*SB*W)+1.1*norm(W'*Z,'fro')^2;
 
-gWZ=0;
-gWZ = norm(W'*M - U)^2;
+gWZ = norm(W'*M - U, 'fro')^2;
 
 Loss=norm(X-D*Z,'fro')^2+opt.lambda1*sum(abs(Z(:)))+opt.mu*fWZ+opt.nu*gWZ;
 

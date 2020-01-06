@@ -20,7 +20,7 @@ C = max(trlabels);
 Nc = N / C;
 H1 = kron(eye(C),ones(Nc)/Nc);
 H2 = ones(N)/N;
-S = 1.1*eye(N) - 2*H1 + H2;
+S = 2.1*eye(N) - 2*H1 + H2;
 opt_init = opt;
 opt_init.C = C; opt_init.N = N; opt_init.Nc = Nc; opt_init.M_d = M_d;
 [D, Z, W, U, Loss, opt] = initdict_t2(X,trlabels,opt_init); % max_iter will change for existing dictionary

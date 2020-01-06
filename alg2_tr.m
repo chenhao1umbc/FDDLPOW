@@ -13,6 +13,7 @@ do_training = 1;
 do_result = 1;
 cvortest = 1;  % 1 means cv, 0 means test
 SNR_INF = 2000;
+root = '.././data/Newly_trained';
 
 % load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3
@@ -39,6 +40,7 @@ beta = -1;
 % mu = [1, 0.1, 0.01, 0.001 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
 % Q = [6 10 20 30 50 75 100];
+
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
 tic
@@ -52,7 +54,7 @@ for ind3 = 1: length(mu)
         disp(opts.Dict2nm)
         Dict = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
         toc
-        save(opts.Dict2nm,'Dict','opts')
+        save([root, opts.Dict2nm],'Dict','opts')
     end
 end 
 end

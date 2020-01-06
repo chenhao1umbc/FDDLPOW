@@ -29,8 +29,8 @@ if mixture_n < 3  pctrl.if2weak = 0; end
 % load settings
 K = 25;
 lbmd = 0.001;
-mu = 0.1;
-Q = 25;
+mu = 0.01;
+Q = 20;
 nu= 20;
 beta = -1;
 
@@ -58,4 +58,3 @@ end
 end
 end
 toc
-run tr3.m

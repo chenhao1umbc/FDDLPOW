@@ -70,7 +70,7 @@ for ii = 1:opt.max_iter
         Loss(ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
         Dict.Loss = Loss;
         if ii > 3            
-        if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 1e-3
+        if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 5e-4
             break;
         end
         end

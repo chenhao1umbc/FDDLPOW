@@ -10,3 +10,9 @@ For product information, visit www.mathworks.com.
  
 >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> dict2_k25_lmbd0.0001_mu0.1_Q25_nu0.001_rng1000.mat
 good from  initdict_t2
+Elapsed time is 83.147750 seconds.
+dict2_k25_lmbd0.0001_mu0.1_Q25_nu0.01_rng1000.mat
+good from  initdict_t2
+Elapsed time is 158.192304 seconds.
+dict2_k25_lmbd0.0001_mu0.1_Q25_nu0.1_rng1000.mat
+good from  initdict_t2

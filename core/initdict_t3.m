@@ -18,8 +18,7 @@ rng(opt.rng)
 % nm = ['FDDLOW_mix','_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1),...
 %     '_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'_nu',num2str(opt.nu),...
 %     '_beta',num2str(-1),'.mat' ];
-nm = ['esc_FDDLPO',opt.dataset,'_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1)...
-    ,'_mu',num2str(opt.mu),'_nu',num2str(opt.nu), '_Q',num2str(opt.Q),'.mat' ];
+nm = opt.Dict2nm;
 fileexistance=exist(nm);
 if fileexistance==2
     load(nm)
@@ -29,7 +28,7 @@ if fileexistance==2
     U = mix_updateU(W, Z, H3);
     Delta = ones(1, opt.C);       
     opt.max_iter=80;% because of good initialization
-    Loss=zeros(3,opt.max_iter); 
+    Loss=zeros(1,opt.max_iter); 
     'good init '
 else    
     D=randn(M_d,opt.K);
@@ -37,7 +36,7 @@ else
     W=randn(opt.K,opt.Q);
     Delta = ones(1, opt.C); 
     U = mix_updateU(W, Z, H3);
-    Loss=zeros(3,opt.max_iter);
+    Loss=zeros(1,opt.max_iter);
 end 
     V = mix_updateV(H_bar_i, Z, W, Delta, opt);
     

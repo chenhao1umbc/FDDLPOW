@@ -106,7 +106,7 @@ function g = grad_f(Z_curr)
     
     grad4 = zeros(opt.K, opt.N);
     for ii = 1:opt.C    
-        grad4(:, 1+Nc*(ii-1):Nc*ii)=  WWtZ(:, 1+Nc*(ii-1):Nc*ii)*H_bar_iSq - W*Delta(ii)*V{ii}'*H_bar_i;
+        grad4(:, 1+Nc*(ii-1):Nc*ii)=  WWtZ(:, 1+Nc*(ii-1):Nc*ii)*H_bar_iSq - W*Delta(ii)*V{ii}*H_bar_i;
     end
     g = 2*grad1 + 2*opt.mu*grad2 + 2*opt.nu*grad3 + 2*opt.beta*grad4; 
 end

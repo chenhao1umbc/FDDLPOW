@@ -10,10 +10,8 @@ addpath(genpath('.././data'))
 addpath(genpath('.././FDDLPOW'))
 
 % do traing or do crossvalidation
-do_training = 1;
-do_result = 1;
 cv = 1; % validation or testing
-root = '.././data/';
+root = '.././data/Newly_trained';
 
 % load data
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3
@@ -39,7 +37,7 @@ nu= 10 ;
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 beta = 1e-4; % or 0.14
-beta = [ 1 10 100];
+beta = [1e-3 1e-2 1e-1 1 10 100];
 
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);

@@ -22,28 +22,29 @@ end
 if mixture_n < 3  pctrl.if2weak = 0; end
 K = 25;
 lbmd = 0.001;
-mu=0.1 ;
+mu=0.1;
 Q= 20;
 nu= 10;
-beta = -1;
+beta = [1e-3 1e-2 1e-1 1 10 100];
 
 %% testing/cv part
 [Database]=load_data_new(2, SNR_INF, pctrl, 1000);
-zf.acc = zeros(length(nu),7,5); mf.acc = zf.acc;
-zf.acc_weak = zf.acc; mf.acc_weak = zf.acc;
-
 lamb_range = lbmd*5.^(-3:3);
 
-for indn = 1:length(nu)
-for f = 1000:1004    
+zf.acc = zeros(length(beta),length(lamb_range),5); mf.acc = zf.acc;
+zf.acc_weak = zf.acc; mf.acc_weak = zf.acc;
+
+for indb = 1:length(beta)
+for f = 1000:1004     
+for indl = 1:length(lamb_range)
     % run doresult
-    [opts]=loadoptions(K,lbmd,mu,Q,nu(indn),beta, SNR_INF, f);
-    if exist(opts.Dict2nm, 'file') load(opts.Dict2nm,'Dict','opts'), else continue; end
-    disp(opts.Dict2nm)
-    for indl = 1:length(lamb_range)
-        opts.lambda1 = lamb_range(indl);
+    [opts]=loadoptions(K,lbmd,mu,Q,nu,beta(indb), SNR_INF, f);
+    if exist(opts.Dict3nm, 'file') load(opts.Dict3nm,'Dict','opts'), else continue; end
+    disp(opts.Dict3nm)
+    opts.lambda1 = lamb_range(indl);
     % run prep_ZF 
-    Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest);
+    if exist('Dict')==1    Dict_mix = Dict;    end
+    Z = sparsecoding(Dict, Database, opts, 2, cvortest);
     Z = aoos(Z,Database.featln, size(Z, 2));
     
     run calc_M
@@ -57,10 +58,9 @@ for f = 1000:1004
     [~, labels_pre_mf] = sort(r_matched, 1, 'descend');
     
     % calculate accuracy
-    [~, zf.acc_weak(indl, indn, f-999), zf.acc(indl, indn, f-999)] = calc_labels(labels_pre, opts);
-    [~, mf.acc_weak(indl, indn, f-999), mf.acc(indl, indn, f-999)] = calc_labels(labels_pre_mf, opts);
-   
-    end
+    [~, zf.acc_weak(indb,indl, f-999), zf.acc(indb,indl, f-999)] = calc_labels(labels_pre, opts);
+    [~, mf.acc_weak(indb,indl, f-999), mf.acc(indb,indl, f-999)] = calc_labels(labels_pre_mf, opts);
+end
 end
 end
 nf = 5;
@@ -68,3 +68,4 @@ sum(zf.acc,3)/nf
 sum(mf.acc,3)/nf
 sum(zf.acc_weak,3)/nf
 sum(mf.acc_weak,3)/nf
+toc

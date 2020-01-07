@@ -8,11 +8,110 @@
 To get started, type doc.
 For product information, visit www.mathworks.com.
  
->> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> dict2_k25_lmbd0.001_mu0.1_Q25_nu0.01_rng1000.mat
-good from  initdict_t2
-Elapsed time is 81.060721 seconds.
-dict2_k25_lmbd0.001_mu0.1_Q25_nu10_rng1000.mat
-good from  initdict_t2
-Elapsed time is 151.257471 seconds.
-dict2_k25_lmbd0.001_mu0.1_Q25_nu0.001_rng1001.mat
-good from  initdict_t2
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.001_rng1000.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 30.826683 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1000.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 58.311823 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1000.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 85.747136 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.001_rng1001.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 27.254005 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1001.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 53.891256 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1001.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 80.676474 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.001_rng1002.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 27.250997 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1002.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 57.618083 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1002.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 84.893089 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.001_rng1003.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 30.125339 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1003.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 58.042766 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1003.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 84.991575 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.001_rng1004.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 26.584719 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1004.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 53.785241 seconds.
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1004.mat
+
+ans =
+
+    'good init '
+
+Elapsed time is 83.197498 seconds.
+>> >> Elapsed time is 83.446957 seconds.
+>> 

@@ -26,13 +26,13 @@ H3H3t = H3*H3';
 opt.N = N;
 opt.Nc = Nc;
 H_bar_i = M1(1:Nc, 1:Nc);
-H_hat = cell(opt.C);
-temp = zeros(N, Nc);
-for ii = 1:opt.C
-    temp(1+ Nc*(ii-1): Nc*ii,:) = H_bar_i;
-    H_hat{ii} = temp;
-    temp = temp -temp;
-end    
+% H_hat = cell(opt.C);
+% temp = zeros(N, Nc);
+% for ii = 1:opt.C
+%     temp(1+ Nc*(ii-1): Nc*ii,:) = H_bar_i;
+%     H_hat{ii} = temp;
+%     temp = temp -temp;
+% end    
 S = 2.1*eye(N) - 2*H1 + H2;
 
 % initialize Dictionary
@@ -81,7 +81,7 @@ for ii = 1:opt.max_iter
     end
     
     % update W
-    W = mix_updateW(opt,H_bar_i,S, H3, Delta, U, V,  Z, H_hat);      
+    W = mix_updateW(opt,H_bar_i,S, H3, Delta, U, V,  Z);      
 
     % update U, with D and Z fixed.    
     U = mix_updateU(W, Z, H3);

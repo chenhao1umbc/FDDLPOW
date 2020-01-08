@@ -22,10 +22,10 @@ if pctrl.db == 0     pctrl.equal = 1; else    pctrl.equal = 0; end
 cvortest = 1;  % 1 means cv, 0 means test
 
 % load settings
-K = 10;
-lbmd = 1e-5;
-mu=0.01;
-nu= 1e3;
+K = 25;
+lbmd = 0.001;
+mu=0.1;
+nu= 10;
 beta = 1;
 Q= 20;
 

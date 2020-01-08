@@ -1,4 +1,4 @@
-function W = mix_updateW(opt, H_bar_i, S, H3, Delta, U, V,  Z, H_hat)
+function W = mix_updateW(opt, H_bar_i, S, H3, Delta, U, V,  Z)
 % this function is to update W with D and Z fixed, for the mixture cases
 % input   X is the training data,a matrix M by N, N data samples
 %         trlabels is the training data labels

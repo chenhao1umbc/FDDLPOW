@@ -68,4 +68,5 @@ sum(zf.acc,3)/nf
 sum(mf.acc,3)/nf
 sum(zf.acc_weak,3)/nf
 sum(mf.acc_weak,3)/nf
+save('alg3_20db_L2.mat','zf', 'mf')
 toc

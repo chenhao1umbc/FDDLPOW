@@ -1,0 +1,1262 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2019 The MathWorks, Inc.
+                  R2019b (9.7.0.1190202) 64-bit (glnxa64)
+                              August 21, 2019
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1000.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1001.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1002.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1003.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.001_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.01_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu0.1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu1_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.01_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta0.1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta10_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta100_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1004.mat
+dict3_k25_lmbd0.001_mu0.1_Q20_nu10_beta1000_rng1004.mat
+>> >> 
+ans(:,:,1) =
+
+    0.8241    0.8354    0.8425    0.8480    0.8327    0.7134    0.4849
+    0.7952    0.8028    0.8106    0.8150    0.7784    0.6476    0.3819
+    0.7234    0.7383    0.7547    0.7517    0.7134    0.5723    0.3793
+    0.8170    0.8283    0.8371    0.8354    0.8048    0.7004    0.4709
+    0.8194    0.8295    0.8370    0.8377    0.8117    0.7042    0.4754
+    0.6544    0.6682    0.7048    0.7591    0.7276    0.6254    0.4813
+
+
+ans(:,:,2) =
+
+    0.8239    0.8353    0.8425    0.8476    0.8322    0.7127    0.4857
+    0.8226    0.8314    0.8387    0.8447    0.8232    0.7127    0.4882
+    0.8009    0.8112    0.8185    0.8219    0.7879    0.6561    0.3939
+    0.8186    0.8292    0.8378    0.8402    0.8142    0.7039    0.4687
+    0.6512    0.6641    0.7118    0.7703    0.7291    0.5947    0.4274
+    0.6693    0.6805    0.7301    0.6956    0.6114    0.4804    0.4035
+
+
+ans(:,:,3) =
+
+    0.8246    0.8358    0.8431    0.8491    0.8336    0.7132    0.4856
+    0.8236    0.8323    0.8398    0.8454    0.8280    0.7125    0.4949
+    0.8256    0.8372    0.8423    0.8488    0.8198    0.7011    0.4918
+    0.6756    0.6890    0.7475    0.7736    0.7280    0.6169    0.4486
+    0.7014    0.7105    0.7400    0.7004    0.6197    0.4931    0.4066
+    0.5985    0.6101    0.6713    0.6799    0.6479    0.5904    0.5105
+
+
+ans(:,:,4) =
+
+    0.8969    0.9029    0.9071    0.9270    0.8998    0.7630    0.5135
+    0.8974    0.9035    0.9077    0.9277    0.9003    0.7632    0.5132
+    0.8979    0.9035    0.9083    0.9278    0.9012    0.7612    0.5231
+    0.8977    0.9030    0.9080    0.9289    0.9016    0.7616    0.5212
+    0.8977    0.9033    0.9081    0.9280    0.9010    0.7544    0.5122
+    0.8978    0.9032    0.9083    0.9274    0.9007    0.7552    0.5276
+
+
+ans(:,:,5) =
+
+    0.9313    0.9593    0.9682    0.9653    0.8906    0.7506    0.4962
+    0.9313    0.9594    0.9683    0.9653    0.8906    0.7506    0.4996
+    0.9314    0.9594    0.9683    0.9656    0.8900    0.7506    0.5036
+    0.9311    0.9596    0.9682    0.9655    0.8892    0.7489    0.5050
+    0.9313    0.9596    0.9684    0.9650    0.8895    0.7466    0.5104
+    0.9312    0.9590    0.9681    0.9652    0.8892    0.7461    0.5066
+
+>> 
+ans(:,:,1) =
+
+    0.8458    0.8455    0.8464    0.8474    0.8426    0.7582    0.5869
+    0.8247    0.8252    0.8246    0.8218    0.8071    0.6657    0.4279
+    0.7577    0.7576    0.7575    0.7590    0.7419    0.6722    0.4576
+    0.7666    0.7669    0.7676    0.7688    0.7798    0.7010    0.5580
+    0.7616    0.7610    0.7611    0.7596    0.7521    0.6687    0.5472
+    0.6358    0.6357    0.6354    0.6340    0.6289    0.5779    0.4980
+
+
+ans(:,:,2) =
+
+    0.8459    0.8457    0.8466    0.8474    0.8426    0.7578    0.5869
+    0.8218    0.8219    0.8217    0.8216    0.8211    0.7819    0.6238
+    0.7914    0.7911    0.7909    0.7918    0.7714    0.7072    0.5274
+    0.7796    0.7789    0.7808    0.7901    0.7778    0.7172    0.5747
+    0.7105    0.7100    0.7094    0.7060    0.6911    0.6472    0.5676
+    0.5826    0.5827    0.5824    0.5814    0.5755    0.5108    0.4378
+
+
+ans(:,:,3) =
+
+    0.8454    0.8453    0.8460    0.8469    0.8424    0.7579    0.5869
+    0.8504    0.8504    0.8512    0.8509    0.8457    0.7520    0.5921
+    0.8027    0.8027    0.8026    0.8022    0.8038    0.7609    0.5880
+    0.6981    0.6982    0.6980    0.6951    0.6832    0.6281    0.5935
+    0.6004    0.6002    0.6003    0.5996    0.6001    0.5703    0.5026
+    0.5913    0.5914    0.5924    0.5920    0.5913    0.5922    0.5316
+
+
+ans(:,:,4) =
+
+    0.8414    0.8390    0.8386    0.8401    0.8466    0.7545    0.5983
+    0.8387    0.8419    0.8416    0.8409    0.8400    0.7418    0.5819
+    0.8154    0.8167    0.8170    0.8217    0.8044    0.7031    0.5566
+    0.7240    0.7232    0.7230    0.7226    0.7076    0.6221    0.5468
+    0.6585    0.6598    0.6589    0.6502    0.6288    0.5837    0.4895
+    0.6052    0.6048    0.6043    0.6014    0.5846    0.5228    0.4668
+
+
+ans(:,:,5) =
+
+    0.9250    0.9440    0.9574    0.9642    0.8921    0.7463    0.5221
+    0.9221    0.9412    0.9527    0.9614    0.8933    0.7444    0.5266
+    0.8821    0.9006    0.9011    0.9038    0.8575    0.7484    0.5140
+    0.7463    0.7426    0.7428    0.7417    0.7345    0.6738    0.5097
+    0.6405    0.6378    0.6383    0.6405    0.6476    0.5385    0.4258
+    0.5967    0.5933    0.5941    0.6018    0.6097    0.5123    0.3721
+
+>> 
+ans(:,:,1) =
+
+    0.8241    0.8354    0.8425    0.8480    0.8327    0.7134    0.4849
+    0.7952    0.8028    0.8106    0.8150    0.7784    0.6476    0.3819
+    0.7234    0.7383    0.7547    0.7517    0.7134    0.5723    0.3793
+    0.8170    0.8283    0.8371    0.8354    0.8048    0.7004    0.4709
+    0.8194    0.8295    0.8370    0.8377    0.8117    0.7042    0.4754
+    0.6544    0.6682    0.7048    0.7591    0.7276    0.6254    0.4813
+
+
+ans(:,:,2) =
+
+    0.8239    0.8353    0.8425    0.8476    0.8322    0.7127    0.4857
+    0.8226    0.8314    0.8387    0.8447    0.8232    0.7127    0.4882
+    0.8009    0.8112    0.8185    0.8219    0.7879    0.6561    0.3939
+    0.8186    0.8292    0.8378    0.8402    0.8142    0.7039    0.4687
+    0.6512    0.6641    0.7118    0.7703    0.7291    0.5947    0.4274
+    0.6693    0.6805    0.7301    0.6956    0.6114    0.4804    0.4035
+
+
+ans(:,:,3) =
+
+    0.8246    0.8358    0.8431    0.8491    0.8336    0.7132    0.4856
+    0.8236    0.8323    0.8398    0.8454    0.8280    0.7125    0.4949
+    0.8256    0.8372    0.8423    0.8488    0.8198    0.7011    0.4918
+    0.6756    0.6890    0.7475    0.7736    0.7280    0.6169    0.4486
+    0.7014    0.7105    0.7400    0.7004    0.6197    0.4931    0.4066
+    0.5985    0.6101    0.6713    0.6799    0.6479    0.5904    0.5105
+
+
+ans(:,:,4) =
+
+    0.8969    0.9029    0.9071    0.9270    0.8998    0.7630    0.5135
+    0.8974    0.9035    0.9077    0.9277    0.9003    0.7632    0.5132
+    0.8979    0.9035    0.9083    0.9278    0.9012    0.7612    0.5231
+    0.8977    0.9030    0.9080    0.9289    0.9016    0.7616    0.5212
+    0.8977    0.9033    0.9081    0.9280    0.9010    0.7544    0.5122
+    0.8978    0.9032    0.9083    0.9274    0.9007    0.7552    0.5276
+
+
+ans(:,:,5) =
+
+    0.9313    0.9593    0.9682    0.9653    0.8906    0.7506    0.4962
+    0.9313    0.9594    0.9683    0.9653    0.8906    0.7506    0.4996
+    0.9314    0.9594    0.9683    0.9656    0.8900    0.7506    0.5036
+    0.9311    0.9596    0.9682    0.9655    0.8892    0.7489    0.5050
+    0.9313    0.9596    0.9684    0.9650    0.8895    0.7466    0.5104
+    0.9312    0.9590    0.9681    0.9652    0.8892    0.7461    0.5066
+
+>> 
+ans(:,:,1) =
+
+    0.8458    0.8455    0.8464    0.8474    0.8426    0.7582    0.5869
+    0.8247    0.8252    0.8246    0.8218    0.8071    0.6657    0.4279
+    0.7577    0.7576    0.7575    0.7590    0.7419    0.6722    0.4576
+    0.7666    0.7669    0.7676    0.7688    0.7798    0.7010    0.5580
+    0.7616    0.7610    0.7611    0.7596    0.7521    0.6687    0.5472
+    0.6358    0.6357    0.6354    0.6340    0.6289    0.5779    0.4980
+
+
+ans(:,:,2) =
+
+    0.8459    0.8457    0.8466    0.8474    0.8426    0.7578    0.5869
+    0.8218    0.8219    0.8217    0.8216    0.8211    0.7819    0.6238
+    0.7914    0.7911    0.7909    0.7918    0.7714    0.7072    0.5274
+    0.7796    0.7789    0.7808    0.7901    0.7778    0.7172    0.5747
+    0.7105    0.7100    0.7094    0.7060    0.6911    0.6472    0.5676
+    0.5826    0.5827    0.5824    0.5814    0.5755    0.5108    0.4378
+
+
+ans(:,:,3) =
+
+    0.8454    0.8453    0.8460    0.8469    0.8424    0.7579    0.5869
+    0.8504    0.8504    0.8512    0.8509    0.8457    0.7520    0.5921
+    0.8027    0.8027    0.8026    0.8022    0.8038    0.7609    0.5880
+    0.6981    0.6982    0.6980    0.6951    0.6832    0.6281    0.5935
+    0.6004    0.6002    0.6003    0.5996    0.6001    0.5703    0.5026
+    0.5913    0.5914    0.5924    0.5920    0.5913    0.5922    0.5316
+
+
+ans(:,:,4) =
+
+    0.8414    0.8390    0.8386    0.8401    0.8466    0.7545    0.5983
+    0.8387    0.8419    0.8416    0.8409    0.8400    0.7418    0.5819
+    0.8154    0.8167    0.8170    0.8217    0.8044    0.7031    0.5566
+    0.7240    0.7232    0.7230    0.7226    0.7076    0.6221    0.5468
+    0.6585    0.6598    0.6589    0.6502    0.6288    0.5837    0.4895
+    0.6052    0.6048    0.6043    0.6014    0.5846    0.5228    0.4668
+
+
+ans(:,:,5) =
+
+    0.9250    0.9440    0.9574    0.9642    0.8921    0.7463    0.5221
+    0.9221    0.9412    0.9527    0.9614    0.8933    0.7444    0.5266
+    0.8821    0.9006    0.9011    0.9038    0.8575    0.7484    0.5140
+    0.7463    0.7426    0.7428    0.7417    0.7345    0.6738    0.5097
+    0.6405    0.6378    0.6383    0.6405    0.6476    0.5385    0.4258
+    0.5967    0.5933    0.5941    0.6018    0.6097    0.5123    0.3721
+
+>> >> Elapsed time is 26981.186978 seconds.
+>> 

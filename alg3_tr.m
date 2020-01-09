@@ -29,15 +29,15 @@ end
 K = 25;
 lbmd = 0.001;
 mu=0.1;
-Q=25;
+Q=20;
 nu= 10 ;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % from table one we know that there are combinationes accuracy is above 0.99
 % one is K = 100, lambda = 1e-4, mu = 1e-3, nu = 0.01
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-beta = 1e-4; % or 0.14
-% beta = [1e-3 1e-2 1e-1 1 10 100];
+% beta = 1e6; % or 0.14
+beta = [1e3 1e4 1e5 1e6];
 
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);

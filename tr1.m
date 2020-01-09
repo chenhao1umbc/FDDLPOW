@@ -10,8 +10,6 @@ addpath(genpath('.././data'))
 addpath(genpath('.././FDDLPOW'))
 
 % do traing or do crossvalidation
-do_training = 1;
-do_result = 1;
 cv = 1; % validation or testing
 root = '.././data/';
 
@@ -31,29 +29,29 @@ end
 K = 25;
 lbmd = 0.001;
 mu=0.1;
-Q=20;
+Q=25;
 nu= 10 ;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % from table one we know that there are combinationes accuracy is above 0.99
 % one is K = 100, lambda = 1e-4, mu = 1e-3, nu = 0.01
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-beta = 1e-4; % or 0.14
-beta = [1e-3 1e-2 1e-1 ];
+% beta = 1e6; % or 0.14
+beta = [1e4 1e5 1e6];
 
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
 tic
 for indb = 1: length(beta)
 % for table 3 algorithm
-if do_training ==1
+
     [opts] = loadoptions(K,lbmd,mu,Q,nu,beta(indb),SNR_INF,f);
     if exist(opts.Dict3nm, 'file') continue; end
     disp(opts.Dict3nm)
     Dict = FDDLOW_table3(Database.tr_data,opts);
     toc
     save([root, opts.Dict3nm],'Dict','opts')
-end
+
 end
 end
 

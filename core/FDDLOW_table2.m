@@ -27,7 +27,7 @@ opt_init.C = C; opt_init.N = N; opt_init.Nc = Nc; opt_init.M_d = M_d;
 
 % main loop
 for ii = 1:opt.max_iter 
-%     ii
+    ii
     % update D, with U W and Z fixed
     optD = opt;
     optD.max_iter = 500;
@@ -69,7 +69,7 @@ for ii = 1:opt.max_iter
     if opt.losscalc
         Loss(ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
         Dict.Loss = Loss;
-        if ii > 3            
+        if ii > 50            
         if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 5e-4
             break;
         end

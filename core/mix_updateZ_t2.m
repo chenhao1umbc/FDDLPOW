@@ -34,10 +34,14 @@ DtD = D'*D;
 DtX = D'*X;
 WWt = W*W';
 WUH3t = W*U*H3';
-normWWt = norm(WWt,'fro');
-L_term1 = norm(2*DtD,'fro'); 
-L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+1.1*eye(N),'fro');
-L_term3 = 2*opt.nu*normWWt*norm(H3H3t, 'fro'); 
+% normWWt = norm(WWt,'fro');
+% L_term1 = norm(2*DtD,'fro'); 
+% L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+1.1*eye(N),'fro');
+% L_term3 = 2*opt.nu*normWWt*norm(H3H3t, 'fro'); 
+normWWt = norm(WWt);
+L_term1 = norm(2*DtD); 
+L_term2 = 2 * opt.mu * normWWt * norm(M1M1t-M2M2t+1.1*eye(N));
+L_term3 = 2*opt.nu*normWWt*norm(H3H3t); 
 L = L_term1 + L_term2 + L_term3;
 
 % main loop

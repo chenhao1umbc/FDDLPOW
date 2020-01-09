@@ -12,6 +12,7 @@ addpath(genpath('D:\Stored_Data\data'))
 SNR_INF = 2000;
 cvortest = 0;
 
+%% testing part
 % load settings
 K = 25;
 lbmd = 0.001;
@@ -19,7 +20,6 @@ mu=0.1;
 nu= 10;
 beta = 1;
 Q= 20; % 10 for alg 1
-
 
 % %% 
 % mixture_n = 1; % mixture_n classes mixture, = 1,2,3
@@ -96,9 +96,11 @@ for alg = 1:3
     % calculate accuracy
     [~, r_zf_weak(alg, indd, f-999), r_zf(alg, indd, f-999)] = calc_labels(labels_pre, opts);
     [~, r_mf_weak(alg, indd, f-999), r_mf(alg, indd, f-999)] = calc_labels(labels_pre_mf, opts);
-end
-end
-end
-    
 
-figure
+end
+end   
+end
+
+
+
+

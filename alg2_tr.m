@@ -13,7 +13,7 @@ do_training = 1;
 do_result = 1;
 cvortest = 1;  % 1 means cv, 0 means test
 SNR_INF = 2000;
-root = '.././data/Newly_trained';
+root = '.././data/';
 
 % load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3
@@ -33,7 +33,7 @@ mu=0.1 ;
 Q= 20
 nu= 10;
 beta = -1;
-%nu= [0.005, 0.01, 0.05 0.1 0.5];
+%nu= [1e-3 1e-2 0.1 1 10 100 1000];
 
 % K = [50, 100, 150, 200, 250];
 % lbmd = [0.1, 0.01, 0.001, 1e-4];

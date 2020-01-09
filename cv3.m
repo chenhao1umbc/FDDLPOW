@@ -63,7 +63,8 @@ for indl = 1:length(lamb_range)
     [~, mf.acc_weak(indb,indl,indn, f-999), mf.acc(indb,indl,indn, f-999)] = calc_labels(labels_pre_mf, opts);
 end
 end
-save('alg3_20db_L2.mat','zf', 'mf','nu','beta')
+% save('alg3_20db_L2.mat','zf', 'mf','nu','beta')
+
 end
 end
 nf = 5;

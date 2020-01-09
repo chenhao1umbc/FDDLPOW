@@ -29,6 +29,7 @@ nu= 10;
 % beta = [0.01 0.1 1 10 100 1000];
 beta = [1e4 1e5 1e6];
 
+
 %% testing/cv part
 [Database]=load_data_new(2, SNR_INF, pctrl, 1000);
 lamb_range = lbmd*5.^(-3:3);
@@ -65,6 +66,7 @@ for indl = 1:length(lamb_range)
 end
 end
 % save('alg3_0db_L2.mat','zf', 'mf','nu','beta')
+
 end
 end
 nf = 5;

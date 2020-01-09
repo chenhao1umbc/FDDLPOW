@@ -19,12 +19,12 @@ cvortest = 1;  % 1 means cv, 0 means test
 
 %% training dictionary
 % load settings
-K = 100;
+K = 25;
 lbmd = 0.01;
-mu=0.001;
+mu=0.1;
 nu= 1e3;
 beta = 1;
-Q= 30;
+Q= 6;
 SNR = 20;
 
 % K = [50, 100, 150, 200, 250];
@@ -34,7 +34,7 @@ SNR = 20;
 % Q = [6 10 20 30 50 75 100];
 
 %% CV/testing part
-SNR = 20;
+SNR = -20;
 r = zeros(length(mu),length(lbmd), length(Q), length(K), 5); % Q, lambda, folds 
 r_zf = r; r_mf = r;
 for f = 1000:1004
@@ -48,11 +48,10 @@ for indq = 1: length(Q)
 for indl = 1: length(lbmd)
 for indm = 1: length(mu)
 
-    [opts]=loadoptions(K(indk),lbmd(indl),mu(indm),Q(indq),-1,-1, SNR, f);
-    disp(opts.Dictnm)
+    [opts]=loadoptions(K(indk),lbmd(indl),mu(indm),Q(indq),-1,-1, SNR, f);    
     if exist(opts.Dictnm, 'file') load(opts.Dictnm,'Dict','opts'), else continue; end
+    disp(opts.Dictnm)
     % run prep_ZF 
-    if exist('Dict')==1    Dict_mix = Dict; opts,   end
     Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest);
     Z = aoos(Z,Database.featln, size(Z, 2));
     

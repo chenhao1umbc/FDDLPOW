@@ -20,6 +20,14 @@ C = max(trlabels);
 Nc = N / C;
 H1 = kron(eye(C),ones(Nc)/Nc);
 H2 = ones(N)/N;
+H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H3
+M1 = eye(N) - H1;
+M2 = H1 - H2;
+M1M1t = M1*M1';
+M2M2t = M2*M2';
+H3H3t = H3*H3';
+max_eig_rest = max(eig(M1M1t-M2M2t+1.1*eye(N)));
+max_eig_H3 = max(eig(H3H3t));
 S = 2.1*eye(N) - 2*H1 + H2;
 opt_init = opt;
 opt_init.C = C; opt_init.N = N; opt_init.Nc = Nc; opt_init.M_d = M_d;
@@ -45,7 +53,7 @@ for ii = 1:opt.max_iter
     optZ.max_Ziter = 1; % for Z update
     optZ.Zthreshold = 1e-4; 
     while 1
-        Z = mix_updateZ_t2(X,trlabels,optZ, W, D, Z, U, H1, H2);           
+        Z = mix_updateZ_t2(X, trlabels, optZ, W, D, Z, U,H3, M1M1t, M2M2t, H3H3t,max_eig_rest, max_eig_H3);           
         a = sum(abs(Z), 2);
         nn = sum(a ==0);
         if nn >0 

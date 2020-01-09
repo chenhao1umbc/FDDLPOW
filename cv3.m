@@ -13,7 +13,7 @@ SNR_INF = 2000;
 % load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3
 
-pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
+pctrl.db = 20; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -63,7 +63,6 @@ for indl = 1:length(lamb_range)
     [~, mf.acc_weak(indb,indl,indn, f-999), mf.acc(indb,indl,indn, f-999)] = calc_labels(labels_pre_mf, opts);
 end
 end
-save('alg3_0db_L2.mat','zf', 'mf','nu','beta')
 end
 end
 nf = 5;
@@ -71,5 +70,5 @@ sum(zf.acc,4)/nf
 sum(mf.acc,4)/nf
 sum(zf.acc_weak,4)/nf
 sum(mf.acc_weak,4)/nf
-save('alg3_0db_L2.mat','zf', 'mf','nu','beta')
+save('alg3_20db_L2.mat','zf', 'mf','nu','beta')
 toc

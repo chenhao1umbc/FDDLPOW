@@ -13,7 +13,7 @@ SNR_INF = 2000;
 % load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3
 
-pctrl.db = 20; % dynamic ratio is 0 3, 6, 10, 20 db
+pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -24,7 +24,7 @@ K = 25;
 lbmd = 0.001;
 mu=0.1 ;
 Q= 20;
-nu= 10;
+nu= [1000];
 beta = -1;
 
 %% testing/cv part
@@ -63,6 +63,7 @@ for f = 1000:1004
     end
 end
 end
+save('alg2_0db_L2.mat','zf', 'mf','nu','beta')
 nf = 5;
 sum(zf.acc,3)/nf
 sum(mf.acc,3)/nf

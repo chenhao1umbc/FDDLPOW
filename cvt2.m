@@ -1,5 +1,3 @@
-% table 2
-
 close all
 clear
 clc;
@@ -9,8 +7,6 @@ addpath(genpath('.././fddlow'))
 addpath(genpath('.././data'))
 addpath(genpath('.././FDDLPOW'))
 % do traing or do crossvalidation
-do_training = 1;
-do_result = 1;
 cvortest = 1;  % 1 means cv, 0 means test
 SNR_INF = 2000;
 
@@ -24,31 +20,32 @@ else
     pctrl.equal = 0;
 end
 if mixture_n < 3  pctrl.if2weak = 0; end
-
-% load settings
 K = 25;
-lbmd = 0.01;
-mu=0.1;
-Q=25;% this is wq without negative
-nu= 10;
+lbmd = [0.1 0.01 0.001 0.001];
+mu=[1 0.1 0.01 1e-3 1e-4] ;
+Q= [6 10 20 25];
+nu= [1e-3 1e-2 0.1 1 10 100];
 beta = -1;
-% nu = [1e-4 5e-4 1e-3 5e-3 1e-2 5e-2 0.1 0.5];
 
 %% testing/cv part
 [Database]=load_data_new(2, SNR_INF, pctrl, 1000);
-zf.acc = zeros(1,5); mf.acc = zeros(1,5);
-zf.acc_weak = zeros(1,5); mf.acc_weak = zeros(1,5);
+zf.acc = zeros(length(mu), 7, length(nu),length(lbmd), length(Q),5); 
+mf.acc = zf.acc; zf.acc_weak = zf.acc; mf.acc_weak = zf.acc;
+
+for indll = 1: length(lbmd)
+    
+lamb_range = lbmd(indll)*5.^(-3:3);
+for indm = 1:length(mu)
+for indq = 1:length(Q)
 for indn = 1:length(nu)
-for f = 1000:1004
-if do_result ==1      
+for f = 1000:1004    
     % run doresult
-    [opts]=loadoptions(K,lbmd,mu,Q,nu(indn),beta, SNR_INF, f);
+    [opts]=loadoptions(K,lbmd(indll),mu(indm),Q(indq),nu(indn),beta, SNR_INF, f);
     if exist(opts.Dict2nm, 'file') load(opts.Dict2nm,'Dict','opts'), else continue; end
     disp(opts.Dict2nm)
-%     if exist(opts.Dictnm, 'file') load(opts.Dictnm,'Dict','opts'), else continue; end
-%     disp(opts.Dictnm)
+    for indl = 1:length(lamb_range)
+        opts.lambda1 = lamb_range(indl);
     % run prep_ZF 
-    if exist('Dict')==1    Dict_mix = Dict;    end
     Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest);
     Z = aoos(Z,Database.featln, size(Z, 2));
     
@@ -63,14 +60,19 @@ if do_result ==1
     [~, labels_pre_mf] = sort(r_matched, 1, 'descend');
     
     % calculate accuracy
-    [~, zf.acc_weak(indn, f-999), zf.acc(indn, f-999)] = calc_labels(labels_pre, opts);
-    [~, mf.acc_weak(indn, f-999), mf.acc(indn, f-999)] = calc_labels(labels_pre_mf, opts);
+    [~, zf.acc_weak(indm, indl, indn, indll, indq, f-999), zf.acc(indm, indl, indn, indll, indq, f-999)] = calc_labels(labels_pre, opts);
+    [~, mf.acc_weak(indm, indl, indn, indll, indq, f-999), mf.acc(indm, indl, indn, indll, indq, f-999)] = calc_labels(labels_pre_mf, opts);
    
+    end
+end
+end
+save('alg2_0db_L2.mat','zf', 'mf','nu','beta','Q','lbmd')
 end
 end
 end
-sum(zf.acc,2)/5
-sum(mf.acc,2)/5
-sum(zf.acc_weak,2)/5
-sum(mf.acc_weak,2)/5
-toc
+save('alg2_0db_L2.mat','zf', 'mf','nu','beta','Q','lbmd')
+nf = 5;
+sum(zf.acc,3)/nf
+sum(mf.acc,3)/nf
+sum(zf.acc_weak,3)/nf
+sum(mf.acc_weak,3)/nf

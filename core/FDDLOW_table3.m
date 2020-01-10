@@ -20,8 +20,8 @@ Nc =N/C;
 [H1, H2, H3] = getMH1H2H3(N, Nc, C);
 M1 = eye(N) - H1;
 M2 = H1 - H2;
-M1M1t = M1*M1';
-M2M2t = M2*M2';
+max_eig_S = 2.1;
+max_eig_H3 = 4.1667e-04;
 H3H3t = H3*H3';
 opt.N = N;
 opt.Nc = Nc;
@@ -45,18 +45,15 @@ optD.threshold = 1e-4;
 optD.showconverge = false;
 
 optZ = opt;
-optZ.M1M1t = M1M1t;
-optZ.M2M2t = M2M2t;
+optZ.S = S;
+optZ.max_eig_S = max_eig_S;
+optZ.max_eig_H3 = max_eig_H3;
 optZ.H3H3t = H3H3t;
-optZ.M1 = M1;
-optZ.M2 = M2;
 optZ.max_iter = 200; % for fista
 optZ.threshold = 1e-4;
 optZ.showprogress = false; % show inside of fista
 optZ.showconverge = false; % show updateZ
 optZ.showcost= true*optZ.showprogress;
-optZ.max_Ziter = 1; % for Z update
-optZ.Zthreshold = 1e-4;  
 
 % main loop
 for ii = 1:opt.max_iter   

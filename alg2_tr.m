@@ -14,6 +14,8 @@ do_result = 1;
 cvortest = 1;  % 1 means cv, 0 means test
 SNR_INF = 2000;
 root = '.././data/';
+load('pre_calc.mat')
+
 
 % load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3

@@ -23,23 +23,24 @@ Nc = opt.Nc;
 S = opt.S;
 max_eig_S = opt.max_eig_S;
 max_eig_H3 = opt.max_eig_H3;
+sum_max_eig_Hhat_c = opt.sum_max_eig_Hhat_c;
 H3H3t = opt.H3H3t;
-H_bar_iSq = H_bar_i^2 ;
+H_bar_iSq = opt.H_bar_iSq;
 DtD = D'*D;
 DtX = D'*X;
 WWt = W*W';
 WUH3t = W*U*H3';
-normWWt = norm(WWt,'fro');
+eigWWt = max(eig(WWt));
 
 % calculate L, which is the Lipch. bound
-L_term1 = norm(2*DtD,'fro');
-L_term2 = 2 * opt.mu * normWWt * max_eig_S; 
-L_term3 = 2*opt.nu*normWWt*max_eig_H3;  
-L_term4 = 2* opt.beta * normWWt * sum_max_eig_Hhat_c;
+L_term1 = 2*max(eig(DtD));
+L_term2 = 2 * opt.mu * eigWWt * max_eig_S; 
+L_term3 = 2*opt.nu*eigWWt*max_eig_H3;  
+L_term4 = 2* opt.beta * eigWWt * sum_max_eig_Hhat_c;
 L = L_term1 + L_term2 + L_term3 + L_term4;
 
 % main loop
-Z = fista(Z_in, L, opt.lambda1, opt, @calc_F, @grad_f);        
+Z = fista(Zin, L, opt.lambda1, opt, @calc_F, @grad_f);        
 
 %% cost function
 function cost = calc_F(Z_curr)   
@@ -57,7 +58,6 @@ function cost = calc_F(Z_curr)
         OmegaWZDeltaV = OmegaWZDeltaV + ...
             norm(H_bar_i*WtZ(:, 1+Nc*(ind-1):Nc*ind)' - Delta(ind)*V{ind}, 'fro')^2;
     end
-    
     % calc cost
     cost = norm(X - D*Z_curr,'fro')^2 + opt.lambda1*norm1(Z_curr) ...
         + opt.mu*fisherterm + opt.nu*gwzu + opt.beta*OmegaWZDeltaV;

@@ -19,21 +19,21 @@ C = opt.C;
 Nc =N/C;
 [H1, H2, H3] = getMH1H2H3(N, Nc, C);
 M1 = eye(N) - H1;
-M2 = H1 - H2;
 max_eig_S = 2.1;
 max_eig_H3 = 4.1667e-04;
+sum_max_eig_Hhat_c = 6;
 H3H3t = H3*H3';
 opt.N = N;
 opt.Nc = Nc;
-H_bar_i = M1(1:Nc, 1:Nc);
+H_bar_i = M1(1:Nc, 1:Nc);  
+S = 2.1*eye(N) - 2*H1 + H2;
 % H_hat = cell(opt.C);
 % temp = zeros(N, Nc);
 % for ii = 1:opt.C
 %     temp(1+ Nc*(ii-1): Nc*ii,:) = H_bar_i;
 %     H_hat{ii} = temp;
 %     temp = temp -temp;
-% end    
-S = 2.1*eye(N) - 2*H1 + H2;
+% end  
 
 % initialize Dictionary
 [D, Z, W, U, V, Delta, Loss, opt] = initdict_t3(X, H_bar_i, H3, opt); 
@@ -48,7 +48,9 @@ optZ = opt;
 optZ.S = S;
 optZ.max_eig_S = max_eig_S;
 optZ.max_eig_H3 = max_eig_H3;
+optZ.H_bar_iSq = H_bar_i^2;
 optZ.H3H3t = H3H3t;
+optZ.sum_max_eig_Hhat_c = sum_max_eig_Hhat_c;
 optZ.max_iter = 200; % for fista
 optZ.threshold = 1e-4;
 optZ.showprogress = false; % show inside of fista
@@ -56,9 +58,7 @@ optZ.showconverge = false; % show updateZ
 optZ.showcost= true*optZ.showprogress;
 
 % main loop
-for ii = 1:opt.max_iter   
-    t1 = toc;
-    
+for ii = 1:opt.max_iter       
     % update D, with U W and Z fixed
     D = DDLMD_updateD(X,optD,D,Z);
        
@@ -91,8 +91,8 @@ for ii = 1:opt.max_iter
     
     Loss(ii) = Loss_mix(X, H_bar_i, H3,S, opt,W,D,Z,U,V,Delta);
     Dict.Loss = Loss;
-    if ii > 3            
-    if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 5e-4
+    if ii > 30            
+    if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 1e-4
         break;
     end
     end

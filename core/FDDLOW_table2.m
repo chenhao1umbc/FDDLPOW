@@ -29,6 +29,7 @@ opt_init = opt;
 opt_init.C = C; opt_init.N = N; opt_init.Nc = Nc; opt_init.M_d = M_d;
 [D, Z, W, U, Loss, opt] = initdict_t2(X,trlabels,opt_init); % max_iter will change for existing dictionary
 
+% r= Loss;f = r;g = f;s = r;
 optD = opt;
 optD.max_iter = 500;
 optD.threshold = 1e-4;
@@ -43,7 +44,7 @@ optZ.showcost= true*optZ.showprogress;
 
 % main loop
 for ii = 1:opt.max_iter 
-    ii
+%     ii
     % update D, with U W and Z fixed
     D = DDLMD_updateD(X,optD,D,Z);    
     
@@ -71,9 +72,16 @@ for ii = 1:opt.max_iter
     
     % show loss function value
     if opt.losscalc
-        Loss(ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
+        wtz = W'*Z;
+        fWZ= opt.mu*trace(wtz*S*wtz');
+        gWZ = opt.nu* norm(W'*M - U, 'fro')^2;
+        sZ = opt.lambda1*sum(abs(Z(:)));
+        fid = norm(X-D*Z,'fro')^2;
+        l= fid + sZ + fWZ+ gWZ;
+%         g(ii) = gWZ; f(ii) = fWZ; s(ii) = sZ; r(ii) = fid;
+        Loss(ii) = l; %DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
         Dict.Loss = Loss;
-        if ii > 50            
+        if ii > 30            
         if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 5e-4
             break;
         end

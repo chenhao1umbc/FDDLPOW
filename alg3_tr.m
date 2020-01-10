@@ -37,7 +37,7 @@ nu= 10 ;
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % beta = 1e6; % or 0.14
-beta = [1e3 1e4 1e5 1e6];
+beta = 1;
 
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
@@ -46,7 +46,7 @@ for indb = 1: length(beta)
 % for table 3 algorithm
 
     [opts] = loadoptions(K,lbmd,mu,Q,nu,beta(indb),SNR_INF,f);
-    if exist(opts.Dict3nm, 'file') continue; end
+%     if exist(opts.Dict3nm, 'file') continue; end
     disp(opts.Dict3nm)
     Dict = FDDLOW_table3(Database.tr_data,opts);
     toc

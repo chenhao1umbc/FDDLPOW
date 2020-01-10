@@ -14,8 +14,6 @@ do_result = 1;
 cvortest = 1;  % 1 means cv, 0 means test
 SNR_INF = 2000;
 root = '.././data/';
-load('pre_calc.mat')
-
 
 % load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3
@@ -31,17 +29,18 @@ if mixture_n < 3  pctrl.if2weak = 0; end
 % load settings
 K = 25;
 lbmd = 0.001;
-mu=0.1 ;
+mu=0.1;
 Q= 20;
 nu= 1;
 beta = -1;
-%nu= [1e-3 1e-2 0.1 1 10 100 1000];
+
 
 % K = [50, 100, 150, 200, 250];
 % lbmd = [0.1, 0.01, 0.001, 1e-4];
 % mu = [1, 0.1, 0.01, 0.001 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
 % Q = [6 10 20 30 50 75 100];
+%nu= [1e-3 1e-2 0.1 1 10 100 1000];
 
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
@@ -50,14 +49,12 @@ for indq = 1: length(Q)
 for ind2 = 1: length(lbmd)
 for ind3 = 1: length(mu)   
     % for table 1 algorithm
-    if do_training ==1
         [opts] = loadoptions(K,lbmd(ind2),mu(ind3),Q(indq),nu,beta,SNR_INF,f);
-%         if exist(opts.Dict2nm, 'file') continue; end
+        if exist(opts.Dict2nm, 'file') continue; end
         disp(opts.Dict2nm)
         Dict = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
         toc
         save([root, opts.Dict2nm],'Dict','opts')
-    end
 end 
 end
 end

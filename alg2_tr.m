@@ -46,16 +46,18 @@ for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
 tic
 for indq = 1: length(Q)
-for ind2 = 1: length(lbmd)
-for ind3 = 1: length(mu)   
+for indl = 1: length(lbmd)
+for indm = 1: length(mu) 
+for indn = 1:length(nu)
     % for table 1 algorithm
-        [opts] = loadoptions(K,lbmd(ind2),mu(ind3),Q(indq),nu,beta,SNR_INF,f);
+        [opts] = loadoptions(K,lbmd(indl),mu(indm),Q(indq),nu(indn),beta,SNR_INF,f);
         if exist(opts.Dict2nm, 'file') continue; end
         disp(opts.Dict2nm)
         Dict = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);
         toc
         save([root, opts.Dict2nm],'Dict','opts')
 end 
+end
 end
 end
 end

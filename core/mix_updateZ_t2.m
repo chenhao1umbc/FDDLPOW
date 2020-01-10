@@ -44,32 +44,9 @@ L_term2 = 2 * opt.mu * normWWt * max_eig_rest;
 L_term3 = 2*opt.nu*normWWt*max_eig_H3; 
 L = L_term1 + L_term2 + L_term3;
 
-% main loop
-for iter = 1:opt.max_Ziter     
-    Z_old = Z;       
-    Z = fista(Z_old, L, opt.lambda1, opt, @calc_F, @grad_f);        
-    
-    % check convergence
-    dZ(iter) = norm(Z - Z_old,'fro')/sqrt(numel(Z));    
-    if dZ(iter) < opt.Zthreshold
-        break;
-    end
-    
-    if opt.showconverge
-        iter
-        cost(iter) = calc_F(Z_old);
-        figure(210);
-        subplot(2,1,1);
-        plot(cost(1:iter));
-        title('Cost function');
-        
-        subplot(2,1,2);
-        plot(dZ(1:iter));
-        title('||Z - Z_old||_F/sqrt(KN)');
-        xlabel({'Iterations';'--from mix\_updateZ.m'})
-        pause(.1);
-    end
-end
+% main loop       
+Z = fista(Z, L, opt.lambda1, opt, @calc_F, @grad_f);        
+
 
 %% cost function
 function cost = calc_F(Z_curr)

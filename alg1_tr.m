@@ -11,8 +11,7 @@ addpath(genpath('/home/chenhao1/Matlab/FDDLOW/data'));
 SNR_INF = 2000;
 
 % do traing or do crossvalidation
-do_training = 0;
-do_cv = 1;
+do_training =1;
 mixture_n = 1; % mixture_n classes mixture, = 1,2,3
 pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
 pctrl.if2weak = 0; % if 2 weak components in mixture of 3
@@ -21,12 +20,12 @@ cvortest = 1;  % 1 means cv, 0 means test
 
 %% training dictionary
 % load settings
-K = 100;
-lbmd = 0.01;
-mu=0.001;
+K = 25;
+lbmd = 0.001;
+mu=0.1;
 nu= 1e3;
 beta = 1;
-Q= 30;
+Q= 10;
 SNR = 20;
 
 % K = [50, 100, 150, 200, 250];
@@ -44,7 +43,7 @@ for ind3 = 1: length(mu)
     % for table 1 algorithm
     if do_training ==1
         [opts] = loadoptions(K(ind1),lbmd(ind2),mu(ind3),Q,nu,beta,SNR,f)
-        if exist(opts.Dictnm, 'file') continue; end
+%         if exist(opts.Dictnm, 'file') continue; end
         Dict = FDDLOW_table1(Database.tr_data,Database.tr_label,opts);
         toc
         save(opts.Dictnm,'Dict','opts')

@@ -30,8 +30,8 @@ if mixture_n < 3  pctrl.if2weak = 0; end
 K = 25;
 lbmd = 0.001;
 mu=0.1 ;
-Q= 20
-nu= 10;
+Q= 20;
+nu= 1;
 beta = -1;
 %nu= [1e-3 1e-2 0.1 1 10 100 1000];
 

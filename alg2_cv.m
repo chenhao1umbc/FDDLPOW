@@ -24,7 +24,7 @@ K = 25;
 lbmd = 0.001;
 mu=0.1 ;
 Q= 20;
-nu= [1000];
+nu= 10;
 beta = -1;
 
 %% testing/cv part

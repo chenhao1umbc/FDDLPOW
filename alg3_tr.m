@@ -27,26 +27,24 @@ end
 %% training dictionary
 % load settings
 K = 25;
-lbmd = 0.001;
-mu=0.1;
-Q=20;
+lbmd = 0.1;
+mu=0.001;
+Q=10;
 nu= 10 ;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % from table one we know that there are combinationes accuracy is above 0.99
 % one is K = 100, lambda = 1e-4, mu = 1e-3, nu = 0.01
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% beta = 1e6; % or 0.14
-beta = 1;
+beta = [1e-3, 1e-2, 0.1, 1, 10]
 
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
 tic
 for indb = 1: length(beta)
 % for table 3 algorithm
-
     [opts] = loadoptions(K,lbmd,mu,Q,nu,beta(indb),SNR_INF,f);
-%     if exist(opts.Dict3nm, 'file') continue; end
+    if exist(opts.Dict3nm, 'file') continue; end
     disp(opts.Dict3nm)
     Dict = FDDLOW_table3(Database.tr_data,opts);
     toc

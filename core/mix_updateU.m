@@ -7,9 +7,12 @@ function U = mix_updateU(W, Z, H3)
 % output is U, the orthogonal constrain
 
 Y = W'*Z*H3;        
-[~,S,V] = svd(Y);
-D = S'*S;
-U = Y*V*diag(1./sqrt(diag(D)))*V';
-
+[u,s,v] = svd(Y);
+if s(end) ==0
+    U = u*eye(size(s))*v';
+else
+    D = s'*s;
+    U = Y*v*diag(1./sqrt(diag(D)))*v';
+end
     
 end

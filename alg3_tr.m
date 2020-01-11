@@ -36,7 +36,7 @@ nu= 10 ;
 % one is K = 100, lambda = 1e-4, mu = 1e-3, nu = 0.01
 % another is K = 100, lambda = 1e-3, mu = 0.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-beta = [1e-3, 1e-2, 0.1, 1, 10]
+beta = [1e-3, 1e-2, 0.1, 1, 10];
 
 for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);

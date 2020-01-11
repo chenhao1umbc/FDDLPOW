@@ -21,10 +21,10 @@ else
 end
 if mixture_n < 3  pctrl.if2weak = 0; end
 K = 25;
-lbmd = 0.001;
-mu=0.1 ;
-Q= 20;
-nu= 10;
+lbmd = 0.1;
+mu=0.001;
+Q=10;
+nu= 10 ;
 beta = -1;
 
 %% testing/cv part
@@ -63,7 +63,7 @@ for f = 1000:1004
     end
 end
 end
-save('alg2_0db_L2.mat','zf', 'mf','nu','beta')
+% save('alg2_0db_L2.mat','zf', 'mf','nu','beta')
 nf = 5;
 sum(zf.acc,3)/nf
 sum(mf.acc,3)/nf

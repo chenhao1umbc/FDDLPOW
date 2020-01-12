@@ -17,9 +17,8 @@ Q= 10; % 10 for alg 1
 x = [];
 y = [];
 
-
 for f = 1000:1004
-[opts]=loadoptions(K,lambda1,mu,Q,nu,beta,2000, f);
+[opts]=loadoptions(K,lambda,mu,Q,nu,beta,2000, f);
 load(opts.Dictnm)
 X = (Dict.W'*Dict.Z)'; % projected
 x = [x; X];
@@ -51,52 +50,68 @@ save(['NN_dict1.mat'], 'net', 'tr');
 
 %% train LR_NN alg 2
 K = 25;
-lbmd = 0.01;
-mu=0.1;
+lbmd = 0.1;
+mu=0.001;
 nu= 10;
 beta = 1;
 Q= 20; % 10 for alg 1
 x = [];
+y = [];
 for f = 1000:1004
-[opts]=loadoptions(K,lambda1,mu,Q,nu,beta,2000, f);
+[opts]=loadoptions(K,lbmd,mu,Q,nu,beta,2000, f);
 load(opts.Dict2nm)
 X = (Dict.W'*Dict.Z)'; % projected
 x = [x; X];
+y = [y; Y];
 end
 warning off
 B = mnrfit(x, y);
-save(['B_X_Y_dict2.mat'], 'B', 'x', 'y');
+save('B_X_Y_dict2.mat', 'B', 'x', 'y');
 
 % train Neural Networks
+trlb = [];
+lb = sum(kron(diag(1:6), eye(2400)));
+for i = 1:5
+    trlb = [trlb, lb];
+end
 inp = x';
 hiddenLayerSize = 10;
 net = patternnet(hiddenLayerSize);
 [net,tr] = train(net,inp,trlb);
-save(['NN_dict2.mat'], 'net', 'tr');
+save('NN_dict2.mat', 'net', 'tr');
 
 
 %% train LR_NN alg 3
-lbmd = 0.01;
-mu=0.1;
+K = 25;
+lbmd = 0.1;
+mu=0.001;
 nu= 10;
 beta = 1;
 Q= 20; % 10 for alg 1
 x = [];
+y = [];
 for f = 1000:1004
-[opts]=loadoptions(K,lambda1,mu,Q,nu,beta,2000, f);
+[opts]=loadoptions(K,lbmd,mu,Q,nu,beta,2000, f);
 load(opts.Dict3nm)
 X = (Dict.W'*Dict.Z)'; % projected
 x = [x; X];
+y = [y; Y];
 end
 warning off
 B = mnrfit(x, y);
-save(['B_X_Y_dict3.mat'], 'B', 'x', 'y');
+save('B_X_Y_dict3.mat', 'B', 'x', 'y');
 
 % train Neural Networks
+trlb = [];
+lb = sum(kron(diag(1:6), eye(2400)));
+for i = 1:5
+    trlb = [trlb, lb];
+end
 inp = x';
 hiddenLayerSize = 10;
 net = patternnet(hiddenLayerSize);
 [net,tr] = train(net,inp,trlb);
-save(['NN_dict2.mat'], 'net', 'tr');
+save('NN_dict3.mat', 'net', 'tr');
+
 
 

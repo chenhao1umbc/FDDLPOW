@@ -27,7 +27,7 @@ if fileexistance==2
     W = Dict.W;
     U = mix_updateU(W, Z, H3);
     Delta = ones(1, opt.C);       
-    opt.max_iter=80;% because of good initialization
+%     opt.max_iter=80;% because of good initialization
     Loss=zeros(1,opt.max_iter); 
     'good init '
 else    

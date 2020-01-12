@@ -8,7 +8,8 @@ function U = mix_updateU_t2(W_in, M)
 W = W_in;
 Y = W'*M;        
 [u,s,v] = svd(Y);
-if s(end)== 0
+ds = diag(s);
+if ds(end) ==0
     U = u*eye(size(s))*v';
 else
     D = s'*s;

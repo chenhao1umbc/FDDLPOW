@@ -13,7 +13,7 @@ SNR_INF = 2000;
 % load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3
 
-pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
+pctrl.db = 20; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
     pctrl.equal = 1;
 else
@@ -32,7 +32,7 @@ beta = -1;
 zf.acc = zeros(length(nu),7,5); mf.acc = zf.acc;
 zf.acc_weak = zf.acc; mf.acc_weak = zf.acc;
 
-lamb_range = lbmd*5.^(-3:3);
+lamb_range = 0.05; %lbmd*5.^(-3:3);
 
 for indn = 1:length(nu)
 for f = 1000:1004    

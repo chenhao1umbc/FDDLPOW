@@ -16,6 +16,9 @@ Cn = size(Dict.Z, 2)/C; % how many sampless per classes/combinations
 temp = aoos(Dict.Z(:,1:end), fln, size(Dict.Z, 2));
 % temp = Dict.Z(:,1:f:1200*n);
 W = Dict.W;
+Cn = size(Dict.Z, 2)/C; % how many sampless per classes/combinations
+temp = aoos(Dict.Z(:,1:end), fln, size(Dict.Z, 2));
+% temp = Dict.Z(:,1:f:1200*n);
 X0 = W'*temp;
 cnt = Cn/fln; % feature length is 4
 xbar = (W'*Dict.Z-mean(W'*Dict.Z,2));
@@ -24,11 +27,9 @@ Vq= v(:,1:3);
 
 PCA =Vq'*X0;
 symbolpool = {'*', 'o', 'h', 's', 'd', '^', 'p', '.', '+', 'x', '>'};
-c = combnk(1:C,mixture_n);
-% nn = size(Z,2)/size(c,1)/mixture_n; % how many samples per combo
-axislimits = [-1 1 -1 1 -1 1];
 jjmax = 1;
-for jj = 1:1
+axislimits = [-1 1 -1 1 -1 1];
+for jj = 1:jjmax
     figure
     plot3(PCA(1,1:cnt),PCA(2,1:cnt),PCA(3,1:cnt), symbolpool{1})
     grid on
@@ -37,19 +38,9 @@ for jj = 1:1
     for ii = 2:C        
         plot3(PCA(1,1+(ii-1)*cnt:ii*cnt),PCA(2,1+(ii-1)*cnt:ii*cnt),PCA(3,1+(ii-1)*cnt:ii*cnt),symbolpool{ii})       
     end    
-%     axis(axislimits)
-    %  plot the testing data
-%     if plottesting == 1
-%         temp = aoos(Z(:,1+ nn*(jj-1):nn*jj), fln, nn);
-%         X = Vq'*W'*temp;    
-%         plot3(X(1,1:end),X(2,1:end),X(3,1:end),'x')
-%     end
-    legend ('Chainsaw','Clock tick','Cracking fire','Crying baby',...
-        'Dog','Helicopter','Rain','Rooster','Sea waves','Sneezing', num2str(c(jj,:)))    
-    % savefig(h,[num2str(c(jj,:)),'.fig'])    
+    legend ('BLE','Bluetooth','FHSS1','FHSS2',...
+        'Wifi1','Wifi2')
     set(gcf,'color','w');
 end
-% close all
-%}
 
 

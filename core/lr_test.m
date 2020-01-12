@@ -9,7 +9,7 @@ opts.ln_test = N/featln;
 opts.equal = pctrl.equal;
 
 W = Dict.W;
-wz = (W'*aoos(Z, featln, N));
+wz = W'*Z; %(W'*aoos(Z, featln, N));
 pre_prob = mnrval(B, wz');
 [~,labels_pre] = sort(pre_prob, 2, 'descend');
 labels_pre = labels_pre';

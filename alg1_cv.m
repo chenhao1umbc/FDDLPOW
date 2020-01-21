@@ -24,12 +24,12 @@ lbmd = 0.01;
 mu=0.1;
 nu= 1e3;
 beta = 1;
-Q= 6;
+Q= 10;
 SNR = 20;
 
 % K = [50, 100, 150, 200, 250];
 % lbmd = [0.1, 0.01, 0.001, 1e-4];
-% mu = [1, 0.1, 0.01, 0.001 0.0001];
+mu = [ 0.01, 0.001 0.0001];
 % SNR = [2000, 20, 0, -5, -10, -20];
 % Q = [6 10 20 30 50 75 100];
 
@@ -37,7 +37,7 @@ SNR = 20;
 SNR = -20;
 r = zeros(length(mu),length(lbmd), length(Q), length(K), 5); % Q, lambda, folds 
 r_zf = r; r_mf = r;
-for f = 1000:1004
+for f = 1000:1009
 % Database = load_data_new(mixture_n, SNR, pctrl, f);
 
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);

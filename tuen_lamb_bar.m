@@ -10,7 +10,7 @@ addpath(genpath('.././FDDLPOW'))
 
 addpath(genpath('D:\Stored_Data\data'))
 SNR_INF = 2000;
-cvortest = 0;
+cvortest = 1;  % 1 means crossvalidation data
 
 %% testing part
 %% 
@@ -27,32 +27,41 @@ for ind_snr = 1:length(SNR)
 %     db.test_data = awgn(db.test_data, SNR(ind_snr), 'measured');
 db = load_data_new(mixture_n, SNR(ind_snr), pctrl, 1000);   
 for f = 1000:1004
-for alg = 1:3
+for alg = 2:3
     
-    if alg == 1 load(['dict1_k25_lmbd0.01_mu0.1_Q10_rng',num2str(f),'.mat']);disp(opts.Dictnm); end
+%     if alg == 1 load(['dict1_k25_lmbd0.01_mu0.1_Q10_rng',num2str(f),'.mat']);disp(opts.Dictnm); end
     if alg == 2 
         load(['dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng',num2str(f),'.mat']);
-        opts.lambda1 = 0.05;
+        opts.lambda1 = 0.2;
         disp(opts.Dict2nm); 
     end
     if alg == 3 
         load(['dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng',num2str(f),'.mat']);
-        opts.lambda1 = 0.02;
+        opts.lambda1 = 0.2;
         disp(opts.Dict3nm); end
          
     % run prep_ZF 
     Z = sparsecoding(Dict, db, opts, mixture_n, 0);
     Z = aoos(Z,db.featln, size(Z, 2));
-    
+    run calc_M
     Xtestorcv = Dict.W'*Z;
     Xtr = Dict.W'*Dict.Z;%aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
     % KNN classifier
-    acc_knn = myknn(Xtr, Xtestorcv, db, 0); % k = 5 ;
-    r_knn(alg, ind_snr, f-999) = acc_knn;   
+%     acc_knn = myknn(Xtr, Xtestorcv, db, 0); % k = 5 ;
+
+
+    H = W'*M;
+    r_zeroforcing = pinv(H)*W'*Z;
+    [~, labels_pre] = sort(r_zeroforcing, 1, 'descend');
+    cvtlabel = aoos(db.test_label,db.featln,size(db.test_label, 2));
+    a = labels_pre(1,:) - cvtlabel(1,:);
+    acc = length(a(a ==0))/length(a);
+    
+    r_knn(alg, ind_snr, f-999) = acc;   
 end
 end
 end
-save('New_test_L=1.mat','r_knn');
+save('alg23_test_L=1.mat','r_knn');
 plot(mean(r_knn,3)', '-x')
 
 

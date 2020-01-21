@@ -13,42 +13,48 @@ SNR_INF = 2000;
 cvortest = 0;
 
 %% testing part
-% load settings
+%% 
+mixture_n = 1; % mixture_n classes mixture, = 1,2,3
+pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
+pctrl.if2weak = 0; % if 2 weak components in mixture of 3
+if pctrl.db == 0     pctrl.equal = 1; else    pctrl.equal = 0; end
+Database = load_data_new(mixture_n, SNR_INF, pctrl, 1000);   
 
-% %% 
-% mixture_n = 1; % mixture_n classes mixture, = 1,2,3
-% pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
-% pctrl.if2weak = 0; % if 2 weak components in mixture of 3
-% if pctrl.db == 0     pctrl.equal = 1; else    pctrl.equal = 0; end
-% Database = load_data_new(mixture_n, SNR_INF, pctrl, 1000);   
-% 
-% r_knn = zeros(3,5,5); % 3 algs; L=1,2,3; 5 dynamic ratio; 5 folds
-% SNR = [20, 0, -10, -20, -30];
-% for ind_snr = 1:length(SNR)
+r_knn = zeros(3,5,5); % 3 algs; L=1,2,3; 5 dynamic ratio; 5 folds
+SNR = [20, 0, -10, -20, -30];
+for ind_snr = 1:length(SNR)
 %     db = Database;
 %     db.test_data = awgn(db.test_data, SNR(ind_snr), 'measured');
-%     
-% for f = 1000:1004
-% for alg = 1:3
-%     
-%     if alg == 1 load(['dict1_k25_lmbd0.01_mu0.1_Q10_rng',num2str(f),'.mat']);disp(opts.Dictnm); end
-%     if alg == 2 load(['dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng',num2str(f),'.mat']);disp(opts.Dict2nm); end
-%     if alg == 3 load(['dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng',num2str(f),'.mat']);disp(opts.Dict3nm); end
-%          
-%     % run prep_ZF 
-%     Z = sparsecoding(Dict, db, opts, mixture_n, 0);
-%     Z = aoos(Z,db.featln, size(Z, 2));
-%     
-%     Xtestorcv = Dict.W'*Z;
-%     Xtr = Dict.W'*Dict.Z;%aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
-%     % KNN classifier
-%     acc_knn = myknn(Xtr, Xtestorcv, db, 0); % k = 5 ;
-%     r_knn(alg, ind_snr, f-999) = acc_knn;   
-% end
-% end
-% end
-% save('test_L=1.mat','r_knn');
-% plot(mean(r_knn,3)', '-x')
+db = load_data_new(mixture_n, SNR(ind_snr), pctrl, 1000); 
+    
+for f = 1000:1004
+for alg = 1:3
+    
+    if alg == 1 load(['dict1_k25_lmbd0.01_mu0.1_Q10_rng',num2str(f),'.mat']);disp(opts.Dictnm); end
+    if alg == 2 
+        load(['dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng',num2str(f),'.mat']);
+        opts.lambda1 = 0.2;
+        disp(opts.Dict2nm); 
+    end
+    if alg == 3 
+        load(['dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng',num2str(f),'.mat']);
+        opts.lambda1 = 0.2;
+        disp(opts.Dict3nm); end
+         
+    % run prep_ZF 
+    Z = sparsecoding(Dict, db, opts, mixture_n, 0);
+    Z = aoos(Z,db.featln, size(Z, 2));
+    
+    Xtestorcv = Dict.W'*Z;
+    Xtr = Dict.W'*Dict.Z;%aoos(Dict.Z,Database.featln, size(Dict.Z, 2));
+    % KNN classifier
+    acc_knn = myknn(Xtr, Xtestorcv, db, 0); % k = 5 ;
+    r_knn(alg, ind_snr, f-999) = acc_knn;   
+end
+end
+end
+save('test_L=1.mat','r_knn');
+plot(mean(r_knn,3)', '-x')
 
 
 

@@ -14,6 +14,10 @@ pre_prob = mnrval(B, wz');
 [~,labels_pre] = sort(pre_prob, 2, 'descend');
 labels_pre = labels_pre';
 
-[acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
+if pctrl.if2weak == 0
+    [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts);
+else
+    [acc_weak, acc_weak_av, acc_all] = calc_labels2w(labels_pre, opts);
+end
 
 end % end of the function file

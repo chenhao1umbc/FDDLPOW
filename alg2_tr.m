@@ -28,10 +28,10 @@ if mixture_n < 3  pctrl.if2weak = 0; end
 %% training dictionary
 % load settings
 K = 25;
-lbmd = 0.001;
-mu=0.1;
+lbmd = 0.1;
+mu=0.001;
 Q= 20;
-nu= 1;
+nu= 10;
 beta = -1;
 
 

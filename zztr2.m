@@ -21,23 +21,29 @@ else
 end
 if mixture_n < 3  pctrl.if2weak = 0; end
 K = 25;
-lbmd = 0.1;
-mu=0.001;
-Q=20;
-nu= 10 ;
+lbmd = [0.1 0.01];
+mu=[1 0.1 0.01 1e-3 1e-4] ;
+Q= [6 10 20 25];
+nu= [1e-3 1e-2 0.1 1 10 100];
 beta = -1;
 
 %% testing/cv part
-[Database]=load_data_new(2, SNR_INF, pctrl, 1000);
-zf.acc = zeros(length(nu),7,5); mf.acc = zf.acc;
-zf.acc_weak = zf.acc; mf.acc_weak = zf.acc;
 
-lamb_range = 0.05; %lbmd*5.^(-3:3);
+zf.acc = zeros(length(mu), 7, length(nu),length(lbmd), length(Q),5); 
+mf.acc = zf.acc; zf.acc_weak = zf.acc; mf.acc_weak = zf.acc;
+for f = 1000:1004 
+[Database]=load_data_new(1, 20, pctrl, f);
+% Database.cv_data = awgn(Database.cv_data, -20, 'measured');
 
+for indll = 1: length(lbmd)
+    
+lamb_range = lbmd(indll)*5.^(-3:3);
+for indm = 1:length(mu)
+for indq = 1:length(Q)
 for indn = 1:length(nu)
-for f = 1000:1004    
+   
     % run doresult
-    [opts]=loadoptions(K,lbmd,mu,Q,nu(indn),beta, SNR_INF, f);
+    [opts]=loadoptions(K,lbmd(indll),mu(indm),Q(indq),nu(indn),beta, SNR_INF, f);
     if exist(opts.Dict2nm, 'file') load(opts.Dict2nm,'Dict','opts'), else continue; end
     disp(opts.Dict2nm)
     for indl = 1:length(lamb_range)
@@ -57,13 +63,17 @@ for f = 1000:1004
     [~, labels_pre_mf] = sort(r_matched, 1, 'descend');
     
     % calculate accuracy
-    [~, zf.acc_weak(indl, indn, f-999), zf.acc(indl, indn, f-999)] = calc_labels(labels_pre, opts);
-    [~, mf.acc_weak(indl, indn, f-999), mf.acc(indl, indn, f-999)] = calc_labels(labels_pre_mf, opts);
-   
+    [~, zf.acc_weak(indm, indl, indn, indll, indq, f-999), zf.acc(indm, indl, indn, indll, indq, f-999)] = calc_labels(labels_pre, opts);
+    [~, mf.acc_weak(indm, indl, indn, indll, indq, f-999), mf.acc(indm, indl, indn, indll, indq, f-999)] = calc_labels(labels_pre_mf, opts);
+
     end
 end
 end
-% save('alg2_0db_L2.mat','zf', 'mf','nu','beta')
+save('alg2_20db_L1.mat','zf', 'mf','nu','beta','Q','lbmd')
+end
+end
+end
+save('alg2_20db_L1.mat','zf', 'mf','nu','beta','Q','lbmd')
 nf = 5;
 sum(zf.acc,3)/nf
 sum(mf.acc,3)/nf

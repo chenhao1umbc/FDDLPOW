@@ -1,0 +1,387 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2019 The MathWorks, Inc.
+              R2019b Update 3 (9.7.0.1261785) 64-bit (glnxa64)
+                             November 27, 2019
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1005.mat
+Elapsed time is 301.676898 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1006.mat
+Elapsed time is 293.757074 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1007.mat
+Elapsed time is 312.119452 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1008.mat
+Elapsed time is 316.743769 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1009.mat
+Elapsed time is 316.831242 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1010.mat
+Elapsed time is 314.482658 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1011.mat
+Elapsed time is 316.233679 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1012.mat
+Elapsed time is 318.660656 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1013.mat
+Elapsed time is 320.267797 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1014.mat
+Elapsed time is 319.841057 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1015.mat
+Elapsed time is 370.593549 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1016.mat
+Elapsed time is 343.715211 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1017.mat
+Elapsed time is 313.403628 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1018.mat
+Elapsed time is 316.523187 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1019.mat
+Elapsed time is 312.619080 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1020.mat
+Elapsed time is 400.692345 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1021.mat
+Elapsed time is 371.097778 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1022.mat
+Elapsed time is 321.565692 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1023.mat
+Elapsed time is 325.437836 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1024.mat
+Elapsed time is 321.905271 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1025.mat
+Elapsed time is 363.644592 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1026.mat
+Elapsed time is 388.178242 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1027.mat
+Elapsed time is 325.051814 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1028.mat
+Elapsed time is 392.052301 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1029.mat
+Elapsed time is 357.048562 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1030.mat
+Elapsed time is 322.463344 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1031.mat
+Elapsed time is 322.944448 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1032.mat
+Elapsed time is 333.810439 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1033.mat
+Elapsed time is 323.085489 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1034.mat
+Elapsed time is 367.620807 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1035.mat
+Elapsed time is 336.056093 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1036.mat
+Elapsed time is 323.109725 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1037.mat
+Elapsed time is 321.645670 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1038.mat
+Elapsed time is 322.684562 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1039.mat
+Elapsed time is 321.631379 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1040.mat
+Elapsed time is 407.597400 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1041.mat
+Elapsed time is 327.160563 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1042.mat
+Elapsed time is 407.357001 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1043.mat
+Elapsed time is 391.778033 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1044.mat
+Elapsed time is 407.216993 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1045.mat
+Elapsed time is 324.449231 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1046.mat
+Elapsed time is 408.515371 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1047.mat
+Elapsed time is 341.233500 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1048.mat
+Elapsed time is 322.576053 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1049.mat
+Elapsed time is 322.462158 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1050.mat
+Elapsed time is 323.918085 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1051.mat
+Elapsed time is 408.855341 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1052.mat
+Elapsed time is 322.715327 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1053.mat
+Elapsed time is 321.219540 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1054.mat
+Elapsed time is 322.946632 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1055.mat
+Elapsed time is 324.078238 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1056.mat
+Elapsed time is 321.281873 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1057.mat
+Elapsed time is 408.181549 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1058.mat
+Elapsed time is 405.945443 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1059.mat
+Elapsed time is 320.884297 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1060.mat
+Elapsed time is 380.123650 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1061.mat
+Elapsed time is 408.131648 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1062.mat
+Elapsed time is 319.962136 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1063.mat
+Elapsed time is 324.185957 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1064.mat
+Elapsed time is 323.070115 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1065.mat
+Elapsed time is 354.233063 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1066.mat
+Elapsed time is 322.281466 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1067.mat
+Elapsed time is 408.876059 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1068.mat
+Elapsed time is 319.258733 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1069.mat
+Elapsed time is 322.462877 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1070.mat
+Elapsed time is 320.883768 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1071.mat
+Elapsed time is 382.582082 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1072.mat
+Elapsed time is 323.411095 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1073.mat
+Elapsed time is 322.865049 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1074.mat
+Elapsed time is 322.740525 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1075.mat
+Elapsed time is 321.962384 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1076.mat
+Elapsed time is 324.633146 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1077.mat
+Elapsed time is 322.157972 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1078.mat
+Elapsed time is 320.009339 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1079.mat
+Elapsed time is 405.840331 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1080.mat
+Elapsed time is 322.163467 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1081.mat
+Elapsed time is 342.863633 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1082.mat
+Elapsed time is 407.035543 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1083.mat
+Elapsed time is 380.856767 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1084.mat
+Elapsed time is 322.797824 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1085.mat
+Elapsed time is 322.381043 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1086.mat
+Elapsed time is 324.350235 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1087.mat
+Elapsed time is 322.065834 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1088.mat
+Elapsed time is 354.684167 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1089.mat
+Elapsed time is 321.659764 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1090.mat
+Elapsed time is 405.412039 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1091.mat
+Elapsed time is 319.680985 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1092.mat
+Elapsed time is 323.221456 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1093.mat
+Elapsed time is 320.195447 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1094.mat
+Elapsed time is 381.925862 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1095.mat
+Elapsed time is 321.234800 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1096.mat
+Elapsed time is 368.486481 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1097.mat
+Elapsed time is 319.489326 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1098.mat
+Elapsed time is 321.977516 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1099.mat
+Elapsed time is 321.912422 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1100.mat
+Elapsed time is 411.638345 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1101.mat
+Elapsed time is 321.283508 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1102.mat
+Elapsed time is 321.462097 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1103.mat
+Elapsed time is 321.960857 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1104.mat
+Elapsed time is 351.751255 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1105.mat
+Elapsed time is 332.283913 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1106.mat
+Elapsed time is 407.471027 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1107.mat
+Elapsed time is 403.295300 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1108.mat
+Elapsed time is 322.112906 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1109.mat
+Elapsed time is 383.751590 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1110.mat
+Elapsed time is 407.412476 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1111.mat
+Elapsed time is 324.160692 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1112.mat
+Elapsed time is 319.830894 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1113.mat
+Elapsed time is 321.392929 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1114.mat
+Elapsed time is 372.929304 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1115.mat
+Elapsed time is 320.924102 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1116.mat
+Elapsed time is 319.455996 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1117.mat
+Elapsed time is 321.937844 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1118.mat
+Elapsed time is 320.974310 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1119.mat
+Elapsed time is 322.010821 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1120.mat
+Elapsed time is 322.217388 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1121.mat
+Elapsed time is 322.993470 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1122.mat
+Elapsed time is 405.752820 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1123.mat
+Elapsed time is 323.050306 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1124.mat
+Elapsed time is 322.561046 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1125.mat
+Elapsed time is 323.191570 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1126.mat
+Elapsed time is 323.911188 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1127.mat
+Elapsed time is 322.449304 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1128.mat
+Elapsed time is 337.504845 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1129.mat
+Elapsed time is 321.189474 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1130.mat
+Elapsed time is 383.517155 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1131.mat
+Elapsed time is 367.712092 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1132.mat
+Elapsed time is 321.975018 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1133.mat
+Elapsed time is 388.752183 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1134.mat
+Elapsed time is 405.182054 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1135.mat
+Elapsed time is 378.686052 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1136.mat
+Elapsed time is 323.156798 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1137.mat
+Elapsed time is 322.023398 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1138.mat
+Elapsed time is 323.047220 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1139.mat
+Elapsed time is 319.637747 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1140.mat
+Elapsed time is 407.786575 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1141.mat
+Elapsed time is 399.358312 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1142.mat
+Elapsed time is 322.969760 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1143.mat
+Elapsed time is 321.029922 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1144.mat
+Elapsed time is 407.029359 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1145.mat
+Elapsed time is 322.347615 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1146.mat
+Elapsed time is 322.805719 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1147.mat
+Elapsed time is 321.795159 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1148.mat
+Elapsed time is 406.141104 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1149.mat
+Elapsed time is 347.679796 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1150.mat
+Elapsed time is 320.480015 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1151.mat
+Elapsed time is 320.362416 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1152.mat
+Elapsed time is 405.031147 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1153.mat
+Elapsed time is 406.209720 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1154.mat
+Elapsed time is 322.669792 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1155.mat
+Elapsed time is 406.064153 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1156.mat
+Elapsed time is 405.086804 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1157.mat
+Elapsed time is 320.647115 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1158.mat
+Elapsed time is 323.083206 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1159.mat
+Elapsed time is 322.604363 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1160.mat
+Elapsed time is 322.594295 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1161.mat
+Elapsed time is 322.857765 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1162.mat
+Elapsed time is 321.511206 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1163.mat
+Elapsed time is 341.969068 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1164.mat
+Elapsed time is 320.999959 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1165.mat
+Elapsed time is 322.034251 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1166.mat
+Elapsed time is 323.474557 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1167.mat
+Elapsed time is 372.064732 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1168.mat
+Elapsed time is 322.271104 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1169.mat
+Elapsed time is 321.177198 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1170.mat
+Elapsed time is 321.690807 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1171.mat
+Elapsed time is 320.541243 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1172.mat
+Elapsed time is 322.443278 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1173.mat
+Elapsed time is 400.043768 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1174.mat
+Elapsed time is 325.834836 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1175.mat
+Elapsed time is 376.645529 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1176.mat
+Elapsed time is 322.071738 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1177.mat
+Elapsed time is 406.034418 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1178.mat
+Elapsed time is 405.670952 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1179.mat
+Elapsed time is 405.156844 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1180.mat
+Elapsed time is 407.713835 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1181.mat
+Elapsed time is 404.045288 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1182.mat
+Elapsed time is 321.089689 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1183.mat
+Elapsed time is 322.303285 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1184.mat
+Elapsed time is 324.256102 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1185.mat
+Elapsed time is 321.328069 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1186.mat
+Elapsed time is 320.926317 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1187.mat
+Elapsed time is 320.949814 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1188.mat
+Elapsed time is 331.200180 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1189.mat
+Elapsed time is 321.646896 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1190.mat
+Elapsed time is 320.032931 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1191.mat
+Elapsed time is 344.127322 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1192.mat
+Elapsed time is 323.694512 seconds.
+dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng1193.mat

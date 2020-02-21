@@ -41,16 +41,16 @@ optZ.showprogress = false; % show inside of fista
 optZ.showconverge = false; % show updateZ
 optZ.showcost= true*optZ.showprogress;
 
-% M = getM_t2(opt.K, opt.C, Nc, Z); %debug
-% loss_detail = zeros(4, 10); %debug
-% r= Loss;f = r;g = f;s = r;
+M = getM_t2(opt.K, opt.C, Nc, Z); %debug
+loss_detail = zeros(4, 10); %debug
+r= Loss;f = r;g = f;s = r;
 
 % main loop
 for ii = 1:opt.max_iter 
 %     ii
     % update D, with U W and Z fixed
     D = DDLMD_updateD(X,optD,D,Z);   
-%     loss_detail(1, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
+    loss_detail(1, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
     
     % update Z, with D Uand W fixed
     while 1
@@ -67,15 +67,15 @@ for ii = 1:opt.max_iter
         end
     end
     M = getM_t2(opt.K, opt.C, Nc, Z); % get M, H1, and H2 for updating W and U.
-%     loss_detail(2, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
+    loss_detail(2, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
     
     % update U, with D and Z fixed.
     U = mix_updateU_t2(W, M);
-%     loss_detail(3, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
+    loss_detail(3, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
     
     % update W, with D U and Z fixed
     W = mix_updateW_t2(opt, S, M, U, Z); 
-%     loss_detail(4, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
+    loss_detail(4, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
     
     % show loss function value
     if opt.losscalc
@@ -88,8 +88,8 @@ for ii = 1:opt.max_iter
 %         g(ii) = gWZ; f(ii) = fWZ; s(ii) = sZ; r(ii) = fid;
         Loss(ii) = l ;     % DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U)
         Dict.Loss = Loss;
-        if ii > 80            
-        if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 1e-4
+        if ii > 30            
+        if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 5e-5
             break;
         end
         end

@@ -12,18 +12,19 @@ function [D, Z, W, U, V, Delta, Loss, opt]=initdict_t3(X, H_bar_i, H3, opt)
 % The output is Dict, a struct with D,W,Z, Loss(the loss function value)
 
 [M_d, ~]=size(X); % M is the data dimension, N is the # of samples
-rng(opt.rng)
+% rng(opt.rng)
 
 % check checking the existing Dictionary
 % nm = ['FDDLOW_mix','_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1),...
 %     '_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'_nu',num2str(opt.nu),...
 %     '_beta',num2str(-1),'.mat' ];
 nm = opt.Dict2nm;
+% nm = 'dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng1000.mat';
 fileexistance=exist(nm);
 if fileexistance==2
     load(nm)
-    D = Dict.D;
-    Z = Dict.Z;
+    D = awgn(Dict.D, 20, 'measured'); %Dict.D;
+    Z = awgn(Dict.Z, 20, 'measured'); %Dict.Z;
     W = Dict.W;
     U = mix_updateU(W, Z, H3);
     Delta = ones(1, opt.C);       

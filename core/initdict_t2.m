@@ -11,12 +11,13 @@ function [D,Z,W,U,Loss,opt]=initdict_t2(X,trlabels,opt)
 %                 opt.losscalc -if true then calculate loss fucntion
 % The output is Dict, a struct with D,W,Z, Loss(the loss function value)
 
-rng(opt.rng)
+% rng(opt.rng)
 
 % check checking the existing Dictionary
 % nm = ['esc_FDDLP',opt.dataset,'_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1)...
 %     ,'_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'.mat' ];
 fileexistance = exist(opt.Dictnm);
+% load(['dict1_k25_lmbd0.01_mu0.1_Q10_rng', num2str(opt.f), '.mat'])
 if fileexistance==2
     load(opt.Dictnm)
     D=Dict.D;
@@ -24,7 +25,7 @@ if fileexistance==2
     W=Dict.W;
     M = getM_t2(opt.K, opt.C, opt.Nc, Z);
     U = mix_updateU_t2(W, M);        
-    opt.max_iter= 100;% because of good initialization
+    opt.max_iter= 150;% because of good initialization
     Loss=zeros(1,opt.max_iter);
     disp('good from  initdict_t2')
 else    

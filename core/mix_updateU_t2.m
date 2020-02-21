@@ -9,7 +9,7 @@ W = W_in;
 Y = W'*M;        
 [u,s,v] = svd(Y);
 ds = diag(s);
-if ds(end) ==0
+if ds(end) < 1e-10 %ds(end) ==0
     U = u*eye(size(s))*v';
 else
     D = s'*s;

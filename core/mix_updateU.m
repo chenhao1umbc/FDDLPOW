@@ -9,11 +9,11 @@ function U = mix_updateU(W, Z, H3)
 Y = W'*Z*H3;        
 [u,s,v] = svd(Y);
 ds = diag(s);
-if ds(end) ==0
+% if ds(end) ==0
     U = u*eye(size(s))*v';
-else
-    D = s'*s;
-    U = Y*v*diag(1./sqrt(diag(D)))*v';
-end
+% else
+%     D = s'*s;
+%     U = Y*v*diag(1./sqrt(diag(D)))*v';
+% end
     
 end

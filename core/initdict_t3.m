@@ -18,6 +18,7 @@ function [D, Z, W, U, V, Delta, Loss, opt]=initdict_t3(X, H_bar_i, H3, opt)
 % nm = ['FDDLOW_mix','_k',num2str(opt.K),'_lmbd',num2str(opt.lambda1),...
 %     '_mu',num2str(opt.mu),'_Q',num2str(opt.Q),'_nu',num2str(opt.nu),...
 %     '_beta',num2str(-1),'.mat' ];
+
 nm = opt.Dict2nm;
 % nm = 'dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng1000.mat';
 fileexistance=exist(nm);
@@ -28,7 +29,7 @@ if fileexistance==2
     W = Dict.W;
     U = mix_updateU(W, Z, H3);
     Delta = ones(1, opt.C);       
-%     opt.max_iter=80;% because of good initialization
+%     opt.max_iter=150;% because of good initialization
     Loss=zeros(1,opt.max_iter); 
     'good init '
 else    

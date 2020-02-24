@@ -39,7 +39,7 @@ beta = 1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % beta = [1e-4,1e-3, 1e-2, 0.1, 1, 10];
 
-for f = 1005:1009
+for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
 tic
 for indb = 1: length(beta)

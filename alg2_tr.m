@@ -51,7 +51,7 @@ for indm = 1: length(mu)
 for indn = 1:length(nu)
     % for table 1 algorithm
         [opts] = loadoptions(K,lbmd(indl),mu(indm),Q(indq),nu(indn),beta,SNR_INF,f);
-%         if exist(opts.Dict2nm, 'file') continue; end
+        if exist(opts.Dict2nm, 'file') continue; end
         disp(opts.Dict2nm)
         opts.f = f;
         Dict = FDDLOW_table2(Database.tr_data,Database.tr_label,opts);

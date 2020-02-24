@@ -2,10 +2,7 @@
 % clc
 % close all 
 
-addpath(genpath('.././fddlow'))
-addpath(genpath('.././data'))
-addpath(genpath('.././FDDLPOW'))
-
+% load(['dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng',num2str(f),'.mat']);
 
 %% MDS / PCA
 % { 

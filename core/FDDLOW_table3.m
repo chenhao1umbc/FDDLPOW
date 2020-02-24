@@ -91,7 +91,7 @@ for ii = 1:opt.max_iter
     
     Loss(ii) = Loss_mix(X, H_bar_i, H3,S, opt,W,D,Z,U,V,Delta);
     Dict.Loss = Loss;
-    if ii > 150            
+    if ii > 120            
     if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 1e-4
         break;
     end

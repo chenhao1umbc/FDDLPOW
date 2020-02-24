@@ -27,6 +27,11 @@ Q=20;
 nu= 10 ;
 beta = -1;
 
+% lbmd = [0.1, 0.01, 0.001, 1e-4];
+% mu = [1 0.1 0.01, 0.001 0.0001];
+% SNR = [2000, 20, 0, -5, -10, -20];
+% Q = [6 10 20 25];
+
 %% testing/cv part
 [Database]=load_data_new(2, SNR_INF, pctrl, 1000);
 zf.acc = zeros(length(nu),7,5); mf.acc = zf.acc;

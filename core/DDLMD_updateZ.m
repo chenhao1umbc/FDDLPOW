@@ -25,7 +25,7 @@ N=length(trlabels);
 Nc=N/C;
 H1 = kron(eye(C),ones(Nc)/Nc);
 H2 = ones(N)/N;
-M = 2.1*eye(N) - 2*H1 + H2;;
+M = 2.1*eye(N) - 2*H1 + H2; % it can be calculated for each dataset ahead
 max_eig_m = 2.1; %max(eig(M));
 end
 

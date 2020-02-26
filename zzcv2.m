@@ -1,3 +1,4 @@
+% draft file for testing codes
 
 close all
 clear
@@ -130,8 +131,8 @@ for alg = 3
 end
 end   
 end
-save('3_0.015_test_L=2.mat','r_zf', 'r_zf_weak', 'r_mf', 'r_mf_weak', 'r_nn','r_nn_weak','r_lr','r_lr_weak');
-% figure;
+% save('3_0.015_test_L=2.mat','r_zf', 'r_zf_weak', 'r_mf', 'r_mf_weak', 'r_nn','r_nn_weak','r_lr','r_lr_weak');
+figure;
 
 % %% 
 % mixture_n = 3; 

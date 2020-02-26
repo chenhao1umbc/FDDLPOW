@@ -159,14 +159,14 @@ for alg = 1:3
         load(['dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng',num2str(f),'.mat']);
         load('B_X_Y_dict2.mat')
         load('NN_dict2.mat')
-        opts.lambda1 = 0.05;
+        opts.lambda1 = 0.035;
         disp(opts.Dict2nm); 
     end
     if alg == 3 
         load(['dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng',num2str(f),'.mat']);
         load('B_X_Y_dict3.mat')
         load('NN_dict3.mat')
-        opts.lambda1 = 0.025;
+        opts.lambda1 = 0.015;
         disp(opts.Dict3nm); 
     end
     
@@ -224,14 +224,14 @@ for alg = 1:3
         load(['dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng',num2str(f),'.mat']);
         load('B_X_Y_dict2.mat')
         load('NN_dict2.mat')
-        opts.lambda1 = 0.05;
+        opts.lambda1 = 0.035;
         disp(opts.Dict2nm); 
     end
     if alg == 3 
         load(['dict3_k25_lmbd0.1_mu0.001_Q20_nu10_beta1_rng',num2str(f),'.mat']);
         load('B_X_Y_dict3.mat')
         load('NN_dict3.mat')
-        opts.lambda1 = 0.025;
+        opts.lambda1 = 0.015;
         disp(opts.Dict3nm); 
     end
     

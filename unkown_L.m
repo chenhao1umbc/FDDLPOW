@@ -1,6 +1,9 @@
 
 clear
 clc
+addpath(genpath('.././fddlow'))
+addpath(genpath('.././data'))
+addpath(genpath('.././FDDLPOW'))
 
 dynamic_ratio = [0, 3, 6, 10, 20];  
 SNR_INF = 2000;

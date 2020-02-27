@@ -83,7 +83,8 @@ end
 L3 = [l3, l3, l3];
 
 %% calculate the acc, ROC and acc vs threhold
-
+lgd = {'Algorithm 1', 'Algorithm 2', 'Algorithm 3'};
+dr = 0.01: 0.01: 1;
 % plot acc
 % L = 2, zf, 0db
 res = zeros(3, 100);
@@ -98,8 +99,14 @@ for alg = 1:3
     end
 end
 figure(100)
-plot(res')
-legend
+set(gcf,'color','w')
+plot(dr,res(1,:), ':b',dr,res(2,:),'--r',dr, res(3,:),'-g','linewidth', 3, 'MarkerSize', 5);
+xlabel('Threshold')
+set(gca,'FontSize',14)
+set(gcf, 'Position',  [100, 100, 700, 600])
+ylabel('Classification accuracy')
+legend(lgd)
+title(' L = 2, ZF detector, equal power')
 
 % L = 2, zf, 20db
 res = zeros(3, 100);
@@ -113,24 +120,97 @@ for alg = 1:3
     end
 end
 figure(101)
-plot(res')
-legend
+set(gcf,'color','w')
+plot(dr,res(1,:), ':b',dr,res(2,:),'--r',dr, res(3,:),'-g','linewidth', 3, 'MarkerSize', 5);
+xlabel('Threshold')
+set(gca,'FontSize',14)
+set(gcf, 'Position',  [100, 100, 700, 600])
+ylabel('Classification accuracy')
+legend(lgd)
+title(' L = 2, ZF detector, 20 dB power difference')
 
-
-% plot ROC
+%
+% _________________________plot ROC_______________________________________%
+% 
+fl = L3(:);
+linewidth = 4;
+db = 2; % db =1 means 0dB, db=2, means 20dB
 % L = 3, zf,0db
+figure(11)
 for alg = 1:3
-r = ar_zf{2, 1, alg};
+r = ar_zf{3, db, alg};
+fr = r(:);
+[tpr, fpr, ~] = roc(fl(1:6000)', fr(1:6000)');
+if alg == 1 plot(fpr, tpr,':b', 'linewidth', linewidth); end
+if alg == 2 plot(fpr, tpr,'--r', 'linewidth', linewidth ); end
+if alg == 3 plot(fpr, tpr,'-g', 'linewidth', linewidth ); end
+hold on
 end
+set(gcf,'color','w')
+xlabel('False positive rate')
+set(gca,'FontSize',14)
+set(gcf, 'Position',  [100, 100, 700, 600])
+ylabel('True positive rate')
+legend(lgd)
+title(' L = 3, ZF detector, 20 dB power difference')
+
 
 % L = 3, mf,0db
+figure(12)
+for alg = 1:3
+r = ar_mf{3, db, alg};
+fr = r(:);
+[tpr, fpr, ~] = roc(fl(1:6000)', fr(1:6000)');
+if alg == 1 plot(fpr, tpr,':b', 'linewidth', linewidth); end
+if alg == 2 plot(fpr, tpr,'--r', 'linewidth', linewidth ); end
+if alg == 3 plot(fpr, tpr,'-g', 'linewidth', linewidth ); end
+hold on
+end
+set(gcf,'color','w')
+xlabel('False positive rate')
+set(gca,'FontSize',14)
+set(gcf, 'Position',  [100, 100, 700, 600])
+ylabel('True positive rate')
+legend(lgd)
+title(' L = 3, MF detector, 20 dB power difference')
 
 % L = 3, lr,0db
+figure(13)
+for alg = 1:3
+r = ar_lr{3, db, alg};
+fr = r(:);
+[tpr, fpr, ~] = roc(fl(1:6000)', fr(1:6000)');
+if alg == 1 plot(fpr, tpr,':b', 'linewidth', linewidth); end
+if alg == 2 plot(fpr, tpr,'--r', 'linewidth', linewidth ); end
+if alg == 3 plot(fpr, tpr,'-g', 'linewidth', linewidth ); end
+hold on
+end
+set(gcf,'color','w')
+xlabel('False positive rate')
+set(gca,'FontSize',14)
+set(gcf, 'Position',  [100, 100, 700, 600])
+ylabel('True positive rate')
+legend(lgd)
+title(' L = 3, LR classifier, 20 dB power difference')
 
 % L = 3, nn,0db
-
-
-
+figure(14)
+for alg = 1:3
+r = ar_nn{3, db, alg};
+fr = r(:);
+[tpr, fpr, ~] = roc(fl(1:6000)', fr(1:6000)');
+if alg == 1 plot(fpr, tpr,':b', 'linewidth', linewidth); end
+if alg == 2 plot(fpr, tpr,'--r', 'linewidth', linewidth ); end
+if alg == 3 plot(fpr, tpr,'-g', 'linewidth', linewidth ); end
+hold on
+end
+set(gcf,'color','w')
+xlabel('False positive rate')
+set(gca,'FontSize',14)
+set(gcf, 'Position',  [100, 100, 700, 600])
+ylabel('True positive rate')
+legend(lgd)
+title(' L = 3, NN classifier, 20 dB power difference')
 
 
 

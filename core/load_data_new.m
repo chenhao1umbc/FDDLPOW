@@ -1,4 +1,4 @@
-function [database]=load_data_new(N_c, SNR, pctrl, rseed)
+function [Database]=load_data_new(N_c, SNR, pctrl, rseed)
 
 %This function is made to load the newly generated sacttering output with
 %q[16, 0.05], n =2
@@ -94,18 +94,18 @@ if N_c ==1
 else
     run ldd4_q16005n2
 end
-database.SNR = SNR;
-database.N_c = N_c; % how many classes of signals mixed
-database.featln=featln;
-database.tr_data=tr_dat;
-database.tr_label=trls;
-database.cv_data=cv_dat;
-database.cv_label=cvls;
-database.test_data=tt_dat;
-database.test_label=ttls;
-database.cv_mixdata=cv_mixdat;
-database.cv_mixlabel=cvmixls;
-database.test_mixdata=tt_mixdat;
-database.test_mixlabel=ttmixls;
-database.cvln_mix =cvln_mix; % samples for training in logistis regression
+Database.SNR = SNR;
+Database.N_c = N_c; % how many classes of signals mixed
+Database.featln=featln;
+Database.tr_data=tr_dat;
+Database.tr_label=trls;
+Database.cv_data=cv_dat;
+Database.cv_label=cvls;
+Database.test_data=tt_dat;
+Database.test_label=ttls;
+Database.cv_mixdata=cv_mixdat;
+Database.cv_mixlabel=cvmixls;
+Database.test_mixdata=tt_mixdat;
+Database.test_mixlabel=ttmixls;
+Database.cvln_mix =cvln_mix; % samples for training in logistis regression
 end % end of the function file

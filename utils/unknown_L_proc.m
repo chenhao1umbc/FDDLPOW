@@ -4,7 +4,7 @@ clc
 addpath(genpath('../../fddlow'))
 addpath(genpath('../../data'))
 addpath(genpath('../../FDDLPOW'))
-load('L_unknown.mat')
+
 
 dynamic_ratio = [0, 3, 6, 10, 20];  
 SNR_INF = 2000;
@@ -12,36 +12,40 @@ cvortest = 0;
 e = 2.718281828;
 
 %% make zf, mf into probalility vectors
+res = cell(3, 2, 5, 3, 4); %3 by 2 by 5 by3 by mixture_n, [0, 20], f, alg, zf/mf...
+for alg = 1:3
+    load(['L_unknown_alg', num2str(1), '.mat'])
 for mixture_n = 1:3
 for indd = [1,5]   
-for f = 1000:1009
-for alg = 1:3
-    if alg == 1 && f<1005      
+for f = 1:5
+
+    if alg == 1    
         % ZF detector        
-        s = e.^r_zf{mixture_n, indd, f-999, alg};
-        r_zf{mixture_n, indd, f-999, alg} = s./sum(s,1);
+        s = e.^r_zf{mixture_n, indd, f};
+        r_zf{mixture_n, indd, f} = s./sum(s,1);
 
         % matched filter
-        s = e.^r_mf{mixture_n, indd, f-999, alg};
-        r_mf{mixture_n, indd, f-999, alg} = s./sum(s,1);
+        s = e.^r_mf{mixture_n, indd, f};
+        r_mf{mixture_n, indd, f} = s./sum(s,1);
+        res{mixture_n, }
     end    
     if alg == 2 && f<1005
         % ZF detector        
-        s = e.^r_zf{mixture_n, indd, f-999, alg};
-        r_zf{mixture_n, indd, f-999, alg} = s./sum(s,1);
+        s = e.^r_zf{mixture_n, indd, f};
+        r_zf{mixture_n, indd, f} = s./sum(s,1);
 
         % matched filter
-        s = e.^r_mf{mixture_n, indd, f-999, alg};
-        r_mf{mixture_n, indd, f-999, alg} = s./sum(s,1);
+        s = e.^r_mf{mixture_n, indd, f};
+        r_mf{mixture_n, indd, f} = s./sum(s,1);
     end    
     if alg == 3 && f>1004
         % ZF detector        
-        s = e.^r_zf{mixture_n, indd, f-999, alg};
-        r_zf{mixture_n, indd, f-999, alg} = s./sum(s,1);
+        s = e.^r_zf{mixture_n, indd, f};
+        r_zf{mixture_n, indd, f} = s./sum(s,1);
 
         % matched filter
-        s = e.^r_mf{mixture_n, indd, f-999, alg};
-        r_mf{mixture_n, indd, f-999, alg} = s./sum(s,1);
+        s = e.^r_mf{mixture_n, indd, f};
+        r_mf{mixture_n, indd, f} = s./sum(s,1);
     end
 end
 end

@@ -31,7 +31,7 @@ for alg = 1:3
         
         run calc_M
 %         Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest); % regular sparse coding
-        Z = sbrvm(Dict, database, mixture_n, cvortest);
+        Z = sbrvm(Dict, Database, mixture_n, cvortest);
         Z = aoos(Z, Database.featln, size(Z, 2));
         wtz = W'*Z; %(W'*aoos(Z, featln, N));
         H = W'*M;

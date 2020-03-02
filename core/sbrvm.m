@@ -1,20 +1,20 @@
-function Z = sbrvm(Dict, database, mixture_n, cvortest)
+function Z = sbrvm(Dict, Database, mixture_n, cvortest)
 % this function is to control which data set to use for sparscoding
 % cvortest = [1, 0] means do cv, not do test
 
 
 if cvortest == 1 
     if mixture_n == 1
-        data = database.cv_data;
+        data = Database.cv_data;
     else
-        data = database.cv_mixdata;
+        data = Database.cv_mixdata;
     end
     
 else % validation cases
     if mixture_n == 1
-        data = database.test_data;
+        data = Database.test_data;
     else
-        data = database.test_mixdata;
+        data = Database.test_mixdata;
     end
 end
 

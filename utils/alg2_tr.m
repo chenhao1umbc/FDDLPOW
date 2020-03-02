@@ -5,9 +5,9 @@ clear
 clc;
 tic
 
-addpath(genpath('.././fddlow'))
-addpath(genpath('.././data'))
-addpath(genpath('.././FDDLPOW'))
+addpath(genpath('../../fddlow'))
+addpath(genpath('../../data'))
+addpath(genpath('../../FDDLPOW'))
 % do traing or do crossvalidation
 do_training = 1;
 do_result = 1;

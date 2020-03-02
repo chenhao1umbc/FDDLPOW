@@ -3,8 +3,9 @@ close all
 clear
 clc;
 
-addpath(genpath('.././fddlow'))
-addpath(genpath('.././data'))
+addpath(genpath('../../fddlow'))
+addpath(genpath('../../data'))
+addpath(genpath('../../FDDLPOW'))
 
 % K = [10, 25, 50, 100, 150, 200, 250];
 % lbmd = [0.1, 0.01, 0.001, 1e-4];  %4

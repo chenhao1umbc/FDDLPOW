@@ -5,9 +5,9 @@ clear
 clc;
 tic
 
-addpath(genpath('./core'));
-addpath(genpath('./etc'));
-addpath(genpath('/home/chenhao1/Matlab/FDDLOW/data'));
+addpath(genpath('../../fddlow'))
+addpath(genpath('../../data'))
+addpath(genpath('../../FDDLPOW'))
 SNR_INF = 2000;
 
 % do traing or do crossvalidation

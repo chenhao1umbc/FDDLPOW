@@ -1,9 +1,9 @@
 % process the unknown L result
 clear
 clc
-addpath(genpath('.././fddlow'))
-addpath(genpath('.././data'))
-addpath(genpath('.././FDDLPOW'))
+addpath(genpath('../../fddlow'))
+addpath(genpath('../../data'))
+addpath(genpath('../../FDDLPOW'))
 load('L_unknown.mat')
 
 dynamic_ratio = [0, 3, 6, 10, 20];  

@@ -3,9 +3,9 @@ clear
 clc;
 tic
 
-addpath(genpath('.././fddlow'))
-addpath(genpath('.././data'))
-addpath(genpath('.././FDDLPOW'))
+addpath(genpath('../../fddlow'))
+addpath(genpath('../../data'))
+addpath(genpath('../../FDDLPOW'))
 % do traing or do crossvalidation
 cvortest = 1;  % 1 means cv, 0 means test
 SNR_INF = 2000;

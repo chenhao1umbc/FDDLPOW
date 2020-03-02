@@ -1,9 +1,9 @@
-
+% This file is written to generate the best ROC/acc vs threhold result
 clear
 clc
-addpath(genpath('.././fddlow'))
-addpath(genpath('.././data'))
-addpath(genpath('.././FDDLPOW'))
+addpath(genpath('../../fddlow'))
+addpath(genpath('../../data'))
+addpath(genpath('../../FDDLPOW'))
 
 dynamic_ratio = [0, 3, 6, 10, 20];  
 SNR_INF = 2000;
@@ -31,7 +31,7 @@ for alg = 1:3
         disp(opts.Dictnm); 
         
         run calc_M
-        Z = sparsecoding(Dict, Database, opts, mixture_n, 0);
+        Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest);
         Z = aoos(Z, Database.featln, size(Z, 2));
         wtz = W'*Z; %(W'*aoos(Z, featln, N));
         H = W'*M;
@@ -59,7 +59,7 @@ for alg = 1:3
         disp(opts.Dict2nm); 
         
         run calc_M
-        Z = sparsecoding(Dict, Database, opts, mixture_n, 0);
+        Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest);
         Z = aoos(Z, Database.featln, size(Z, 2));
         wtz = W'*Z; %(W'*aoos(Z, featln, N));
         H = W'*M;
@@ -87,7 +87,7 @@ for alg = 1:3
         disp(opts.Dict3nm); 
         
         run calc_M
-        Z = sparsecoding(Dict, Database, opts, mixture_n, 0);
+        Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest);
         Z = aoos(Z, Database.featln, size(Z, 2));
         wtz = W'*Z; %(W'*aoos(Z, featln, N));
         H = W'*M;

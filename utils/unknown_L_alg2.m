@@ -9,7 +9,7 @@ dynamic_ratio = [0, 3, 6, 10, 20];
 SNR_INF = 2000;
 cvortest = 0;
 
-r_zf = cell(3, 2, 10, 3);
+r_zf = cell(3, 2, 5);
 r_mf = r_zf; r_lr = r_zf; r_nn = r_zf;
 
 for mixture_n = 1:3
@@ -31,23 +31,23 @@ for alg = 1:3
         
         run calc_M
 %         Z = sparsecoding(Dict, Database, opts, mixture_n, cvortest); % regular sparse coding
-        Z = sbrvm(Dict, Database, opts, mixture_n, cvortest);        
+        Z = sbrvm(Dict, database, mixture_n, cvortest);        
         Z = aoos(Z, Database.featln, size(Z, 2));
         wtz = W'*Z; %(W'*aoos(Z, featln, N));
         H = W'*M;
         
         % ZF detector
-        r_zf{mixture_n, indd, f-999, alg} = pinv(H)*wtz;
+        r_zf{mixture_n, indd, f-999} = pinv(H)*wtz;
 
         % matched filter
-        r_mf{mixture_n, indd, f-999, alg} = H'*wtz;
+        r_mf{mixture_n, indd, f-999} = H'*wtz;
 
         %neural networks
-        r_nn{mixture_n, indd, f-999, alg} = net(wtz);
+        r_nn{mixture_n, indd, f-999} = net(wtz);
 
         %logistic regression classifier
         pre_prob = mnrval(B, wtz');
-        r_lr{mixture_n, indd, f-999, alg} = pre_prob';
+        r_lr{mixture_n, indd, f-999} = pre_prob';
     end
     
 end

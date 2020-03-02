@@ -12,14 +12,12 @@ cvortest = 0;
 e = 2.718281828;
 
 %% make zf, mf into probalility vectors
-res = cell(3, 2, 5, 3, 4); %3 by 2 by 5 by3 by mixture_n, [0, 20], f, alg, zf/mf...
+table = cell(3, 2, 5, 3, 4); %3 by 2 by 5 by3 by mixture_n, [0, 20], f, alg, zf/mf...
 for alg = 1:3
-    load(['L_unknown_alg', num2str(1), '.mat'])
+    load(['L_unknown_alg', num2str(alg), '.mat'])
 for mixture_n = 1:3
 for indd = [1,5]   
-for f = 1:5
-
-    if alg == 1    
+for f = 1:5 
         % ZF detector        
         s = e.^r_zf{mixture_n, indd, f};
         r_zf{mixture_n, indd, f} = s./sum(s,1);
@@ -27,39 +25,24 @@ for f = 1:5
         % matched filter
         s = e.^r_mf{mixture_n, indd, f};
         r_mf{mixture_n, indd, f} = s./sum(s,1);
-        res{mixture_n, }
-    end    
-    if alg == 2 && f<1005
-        % ZF detector        
-        s = e.^r_zf{mixture_n, indd, f};
-        r_zf{mixture_n, indd, f} = s./sum(s,1);
-
-        % matched filter
-        s = e.^r_mf{mixture_n, indd, f};
-        r_mf{mixture_n, indd, f} = s./sum(s,1);
-    end    
-    if alg == 3 && f>1004
-        % ZF detector        
-        s = e.^r_zf{mixture_n, indd, f};
-        r_zf{mixture_n, indd, f} = s./sum(s,1);
-
-        % matched filter
-        s = e.^r_mf{mixture_n, indd, f};
-        r_mf{mixture_n, indd, f} = s./sum(s,1);
-    end
+        
+        table{mixture_n, round((indd+3)/4), f, alg, 1} = r_zf{mixture_n, indd, f};
+        table{mixture_n, round((indd+3)/4), f, alg, 2} = r_mf{mixture_n, indd, f};
+        table{mixture_n, round((indd+3)/4), f, alg, 3} = r_lr{mixture_n, indd, f};
+        table{mixture_n, round((indd+3)/4), f, alg, 4} = r_nn{mixture_n, indd, f};
 end
 end
 end
 end
 
-% get the averaged result over the f/fold
-ar_zf = cell(3,2,3); % mixture_n, 0dB 20dB, alg
+% get the averaged tableult over the f/fold
+ar_zf= cell(3,2,3); % mixture_n, 0dB 20dB, alg
 ar_mf = ar_zf; ar_lr = ar_zf;  ar_nn = ar_zf;
 
-ar_zf = avv(r_zf, ar_zf);
-ar_mf = avv(r_mf, ar_mf);
-ar_nn = avv(r_nn, ar_nn);
-ar_lr = avv(r_lr, ar_lr);
+ar_zf = avv(table(:,:,:,:,1), ar_zf);
+ar_mf = avv(table(:,:,:,:,2), ar_mf);
+ar_lr = avv(table(:,:,:,:,3), ar_lr);
+ar_nn = avv(table(:,:,:,:,4), ar_nn);
 
 %% generate the true labels
 L1 = kron(eye(6), ones(1,75));

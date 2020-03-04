@@ -121,8 +121,6 @@ end
 
 fl = L3(:);
 linewidth = 4;
-
-
 for L = 1:3
     if L == 1  fl = L1(:); end
     if L == 2  fl = L2(:); end

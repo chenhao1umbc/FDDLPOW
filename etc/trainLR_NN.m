@@ -83,7 +83,7 @@ beta = 1;
 Q= 20; % 10 for alg 1
 x = [];
 y = [];
-for f = 1000:1004
+for f = 1005:1009
 [opts]=loadoptions(K,lbmd,mu,Q,nu,beta,2000, f);
 load(opts.Dict3nm)
 X = (Dict.W'*Dict.Z)'; % projected

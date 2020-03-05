@@ -86,7 +86,7 @@ end
 L3 = [l3, l3, l3];
 
 
-%
+%%
 % _________________________acc vs threhold_______________________________________%
 % 
 db = [0,20];
@@ -116,6 +116,7 @@ end
 figure(100*L + 10*idb + icls)
 set(gcf,'color','w')
 plot(dr,res(1,:), ':b',dr,res(2,:),'--r',dr, res(3,:),'-g','linewidth', 3, 'MarkerSize', 5);
+ylim([0,1]);
 xlabel('Threshold')
 set(gca,'FontSize',14)
 set(gcf, 'Position',  [100, 100, 700, 600])
@@ -123,19 +124,13 @@ ylabel('Classification accuracy')
 legend(lgd)
 if idb ==1 pw_rt = ', equal power'; else pw_rt = ', 20 dB power ratio'; end
 title([' L = ', num2str(L), ',', cls{icls}, pw_rt])
-L, idb, icls
+
         end
     end
 end
 
 
-
-
-
-
-%
 % _________________________plot ROC_______________________________________%
-% 
 
 fl = L3(:);
 linewidth = 4;
@@ -176,7 +171,7 @@ title(['ROC, L = ', num2str(L), ',', cls{icls}, pw_rt])
 end
 
 
-
+%% Calc AUC (Area under curve)
 
 
 

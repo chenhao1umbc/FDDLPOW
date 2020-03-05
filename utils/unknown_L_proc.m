@@ -35,6 +35,22 @@ end
 end
 end
 
+% logistic regression may give Nan which should be 1
+for mixture_n = 1:3
+    for indd = [1,2]   
+for f = 1:5 
+    for alg = 1:3
+for icls = 1:4
+    t = table{mixture_n, indd, f, alg, icls};
+    t(isnan(t)) = 1;
+    table{mixture_n, indd, f, alg, icls} = t; 
+end
+    end
+end
+    end
+end
+
+
 % get the averaged tableult over the f/fold
 ar_zf= cell(3,2,3); % mixture_n, 0dB 20dB, alg
 ar_mf = ar_zf; ar_lr = ar_zf;  ar_nn = ar_zf;
@@ -69,8 +85,10 @@ for i = 1: nc
 end
 L3 = [l3, l3, l3];
 
-%% calculate the acc, ROC and acc vs threhold
-lgd = {'Algorithm 1', 'Algorithm 2', 'Algorithm 3'};
+
+%
+% _________________________acc vs threhold_______________________________________%
+% 
 db = [0,20];
 cls = {'ZF detector', 'MF detector', 'LR classifier', 'NN classifier'};
 lgd = {'Algorithm 1', 'Algorithm 2', 'Algorithm 3'};
@@ -105,7 +123,7 @@ ylabel('Classification accuracy')
 legend(lgd)
 if idb ==1 pw_rt = ', equal power'; else pw_rt = ', 20 dB power ratio'; end
 title([' L = ', num2str(L), ',', cls{icls}, pw_rt])
-
+L, idb, icls
         end
     end
 end

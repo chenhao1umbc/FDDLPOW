@@ -20,7 +20,7 @@ for indd = [1,5]
     if mixture_n == 3 && pctrl.db == 0  pctrl.if2weak = 0; end
     Database = load_data_new(mixture_n, SNR_INF, pctrl, 1000);
     
-for f = 1000:1004
+for f = 1001:1004
 for alg = 1:3    
     if alg == 2 && f<1005
         load(['dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng',num2str(f),'.mat']);
@@ -46,7 +46,7 @@ for alg = 1:3
         r_nn{mixture_n, indd, f-999} = net(wtz);
 
         %logistic regression classifier
-        pre_prob = mnrval(B, wtz');
+        pre_prob = mnrval(B, wtz');  % this is not robust it may produce Nan, which should be 1
         r_lr{mixture_n, indd, f-999} = pre_prob';
     end
     

@@ -1,4 +1,6 @@
 function [acc_weak, acc_weak_av, acc_all] = calc_labels(labels_pre, opts)
+    % this function is only for the L is known and L>1
+
     n = opts.n; % how many components in the mixture
     C = opts.C; % total number of classes
     Ncombs = opts.Ncombs;

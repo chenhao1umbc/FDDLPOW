@@ -28,7 +28,7 @@ warning off
 B = mnrfit(x, y);
 save(['B_X_Y_dict1.mat'], 'B', 'x', 'y');
 % % use LR
-% load('dict2_k25_lmbd0.01_mu0.1_Q6_nu1000_rng1000.mat')
+% load('dict1_k25_lmbd0.01_mu0.1_Q10_rng1000.mat')
 % load('B_X_Y_dict1.mat')
 % [acc, acc_weak_av, acc_av] = lr_test(Dict, Database, Z, B, pctrl)
 

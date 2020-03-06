@@ -186,6 +186,7 @@ set(0, 'CurrentFigure', FigHandle);
 saveas(h1, title, 'fig');
 end
 
-
+data_structure = 'auc= zeros(4, 3, 3, 2); % 4 classifiers, 3 alg, L, 2 power ratios=';
+save('auc.mat','auc', 'data_structure');
 
 

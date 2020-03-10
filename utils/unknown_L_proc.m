@@ -92,7 +92,7 @@ L3 = [l3, l3, l3];
 db = [0,20];
 cls = {'ZF detector', 'MF detector', 'LR classifier', 'NN classifier'};
 lgd = {'Algorithm 1', 'Algorithm 2', 'Algorithm 3'};
-dr = 0.01: 0.01: 1;
+dr = 0: 0.01: 1;
 
 for L = 1:3
     for idb = 1:2
@@ -105,12 +105,12 @@ if icls == 3  ar = ar_lr; end
 if icls == 4  ar = ar_nn; end
 res = zeros(3, 100);
 for alg = 1:3
-    for thr = 0.01: 0.01: 1
+    for thr = 0:0.01: 1
         r = ar{L, idb, alg};
         r(r>thr) = 1;
         r(r<=thr) = 0;
         rr = (eval(['L', num2str(L)]) - r);
-        res(alg, round(thr*100)) = sum(rr ==0, 'all' ) /numel(rr);
+        res(alg, round(thr*100)+1) = sum(rr ==0, 'all' ) /numel(rr);
     end
 end
 figure(100*L + 10*idb + icls)

@@ -92,7 +92,7 @@ L3 = [l3, l3, l3];
 db = [0,20];
 cls = {'ZF detector', 'MF detector', 'LR classifier', 'NN classifier'};
 lgd = {'Algorithm 1', 'Algorithm 2', 'Algorithm 3'};
-dr = 0.01: 0.01: 1;
+dr = 0: 0.01: 1;
 
 for L = 1:3
     for idb = 1:2
@@ -105,12 +105,12 @@ if icls == 3  ar = ar_lr; end
 if icls == 4  ar = ar_nn; end
 res = zeros(3, 100);
 for alg = 1:3
-    for thr = 0.01: 0.01: 1
+    for thr = 0:0.01: 1
         r = ar{L, idb, alg};
         r(r>thr) = 1;
         r(r<=thr) = 0;
         rr = (eval(['L', num2str(L)]) - r);
-        res(alg, round(thr*100)) = sum(rr ==0, 'all' ) /numel(rr);
+        res(alg, round(thr*100)+1) = sum(rr ==0, 'all' ) /numel(rr);
     end
 end
 figure(100*L + 10*idb + icls)
@@ -121,7 +121,7 @@ xlabel('Threshold')
 set(gca,'FontSize',14)
 set(gcf, 'Position',  [100, 100, 700, 600])
 ylabel('Classification accuracy')
-legend(lgd)
+legend(lgd, 'Location','SouthEast')
 if idb ==1 pw_rt = ', equal power'; else pw_rt = ', 20 dB power ratio'; end
 title([' L = ', num2str(L), ',', cls{icls}, pw_rt])
 
@@ -130,10 +130,13 @@ title([' L = ', num2str(L), ',', cls{icls}, pw_rt])
 end
 
 
-% _________________________plot ROC_______________________________________%
-
+% _________________________plot ROC & AUC___________________________________%
+lgd = {'Algorithm 1', 'Algorithm 2', 'Algorithm 3'};
+cls = {'ZF detector', 'MF detector', 'LR classifier', 'NN classifier'};
 fl = L3(:);
 linewidth = 4;
+auc= zeros(4, 3, 3, 2); % 4 classifiers, 3 alg, L, 2 power ratios
+
 for L = 1:3
     if L == 1  fl = L1(:); end
     if L == 2  fl = L2(:); end
@@ -151,7 +154,8 @@ figure(1000 + 100*L + 10*idb + icls)
 for alg = 1:3
     r = ar{L, idb, alg};
     fr = r(:);
-    [tpr, fpr, ~] = roc(fl', fr');
+%     [tpr, fpr, ~] = roc(fl', fr');
+    [fpr, tpr,~, auc(icls, alg, L, idb)] = perfcurve(logical(fl'),fr','true');
     if alg == 1 plot(fpr, tpr,':b', 'linewidth', linewidth); end
     if alg == 2 plot(fpr, tpr,'--r', 'linewidth', linewidth ); end
     if alg == 3 plot(fpr, tpr,'-g', 'linewidth', linewidth ); end
@@ -162,7 +166,7 @@ xlabel('False positive rate')
 set(gca,'FontSize',14)
 set(gcf, 'Position',  [100, 100, 700, 600])
 ylabel('True positive rate')
-legend(lgd)
+legend(lgd, 'Location','SouthEast')
 if idb ==1 pw_rt = ', equal power'; else pw_rt = ', 20 dB power ratio'; end
 title(['ROC, L = ', num2str(L), ',', cls{icls}, pw_rt])
 
@@ -171,9 +175,18 @@ title(['ROC, L = ', num2str(L), ',', cls{icls}, pw_rt])
 end
 
 
-%% Calc AUC (Area under curve)
+%% save figures
+FigList = findobj(allchild(0), 'flat', 'Type', 'figure');
+for iFig = 1:length(FigList)
+FigHandle = FigList(iFig);
+FigName = num2str(get(FigHandle, 'Number'));
+h1=gca;
+title=h1.Title.String;
+set(0, 'CurrentFigure', FigHandle);
+saveas(h1, title, 'fig');
+end
 
-
-
+data_structure = 'auc= zeros(4, 3, 3, 2); % 4 classifiers, 3 alg, L, 2 power ratios=';
+save('auc.mat','auc', 'data_structure');
 
 

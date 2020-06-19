@@ -15,7 +15,7 @@ SNR_INF = 2000;
 % load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3
 
-pctrl.db = 0; % dynamic ratio is 0 3, 6, 10, 20 db
+pctrl.db = 20; % dynamic ratio is 0 3, 6, 10, 20 db
 if pctrl.db == 0
     pctrl.equal = 1;
 else

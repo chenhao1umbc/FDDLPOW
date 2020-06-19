@@ -12,6 +12,7 @@ addpath(genpath('/extra/chenhao1/DICTOL-master/LRSDL_FDDL'))
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3
 SNR_INF = 2000;
 pctrl.db = 20; % dynamic ratio is 0 3, 6, 10, 20 db
+if mixture_n < 3  pctrl.if2weak = 0; end
 if pctrl.db == 0
     pctrl.equal = 1;
 else

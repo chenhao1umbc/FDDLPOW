@@ -27,7 +27,8 @@ cv_mixdat=[];tt_mixdat=[];cvmixls=[];ttmixls=[];
 c = combnk(1:6, N_c); % ble bt fhss1 zb
 
 % r00t = '.././data/RF/SNout_LMdata4/q16005n2/norm_mix';
-r00t = '/home/chenhao1/Matlab/FDDLOW/data/RF/SNout_LMdata4/q16005n2/norm_mix';
+r00t = '/extra/chenhao1/FDDLOW/data/RF/SNout_LMdata4/q16005n2/norm_mix';
+% r00t = '/home/chenhao1/Matlab/FDDLOW/data/RF/SNout_LMdata4/q16005n2/norm_mix';
 part1 ='db449_1classq16&0.05n2_positive_M2_snr';
 part2 = 'db449_1classq16&0.05n2_negative_M2_snr';
 if pctrl.if2weak == 1

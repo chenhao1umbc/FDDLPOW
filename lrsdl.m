@@ -19,13 +19,13 @@ else
     pctrl.equal = 0;
 end
 
-for f = 1:5
+for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
-end
+
 %% settings
-k = 10;
-k0 = 5;
-lambda1 = 0.001;
+k = 5;
+k0 = 3;
+lambda1 = 0.01;
 lambda2 = 0.01;
 lambda3 = 0.02;
 C = 6;
@@ -38,14 +38,19 @@ opts.lambda2     = lambda2;
 opts.lambda3     = lambda3;
 opts.D_range     = k*(0:C);
 opts.D_range_ext = [opts.D_range k*C+k0];
-opts.initmode    = 'normal';   
+opts.initmode    = 'other';   
 opts.max_iter    = 100;
 opts             = initOpts(opts);
 opts.verbose      = true;
 opts.tol         = 1e-8;
 
 %% Train 
-[D, D0, X, X0, CoefM, coefM0, opts, rt] = LRSDL(Y_train, label_train, opts);
+Y_train = Database.tr_data;
+Y_cv = Database.cv_data;
+label_train = Database.tr_label;
+label_cv = Database.cv_label;
+rmpath(genpath('.././fddlow'))  % to avoid the two fista.m confusion
+[D, D0, X, X0, CoefM, CoefM0, opts, rt] = LRSDL(Y_train, label_train, opts);
 X1 = [X; X0];
 Y_range = label_to_range(label_train);
 C = max(label_train);
@@ -55,8 +60,12 @@ for c = 1: C
     CoefMM0(:,c) = mean(X1c,2);
 end    
 
-acc1 = LRSDL_pred(Y_test, D, D0, CoefM, coefM0, opts, label_test);
-
+param = ['k_',num2str(k),'k0_',num2str(k0), 'l1_',num2str(lambda1), ...
+    'l2_',num2str(lambda2), 'l3_',num2str(lambda3), 'f_', num2str(f)];
+save([param,'lrscdl_train.mat'], 'D','D0','X', 'X0', 'CoefM','CoefM0', 'opts')
+acc1 = LRSDL_pred(Y_cv, D, D0, CoefM, CoefM0, opts, label_cv);
+addpath(genpath('.././fddlow'))
+end
 
 
 
@@ -84,7 +93,7 @@ N = size(Y,2);
 acc = [];
 % --------------- Sparse coding -------------------------
 for lambda1 = [0.001]
-    [X, X0] = local_sparse_coding(Y, D, D0, m0, lambda1, lambda2);
+    [X, X0] = local_sparse_coding(Y, D, D0, m0, opts.lambda1, opts.lambda2);
     % --------------- classification -------------------------
     Yhat = Y - D0*X0;
     E1 = zeros(nClasses, N);

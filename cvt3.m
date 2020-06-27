@@ -5,9 +5,10 @@ clear
 clc;
 tic
 
-addpath(genpath('../../fddlow'))
-addpath(genpath('../../data'))
-addpath(genpath('../../FDDLPOW'))
+addpath(genpath('/extra/chenhao1/FDDLOW/fddlow'))
+addpath(genpath('/extra/chenhao1/FDDLOW/data'))
+addpath(genpath('/extra/chenhao1/FDDLPOW'))
+rmpath(genpath('/extra/chenhao1/DICTOL-master'))
 % do traing or do crossvalidation
 cvortest = 1;  % 1 means cv, 0 means test
 SNR_INF = 2000;

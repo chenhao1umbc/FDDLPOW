@@ -7,6 +7,28 @@ for counter =1:6
     kron(ones(300*featln,1), circshift(lb, counter-1));
 end
 
+%% train LR_NN lrsdl
+k0 = 3;
+k = 15;
+lambda1 = 1e-4;
+lambda2 = 1e-3;
+lambda3 = 1e-2;
+C = 6;
+x = [];
+y = [];
+for f = 1000:1004
+    param = ['k_',num2str(k),'k0_',num2str(k0), 'l1_',num2str(lambda1), ...
+        'l2_',num2str(lambda2), 'l3_',num2str(lambda3), 'f_', num2str(f)];
+    filename = [param,'lrscdl_train.mat'];
+    load(filename)
+    x = [x; X'];
+    y = [y; Y];
+end
+warning off
+B = mnrfit(x, y);
+save(['B_X_Y_lrsdl.mat'], 'B', 'x', 'y');
+
+
 %% train LR_NN alg 1
 K = 25;
 lbmd = 0.01;

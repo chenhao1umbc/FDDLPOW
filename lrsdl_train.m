@@ -21,20 +21,20 @@ end
 
 
 f = 1000;
-for f = 1000:1004
+% for f = 1000:1004
 [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);
 
 %% settings
-% for k = [10 15]
-%     for lambda1 = [0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001]
-%         for lambda2 = [0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001]
-%             for lambda3 = [0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001]
 
+for lambda1 = [0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001]
+    for lambda2 = [0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001]
+        for lambda3 = [0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001]
+
+k = 4;
 k0 = 3;
-k = 15;
-lambda1 = 1e-4;
-lambda2 = 1e-3;
-lambda3 = 1e-2;
+% lambda1 = 1e-4;
+% lambda2 = 1e-3;
+% lambda3 = 1e-2;
 C = 6;
 
 opts.k           = k;
@@ -74,9 +74,9 @@ save([param,'lrscdl_train.mat'], 'D','D0','X', 'X0', 'CoefM','CoefM0', 'opts')
 printf(param)
 acc1 = LRSDL_pred(Y_cv, D, D0, CoefM, CoefM0, opts, label_cv);
 addpath(genpath('/extra/chenhao1/FDDLOW/fddlow'))
+        end
+    end
 end
-%         end
-%     end
 % end
 
 

@@ -55,7 +55,7 @@ for f = 1000:1004
     load(filename)    
     
     % run prep_ZF 
-    [Z, Z0] = local_sparse_coding(Y, D, D0, CoefM0, lbmd_bar, lambda2);
+    [Z, Z0] = local_sparse_coding(Y, D, D0, CoefM0, lambda1, lambda2);
     Z = aoos(Z,Database.featln, size(Z, 2));      
     
     N = size(Database.tr_label,2);

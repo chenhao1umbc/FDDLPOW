@@ -69,7 +69,7 @@ end
 
 param = ['k_',num2str(k),'k0_',num2str(k0), 'l1_',num2str(lambda1), ...
     'l2_',num2str(lambda2), 'l3_',num2str(lambda3), 'f_', num2str(f)];
-save([param,'lrscdl_train.mat'], 'D','D0','X', 'X0', 'CoefM','CoefM0', 'opts')
+% save([param,'lrscdl_train.mat'], 'D','D0','X', 'X0', 'CoefM','CoefM0', 'opts')
 
 printf(param)
 acc1 = LRSDL_pred(Y_cv, D, D0, CoefM, CoefM0, opts, label_cv);
@@ -81,17 +81,3 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

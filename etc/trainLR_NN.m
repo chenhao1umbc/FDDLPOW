@@ -9,10 +9,10 @@ end
 
 %% train LR_NN lrsdl
 k0 = 3;
-k = 15;
+k = 4;
 lambda1 = 1e-4;
-lambda2 = 1e-3;
-lambda3 = 1e-2;
+lambda2 = 5e-3;
+lambda3 = 5e-2;
 C = 6;
 x = [];
 y = [];
@@ -26,7 +26,16 @@ for f = 1000:1004
 end
 warning off
 B = mnrfit(x, y);
-save(['B_X_Y_lrsdl.mat'], 'B', 'x', 'y');
+save('B_X_Y_lrsdl.mat', 'B', 'x', 'y');
+
+% train Neural Networks
+inp = x';
+hiddenLayerSize = 10;
+net = patternnet(hiddenLayerSize);
+[net,tr] = train(net,inp,y');
+% % use NN
+% outputs = net(z);
+save('NN_lrsdl.mat', 'net', 'tr');
 
 
 %% train LR_NN alg 1
@@ -48,7 +57,7 @@ y = [y; Y];
 end
 warning off
 B = mnrfit(x, y);
-save(['B_X_Y_dict1.mat'], 'B', 'x', 'y');
+save('B_X_Y_dict1.mat', 'B', 'x', 'y');
 % % use LR
 % load('dict1_k25_lmbd0.01_mu0.1_Q10_rng1000.mat')
 % load('B_X_Y_dict1.mat')
@@ -62,7 +71,7 @@ net = patternnet(hiddenLayerSize);
 [net,tr] = train(net,inp,y');
 % % use NN
 % outputs = net(z);
-save(['NN_dict1.mat'], 'net', 'tr');
+save('NN_dict1.mat', 'net', 'tr');
 
 
 %% train LR_NN alg 2
@@ -92,7 +101,7 @@ net = patternnet(hiddenLayerSize);
 [net,tr] = train(net,inp,y');
 % % use NN
 % outputs = net(z);
-save(['NN_dict2.mat'], 'net', 'tr');
+save('NN_dict2.mat', 'net', 'tr');
 
 
 
@@ -123,7 +132,7 @@ net = patternnet(hiddenLayerSize);
 [net,tr] = train(net,inp,y');
 % % use NN
 % outputs = net(z);
-save(['NN_dict3.mat'], 'net', 'tr');
+save('NN_dict3.mat', 'net', 'tr');
 
 
 

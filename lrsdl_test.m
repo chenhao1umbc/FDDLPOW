@@ -30,7 +30,8 @@ lr.acc = zeros(5,5);
 
 %% testing/cv part
 % load data
-mixture_n = 2; % mixture_n classes mixture, = 1,2,3
+mixture_n = 3; % mixture_n classes mixture, = 1,2,3
+
 dbpool = [0 3 6 10 20];
 for ind = 1:5
 pctrl.db = dbpool(ind); % dynamic ratio is 0 3, 6, 10, 20 db
@@ -40,6 +41,7 @@ else
     pctrl.equal = 0;
 end
 if mixture_n < 3  pctrl.if2weak = 0; end
+if mixture_n == 3 pctrl.if2weak = 0; end
 
 for f = 1000:1004     
     [Database]=load_data_new(mixture_n, SNR_INF, pctrl, f);

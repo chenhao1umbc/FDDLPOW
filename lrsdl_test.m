@@ -8,14 +8,14 @@ addpath(genpath('/extra/chenhao1/FDDLOW/data'))
 addpath(genpath('/extra/chenhao1/DICTOL-master'))
 
 % do traing or do crossvalidation
-cvortest = 1;  % 1 means cv, 0 means test
+cvortest = 0;  % 1 means cv, 0 means test
 SNR_INF = 2000;
 lbmd_bar = 0.001;
 k0 = 3;
-k = 15;
+k = 4;
 lambda1 = 1e-4;
-lambda2 = 1e-3;
-lambda3 = 1e-2;
+lambda2 = 5e-3;
+lambda3 = 5e-2;
 C = 6;
 load('NN_lrsdl.mat')
 load('B_X_Y_lrsdl.mat')
@@ -107,6 +107,59 @@ lr.acc
 lr.acc_week
 end
 toc
+
+
+%%%%%%%%%%%plot results%%%%%%%%%%%%%%%%%%%
+
+zfw = mean(zf.acc_week, 2);
+zfa = mean(zf.acc, 2);
+mfa = mean(mf.acc, 2);
+mfw = mean(mf.acc_week, 2);
+nna = mean(nn.acc, 2);
+nnw = mean(nn.acc_week, 2);
+lra = mean(lr.acc, 2);
+lrw = mean(lr.acc_week, 2);
+
+figure;
+plot([0,3,6,10,20], mfa, '-x')
+hold on
+plot([0,3,6,10,20], mfw, '--o')
+ylim([0.2,1])
+xlabel('power ratio 0, 3,6, 10, 20db')
+ylabel('accuracy')
+legend('all', 'weak')
+title(['L=', num2str(mixture_n), 'lrsdl + mf'])
+
+figure;
+plot([0,3,6,10,20], zfa, '-x')
+hold on
+plot([0,3,6,10,20], zfw, '--o')
+ylim([0.2,1])
+xlabel('power ratio 0, 3,6, 10, 20db')
+ylabel('accuracy')
+legend('all', 'weak')
+title(['L=', num2str(mixture_n), 'lrsdl + zf'])
+
+figure;
+plot([0,3,6,10,20], nna, '-x')
+hold on
+plot([0,3,6,10,20], nnw, '--o')
+ylim([0.2,1])
+xlabel('power ratio 0, 3,6, 10, 20db')
+ylabel('accuracy')
+legend('all', 'weak')
+title(['L=', num2str(mixture_n), 'lrsdl + nn'])
+
+figure;
+plot([0,3,6,10,20], lra, '-x')
+hold on
+plot([0,3,6,10,20], lrw, '--o')
+ylim([0.2,1])
+xlabel('power ratio 0, 3,6, 10, 20db')
+ylabel('accuracy')
+legend('all', 'weak')
+title(['L=', num2str(mixture_n), 'lrsdl + lr'])
+
 %}
 
 %{

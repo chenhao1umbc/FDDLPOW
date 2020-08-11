@@ -164,7 +164,7 @@ title(['L=', num2str(mixture_n), 'lrsdl + lr'])
 
 %}
 
-%{
+% {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % this script is used to test LRSDL+SVM for mixture=1
 close all

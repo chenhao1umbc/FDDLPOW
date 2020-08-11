@@ -7,6 +7,31 @@ for counter =1:6
     kron(ones(300*featln,1), circshift(lb, counter-1));
 end
 
+
+%% train LR_NN ksvd
+K = 25;
+T0 = 18;
+x = [];
+y = [];
+for f = 1000:1004
+    params = ['k_',num2str(K), 'T0_',num2str(T0), 'f_', num2str(f)];
+    load([params,'ksvd_train.mat'])
+    x = [x; W'];
+    y = [y; Y];
+end
+warning off
+B = mnrfit(x, y);
+save('B_X_Y_ksvd.mat', 'B', 'x', 'y');
+
+% train Neural Networks
+inp = x';
+hiddenLayerSize = 10;
+net = patternnet(hiddenLayerSize);
+[net,tr] = train(net,inp,y');
+% % use NN
+% outputs = net(z);
+save('NN_ksvd.mat', 'net', 'tr');
+
 %% train LR_NN lrsdl
 k0 = 3;
 k = 4;

@@ -8,7 +8,7 @@ for counter =1:6
 end
 
 
-%% train LR_NN ksvd
+%% train LR_NN_SVM ksvd
 K = 25;
 T0 = 18;
 x = [];
@@ -20,6 +20,16 @@ for f = 1000:1004
     y = [y; Y];
 end
 warning off
+
+%train svm
+yy = sum(y, 2);
+for i =1:size(yy, 1)
+    yy(i) = find(y(i,:));
+end
+Mdl = fitcecoc(full(x),yy);
+save('Mdl_X_Y_ksvd.mat', 'Mdl', 'x', 'yy')
+
+% train lr
 B = mnrfit(x, y);
 save('B_X_Y_ksvd.mat', 'B', 'x', 'y');
 
@@ -32,7 +42,7 @@ net = patternnet(hiddenLayerSize);
 % outputs = net(z);
 save('NN_ksvd.mat', 'net', 'tr');
 
-%% train LR_NN lrsdl
+%% train LR_NN_SVM lrsdl
 k0 = 3;
 k = 4;
 lambda1 = 1e-4;
@@ -49,6 +59,15 @@ for f = 1000:1004
     x = [x; X'];
     y = [y; Y];
 end
+
+%train svm
+yy = sum(y, 2);
+for i =1:size(yy, 1)
+    yy(i) = find(y(i,:));
+end
+Mdl = fitcecoc(full(x),yy);
+save('Mdl_X_Y_lrsdl.mat', 'Mdl', 'x', 'yy')
+
 warning off
 B = mnrfit(x, y);
 save('B_X_Y_lrsdl.mat', 'B', 'x', 'y');
@@ -63,7 +82,7 @@ net = patternnet(hiddenLayerSize);
 save('NN_lrsdl.mat', 'net', 'tr');
 
 
-%% train LR_NN alg 1
+%% train LR_NN_SVM alg 1
 K = 25;
 lbmd = 0.01;
 mu=0.1;
@@ -80,6 +99,15 @@ X = (Dict.W'*Dict.Z)'; % projected
 x = [x; X];
 y = [y; Y];
 end
+
+%train svm
+yy = sum(y, 2);
+for i =1:size(yy, 1)
+    yy(i) = find(y(i,:));
+end
+Mdl = fitcecoc(full(x),yy);
+save('Mdl_X_Y_alg1.mat', 'Mdl', 'x', 'yy')
+
 warning off
 B = mnrfit(x, y);
 save('B_X_Y_dict1.mat', 'B', 'x', 'y');
@@ -99,7 +127,7 @@ net = patternnet(hiddenLayerSize);
 save('NN_dict1.mat', 'net', 'tr');
 
 
-%% train LR_NN alg 2
+%% train LR_NN_SVM alg 2
 K = 25;
 lbmd = 0.1;
 mu=0.001;
@@ -115,6 +143,15 @@ X = (Dict.W'*Dict.Z)'; % projected
 x = [x; X];
 y = [y; Y];
 end
+
+%train svm
+yy = sum(y, 2);
+for i =1:size(yy, 1)
+    yy(i) = find(y(i,:));
+end
+Mdl = fitcecoc(full(x),yy);
+save('Mdl_X_Y_alg2.mat', 'Mdl', 'x', 'yy')
+
 warning off
 B = mnrfit(x, y);
 save('B_X_Y_dict2.mat', 'B', 'x', 'y');
@@ -130,7 +167,7 @@ save('NN_dict2.mat', 'net', 'tr');
 
 
 
-%% train LR_NN alg 3
+%% train LR_NN_SVM alg 3
 K = 25;
 lbmd = 0.1;
 mu=0.001;
@@ -146,6 +183,15 @@ X = (Dict.W'*Dict.Z)'; % projected
 x = [x; X];
 y = [y; Y];
 end
+
+%train svm
+yy = sum(y, 2);
+for i =1:size(yy, 1)
+    yy(i) = find(y(i,:));
+end
+Mdl = fitcecoc(full(x),yy);
+save('Mdl_X_Y_alg3.mat', 'Mdl', 'x', 'yy')
+
 warning off
 B = mnrfit(x, y);
 save('B_X_Y_dict3.mat', 'B', 'x', 'y');

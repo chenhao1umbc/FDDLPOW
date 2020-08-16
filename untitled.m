@@ -34,7 +34,7 @@ for alg = 1:3
         disp(opts.Dictnm); 
     end
     if alg == 2 
-        load(['dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng',num2str(f+5),'.mat']);
+        load(['dict2_k25_lmbd0.1_mu0.001_Q20_nu10_rng',num2str(f),'.mat']);
         load('Mdl_X_Y_alg2.mat')
         opts.lambda1 = 0.025;
         disp(opts.Dict2nm); 

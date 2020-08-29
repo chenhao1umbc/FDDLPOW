@@ -35,7 +35,7 @@ yy = sum(y, 2);
 for i =1:size(yy, 1)
     yy(i) = find(y(i,:));
 end
-Mdl = fitcecoc(full(x),yy);
+Mdl = fitcecoc(full(x),yy, 'Coding', 'onevsall');
 save('Mdl_X_Y_ksvd.mat', 'Mdl', 'x', 'yy')
 
 % train lr
@@ -74,7 +74,7 @@ yy = sum(y, 2);
 for i =1:size(yy, 1)
     yy(i) = find(y(i,:));
 end
-Mdl = fitcecoc(full(x),yy);
+Mdl = fitcecoc(full(x),yy, 'Coding', 'onevsall');
 save('Mdl_X_Y_lrsdl.mat', 'Mdl', 'x', 'yy')
 
 warning off
@@ -114,7 +114,7 @@ yy = sum(y, 2);
 for i =1:size(yy, 1)
     yy(i) = find(y(i,:));
 end
-Mdl = fitcecoc(full(x),yy);
+Mdl = fitcecoc(full(x),yy, 'Coding', 'onevsall');
 save('Mdl_X_Y_alg1.mat', 'Mdl', 'x', 'yy')
 
 warning off
@@ -158,7 +158,7 @@ yy = sum(y, 2);
 for i =1:size(yy, 1)
     yy(i) = find(y(i,:));
 end
-Mdl = fitcecoc(full(x),yy);
+Mdl = fitcecoc(full(x),yy, 'Coding', 'onevsall');
 save('Mdl_X_Y_alg2.mat', 'Mdl', 'x', 'yy')
 
 warning off
@@ -198,7 +198,7 @@ yy = sum(y, 2);
 for i =1:size(yy, 1)
     yy(i) = find(y(i,:));
 end
-Mdl = fitcecoc(full(x),yy);
+Mdl = fitcecoc(full(x),yy, 'Coding', 'onevsall');
 save('Mdl_X_Y_alg3.mat', 'Mdl', 'x', 'yy')
 
 warning off

@@ -1,12 +1,13 @@
 # Robust classification for mixture signal
 This github folder is just for the script
 the folder structure is:
-
+```
 --fddlow(this github folder)
 |
---data (too large not on github)
+--data (too large not on github) 
 |
---DICTOL-master (for comparison)
+--DICTOL-master (for comparison) 
+```
 
 the working directory is in the folder fddlow(the github folder)
 to train alg123, the training and cross-validation files are located in ./utils

@@ -16,81 +16,6 @@ for counter =1:6
     kron(ones(300*featln,1), circshift(lb, counter-1));
 end
 
-
-%% train LR_NN_SVM ksvd
-K = 25;
-T0 = 18;
-x = [];
-y = [];
-for f = 1000:1004
-    params = ['k_',num2str(K), 'T0_',num2str(T0), 'f_', num2str(f)];
-    load([params,'ksvd_train.mat'])
-    x = [x; W'];
-    y = [y; Y];
-end
-warning off
-
-%train svm
-yy = sum(y, 2);
-for i =1:size(yy, 1)
-    yy(i) = find(y(i,:));
-end
-Mdl = fitcecoc(full(x),yy);
-save('Mdl_X_Y_ksvd.mat', 'Mdl', 'x', 'yy')
-
-% train lr
-B = mnrfit(x, y);
-save('B_X_Y_ksvd.mat', 'B', 'x', 'y');
-
-% train Neural Networks
-inp = x';
-hiddenLayerSize = 10;
-net = patternnet(hiddenLayerSize);
-[net,tr] = train(net,inp,y');
-% % use NN
-% outputs = net(z);
-save('NN_ksvd.mat', 'net', 'tr');
-
-%% train LR_NN_SVM lrsdl
-k0 = 3;
-k = 4;
-lambda1 = 1e-4;
-lambda2 = 5e-3;
-lambda3 = 5e-2;
-C = 6;
-x = [];
-y = [];
-for f = 1000:1004
-    param = ['k_',num2str(k),'k0_',num2str(k0), 'l1_',num2str(lambda1), ...
-        'l2_',num2str(lambda2), 'l3_',num2str(lambda3), 'f_', num2str(f)];
-    filename = [param,'lrscdl_train.mat'];
-    load(filename)
-    x = [x; X'];
-    y = [y; Y];
-end
-
-%train svm
-yy = sum(y, 2);
-for i =1:size(yy, 1)
-    yy(i) = find(y(i,:));
-end
-Mdl = fitcecoc(full(x),yy);
-save('Mdl_X_Y_lrsdl.mat', 'Mdl', 'x', 'yy')
-
-warning off
-B = mnrfit(x, y);
-save('B_X_Y_lrsdl.mat', 'B', 'x', 'y');
-
-% train Neural Networks
-inp = x';
-hiddenLayerSize = 10;
-net = patternnet(hiddenLayerSize);
-[net,tr] = train(net,inp,y');
-% % use NN
-% outputs = net(z);
-save('NN_lrsdl.mat', 'net', 'tr');
-
-
 %% train LR_NN_SVM alg 1
 K = 25;
 lbmd = 0.01;
@@ -114,7 +39,8 @@ yy = sum(y, 2);
 for i =1:size(yy, 1)
     yy(i) = find(y(i,:));
 end
-Mdl = fitcecoc(full(x),yy);
+% Mdl = fitcecoc(full(x),yy);
+Mdl = fitcecoc(full(x),yy, 'Coding', 'onevsall');
 save('Mdl_X_Y_alg1.mat', 'Mdl', 'x', 'yy')
 
 warning off
@@ -158,7 +84,8 @@ yy = sum(y, 2);
 for i =1:size(yy, 1)
     yy(i) = find(y(i,:));
 end
-Mdl = fitcecoc(full(x),yy);
+% Mdl = fitcecoc(full(x),yy);
+Mdl = fitcecoc(full(x),yy, 'Coding', 'onevsall');
 save('Mdl_X_Y_alg2.mat', 'Mdl', 'x', 'yy')
 
 warning off
@@ -198,7 +125,8 @@ yy = sum(y, 2);
 for i =1:size(yy, 1)
     yy(i) = find(y(i,:));
 end
-Mdl = fitcecoc(full(x),yy);
+% Mdl = fitcecoc(full(x),yy);
+Mdl = fitcecoc(full(x),yy, 'Coding', 'onevsall');
 save('Mdl_X_Y_alg3.mat', 'Mdl', 'x', 'yy')
 
 warning off

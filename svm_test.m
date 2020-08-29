@@ -82,7 +82,7 @@ xlabel('power ratio 0, 3,6, 10, 20db')
 ylabel('accuracy')
 end
 legend('all', 'weak')
-title(['L=', num2str(mixture_n), 'alg124 + svm'])
+title(['L=', num2str(mixture_n), 'alg123 + svm'])
 
 %%
 mixture_n = 3; 
@@ -154,7 +154,7 @@ xlabel('power ratio 0, 3,6, 10, 20db')
 ylabel('accuracy')
 end
 legend('all', 'weak')
-title(['L=', num2str(mixture_n), 'alg124 + svm'])
+title(['L=', num2str(mixture_n), 'alg123 + svm'])
 
 %% _____________________KSVD svm_____________________
 

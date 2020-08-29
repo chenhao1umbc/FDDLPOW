@@ -1,12 +1,12 @@
-% {
+% this script is CNN for mixture signal
 close all
 clear
 clc;
 tic
-addpath(genpath('/extra/chenhao1/FDDLOW/fddlow'))
-addpath(genpath('/extra/chenhao1/FDDLOW/data'))
-addpath(genpath('/extra/chenhao1/DICTOL-master'))
 
+addpath(genpath('.././fddlow'))
+addpath(genpath('.././data'))
+addpath(genpath('.././DICTOL-master'))
 
 % do traing or do crossvalidation
 cvortest = 0;  % 1 means cv, 0 means test
@@ -33,7 +33,11 @@ SNR_INF = 2000;
 % end
 % toc
 
-%_____________________________get results____________________________
+% _______________ train and test __________________
+% scripts are stored in 
+% ./utils/CNN_FDDLOW.ipynb
+
+%_____________________________plot results____________________________
 dbpool = [0 3 6 10 20];
 mixture_n = 3; % mixture_n classes mixture, = 1,2,3
 weak = zeros(1,5);

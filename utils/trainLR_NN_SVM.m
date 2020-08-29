@@ -5,8 +5,8 @@ clear
 clc;
 tic
 
-addpath(genpath('/home/chenhao1/Matlab/FDDLOW/fddlow'))
-addpath(genpath('/home/chenhao1/Matlab/FDDLOW/data'))
+addpath(genpath('../../fddlow'))
+addpath(genpath('../../data'))
 
 % load settings
 featln = 8;

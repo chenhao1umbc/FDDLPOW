@@ -1,12 +1,4 @@
-% this script is used to test LRSDL+SVM for mixture signal
-close all
-clear
-clc;
-tic
-
-addpath(genpath('/extra/chenhao1/FDDLOW/fddlow'))
-addpath(genpath('/extra/chenhao1/FDDLOW/data'))
-addpath(genpath('/extra/chenhao1/DICTOL-master'))
+% run lrsdl.m in the main folder to add supporting directories
 
 %% load data
 mixture_n = 2; % mixture_n classes mixture, = 1,2,3

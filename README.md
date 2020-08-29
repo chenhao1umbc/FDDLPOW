@@ -1,7 +1,17 @@
-<<<<<<< HEAD
-# FDDLOW
-More details will be disclosed when the journal paper is published.
-=======
-# FDDLPOW
-All this work is transfered to github
->>>>>>> 08ff3a0449afe53e0af4a7d7a9b2855ed5c36fcc
+# Robust classification for mixture signal
+This github folder is just for the script
+the folder structure is:
+
+--fddlow(this github folder)
+|
+--data (too large not on github)
+|
+--DICTOL-master (for comparison)
+
+the working directory is in the folder fddlow(the github folder)
+to train alg123, the training and cross-validation files are located in ./utils
+to train nn, logistic, svm, the file is located in ./utils
+
+to test ksvd, lrsdl, the files are located in ./
+to test alg123, the files are located in ./
+to test CNN the file is located in ./utils using python

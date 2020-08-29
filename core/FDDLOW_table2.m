@@ -15,59 +15,81 @@ function [Dict]=FDDLOW_table2(X,trlabels,opt)
 % The output is Dict, a struct with D,W,Z,X, Loss(the loss function value)
 
 % initialize Dictionary
-[D, Z, W, U, Loss, opt] = initdict_t2(X,trlabels,opt); % max_iter will change for existing dictionary
+C = max(trlabels);
+[M_d, N]=size(X);
+Nc = N / C;
+H1 = kron(eye(C),ones(Nc)/Nc);
+H2 = ones(N)/N;
+H3 = kron(eye(C),ones(Nc, 1)/Nc); % M = Z*H0
+H3H3t = H3*H3';  % H3 is H0 in the paper
+max_eig_S = 2.1; % max(eig(M1M1t-M2M2t+1.1*eye(N)));
+max_eig_H3 = 4.1667e-04; %max(eig(H3H3t));
+S = 2.1*eye(N) - 2*H1 + H2;
+opt_init = opt;
+opt_init.C = C; opt_init.N = N; opt_init.Nc = Nc; opt_init.M_d = M_d;
+[D, Z, W, U, Loss, opt] = initdict_t2(X,trlabels,opt_init); % max_iter will change for existing dictionary
+
+optD = opt;
+optD.max_iter = 500;
+optD.threshold = 1e-4;
+optD.showconverge = false;
+
+optZ = opt;
+optZ.max_iter = 100; % for fista
+optZ.threshold = 1e-4;
+optZ.showprogress = false; % show inside of fista
+optZ.showconverge = false; % show updateZ
+optZ.showcost= true*optZ.showprogress;
+
+M = getM_t2(opt.K, opt.C, Nc, Z); %debug
+loss_detail = zeros(4, 10); %debug
+r= Loss;f = r;g = f;s = r;
 
 % main loop
-for ii = 1:opt.max_iter   
-    t1 = toc;
-    
+for ii = 1:opt.max_iter 
+%     ii
     % update D, with U W and Z fixed
-    optD = opt;
-    optD.max_iter = 500;
-    optD.threshold = 1e-4;
-    optD.showconverge = false;
-    D = DDLMD_updateD(X,optD,D,Z);
-    if opt.losscalc
-        Loss(1,ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z);
-    end        
+    D = DDLMD_updateD(X,optD,D,Z);   
+%     loss_detail(1, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
     
     % update Z, with D Uand W fixed
-    optZ = opt;
-    optZ.max_iter = 500; % for fista
-    optZ.threshold = 1e-5;
-    optZ.showprogress = false; % show inside of fista
-    optZ.showconverge = false; % show updateZ
-    optZ.showcost= true*optZ.showprogress;
-    optZ.max_Ziter = 20; % for Z update
-    optZ.Zthreshold = 1e-6;        
-    Z = mix_updateZ_t2(X,trlabels,optZ, W, D, Z, U); 
-    [M, H1, H2] = getMH1H2_t2(trlabels, Z); % get M, H1, and H2 for updating W and U.    
-    if 0.3 == ii/opt.max_iter
-        sparsity = mean(sum(Z ~= 0))/opt.K;      % avg number of nonzero elements in cols of Z
-        if sparsity > 0.9 || sparsity < 0.05
-            fprintf('30 percent iters too sparse or non-sparse\n')
-            break;            
+    while 1
+        Z = mix_updateZ_t2(X, trlabels, optZ, W, D, Z, U,H3, S, H3H3t,max_eig_S, max_eig_H3);           
+        a = sum(abs(Z), 2);
+        nn = sum(a ==0);
+        if nn >0 
+            disp('In the while loop...')
+            ii
+            D(:, a==0) = X(:,randi([1, N],[nn,1])); 
+            Z(a==0,:) = rand(nn, N);
+        else
+            break;
         end
     end
-    if opt.losscalc
-        Loss(2,ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z);
-    end
+    M = getM_t2(opt.K, opt.C, Nc, Z); % get M, H1, and H2 for updating W and U.
+%     loss_detail(2, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
     
     % update U, with D and Z fixed.
     U = mix_updateU_t2(W, M);
+%     loss_detail(3, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
     
-    % update W, with D Uand Z fixed
-    W = mix_updateW_t2(opt, H1, H2, M, U, Z);
-    if opt.losscalc
-        Loss(3,ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z);
-    end    
+    % update W, with D U and Z fixed
+    W = mix_updateW_t2(opt, S, M, U, Z); 
+%     loss_detail(4, ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U);
     
     % show loss function value
     if opt.losscalc
-        Loss(4,ii) = DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z);
+        wtz = W'*Z;
+        fWZ= opt.mu*trace(wtz*S*wtz');
+        gWZ = opt.nu* norm(W'*M - U, 'fro')^2;
+        sZ = opt.lambda1*sum(abs(Z(:)));
+        fid = norm(X-D*Z,'fro')^2;
+        l= fid + sZ + fWZ+ gWZ;
+%         g(ii) = gWZ; f(ii) = fWZ; s(ii) = sZ; r(ii) = fid;
+        Loss(ii) = l ;     % DDLMD_Loss_mix_t2(X,trlabels,opt,W,D,Z, M, U)
         Dict.Loss = Loss;
-        if ii > 1            
-        if abs(Loss(end, ii-1) - Loss(end, ii)) < 1e-5
+        if ii > 30            
+        if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 5e-5
             break;
         end
         end
@@ -82,7 +104,6 @@ for ii = 1:opt.max_iter
     
 % fprintf('one iter time: %6.4f \n',toc-t1)
 end
-
 Dict.D = D;
 Dict.W = W;
 Dict.Z = Z;

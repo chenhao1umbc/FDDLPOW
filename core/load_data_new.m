@@ -1,4 +1,4 @@
-function [database]=load_data_new(N_c, SNR, pctrl)
+function [Database]=load_data_new(N_c, SNR, pctrl, rseed)
 
 %This function is made to load the newly generated sacttering output with
 %q[16, 0.05], n =2
@@ -47,11 +47,17 @@ for ii=1:449*6
 end
 db.features=[db.features;db2.features];
 
-rng(1000)
+rng(0);
 ind = randperm(449);
 ind_tr = ind(1:trln);
 ind_cv = ind(trln+1:trln+cvln);
 ind_tt = ind(trln+cvln+1:end);
+
+rng(rseed);
+tr_cv = [ind_tr, ind_cv];
+tr_cv(randperm(trln+cvln));
+ind_tr = tr_cv(1:trln);
+ind_cv = tr_cv(trln+1:trln+cvln);
 
 n_r = size(db.features,1);
 n_tr_p = trln*featln;
@@ -88,18 +94,18 @@ if N_c ==1
 else
     run ldd4_q16005n2
 end
-database.SNR = SNR;
-database.N_c = N_c; % how many classes of signals mixed
-database.featln=featln;
-database.tr_data=tr_dat;
-database.tr_label=trls;
-database.cv_data=cv_dat;
-database.cv_label=cvls;
-database.test_data=tt_dat;
-database.test_label=ttls;
-database.cv_mixdata=cv_mixdat;
-database.cv_mixlabel=cvmixls;
-database.test_mixdata=tt_mixdat;
-database.test_mixlabel=ttmixls;
-database.cvln_mix =cvln_mix; % samples for training in logistis regression
+Database.SNR = SNR;
+Database.N_c = N_c; % how many classes of signals mixed
+Database.featln=featln;
+Database.tr_data=tr_dat;
+Database.tr_label=trls;
+Database.cv_data=cv_dat;
+Database.cv_label=cvls;
+Database.test_data=tt_dat;
+Database.test_label=ttls;
+Database.cv_mixdata=cv_mixdat;
+Database.cv_mixlabel=cvmixls;
+Database.test_mixdata=tt_mixdat;
+Database.test_mixlabel=ttmixls;
+Database.cvln_mix =cvln_mix; % samples for training in logistis regression
 end % end of the function file

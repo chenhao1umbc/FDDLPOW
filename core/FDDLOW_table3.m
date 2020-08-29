@@ -19,85 +19,83 @@ C = opt.C;
 Nc =N/C;
 [H1, H2, H3] = getMH1H2H3(N, Nc, C);
 M1 = eye(N) - H1;
-M2 = H1 - H2;
-M1M1t = M1*M1';
-M2M2t = M2*M2';
+max_eig_S = 2.1;
+max_eig_H3 = 4.1667e-04;
+sum_max_eig_Hhat_c = 6;
 H3H3t = H3*H3';
 opt.N = N;
 opt.Nc = Nc;
-H_bar_i = M1(1:Nc, 1:Nc);
+H_bar_i = M1(1:Nc, 1:Nc);  
+S = 2.1*eye(N) - 2*H1 + H2;
+% H_hat = cell(opt.C);
+% temp = zeros(N, Nc);
+% for ii = 1:opt.C
+%     temp(1+ Nc*(ii-1): Nc*ii,:) = H_bar_i;
+%     H_hat{ii} = temp;
+%     temp = temp -temp;
+% end  
 
 % initialize Dictionary
 [D, Z, W, U, V, Delta, Loss, opt] = initdict_t3(X, H_bar_i, H3, opt); 
 % max_iter will change for existing dictionary
 
+optD = opt;
+optD.max_iter = 500;
+optD.threshold = 1e-4;
+optD.showconverge = false;
+
+optZ = opt;
+optZ.S = S;
+optZ.max_eig_S = max_eig_S;
+optZ.max_eig_H3 = max_eig_H3;
+optZ.H_bar_iSq = H_bar_i^2;
+optZ.H3H3t = H3H3t;
+optZ.sum_max_eig_Hhat_c = sum_max_eig_Hhat_c;
+optZ.max_iter = 200; % for fista
+optZ.threshold = 1e-4;
+optZ.showprogress = false; % show inside of fista
+optZ.showconverge = false; % show updateZ
+optZ.showcost= true*optZ.showprogress;
+
 % main loop
-for ii = 1:opt.max_iter   
-    t1 = toc;
-    
+for ii = 1:opt.max_iter       
     % update D, with U W and Z fixed
-    optD = opt;
-    optD.max_iter = 500;
-    optD.threshold = 1e-4;
-    optD.showconverge = false;
     D = DDLMD_updateD(X,optD,D,Z);
-    if opt.losscalc
-        Loss(1,ii) = Loss_mix(X, H_bar_i, H3, M1, M2, opt,W,D,Z,U,V,Delta);
-    end
-        
-    % update Z, with D Uand W fixed
-    optZ = opt;
-    optZ.M1M1t = M1M1t;
-    optZ.M2M2t = M2M2t;
-    optZ.H3H3t = H3H3t;
-    optZ.M1 = M1;
-    optZ.M2 = M2;
-    
-    optZ.max_iter = 500; % for fista
-    optZ.threshold = 1e-6;
-    optZ.showprogress = false; % show inside of fista
-    optZ.showconverge = false; % show updateZ
-    optZ.showcost= true*optZ.showprogress;
-    optZ.max_Ziter = 20; % for Z update
-    optZ.Zthreshold = 1e-6;        
-    Z = mix_updateZ(X,H_bar_i, H3, optZ, W, D, Z, U, V, Delta); 
-    if 0.3 == ii/opt.max_iter
-        sparsity = mean(sum(Z ~= 0))/opt.K       % avg number of nonzero elements in cols of Z
-        if sparsity > 0.9 || sparsity < 0.05
-            fprintf('30 percent iters too sparse or non-sparse\n')
-            break;            
+       
+    % update Z, with D Uand W fixed 
+    while 1
+        Z = mix_updateZ(X,H_bar_i, H3, optZ, W, D, Z, U, V, Delta); 
+        a = sum(abs(Z), 2);
+        nn = sum(a ==0);
+        if  nn >0 
+            ii
+            disp('In the while loop...')
+            D(:, a==0) = X(:,randi([1, N],[nn,1])); 
+            Z(a==0,:) = rand(nn, N);
+        else
+            break;
         end
-    end
-    if opt.losscalc
-        Loss(2,ii) = Loss_mix(X, H_bar_i, H3, M1, M2, opt,W,D,Z,U,V,Delta);
     end
     
     % update W
-    W = mix_updateW(opt,H_bar_i, M1, M2, H3, Delta, U, V,  Z);    
-    if opt.losscalc
-        Loss(3,ii) = Loss_mix(X, H_bar_i, H3, M1, M2, opt,W,D,Z,U,V,Delta);
-    end     
-    
+    W = mix_updateW(opt,H_bar_i,S, H3, Delta, U, V,  Z);      
+
     % update U, with D and Z fixed.    
     U = mix_updateU(W, Z, H3);
 
     % updtae V
-    V = mix_updateV(H_bar_i, Z, W, Delta, opt);
+    [V, WtZHhatc] = mix_updateV(H_bar_i, Z, W, Delta, opt);
 
     % update Delta   
-    Delta = mix_updateDelta(H_bar_i, Z, W, V, opt);
-
-% a = cell(1, C);
-% b = cell(1, C);
-% dist = 0;
-% for i = 1:C    
-%     a{i} = H_bar_i*(W'*Z(:, 1+ Nc*(i-1): Nc*i))';
-%     b{i} = Delta(i)*V{i};
-%     dist = dist + norm(a{i} - b{i}, 'fro')^2; % perclass whitening term
-% end
-% dist
-% normW = norm(W, 'fro')
-
+    Delta = mix_updateDelta(WtZHhatc, V, opt);
+    
+    Loss(ii) = Loss_mix(X, H_bar_i, H3,S, opt,W,D,Z,U,V,Delta);
+    Dict.Loss = Loss;
+    if ii > 120            
+    if abs(Loss( ii-1) - Loss( ii))/Loss(ii) < 1e-4
+        break;
+    end
+    end
     % show loss function value
     if opt.losscalc
         Dict.Loss = Loss;

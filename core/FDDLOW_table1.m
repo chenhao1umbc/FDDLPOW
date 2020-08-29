@@ -16,47 +16,45 @@ function [Dict]=FDDLOW_table1(X,trlabels,opt)
 
 % initialize Dictionary
 [D, Z, W, Loss, opt]=initdict(X,trlabels,opt); % max_iter will change for existing dictionary
-
+N = size(X, 2);
 % main loop
 for ii=1:opt.max_iter  
     ii
-    %     tic
-        % update D, with W and Z fixed
-        optD=opt;
-        optD.max_iter=500;
-        optD.threshold=5e-5;
-        optD.showconverge=false;
-        D=DDLMD_updateD(X,optD,D,Z);
+    % update D, with W and Z fixed
+%     disp('Updating D ...');
+    optD=opt;
+    optD.max_iter=500;
+    optD.threshold=5e-5;
+    optD.showconverge=false;
+    D_old = D;
+    D=DDLMD_updateD(X,optD,D,Z);
 
-    while 1
-        % update Z, with D and W fixed
-        optZ=opt;
-        optZ.max_iter=500;  % for fista iters
-        optZ.threshold=1e-6;
-        optZ.showprogress = false; % show inside of fista
-        optZ.showconverge = false; % show updateZ
-        optZ.showcost= true*optZ.showprogress;         
-        Z=DDLMD_updateZ(X,trlabels,optZ,W,D,Z);
-        
-        a = sum(abs(Z), 2);
-        if sum(a ==0) >0 
-            disp('In the while loop...')
-            D(:, a==0) = X(:,randi([1, 800],[sum(a ==0),1])); 
-            Z = randn(size(Z));
+    % update Z, with D and W fixed
+%     disp('Updating Z ...');
+    optZ=opt;
+    optZ.max_iter=100;  % for fista iters
+    optZ.threshold=1e-4;    
+    optZ.showprogress = false; % show updateZ
+    optZ.showcost= optZ.showprogress;  
+    Z_old = Z;
+    while true
+        Z = DDLMD_updateZ(X,trlabels,optZ,W,D,Z);    
+        a = sum(abs(Z),2);
+        nn = sum(a ==0);
+        if nn > 0 
+            disp('Expunging unused atoms ...')
+            find(a == 0)
+            D(:,a==0) = X(:,randi([1, N],[nn,1])); 
+            Z(a==0,:) = rand(nn,N);
         else
             break;
         end
     end
-    if 0.3 == ii/opt.max_iter
-        sparsity=mean(sum(Z ~= 0))/opt.K;   % avg number of nonzero elements in cols of Z
-        if sparsity > 0.95 || sparsity < 0.05
-            fprintf('30 percent iters too sparse or non-sparse\n')
-            break;            
-        end
-    end
+    
     % update W, with D and Z fixed
     optW=opt;
     optW.ploteig=false;
+    W_old = W;
     W=DDLMD_updateW(trlabels,optW,Z);    
       
 
@@ -64,12 +62,13 @@ for ii=1:opt.max_iter
     if opt.losscalc
         Loss(ii)=DDLMD_Loss(X,trlabels,opt,W,D,Z);
         Dict.Loss=Loss;
-        if ii > 1            
-        if abs(Loss(ii-1) - Loss(ii)) < 1e-5
-            break;
-        end
+        if ii > 1
+            if abs(Loss(ii-1) - Loss(ii))/Loss(ii) < 1e-4
+                break;
+            end
         end
     end
+    
     if opt.showconverge
         figure(400);
         plot(Loss(:));
@@ -78,16 +77,24 @@ for ii=1:opt.max_iter
         pause(.1);
     end
     
-    if opt.savedict*0
-        if mod(ii,40)==0
-            Dict.D=D;
-            Dict.W=W;
-            Dict.Z=Z;
-            opts=opt;
-            save([opts.Dictnm(1:end-4),'_',num2str(ii)],'Dict','opts')
-        end
+    % stopping criterion
+    deltaD = max(abs(D(:) - D_old(:)));
+    deltaZ = max(abs(Z(:) - Z_old(:)));
+    deltaW = max(abs(W(:) - W_old(:)));
+    delta = max([deltaD,deltaZ,deltaW]);
+    if delta < opt.th
+        break;
     end
-%     toc
+    
+%     if opt.savedict
+%         if mod(ii,40)==0
+%             Dict.D=D;
+%             Dict.W=W;
+%             Dict.Z=Z;
+%             opts=opt;
+%             save([opts.Dictnm(1:end-4),'_',num2str(ii)],'Dict','opts')
+%         end
+%     end
 end
 
 Dict.D=D;

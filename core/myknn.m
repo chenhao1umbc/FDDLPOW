@@ -5,9 +5,6 @@ if nargin < 5
     k = 5;
 end
 
-if sum(cvortest) ~= 1
-    error(' error from file myknn.m')
-end
 
 labels = Database.tr_label;
 % labels = aoos(Database.tr_label,Database.featln,size(Database.tr_label, 2));

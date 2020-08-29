@@ -7,8 +7,13 @@ function U = mix_updateU_t2(W_in, M)
 
 W = W_in;
 Y = W'*M;        
-[~,S,V] = svd(Y);
-D = S'*S;
-U = Y*V*diag(1./sqrt(diag(D)))*V';
+[u,s,v] = svd(Y);
+ds = diag(s);
+% if ds(end) < 1e-10 %ds(end) ==0
+    U = u*eye(size(s))*v';
+% else
+%     D = s'*s;
+%     U = Y*v*diag(1./sqrt(diag(D)))*v';
+% end
     
 end

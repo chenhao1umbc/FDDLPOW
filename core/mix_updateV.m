@@ -1,4 +1,4 @@
-function V = mix_updateV(H_bar_i, Z, W, Delta, opt)
+function [V, WtZHhatc] = mix_updateV(H_bar_i, Z, W, Delta, opt)
 % Solves U update with constrain V^TV=I,
 % input   H1 is squre matrix, kron(eye(C),ones(Nc)/Nc), C*N by C*N 
 %         Z is sparse coefficients, K by N
@@ -9,10 +9,12 @@ function V = mix_updateV(H_bar_i, Z, W, Delta, opt)
 
 Nc = opt.Nc;
 V = cell(1, opt.C);
+WtZHhatc = cell(1, opt.C);
 for ii = 1: opt.C
     Y = H_bar_i*Z(:, 1+ Nc*(ii-1): Nc*ii)'*W/Delta(ii);
+    WtZHhatc{ii} = Y'*Delta(ii);
     [u,~,v] = svd(Y);
-    V{ii} = u * eye(size(u,1), size(v, 1)) * v';    
+    V{ii} = v * eye(size(v,2), size(u, 2)) * u';    
 end
 
 end % end of the file

@@ -70,7 +70,7 @@ ind = randperm(N);
 D = randn(d, opt.K);
 Z=randn(opt.K,N);
 W=randn(opt.K,opt.Q);
-[M, ~, ~] = getMH1H2_t2(trlabels, Z);
+% M = getM_t2(trlabels, Z);
 Loss=zeros(1,opt.max_iter);
 
 

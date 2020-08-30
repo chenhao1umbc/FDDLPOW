@@ -162,9 +162,9 @@ close all
 clear
 clc;
 tic
-addpath(genpath('/extra/chenhao1/FDDLOW/fddlow'))
-addpath(genpath('/extra/chenhao1/FDDLOW/data'))
-addpath(genpath('/extra/chenhao1/DICTOL-master'))
+addpath(genpath('.././fddlow'))
+addpath(genpath('.././data'))
+addpath(genpath('.././DICTOL-master'))
 
 % do traing or do crossvalidation
 cvortest = 0;  % 1 means cv, 0 means test
@@ -351,9 +351,9 @@ close all
 clear
 clc;
 tic
-addpath(genpath('/extra/chenhao1/FDDLOW/fddlow'))
-addpath(genpath('/extra/chenhao1/FDDLOW/data'))
-addpath(genpath('/extra/chenhao1/DICTOL-master'))
+addpath(genpath('.././fddlow'))
+addpath(genpath('.././data'))
+addpath(genpath('.././DICTOL-master'))
 
 % do traing or do crossvalidation
 cvortest = 0;  % 1 means cv, 0 means test

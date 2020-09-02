@@ -7,7 +7,7 @@ tic
 
 addpath(genpath('../../fddlow'))
 addpath(genpath('../../data'))
-addpath(genpath('../../FDDLPOW'))
+addpath(genpath('../../DICTOL-master'))
 
 addpath(genpath('D:\Stored_Data\data'))
 SNR_INF = 2000;

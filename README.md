@@ -1,4 +1,4 @@
-# Robust classification for mixture signal
+# Robust RF Mixture Signal Recognition Using Discriminative Dictionary Learning
 This github folder is just for the script
 the folder structure is:
 ```
